@@ -15,7 +15,7 @@ password = "MCOT9A9.u"
 loginDev = "a"
 passwordDev = ""
 jossoEndpointDev = '/j_security_check'
-
+jossoEndpoint ='/josso/signon/usernamePasswordLogin.do'
 cookies={}
 
 headers = {}
