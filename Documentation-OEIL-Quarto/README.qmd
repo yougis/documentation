@@ -1,0 +1,30 @@
+La documentation produite est réalisé à partir de note Markdown puis convertie en .qmd pour être intégrée dans le système de gestion de connaissance généré par Quarto.
+
+Pour disposer des dates de créeation et mise à jour des notes, il est nécessaire de les ajouter dans le frontmatter de chaque note.
+
+
+# Mettre à jour la documentation
+
+Pour mettre à jour la documentation, il suffit de modifier les fichiers .qmd sur le repo git et de pull dans le dossier Documentation sur le serveur local. Le pull se fait automatiquement dés qu'un push est effectué sur le repo git grace à une CI (agent azure devops) qui est configuré pour pull les modifications sur le serveur local et déposer les fichiers dans le repertoire Documentation.
+
+# Publication
+
+La publication de la documentation se fait sur le serveur de l'OEIL. La doc à jour doit être déposé dans le dossier Documentation (/home/frodon/Documentation).
+
+Ce dossier est monté en tant que volume dans le container docker de l'application Quarto dont le container est nommé quarto_render.
+
+Pour regénérer la documentation, il suffit de redémarrer le container quarto_render car au lancement de ce container il lance la commande render sur le dossier de la documentation et publie les fichiers html dans le dossier _site, qui est consomé par le container doc_si_web qui n'est rien d'autre qu'un simple serveur web pour afficher la documentation.
+
+```bash
+docker compose up render
+```
+
+L'opération prend plusieurs dizaines de minutes selon le nombre de notes à traiter.
+
+Pour avoir les notes en pdf, il faut lancer manuellement la commande suivante:
+
+```bash
+docker run -it --rm -v /home/frodon/Documentation/:/app -v /home/frodon/pdf_doc_si_web:/pdf_doc_si_web render quarto render --profile local --to pdf --output-dir _pdf && cp -r /app/_pdf/* /pdf_doc_si_web/
+```
+
+dans la commande ci-dessus, le dossier /home/frodon/pdf_doc_si_web est le dossier de destination des fichiers pdf générés par quarto_render. celui ci est monté en tant que volume dans le container quarto_render et utilisé pour introduire les fichiers pdf. Le profil local est utilisé pour la génération des fichiers pdf.

@@ -1,0 +1,23 @@
+
+# Bienvenue sur la base de connaissance du Système d'information de l'OEIL
+
+Vous consulter une base de connaissance provenant de notes et informations acquises durant plusieurs années. Ces notes ont été rédigé initialement par Hugo Roussaffa occupant le poste de responsable du pole système d'information et des projets géomatiques de l'Observatoire de l'environnement en Nouvelle-Calédonie.
+
+Les notes sont rédigées en Markdown pour être intégrées dans ce système de consultation de la base de connaissance.
+
+
+## Maintenir la documentation à jour
+
+
+Les notes ont été initialement rédigées en Markdown puis convertie en .qmd pour être mieux intégrées à ce système de consultation de la base de connaissance.
+
+Le système de gestion de connaissance généré par [Quarto](https://quarto.org/docs/websites/) permet de disposer des dates de création et de mise à jour des notes. Pour profiter de fonction avancé,il est nécessaire de les ajouter dans le frontmatter de chaque note.
+
+Le système de gestion de connaissance est un projet de type website de Quarto. La documentation se trouve ici : [https://quarto.org/docs/websites/](https://quarto.org/docs/websites/)
+
+Les sources du système de la documentation sont localisées sur le repo Documentation sur Azure DevOps : [Documentation](https://dev.azure.com/Oeilnc/GO%20-%20Gestion%20information%20OEIL%20(Documentation%20et%20script)/_git/Documentation)
+
+
+Le fichier readme présente le processus de mise à jour de la documentation et de publication de la documentation sur le serveur de l'OEIL.
+
+{{< include_relative README.qmd >}}

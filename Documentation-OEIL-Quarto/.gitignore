@@ -1,0 +1,12 @@
+/.quarto/
+_site/
+site_libs/
+*.html
+*.pdf
+*.log
+*.toc
+*.tex
+*.docx
+*.aux
+*.md
+_extensions/
