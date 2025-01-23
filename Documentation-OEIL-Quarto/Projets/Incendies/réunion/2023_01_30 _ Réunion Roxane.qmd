@@ -1,0 +1,19 @@
+---
+title: '2023/01/30 : Réunion Roxane '
+last-modified: 2023-01-30 01:10:18Z
+date: 2023-01-30 01:01:55Z
+---
+
+Analyse des Surfaces dans les rapports.
+
+Approfondir les analyses des statistiques de contrôle par PI. Sur la base des travaux de Baptiste.
+
+Amélioration à affiner sur le protocole avec Roxane.
+
+Cas aberrants à évaluer.
+
+Correlation avec VIIRS par Hélène Patel.
+
+Relance Sébastien pour 2022.
+
+

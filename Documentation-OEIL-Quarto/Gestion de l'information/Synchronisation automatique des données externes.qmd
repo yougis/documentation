@@ -1,0 +1,34 @@
+---
+title: Synchronisation automatique des données externes
+last-modified: 2021-07-22 21:03:40Z
+date: 2021-06-28 03:03:00Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+Exploiter les données externe en interne nous permet de réaliser nos études. 
+
+Réaliser le catalogue des données externes qui nous sont utiles.
+Réaliser un script d'intégration par source. 
+Si certaine donnée nécessite la construction d'une donnée dérivée , alors le script devra lancer cette création.
+
+- Peux ont établir une connexion au serveur de base de donnée ?
+	- réaliser une copie des tables qui nous intéressent
+
+- Les données sont téléchargeables par http/ftp ?
+	- réaliser un téléchargement avec une intégration des données en base data_externe
+
+- la données est livrée sur support mémoire (DD, USB, DVD ...)
+	- l'intégration se fait manuellement
+
+
+Contrôle d'intégration :
+- vérifier le nombre d'entité de la source téléchargé et celle de la table en base.
+
+Une fois en base de donnée (vecteur), ou sur le serveur de fichier (RASTER), la source de donnée téléchargée (zip ou autre) est supprimée. 
+
+Automatisation de l'intégration d'une mise à jour:
+- vérifier la métadonnée
+- vérifier si le md5 est identique entre celui du fichier source du précédent import et le nouveau.
+- créer un log indiquant 

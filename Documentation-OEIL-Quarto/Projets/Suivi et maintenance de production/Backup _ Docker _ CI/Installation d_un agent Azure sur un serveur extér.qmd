@@ -1,0 +1,27 @@
+---
+title: Installation d'un agent Azure sur un serveur extérieur
+last-modified: 2023-08-03 22:40:59Z
+date: 2023-08-03 22:40:25Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+# Installation d'un agent Azure sur un serveur extérieur
+
+Pour certains projets, nous allons devoir faire tourner noter système d'intégration continue sur le serveur d'une prestataire. Comme c'est le cas pour EO4DM chez Insight.
+
+## EO4DM
+
+La chaîne de traitement devra à terme tourner sur les serveurs d'Insight, mais le code (dépôt Git) est stocké dans l'Azure DevOps de l'OEIL. Pour être en mesure de déployer sur le serveur d'Insight, il faut faire tourner un agent Azure sur ce même serveur.
+
+Pour se faire, aller dans les paramètres Azure DevOps > Agent pool et cliquer sur "Add pool". Choisissez ensuite le type "self-hosted", donnez lui un nom et cliquez sur "Create".
+
+Une fois le pool créé, on va pouvoir installer un nouvel agent sur la machine. Copier l'ensemble des fichiers du dossier insight sur la machine qui doit faire tourner l'agent. Dans le fichier docker-compose.yml, remplacez la valeur de la variable AZP_POOL par le nom du pool tout juste créé. Remplacez également la valeur de la variable AZP_AGENT_NAME par le nom de l'agent a utilisé, ce que vous voulez.
+
+Pour fonctionner, l'agent doit avoir accès au compte Azure, il faudra donc définir le token Azure en variable d'environnement sur la machine cible, comme décrit précédemment dans la documentation d'installation des applications sur notre serveur (la variable AZURE_ADMIN_OEIL_PASSWORD n'a pas besoin d'être définie puisque le script deploy.sh ne sera pas utilisé sur la machine cible mais uniquement depuis nos serveurs).
+
+Plus d'informations dans la documentation officielle .
+
+Pour fonctionner, l'agent Azure a besoin d'accéder au binaire docker de la machine pour construire l'image et l'exécuter. Pour cela, il faut monter le socket Docker /var/run/docker.sock de la machine host sur le conteneur (cf. docker-compose.yml) et installer la librarie Docker dans l'image Docker de l'agent (cf. Dockerfile).
+TODO il faudra réitérer cette opération pour créer un pool et un agent pour le serveur de PROD d'Insight.

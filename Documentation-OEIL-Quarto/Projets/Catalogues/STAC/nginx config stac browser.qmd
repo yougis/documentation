@@ -1,0 +1,41 @@
+---
+title: nginx config stac browser
+last-modified: 2023-10-03 21:38:13Z
+date: 2023-10-03 21:36:37Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+
+# Configuration du server web NGINX pour le STAC browser 
+
+```sh
+server {                                                      
+    listen       80;                        
+    listen  [::]:80;                                          
+    server_name  localhost;                                   
+                                            
+    #access_log  /var/log/nginx/host.access.log  main;         
+                                                               
+    location / {                                          	       # try... pour régler le pb Historymode. premet de rediriger les url partagés vers la racine et de relancer la requete vers l'api     
+        try_files $uri $uri/ /index.html;                      
+        root   /usr/share/nginx/html;                          
+       index  index.html index.htm;         
+    }                                                                   
+                                                                        
+    #error_page  404              /404.html;                  
+                                                                        
+    # redirect server error pages to the static page /50x.html          
+    #                                  
+    error_page   500 502 503 504  /50x.html;                            
+                                                                        
+    location /media/archive/ {                                 
+        alias /media/archive/;                                          
+    }                                                                   
+                                                               
+    location = /50x.html {                                            
+        root   /usr/share/nginx/html;                                   
+    } 
+}
+```

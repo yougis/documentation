@@ -1,0 +1,136 @@
+---
+title: Workpackage HydroScope
+last-modified: 2024-01-30 23:52:19Z
+date: 2024-01-29 04:32:13Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+# Présentation générale du projet 
+
+- **Gestion de projet**
+    - planification du projet
+    - suivi et contrôle du projet
+    - communication avec les parties prenantes
+    - livraison et clôture du projet
+   
+- **Infrastructure du système d'information**
+    - mise en place de l'infrastructure serveur et réseau
+    - achat et configuration de licences logicielles et abonnements cloud
+    - configuration de la sécurité et sauvegarde des données
+    
+- **Intégration de données**
+	- mise en œuvre opérationnelle de bilbo (évolutions nécessaire pour la gestion des linéaires et des points)
+	- nouvelles sources de données, collecte, catalogage et intégration (routes, MOS dynamique, Tropical Moist Forest etc.)
+	- adaptations du modèle de donnée métier (lien entre PPE  et BVAEP et point de captage)
+    - conception du modèle de données
+    - développement de l'algorithme pour la mise à jour des données différentielles (GeoDiff, hash MD5 ...)
+    - mise en place d'un orchestrateur pour l'intégration et les traitements des données
+    
+- **Géotraitement et analyses**
+    - Identification et développement des nouveaux indicateurs
+    - géotraitements des données existantes et nouvelles
+    
+- **Outils de visualisation et tableaux de bord**
+    - dashboard gestionnaire (fonctionnalités avancées)
+    - dashboard partenaire (fonctionnalités légères)
+    - dashboard grand public
+    
+- **Partage d'analyse et reporting**
+    - automatisation de la production de rapports d'intégration des données
+    - mise en place d'outils d'export des données des rapports et de catalogage
+  
+- **Formation et restitution**
+    - préparation de matériel de formation
+    - sessions de formation pour les utilisateurs
+    - restitution des résultats du projet
+  
+- **Production**
+	- mise en production, hébergement cloud
+	- support assistance et mainenance corrective / évolutive : 1 an
+
+
+# Présentation technique
+
+```mermaid
+graph LR
+    subgraph "Collecte des données"
+        A1[Capteurs et mesures sur terrain]
+        A2[Données satellites]
+        A3[BD TOPO et autres sources externes]
+        A4[Données historiques et études]
+    end
+
+    subgraph "Data Lake"
+        B1[(SIG)]
+        B2[File storage]
+    end
+
+    subgraph "Traitements et analyses"
+    	C1[TRAITEMENTS]            
+    end
+    
+    subgraph "Diffusion de l'information"
+        D1[Tableaux de bord numériques]
+        D3[Rapports]
+        D4[Exports des données]
+    end
+
+    subgraph "Formation et accompagnement"
+        E1[Formations techniques]
+        E2[Support et maintenance]
+    end
+
+    A1 --> B1
+    A2 --> B2
+    A3 --> B1
+    A4 --> B1
+    B1 --> C1
+    B2 --> C1
+	  C1 --> D1
+    C1 --> D3
+    C1--> D4
+    D1 --> E1
+    D3 --> E2
+    D4 --> E1
+
+```
+
+```mermaid
+graph TD
+C1[Nettoyage et normalisation des données] -->|Les données sont nettoyées et normalisées| B[Détection de changements - GeoDiff]
+    B -->|Identification des changements| C[Règles d'intégration]
+    C -->|Contrôle, filtre et correction| D[Géotraitement et analyse spatiale]
+    D -->|Pré-calcul des indicateurs| E[Base de données]
+    E -->|Stockage des données analysées| F[Calcul des indicateurs de pression]
+    F -->|Évaluation de l'état des bassins versants et impact| G[Aggrégation et corrélation]
+    G -->|Extraction des valeurs d'indicateurs| H[Indicateurs par dimensions temporelles et spatiales]
+
+```
+
+### Nettoyage et normalisation des données
+
+Les nouvelles données sont d'abord nettoyées et normalisées pour assurer leur qualité et cohérence.
+
+#### Détection de changements (GeoDiff)
+
+Avant d'intégrer de nouvelle données, un algorithme de détection de différence (comme GeoDiff) est utilisé pour identifier les différences significatives entre les données initiale et nouvelle.
+Cette étape est permet d'identifier les changements dans les données de référence comme la BDTOPO, les ICPE, ainsi que les points de captage, les  BV AEP et les PPE.
+
+#### Réglès d'intégration
+
+Différents contrôle, filtre et correction sont ensuite appliqués pour que la données soit exploitable dans le système.
+
+### Géotraitement et analyse spatiale
+
+Après le nettoyage, les données sont soumises à un géotraitement pour pré-calculer les indicateurs spatio-temporelle.
+
+### Base de données
+
+Les données analysées sont ensuite stockées dans une base de données. Cette base de données est essentielle pour constituer les indicateurs finaux.
+
+### Calcul des indicateurs de pression
+
+Après avoir identifié les changements, les indicateurs de pression sont calculés. Ces indicateurs permettent d'évaluer l'état des bassins versants, l'impact des activités humaines et environnementales.
+Plusieurs aggrégation et corrélation sont appliquer pour extraire des valeurs d'indicateurs selon des dimensions temporelles et spatiales variables (captage, BV, PP, commune, Province... )

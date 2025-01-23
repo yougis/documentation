@@ -1,0 +1,38 @@
+---
+title: 'Point IT architecture mutualisée '
+last-modified: 2023-12-03 04:47:06Z
+date: 2022-06-07 21:03:57Z
+---
+
+
+Matériel INSIGHT de calcul sur financement 
+Mutualisation de ressources pour du calcul avec IRD
+Utilisation en mode opérationnel souhaité
+Partage et redondance
+Plate-forme télédétection IRD sur la mangrove. 
+Loadbalancing a prévoir ?
+Question du coût/ pas de mise en œuvre opérationnelle possible jusqu'a maintenant pour cause du déménagement IRD.
+
+Hébergement dans un data centre unique ?
+Contractualisation UNC pour du calcul.
+Ird pas de stockage mais du calculateur.
+
+Concurrence entre digital earth pacifique et 
+Gaia data.
+
+Technique Difficultés 
+- quantité de donnée partagée 
+- réflexion de l'architecture de calcul
+
+Vpn , avec difficulte de bande passante
+
+Étape : 
+- Vpn
+- calcul
+
+Liste des besoins et des capacités de chacune des parties pour le 30, état global.
+
+Une réunion sans user le 12 juillet 2023
+
+
+

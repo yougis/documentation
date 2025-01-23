@@ -1,0 +1,170 @@
+---
+title: Présentation du projet de la mise en place d'un Système d'Information
+  Décisionnel à l'OEIL
+last-modified: 2024-07-03 01:50:42Z
+date: 2022-03-28 04:46:53Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+L'observatoire de l'environnement a pour objectif de traduire les pressions, l'état et les réponses qui s'exercent sur l'environnement en Nouvelle Calédonie. Pour répondre à ces objectifs, l'observatoire analyse des données de suivi et des données spatialisées provenant de producteurs locaux (Collectivités, Institut de recherche, associations, entreprises) ainsi que des données non produites localement et obtenues par des capteurs de satellites d'observation de la terre. La quantité d'information disponible et analysé est massive et en permanente augmentation, on parle donc de Big data.
+
+**Principales étapes nécessaires à l'analyse :**
+
+- Le recueil des données,
+- L'extraction et nettoyage des données pertinentes,
+- L'intégration des données dans le système d'information,
+- Les traitements des données pour la création d'indicateurs,
+- La diffusion des données,
+- La valorisation sous forme de rapport et/ou de tableau de bord.
+
+Certaines de ces étapes peuvent être répétitives et laborieuses si aucun process n'est mis en place ou qu'aucune automatisation n'est réalisée.
+
+Afin d'optimiser, de standardiser et d'automatiser le plus possible le travail de l'analyste à l'observatoire, nous allons construire un Système d'Information Décisionnel (SID).
+
+Le SID nous permettra d'exploiter plus facilement l'ensemble des données à la fois pour nos outils d'analyse mais aussi pour valoriser les informations dans nos interfaces d'aide à la décision et d'observation des dynamiques environnementales.
+
+**Eléments du système cible :**
+
+- Les données intégrées et disponibles dans un entrepôt de données (DWH : Data Ware House),
+- Un modèle de donnée permettant l'accès aux indicateurs selon différents axe d'analyse (dimension temporelle, spatiales),
+- Des opérations orchestrées, de transfert, d'intégration et de traitements des données.
+- Des produits de valorisation des indicateurs (publication des données, rapports, tableaux de bord)
+
+Tout ceci sera maintenu et administré par les agents de l'observatoire. Nous avons fait le choix de capitaliser sur le langage de programmation Python, suffisamment simple, stable, omnipotent, performant, répandu et adapté à la Data Science comprenant entre autres l'analyse spatiale.
+
+En vue e réaliser notre système nous nous posons les questions suivantes :
+
+- quelle architecture de données doit-on implémenter ?
+- quel sera le cycle de vie des données que nous exploitons ?
+- quels processus doit ont implémenter et automatiser ?
+- quels performances recherchons (création des indicateurs et rapidité des requêtes d'accès) ?
+- quelles opérations seront nécessaires à l'exploitation et la maintenance du Système d'Information Décisionnel ?
+
+## Différentes architectures de donnée
+
+Selon l'architecture des données définie, nous aurons des avantages et des inconvénients concernant :
+
+- des performances d'accès aux indicateurs,
+- des modalités de maintenance (vie des données, nouvelles analyses).
+
+Afin de bien choisi notre architecture cible, une comparaison de différentes architectures de donnée doit être effectuée, précisément pour comprendre comment appréhender la dimension spatiale de nos données.
+
+### Modèle de donnée en étoile
+
+#### Les données géographiques vectorielles
+
+.\[A rediger\]
+
+#### Les données géographiques rasters
+
+.\[A rediger\]
+
+### Modèle de donnée en cube
+
+.\[A rediger\]
+
+#### Les données géographiques vectorielles
+
+.\[A rediger\]
+
+#### Les données géographiques rasters
+
+.\[A rediger\]
+
+## La gestion du cycle de vie des données
+
+### Une stratégie ETL et/ou ELT ?
+
+.\[A rediger\]
+
+### Orchestrer les opérations 
+
+La réalisation de pipelines pour tout ou partie du cycle avec l'orchestrateur **Dagster** ou **Prefect,** destiner à piloter l'ensemble de la chaine de production (de la mise à jour des données sources à la production des geotraitement (Bilbo) et de la valorisation dans des tables agrégées contenant les indicateurs clés (requêtes SQL issues de **DBT**).
+
+### Le recueil des données
+
+Données de référence disponibles :
+
+- sur internet (georep, openData, Nasa, Sentinel-hub, province Sud, Province Nord, UNC, Mairies...),
+    
+- Suivre les mises à jour des données disponibles, via un système de versionnement puissante comme [Kart](https://docs.kartproject.org/en/latest/)
+    
+- Cataloguer les sources pour la gestion des références dans le système avec **Intake** (pour assurer les traitements bilbo) d'une part, dans **CKAN** et **STAC** (pour apporter de l'information sur la donnée et la rendre consultable aux utilisateurs) d'autre part.
+    
+
+### L'extraction et nettoyage des données pertinentes
+
+Tache très lourde et difficilement automatisable.
+Il s'agira de réaliser a une validation sur les données entrantes avec [Pandera](https://pandera.readthedocs.io/en/stable/) ou **Great Expectations**
+
+Réaliser des corrections génériques :
+
+- corrections géométriques OGC standards
+
+Réaliser des corrections spécifiques :
+
+- mapping d'attributs / de classe / de type
+- suppression d'entité comportant certaines erreurs/imprécisions
+
+### L'intégration des données dans le système d'information
+
+#### Intégration des données dans notre base de données de traitement PostGis (Mordor).
+
+- Appliquer la stratégie sur la gestion des droits et l'organisation en schéma
+- Monnitorer et suivre les étapes d'intégration
+
+### Les traitements spatiaux des données destinées à la création d'indicateurs
+
+- Constituer les tables de faits thématiques standardisés à partir de script et d'ETL comme Bilbo permettant d'obetnir des unités géomtriques fines résultant d'une opération spatiales comme une intersection, un contains ou une différence géometrique. (voir doc Bilbo)
+- Constituer les tables de fait par indexation dans une grille de référence hiérarchique H3 et des requetes SQL permettant d'obtenir des résultats d'analyse spatiale. (voir doc BilboH3)
+- Constituer des cubes de donnée raster.
+- Monitorer les traitement et de valorisation des données via la création de table de log des opérations, telle que la table "**processing_metadata**", qui enregistre chaque lot de données traités avec Bilbo, la version du script et les paramètre de traitement effectués sur les données sources. L'identifiant de cette métadonnée est aussi présent dans la table de fait résultant du traitement bilbo.
+
+### Cycle de vies des tables de faits
+Le modèle de données des tables de faits permet d'entrer dans un cycle de vie de données simple :
+- Insertion d'entité dans une table de fait existante par ajout des données (mode append par defaut). L'ajout de nouvelle dimension spatiale est un simple ajout des resutats d'un traitments bilbo par ex.
+- Mise à jour d'entité dans une table de fait existante nécessitant plutôt une suppression puis une création, en exploitant les id_spatiaux, dimension temporelle, l'identifiant de du run_metadata, des HexId (H3) ou en applicant un Bounding Box sur les traitements 
+- Suppression et création de l'ensemble de la table de fait, grace au mode replace de bilbo.
+
+### Publication des indicateurs en base de production
+
+- La valorisation des données de fait passe par la production de table dit "marché de donnée" ou DaTaMart (DTM), constituant une agrégation plus ou moins fine en terme de granularité temporelle  (au jour, au mois, la saison, à l'année etc.), spatiale (au mètre carré à l'hectare, à la commune, à la province etc.) et thématique (classe de MOS regroupées, groupe de classe de luminance etc.). Ces agrégation permette de réduire considérablement le nombre de lignes des tables qui pourront être valorisé à travers des interfaces décisionnels de type Dashboard.
+- Les DTM sont produits via des requêtes SQL, sous forme de table/vue/vue matérialisée selon les spécificités des données et des problématique du projet.
+- Une synchronisation des DTM et de la base de diffusion web (situé sur AWS) doit être effectué et monitorer intelligemment ou manuellement pour éviter des transferts important et inutiles. 
+
+### La diffusion des données
+
+#### Données statiques téléchargeables
+
+- Création d'export vers une plateforme de téléchargement type open data comme **CKAN**
+
+#### Publication de service Web
+
+- La publication via des server cartographique des tables de données DTM spatiales et non spatiales répondant à la phylosophie REST ou aux normes OGC à est possible moyennant la création d'un projet de carte compatible : Arcgis Server / Qgis Server / GeoServer / MapServer.
+- La publication des données répondant à la phylosophie REST directement depuis le serveur de base de données via [Pgfeaturesrv](https://github.com/CrunchyData/pg_featureserv?tab=readme-ov-file) ou [gp_tileserv](https://github.com/CrunchyData/pg_tileserv)
+- La publication de données vectoriels via d'autre server python pour des applications spécifiques à partir de framework comme Holoviz, solara, geemap
+
+### Valorisation sous forme de rapport et/ou de tableau de bord
+
+#### Rapport statique
+
+- La production d'Atlas cartographique avancés est réalisé via QGIS, exploitant le modèles décisionnels, les atlas peuvent être fait de manière assez générique et répondre au interogation principale d'un projet. Les sources du documents sont réexploitable et peuvent exploiter des variables et parametres commes les années d'études et donc être reproduit chaque année. Les conditionnalités d'affichage de tel ou tel graphique ou carte ou visuel et toutefois très complexe à mettre en oeuvre. Ces atlas sont l'équivalent d'une fiche ou d'une plaquette contextuelle à une unité administratique (fiche communale incendie par exemple). 
+- La production de rapport standarsé via l'utilisation de QUARTO, exploitant les sources de données du modèle décisionnel est très puissant pour présenter les résultats d'une étude complexe en respectant la mise en forme "standard" d'un rapport ou d'un bilan (Titre, sommaire, pied de page, renvois, biblio etc...). Les figures sont produites via de quelconque librairie de Dataviz (maplotlib, holoviz, seaborn etc...), tout en ayant une capacité de reproduction et d'automatisation de production selon différents parametre et variable en entrée (date, localité, format d'export etc.). Les export peuvent être multiple et adapté à des rendu statique comme interactif web. 
+
+#### Tableau de bord dynamique
+
+- La production de tableau de bord dynamique est réalisé via des outils de BI (Business Intelligence) comme Power BI, Arcgis Dashboard, Metabase, Apache Superset, Lumen (holoviz) ou Quarto. Ces outils permettent de produire des tableaux de bord interactifs, dynamiques, et de les publier sur le web pour une consultation en ligne. Les données sont exploitées directement via des requêtes SQL ou des appels aux API REST selon les techno, et les visualisations sont paramétrables et personnalisables. Les tableaux de bord sont destinés à être partagés et consultés par des utilisateurs externes à l'observatoire.
+
+##### Propriétaire sous licence pour l'administrateur
+
+- Arcgis Dashboard
+- Power BI
+
+##### Open Source
+
+- Lumen (holoviz)
+- Quarto
+- Apache Superset
+- Metabase

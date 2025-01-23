@@ -1,0 +1,22 @@
+---
+title: créer un nouveau kernel pour un utilisateur jupyter
+last-modified: 2022-09-05 04:45:36Z
+date: 2021-10-17 23:18:15Z
+---
+
+# Etapes à suivre
+
+## prérequis, nouvel utilisateur
+- installer miniconda
+
+- installer ipkernel dans l'environnement base
+
+## créer environnement conda
+
+` conda create [nom env] `
+
+` conda activate  `
+
+# pour creer un nouveau kernel de l'environnement
+
+`ipython kernel install --name "base" --user`

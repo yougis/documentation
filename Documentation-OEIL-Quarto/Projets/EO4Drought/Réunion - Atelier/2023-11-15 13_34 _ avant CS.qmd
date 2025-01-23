@@ -1,0 +1,53 @@
+---
+title: '2023-11-15 13:34 : avant CS'
+last-modified: 2023-11-22 02:07:56Z
+date: 2023-11-15 02:34:22Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+2023-11-15 13:34
+
+CS : 
+demander adrien comment est introduit la presentation. est ce que Mathis ou Nous présentons le contexte fond pacifique.
+
+qui sera là ?
+
+faire partie du CS  : Michelle lePage CSBIO. télédetection suivi végétation.
+
+----
+Méteo france : A relancer
+
+-> mise en qualif ?
+mise en qualif ok dans un container.
+il y a des bugs/error
+
+erreur sur les 3 chaines :
+automatisation du démarage 
+mode auto : continue
+regarde dans datahisto pour chaque chaine.
+si vide mode histo, à partir de la collection de GEE.
+
+mode manuel : écrase les data histo si existante.
+
+préférer s'appuyer sur les indicateurs que sur les indice pour verifier la création des décades.
+
+Alerte : contrôle VHI, METEO et ASCAT dispo ?
+date SPI SPEI : periode de référence pour calculer les indicateurs.
+
+stat de MAI par commune : anomalie d'humidité meteo à la commune.  n'est pas utilisé dans la chaine, mais sert à valider . pour faire la correlation
+
+
+dans moisture ce qui sert à calculer le MAI.
+
+dans annex :
+station
+SPI_commune , pour Belep y a moyen qu'il n'y ai pas d'alerte.
+
+pour le SPEI, plusieurs communes sont sans SPEI. 
+
+pas de réponse de FIDJI, demande à fabien de relancer
+
+Quid de Tahiti ?  demande si prise de contact prochainement
+

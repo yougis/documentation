@@ -10,3 +10,5 @@ site_libs/
 *.aux
 *.md
 _extensions/
+
+_remmina_files/

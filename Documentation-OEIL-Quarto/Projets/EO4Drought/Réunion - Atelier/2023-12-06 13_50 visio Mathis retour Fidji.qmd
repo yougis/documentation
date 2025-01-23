@@ -1,0 +1,48 @@
+---
+title: 2023-12-06 13:50 visio Mathis retour Fidji
+last-modified: 2024-01-17 06:06:08Z
+date: 2023-12-06 02:50:47Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+2023-12-06 13:50
+
+Contact polynesie, direction Agricole, manifeste leur intérêt sur l'utilisation : Alexandre Amary / Yohan 
+-> envoyer des premiers résultats pour eu mettre l'eau à la bouche et demander des détails et des données. VAI/VHI : Pour controler et pour les alertes.
+
+Contact NewZeland Niwa, centre de recherche météo (pour avoir des données au Vanuatu), passer par le centre météo de Port-Villa.
+-> tenter de contacter le centre Météo / intérêt pour Vanuatu
+
+
+intégration de carte de l'ile principale
+calcul du VHI (historique modis 2000-2017), pas réussi à traiter jusqu'au bout.
+
+Biblio étude de sécheresse en 2010 quand à FIDJI. Correlation avec les resultats de l'étude. Combine plusieurs trucs à définir par Mathis.
+
+La chaine à planté, sans comprendre pourquoi. Peut être connexion au serveur GEE.
+
+phase 3 : monitorer les ressources du serveur.
+voir sur GEE l'activité.
+
+Déployer un container par territoire par chaine (définir les variables des tuiles etc.) modifier le config process avec ces variables.
+
+
+stockage GEE , limité 120GO/250
+certain produit pas tous necessaires
+Nettoyer le dossier des données drive suite à la production de toutes les tuiles d'une date.
+
+Automatiser le rsync les tuiles de lifou sont calculés
+
+mise à jour de l'historique ou fixe : evaluer l'éffort de réalisation d'une grille des moyenne et écart-type. Envisager un fonctionnement par mode.
+Argument : changement d'occupation du sol ne sera pas pris en compte et remonter des stresse végétal. Dépend des objectifs d'utilisation des données.
+est ce qu'on recalcul l'historique : effort de refonte du code.
+ecart type, variablibilité : chaque pixel à sa propre dynamique.
+
+
+départ metropole 2 semaines + 2 semaine de congés (15dec - 13 janvier)
+- mission CSBIO
+3 jours charges
+
+

@@ -1,0 +1,18 @@
+---
+title: quetions Pollution lumineuse
+last-modified: 2021-07-13 04:29:00Z
+date: 2021-07-04 22:26:21Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: yes
+---
+
+# Réunion de démarrage pollution lumineuse en NC
+
+Plusieurs questions/points à aborder ensemble (liste non exhaustive):
+-	Présentation du calendrier du projet, des livrables attendus
+-	Acquisition des images JILIN : Comment préparer au mieux cette acquisition ? Pourquoi avoir besoin de connaitre les sites au préalable pour évaluer la faisabilité ?....
+-	Sonde Ninox : Comment décider du site d’implantation ? Il me semble que nous avions parlé de 6 mois de déploiement, il faudrait donc rapidement la mettre en place ; Je ne crois pas avoir eu de nouvelles concernant les autres initiatives de déploiement de sondes NINOX (possibilité de déploiement d’un observatoire astronomique en NC…)
+-	Traitements ortho sur les images JILIN : Telescop ou Insight ?
+-	Modalités pour avancer sur la contractualisation

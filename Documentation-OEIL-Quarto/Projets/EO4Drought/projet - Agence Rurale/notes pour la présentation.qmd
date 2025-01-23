@@ -1,0 +1,49 @@
+---
+title: notes pour la présentation
+last-modified: 2024-03-17 23:09:27Z
+date: 2024-03-17 22:37:35Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+2024-03-18 09:37
+
+Suivi et anticipation de la sécheresse végétale
+ en Nouvelle-Calédonie
+
+
+# contexte
+Nouvelle-Calédonie, 2019 : “Deuxième année la plus chaude au niveau mondial depuis 1850.”
+
+Météo-France NC, 2020
+
+- principaux évenement, ENSO
+
+
+# Système de suivi et d'anticipation
+
+- projet financé et réalisé en 2 temps :
+	- SCO (R&D)
+	- Fonds pacifique (Mise en oeuvre opérationnel en NC)
+
+- Réalisation INSIGHT
+- Appuit et conseil technique et thématique, opérateur :  OEIL
+- Soutien IRD
+
+## Points importants sur le fonctionnement de la chaine
+- 4 produits distincts, différents usages
+	- Prévisionnel
+	- Alerte (commune)
+	- Globale (infra-communal : pixel 430m) 
+	- Locale (parcellaire : pixel 10m)
+-  fréquence de production des indicateurs (en continue)  
+	- VHI/VAI : Décade 
+	- Alerte / Prévision : 1 Mois
+- Délais de production des indicateurs  
+	-  Tous les 1 à 1,5 mois
+
+## Avancement actuel
+
+
+

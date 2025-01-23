@@ -1,0 +1,10 @@
+---
+title: idée projet
+last-modified: 2023-11-22 01:47:02Z
+date: 2022-09-04 23:19:40Z
+---
+
+source : https://core.ac.uk/download/pdf/344753712.pdf
+
+Les produits d’humidité du sol des capteurs ASCAT du satellite MetOp, SMAP et SCATSAR-SWI (combinaison d’ASCAT et Sentinel-1)
+

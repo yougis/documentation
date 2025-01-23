@@ -1,0 +1,16 @@
+---
+title: installation R main meteo france
+last-modified: 2024-04-25 05:28:45Z
+date: 2024-04-25 03:46:05Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+preparation machine et environnment
+
+sudo apt-get install libnetcdf-dev
+sudo apt-get install gcc-multilib
+
+
+conda install -c conda-forge  r-proj4 r-ncdf4 r-ncdf4.helpers r-tidyr r-dplyr r-forcats r-ordinal r-sp r-gstat r-spacetime r-rgdal r-rgeos r-maps r-mapdata r-mapproj r-maptools r-sf r-curl r-rvest r-raster r-purrr

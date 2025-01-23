@@ -1,0 +1,37 @@
+---
+title: Phase 2 erosion
+last-modified: 2022-06-23 03:16:37Z
+date: 2021-07-26 00:55:44Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: no
+tags:
+  - asap
+---
+
+24/05/2022 :
+
+Disposer d'information caracteristiques des formes concernant leur forme :
+- périmètre
+- surface
+- indices d'allongement ou d'élongation 
+
+Pour juillet :
+- fournir le plan à geo.Impact
+- fournir les tables xls ventilée par maille territoriale (Hydro Eco Région)
+- fournir les tables xls pour chaque indicateur
+
+Spécifiquement :
+
+```mermaid
+flowchart LR
+   erosion --> pente & geol--> geol/pente
+
+```
+
+- Régionalisation par HRE (Hydro Eco Région) à valider par GeoImpact mais bon a priori.
+
+Question : faut il prévoir des allez retour  avec le CS sur la pertinence des zones ou autre question , indicateurs pertinents ?
+
+

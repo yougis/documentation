@@ -1,0 +1,20 @@
+---
+title: création d'un nouvel abonnement
+last-modified: 2024-07-02 00:54:10Z
+date: 2024-07-02 00:50:40Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+
+ création d'un nouvel abonnement 
+ sur la qualif : [https://geoportail.oeil.nc/AlerteIncendiesRec/Emails/Abonnement/Nouveau](abonnement qualification/recette)
+
+
+pensez à activer le VPN sur le serveur sinon vous n'aurez pas accès aux resources : 
+L'application n'arrive pas à obtenir les ressources liées : 
+https://geoportail.oeil.nc/AlerteIncendiesRec/API/Subscription/Areas
+https://geoportail.oeil.nc/AlerteIncendiesRec/API/Subscription/Thematics
+
+En activant le VPN c'est fonctionnel 

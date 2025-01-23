@@ -1,0 +1,26 @@
+---
+title: Préstation AMOA Ergoconcept pour le compte de l'OEIL
+last-modified: 2023-10-10 23:04:18Z
+date: 2023-10-09 23:06:15Z
+---
+La réflexion sur la refonte du site web a été rondement menée par l'équipe assistée par Véronique de la société Ergoconcept. Nous avons en 2022 engagé une dépense équivalent à 10 de prestation supplémentaire pour nous accompagner à la réalisation du site par le prestataire retenu de l'AO. N'ayant pas le budget nécessaire à la réalisation du site, nous avions dans un premier temps convenu d'utiliser le temps d'assistance pour consolider la réflexion sur la refonte d'un module spécifique du site web concernant les bilans environnementaux. Pour autant, la réflexion sur l'offre de service numérique de l'OEIL pourrait être vue dans son ensemble afin de :
+
+- clarifier l'offre de service numérique de l'OEIL,
+- identifier les cibles pour chacun de ces services rendus,
+- harmoniser les applications qui permettent de créer le lien entre utilisateurs / services.
+
+En effet, l'offre de services numériques actuelle de l'OEIL a été construite au fil du temps et de nouveaux services continus d'être proposés. Pour rappel, nous avions au cours de nos différents ateliers sur le site web, évacué volontairement l'ensemble de cette réflexion pour se concentrer sur le site web et catalogue de ressources.  
+
+Quels risques pour l'OEIL de voir son offre de service s'étoffer sans prendre de recul :
+
+- Des utilisateurs probablement perdues dans l'offre de services numériques rendues de l'OEIL,
+- Une perte de connaissance interne sur l'intérêt des services numériques mis en place historiquement,
+- Une administration et une maintenance informatique complexe et lourde, dépendante de prestataires spécifiques.
+
+Je propose d'axer l'AMOA de 10 j de Véronique sur les questions suivantes :
+
+- Quelles sont les services numériques que l'OEIL souhaite continuer à délivrer, à mettre en place à court terme, moyen terme, long terme ?
+- Comment harmoniser nos services numériques / applications en restant cohérent avec la diversité de nos utilisateurs ?
+- Quelles méthodes et outils pourraient permettre de faciliter la définition, le développement et la mise en place de nouveaux services numériques ?
+
+L'ambition de cet accompagnement est de nous permettre à tous, d'avoir une vision commune et cohérente sur les services numériques actuels et futurs souhaité pour l'OEIL. Ce travail est la base pour permettre au pôle SI de maintenir, de consolider et d'améliorer notre socle technique.

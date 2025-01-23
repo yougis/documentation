@@ -1,0 +1,15 @@
+---
+title: 'todo : migration PG'
+last-modified: 2023-03-30 22:20:01Z
+date: 2023-03-30 22:14:21Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+- [ ] programmer date d'extinction du docker de prod
+- [ ] eteindre instance
+- [ ] modifier le script de dump actuel pour pointer vers le nouveau docker
+- [ ] modification des script bash permettant de créer des nouveau projet, nouveau user, et de gérer les roles.
+- [ ] changement des ports 
+- [ ] faire la doc d'exploitation de cette nouvelle architecture

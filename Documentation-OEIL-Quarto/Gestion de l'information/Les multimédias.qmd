@@ -1,0 +1,27 @@
+---
+title: Les multimédias
+last-modified: 2024-06-27 10:40:15Z
+date: 2021-06-23 03:01:47Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+# La médiatèque
+
+Lorsque vous prenez ou récéptionnés des photos, supprimez celles qui sont inutilisables avant ou pendant que vous les importez sur le serveur de fichier.
+
+Des applications (à définir) permettent de vous aider à déterminer les doublons ou fortes ressemblance de plusieurs images. Choisissez en une seule et supprimez les autres.
+
+Un application de type médiathèque organise et index automatiquement les images selon les dates de prise de vue, leur geololasation, type d'appareil photo, lorsque cela est disponible. 
+Vous aurez ensuite la possibilité d'organiser les photo par événements, les tagger, les noter etc.
+Des fonctions plus ou moins avancées vous permettent de retoucher les photos (cadrage,orientation, filtre gaussien etc.). 
+Des fonctionnalités d'export ou de partage à travers les réseaux sociaux ou mail sont disponibles.
+
+## Backup
+La médiatheque entière doit être backupée
+
+
+## Outil en cours de test 
+La suite d'outils Phraseanet a été installée sur le serveur de qualification à l'OEIL pour évaluer la pertinence de l'outil pour le pôle Communication.
+A ce jour, l'outil n'est pas encore utilisé et non validé par le pôle Communication.

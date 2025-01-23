@@ -1,0 +1,30 @@
+---
+title: 'reunion '
+last-modified: 2022-06-01 05:51:36Z
+date: 2022-06-01 04:59:21Z
+---
+
+qu'en pense gyslain du décalage ?
+- reserver l'analyse dans le masque admin terrestre + mangrove zoneco 2006 (hors litoral)
+
+simplifier la presentation du protocole
+
+echantillonage sur les zones ouù on a des images
+y a til une résolution seuil limite pour la PI ? rapid EYE 1,5m
+peut on adapter l'echelle de travail de l'opérateur selon la qualité des données?
+
+combien de point 
++ question de la metrique de synthèse des valeurs sur la méthode intra pixellaire.
+
+on ne fait pas de pi sur d'autre dates que 2000 et 2010. pas prioritaire. mais interessant de le faire en perspective pour TMF.
+
+limites foret seche : utiliser le masque CEN et exploiter les pixels de la source la meilleur dans ces perimètres.
+
+nouvelles interrogations : 
+- est ce qu'il y a une UMC à prendre en compte pour les pixels de perte ? 
+
+on ne pourra pas évaluer la donnée pour toutes les questions. on se prend pê trop la tête.
+
+# pertes et gains
+
+

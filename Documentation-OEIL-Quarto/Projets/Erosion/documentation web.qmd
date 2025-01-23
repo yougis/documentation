@@ -1,0 +1,8 @@
+---
+title: documentation web
+last-modified: 2022-06-23 03:01:58Z
+date: 2022-06-23 03:01:47Z
+completed?: no
+---
+
+https://www.researchgate.net/publication/324128265_Geotraitement_au_service_d'un_environnement_de_modelisation_graphique_des_phenomenes_spatiaux

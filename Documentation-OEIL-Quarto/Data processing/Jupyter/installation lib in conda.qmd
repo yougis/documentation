@@ -1,0 +1,33 @@
+---
+title: installation lib in conda
+last-modified: 2022-04-05 04:41:57Z
+date: 2021-10-18 00:22:32Z
+---
+
+
+# Préparation environnenement
+conda activate **env_name**
+
+Mettre en place un dépôt prioritaire
+
+``` 
+conda config --env --add channels conda-forge 
+conda config --env --set channel_priority strict
+```
+
+Construire et rendre le kernel accessible par Jupyter
+```
+python -m ipykernel install --user --name=gis_37
+```
+
+# GIS
+```
+conda install gdal rasterio sqlalchemy psycopg2 pandas shapely pyproj rtree geopandas fiona ipyleaflet geoalchemy2 geocube
+```
+
+
+# Viz
+```
+conda install holoviews bokeh geoviews
+```
+

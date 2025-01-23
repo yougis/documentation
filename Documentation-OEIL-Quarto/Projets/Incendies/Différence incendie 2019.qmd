@@ -1,0 +1,45 @@
+---
+title: Différence incendie 2019
+last-modified: 2023-10-20 03:24:07Z
+date: 2023-10-19 00:04:11Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Contexte :
+
+les données dans la base de donnée du shema bilan_incendie_2019, table incendie_2019 utilisé , pour le bilan 2019 et pour les fiches communales 2019 sont différentes des données compillées dans la table sentinel_surface_detectée (filtrée en 2019) ou faits_zones_brulees_zee (issue de cette donnees).
+
+Ex. sur Belep des surfaces existent dans incendie_2019 et n'existent pas dans faits_zones_brulees_zee
+
+
+De ce constat, plusieurs question se pose :
+- quelles sont les sources de la données FEUX_CQ.sentinel_surfaces_detectees ?
+- quelles sont les sources de la données bilan_incendie_2019.incendie_2019 ?
+
+
+Voici les sources possibles :
+Commun / Activité / Etudes 
+- Livraison INSIGHT : s'agit t-il de la version 1 de la chaine ? des données L8 et S2
+	1. dossier mensualisé
+	2. une compilation dans une GDB
+
+
+Commun / Informatique / SIG / DONNNEES / projet feux
+- Photointerpretation 2019
+
+
+Commun / Informatique / SIG / Etudes
+
+INSIGHT / geostorage
+Dossier FEUXV2 . RESULTAT
+- dossier 2017 2018 2020 2021 2022 + fichiers 2023 
+-> dossier 2019 vide ! pas les autres
+retrouvé dans activité 2020 > analyse incendie > J'ai créer un dossier livrable dans 2019 concernant la livraison V2
+
+Voici les autres données distribuées 
+- Vulcain Pro :
+fichiers accessibles par http ou en base OEIL_REFERENCE , feux.sentinel_zones_brulees
+
+

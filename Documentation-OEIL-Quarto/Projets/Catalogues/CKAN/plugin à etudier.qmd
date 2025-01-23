@@ -1,0 +1,43 @@
+---
+title: plugin à etudier
+last-modified: 2024-02-07 04:50:39Z
+date: 2024-02-07 04:33:40Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+https://github.com/ckan/ckanext-hierarchy
+
+https://github.com/ckan/ckanext-scheming
+
+https://github.com/EnviDat/ckanext-composite
+
+
+https://extensions.ckan.org/extension/tagmanager/
+
+
+https://github.com/ckan/ckanext-archiver
+
+
+https://github.com/ckan/ckanext-dcat
+
+
+https://github.com/ckan/ckanext-xloader
+
+https://github.com/ckan/ckanext-geoview
+
+ckanext-pdfview
+
+ckanext-googleanalytics
+
+ckanext-showcase
+
+ckanext-spatial
+
+
+Owner avatar
+ckanext-sitesearch
+
+
+ ckanext-envvars

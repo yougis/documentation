@@ -1,0 +1,80 @@
+---
+title: plan CDC APID
+last-modified: 2024-04-02 04:00:18Z
+date: 2024-04-02 03:02:06Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+
+
+**1. Introduction**
+
+- Contexte du projet
+
+- Objectifs du cahier des charges
+
+- Description du POC
+
+- Technologies et infrastructures existantes
+
+**2. Objectifs**
+
+- Objectifs généraux du développement de l'algorithme
+
+- Objectifs spécifiques liés à l'intégration dans l'infrastructure existante
+
+- Objectifs de performance (parallélisation, distribution avec Dask)
+
+**3. Spécifications fonctionnelles**
+
+- Description détaillée des fonctionnalités de l'algorithme
+
+- Exigences en termes d'entrées et de sorties
+
+- Gestion des erreurs et des exceptions
+
+- Exigences de performances (temps d'exécution, utilisation des ressources)
+
+**4. Spécifications techniques**
+
+- Langage de programmation : Python
+
+- Utilisation de la parallélisation et de la distribution avec Dask
+
+- Intégration dans l'infrastructure existante
+
+- Utilisation de Docker pour la gestion des conteneurs
+
+- Utilisation de Pystac et Stackstac pour la manipulation de données géospatiales
+
+**5. Architecture**
+
+- Description de l'architecture logicielle de l'algorithme
+
+	- Schéma de l'architecture intégrée dans l'infrastructure existante
+
+- Proposition à faire sur la décomposition en modules et composants si necessaire
+
+**6. Tests et validation**
+
+- Stratégie de test (unitaires, intégration, système)
+
+**7. Gestion de projet**
+
+- Méthodologie de développement (agile, scrum)
+
+- Outils de gestion de projet (Azure DevOps)
+
+- Moyen de communication et de reporting
+
+**8. Planning**
+
+- Contraintes de délais de réalisation
+
+
+**9. Réponses à l'appel d'offre**
+- Contenu de l'offre (presentaiton,CV, experience passé, réponse technique, methodologie de travail, ventilation des coût, calendrier détaillé incluant des delais de livraison, conditions contractuelles, modalité de paiement)
+- Délais de réponse
+- Contacts des parties prenantes et des personnes à contacter

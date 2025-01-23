@@ -1,0 +1,13 @@
+---
+title: question à poser à gislain
+last-modified: 2023-04-18 05:47:19Z
+date: 2023-04-16 22:36:36Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+le service WMS et gee sont différents, est ce que les données GEE sont plus à jour ? quelle est la versions et plus globalement les metadonnées du services ?
+GEE : projects/JRC/TMF/v1_2021/TransitionMap_Subtypes/1ASIA
+
+WMS : https://ies-ows.jrc.ec.europa.eu/iforce/tmf_v1/wms.py?

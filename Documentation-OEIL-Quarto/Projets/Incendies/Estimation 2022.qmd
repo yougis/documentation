@@ -1,0 +1,51 @@
+---
+title: Estimation 2022
+last-modified: 2023-01-30 01:10:38Z
+date: 2021-11-23 23:03:12Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: no
+---
+
+- Intégration sentinel INSIGHT
+	- Vérification des données et fusion des géométries (script COME)
+ 
+> A industrialiser et évolution du script : 10 jours (évolution)
+
+- Contrôle qualité :
+	- 30 j pour 2019 : 1700 (fusionnée) / 60K (non fusionnée) 
+> Création d'une interface
+20 jours
+
+- Intégration dans Vulcain :
+	- FME, calcul des statistiques
+
+> Ecart Vulcain/Vulcain Pro : 10 jours (critères 75% et passage date année)
+
+- Documentation :
+> Rédaction d'une documentation complète : 5 jours
+
+- Restitution et mise à disposition de données
+> Formulaire alerte incendie
+15 jours
+
+- Monitoring :
+10 jours
+
+- Maintenance :
+5 jours
+
+- Architecture cloud :
+5 jours
+
+- Evolution architecture base de donnée
+60 jours (stagiaire SGBD)
+
+- Evolution :
+10 jours
+
+
+ GEDI (formation intégration) 30 jours
+ 
+ PNG 30jours   + mise en place architecture : 30 jours

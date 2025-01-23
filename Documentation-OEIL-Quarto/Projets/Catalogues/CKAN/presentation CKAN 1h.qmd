@@ -1,0 +1,50 @@
+---
+title: presentation CKAN 1h
+last-modified: 2024-02-07 21:33:08Z
+date: 2024-02-07 21:32:57Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+    Introduction à CKAN :
+        Définition et objectif de CKAN.
+        Histoire et développement de la plateforme.
+
+    Fonctionnalités principales :
+        Gestion des données : comment télécharger, stocker et gérer des ensembles de données.
+        Recherche et découverte : démonstration des outils de recherche et de filtrage.
+        Visualisation des données : présentation des options de visualisation intégrées.
+
+    Avantages pour l'organisation :
+        Facilite le partage et la collaboration autour des données.
+        Améliore la transparence et l'accessibilité des données.
+        Supporte la prise de décision basée sur des données fiables.
+
+    Cas d'utilisation et exemples :
+        Présenter des exemples concrets d'utilisation de CKAN dans des organisations similaires.
+        Montrer comment CKAN a aidé à résoudre des problèmes spécifiques.
+
+    Démonstration pratique :
+        Navigation dans l'interface utilisateur de CKAN.
+        Téléchargement et upload de données.
+        Création de visualisations simples.
+
+    Personnalisation et intégration :
+        Options de personnalisation pour répondre aux besoins spécifiques de l'organisation.
+        Intégration avec d'autres outils et systèmes.
+
+    Sécurité et gestion des accès :
+        Politiques de sécurité et de confidentialité des données.
+        Gestion des droits d'accès et des rôles utilisateurs.
+
+    Support et ressources :
+        Ressources disponibles (documentation, tutoriels, forums).
+        Information sur le support technique et la communauté CKAN.
+
+    Questions et réponses :
+        Session de questions ouvertes pour clarifier les doutes et discuter des besoins spécifiques.
+
+    Conclusion :
+        Résumé des points clés.
+        Prochaines étapes pour l'adoption de CKAN au sein de l'organisation.

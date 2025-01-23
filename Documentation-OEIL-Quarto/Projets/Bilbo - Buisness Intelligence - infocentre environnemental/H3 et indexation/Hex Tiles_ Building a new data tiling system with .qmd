@@ -1,0 +1,91 @@
+---
+title: 'Hex Tiles: Building a new data tiling system with H3'
+last-modified: 2022-09-22 04:17:25Z
+date: 2022-09-22 04:17:25Z
+source: >-
+  https://medium.com/foursquare-direct/hex-tiles-building-a-new-data-tiling-system-with-h3-61eb33fed4cb
+---
+
+Author: Isaac Brodsky
+
+At [Foursquare](https://foursquare.com/), our goal is to make industrial-grade geospatial data and analysis accessible to a broad audience. This past February, we launched [Hex Tiles](https://foursquare.com/article/introducing-hex-tiles-our-next-gen-tiling-system/), the newest addition to Foursquare’s [Unfolded](https://foursquare.com/products/unfolded/) platform. Hex Tiles is a unique approach to geospatial data tiling, leveraging the [H3](https://eng.uber.com/h3) discrete global grid system and making it easier than ever to parallelize workloads on the server and visualize massive datasets in the browser. We recently celebrated [the one-year anniversary](https://foursquare.com/article/fsq-unfolded-one-year-anniversary/) of Foursquare’s acquisition of Unfolded and, in recognition of this milestone, we’re discussing how Hex Tiles came to be and how it’s currently optimizing data analysis.
+
+## Map tiling 101
+
+Geospatial datasets can present several visualization and processing challenges. Oftentimes, transferring an entire gigabyte or larger dataset to a browser for visualization will likely just result in the browser tab crashing. While loading parts of datasets can reduce it to a reasonable size, many do not have convenient partitions to divide the data. That’s where partitioning by geographic areas, or tiles, comes in handy.
+
+A **tiling system** is a way of serving very large geospatial datasets over the web. Modern geospatial datasets are so large that downloading all records, even to a dedicated native application, may be inefficient or, in many cases, impossible. Tiling systems break up these large datasets into partitions known as tiles and allow users to specifically access the portion of the data that they need.
+
+The first map tiling systems were based on raster image data. In **raster tiles**, individual [raster](https://en.wikipedia.org/wiki/Raster_graphics) images are transferred across the Internet and can be stitched together by a client to produce composite images of the desired area. Transferring continuous data such as satellite images is especially efficient with raster tiles because they can take advantage of the many advances in image compression and processing.
+
+However, this comes with some limitations. Raster images of certain features do not scale smoothly, making it difficult for the client to know what each pixel represents. Challenges like this are what led to the development of **vector tiling systems**, which are made up of a geometry defined by precise coordinates. This makes them a better match for road networks, points of interest, and administrative boundaries. While performing further processing becomes a lot easier with vector tiles, they too have limitations. Features are unaligned and require computationally expensive algorithms to join. In contrast to their geometric flexibility, common implementations like [Mapbox Vector Tiles](https://github.com/mapbox/vector-tile-spec/tree/master/2.1) also offer relatively constrained choices of data encoding.
+
+## Going Hexagonal
+
+Another way of encoding geospatial data is to use **discrete global grid systems** (DGGS). DGGSs produce a uniform grid, where cells are related to each other at different grid resolutions.
+
+**H3** is a hexagonal, global, hierarchical, and open source discrete global grid system. The hexagonal shape of H3’s grid cells provides several key benefits. Unlike square-based grids, hexagons make it easier to connect nearby regions while minimizing spatial bias, because a hexagon’s six neighbors are equidistant. Hexagonal cells can also improve shape-fitting, low area, and angle distortion over the face of the globe, all while reducing margin of error.
+
+What’s more, because H3 is a discrete global grid *system*, it has multiple grids at different resolutions. This hierarchical structure enables us to relate cells at different resolutions with just bitwise operations. H3 is also open source under the Apache 2.0 license, and can be used with a variety of programming languages, frameworks, and database systems using the same common core library behind the scenes.
+
+We use H3 for analytical data because grid-based systems abstract away many of the complex, hard-to-handle features of geographic datasets, moving data into a mathematical space that is easy for the user to understand and process. Existing tiling systems like the ones mentioned previously are not equipped for working with data in this way. Vector geometries are computationally and algorithmically difficult to work with, and while rasters may be efficient, they can become complicated because of the need to consider different projections and the compositing of different images together. Other grid systems like S2 do not offer the [advantages](https://h3geo.org/docs/comparisons/s2/) of H3’s hexagonal cell shape.
+
+H3 is especially effective as a data indexing system when implemented in a large data lake, since it allows many datasets to have the same join key. A client is able to analyze drastically different datasets — take the United States census data, road network lines, and weather raster data for example — in a unified join key for efficient computation.
+
+## Introducing Hex Tiles
+
+While discrete global grids were [discussed in 1998](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.136.7897&rep=rep1&type=pdf), the technology has not previously been applied to web map tiling systems — until now.
+
+Hex Tiles, as the name suggests, use hexagonal cells based on the H3 grid system. While any DGGS could be used to build a tile system, we chose H3 in order to have a single join key for our datasets, and for its hexagonal cell shape.
+
+![](../../../_resources/0_bmRvJp54jAR2Mv-e_a956e5d27bce4e20be3dc38849416b3.png)
+
+*Illustration: Hex tile outline with resolution 3 tiles*
+
+Just as tiles in raster or vector tile systems represent a quadrilateral area of data, tiles in the Hex Tile system represent a hexagonal area. Tiles have a **tile index**, which is an H3 identifier that defines the bounds of the cell. Tiles contain H3-indexed data at the data resolution, which is generally 3 to 5 subdivisions finer than the tile index’s resolution.
+
+While tiles contain the data, which is logically rather than geographically contained by that parent cell, this is not noticeable in most use cases. Analytical and enrichment use cases can always determine the exact set of tiles to query. This is invisible in map visualization use cases because the necessary neighboring tile is always loaded.
+
+![](../../../_resources/0_fTyuqFpcWnwP1UuC_48c03f36c23a4615ae2c1a3c613fb5b.png)
+
+*Illustration: Hex Tiles over New York*
+
+Hex Tiles are an excellent system for performing analytics because the H3 grid makes defining analytic algorithms easier. Datasets are scalable by querying H3 cell by H3 cell. The resolution of the H3 cell queried can be varied to load the appropriate resolution of data. The specific resolutions used can then be tuned to return tiles of roughly the same size.
+
+In short, Hex Tiles implements the query pattern *query by H3 cell ID* over a dataset. The API for Hex Tiles includes query by H3 cell, a number of metadata files that support decoding and visualizing the tile set, and querying on top of the tileset:
+
+![](../../../_resources/1_EhN-_o19IzsRhlAz3NImkA_d4f1dbd00d74480cb426cecfc.png)
+
+The `GET /tileset/{tile_id}` query can translate to the following in terms of SQL:
+
+<a id="7c66"></a>SELECT h3\_data, SUM(my\_metric) — h3_data is h3 indexed at the data resolution<a id="dd30"></a>FROM my_table<a id="ec39"></a>WHERE h3\_parent = {tile\_id} — h3_parent is h3 indexed at the tile resolution<a id="1196"></a>GROUP BY h3_data
+
+This can take advantage of a table partitioned on the `h3_parent`column.
+
+## Inside a Hex Tile
+
+Hex Tiles return tiles as [**arrow files**](https://arrow.apache.org/). Arrow was chosen because of its efficiency as a binary format, portability across a wide range of front-end and back-end systems, and flexibility in what data can be stored.
+
+![](../../../_resources/0_BJh8G9jpuoFrw1Et_4e46daec11ba4032a0b64129036db4e.png)
+
+*Illustration: A single tile of data, with overlays showing how the tile would be further divided.*
+
+Using an efficient binary format along with modern compression algorithms is necessary for tiles to be loaded quickly. [Zstandard](https://github.com/facebook/zstd#benchmarks), used in Arrow, is able to offer similar compression ratios to zlib with significantly improved decompression speeds.
+
+Portability is an important factor because tiles need to be handled in many systems. Backend services, notebooks, and browsers all need to be able to create and load tiles. Arrow has libraries available for JavaScript, Python, and Java. This allows the same binary files to be loaded in the browser in JavaScript, a Python notebook, or a Java service.
+
+Flexibility helps ensure that all analytical data can be represented in Hex Tiles and enables gains in precision and speed. Precision is needed when using Hex Tiles for enrichment. Speed becomes necessary for visualization, exploration of data, and for iterating on analytical approaches. Therefore, it is important to be open to several data encoding options, whether they be very compact bitmasks, 32 bit floats or varying length strings.
+
+H3 was developed with data engineering in mind in addition to its geospatial aspects. Cell identifiers (also referred to as *indexes*) are 64 bit integers, and the structure of the index is hierarchical. This allows for a number of very efficient encodings: in the best case, no cell identifier column is needed in the file because the ordering of rows encodes which row goes with which cell. When this is not optimal, representations of the partial cell ID with fewer bits can still be used to optimize the files.
+
+## Behind the tech
+
+When I, along with my co-founders Sina Kashuk (SVP of Data Science and Research), Ib Green (VP of Engineering), and Shan He (Senior Director of Engineering) started Unfolded, Hex Tiles was a key part of our [vision](https://www.unfolded.ai/blog/2021-01-21-unfolded-difference/) for unified geoanalytics.
+
+Like others of Foursquare’s Unfolded products, Hex Tiles is based on open source foundations. The H3 system used for Hex Tiles was initially [published](https://eng.uber.com/h3/) by Uber back in January 2018, and has since seen growing adoption throughout the industry. Several Unfolded team members also continue to be active contributors and leaders on this project.
+
+As we continue to build Hex Tiles, we get closer to achieving our goal of creating *the* platform for unified geospatial analytics. H3-indexed datasets can now be scalably brought together using Hex Tiles in a common data framework, while Hex Tiles in turn expands the capabilities of H3-indexed datasets to include scalable querying and visualization.
+
+Now, one-year after Foursquare acquired Unfolded, I am extremely proud of our team’s work and that Hex Tiles has become a reality. Its launch would not have been possible without the entire Unfolded team, and the passion, dedication and expertise of my colleagues. [Contact us](https://foursquare.com/contact-us/) for a demo to learn more.
+
+Be sure to also register for our upcoming webinar [here](https://connect.foursquare.com/2022-06-Geospatial-analytics-with-Unfolded.html?utm_source=blog&utm_campaign=2022.06.28-Web-Webinar-Unfolded-Geospatial_analytics&utm_medium=website) on June 28th to hear the latest on Hex Tiles.

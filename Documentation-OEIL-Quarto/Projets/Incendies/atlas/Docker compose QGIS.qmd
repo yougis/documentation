@@ -1,0 +1,48 @@
+---
+title: compose de qgis
+last-modified: 2023-10-06 01:07:16Z
+date: 2023-10-05 04:00:44Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+```yaml
+version: '3.3'
+services:
+  qgis:
+    image: qgis/qgis:latest
+    container_name : qgis-dev
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix 
+      - /media/commun/Commun/Informatique/SIG/Application/QGIS:/root/QGIS
+      - /home/hugo/projets:/root/projects
+      - /media/archive:/root/archive 
+      - /media/commun:/root/commun
+      - config:/root/.qgis/
+      - projects:/root/.qgis/projects/
+      - styles:/root/.qgis/styles/
+      - plugins:/root/.qgis/python/plugins/
+      - type: bind
+        source: ./fonts
+        target: /root/fonts
+
+    environment:
+      - DISPLAY=unix$DISPLAY
+
+volumes:
+  config:
+  projects:
+  styles:
+  plugins:
+  
+```
+  
+  
+variable d'environnement ATLAS_YEAR à indiquer
+déplacer les fichiers font et resources
+installer plotly avec pip install plotly
+installer l'extention data plotly dans QGIS
+
+  
+  

@@ -1,0 +1,99 @@
+---
+title: réunion 12/05/22
+last-modified: 2024-07-02 22:50:06Z
+date: 2022-05-11 23:03:54Z
+latitude: -22.26000023
+longitude: 166.44694519
+altitude: 0.0000
+---
+
+date : 12/05/2022 10:04
+
+# fonctionnement /gouvernance
+
+identification des parties prenante et organisation des comités de travail
+1 gouvernance à respecter au CEN
+1GT : CT IFRECOR et élargissement au commanditaire du RORC
+-> CEN invite, animation collective
+Caler le GT fin mai début juin (30 mai au 3 juin).
+- rappeler les objectifs et le déroulement du projet
+
+en attente d'un envois d'un mail du CEN auprès de l'IFRECOR
+
+
+échange bi-lateraux  parties prenantes
+-> envois des CR au CEN au fur et à mesure
+
+1 scenario à identifier sur mesure en fonction des résultats des entretiens
+
+Sandrine : réflexion avec la PIL sur la mise en place d'une bancarisation
+
+Note évolutives suites aux échanges.
+
+Calendrier des entretiens de Mai à fin Juillet.
+En aout réunion avec les PP pour présenter les résultats + propositions d'une méthode.
+élément calendaire / budget.
+Novembre = proposition de plan d'action pour la mise en œuvre.
+
+congés Anaïs de fin août à fin sept.
+
+# Entretiens
+- poser la question du financement possible (oeil)
+- indiquer les couts selon les objectifs (anaïs)
+
+Liste des parties prenantes :
+- ADL financé par IFRECOR de 2006 à 2016 puis collecte (finance?) une partie des stations sur NEA Mont Dore, membre du CT IFRECOR
+contact supplémentaire : Olivier Chateau
+- IFREMER :  membre du CT IFRECOR
+- CEN coordination de UNESCO. finance une partie du RORC pour la collecte (à travers la DAFE sur quelques station : Pala dalik). finance rapportage.
+- lien entre OFB/IFREMER : accord - convention qui délègue la bancarisation des données localement.
+- Amélie Séchaud qui gère BD récif. coordinateur Martinique - Guadeloupe
+c'est Nantes qui gère l'aspect financier. une bonne ressource pour la partie technique.
+- OFB France, n'est pas nécessaire de les intégrés avant de décider si BDRécif. Julie Butin comme contact. membre du CT IFRECOR
+- Pala Dalik : bancarise des données
+- PNMC:  membre du CT IFRECOR. pas de référent SI connu. à demander d'identifier la personne.
+- PIL : financeur. membre du CT IFRECOR
+- PN : contact Mathieu Estebe. pas de financement
+- PSUD : pas de financement
+intégration du service / direction info
+
+
+En  + autour de la table (CT IFRECOR)
+- ajouter IRD : Massane Cayal, Claude Perry
+- Senat coutumier
+- WWF
+- CI
+- DRTT : gouv-nc
+- UNC : Laurent
+- CNRT : Carole Bernard
+
+Avis demandé aux gestionnaires principalement.
+Ils seront dans le GT.
+Convenir aux partenaires techniques. Tout le monde n'a pas de veto...
+
+Le CEN doit il s'exprimer ? plutôt animateur. But suivre le besoin des gestionnaires.
+
+# Objectifs
+La note semble convenir.
+1 seule base de référence
+temporalité de reversement des données en base centrale
+disponibilité / partageable
+sécurisé / backup
+valorisation ? rapportage ?
+gouvernance : licences données (open ? pas open ?)
+
+Disponibilité du ppt qui présente le schéma du RORC (Anaïs demande à Sandrine)
+
+# Liste question
+- question métadonnées (différents niveau mésologique )
+- chaque critère = discussion
+- qui valide ? qui vérifie ?
+- sécurité des données / délais de saisie acceptable avant bancarisation
+- synchro (montante - descendante)
+- capacité de partage
+- format des données
+- faciliter d'accès aux données des autres producteurs
+- faciliter de comparaisons avec les observations d'autres producteur/pays
+
+- gouvernance :
+portage de l'outil -> pays / nationale / régionale / internationale

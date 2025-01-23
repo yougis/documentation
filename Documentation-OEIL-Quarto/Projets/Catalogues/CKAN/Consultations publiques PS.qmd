@@ -1,0 +1,14 @@
+---
+title: Consultations publiques PS
+last-modified: 2021-08-22 22:50:20Z
+date: 2021-08-22 22:49:56Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+Concernant le référencement sur le CDRN de ces études, il faudrait qu’on ait les idées claires sur la politique de la PS relative à l’accès et à la diffusion de ce type de document pour le Public via leur outil Pandore et à leur volonté de rendre moissonnable leur base via le CDRN.
+
+Je propose de rouvrir ce chantier qui n’avait jamais abouti faute de positionnement clair de la PS.  Nous l’avons mis de côté depuis quelque temps. Je relance la démarche avec en chef de projet Hugo.
+
+En attendant, nous conservons les doc « à l’ancienne »  sur notre serveur en attendant un hypothétique référencement si la PS ne le fait pas de son côté.

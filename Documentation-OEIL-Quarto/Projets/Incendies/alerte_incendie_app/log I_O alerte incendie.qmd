@@ -1,0 +1,515 @@
+---
+title: log I/O alerte incendie
+last-modified: 2024-07-01 23:48:18Z
+date: 2024-07-01 23:47:54Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+```sql
+pg_restore: connexion à la base de données pour la restauration
+pg_restore: création de SEQUENCE « alerte_incendie.abonnement_id_seq »
+pg_restore: création de TABLE « alerte_incendie.abonnement »
+pg_restore: création de TABLE « alerte_incendie.agriculture_culture »
+pg_restore: création de TABLE « alerte_incendie.agriculture_elevage »
+pg_restore: création de TABLE « alerte_incendie.agriculture_sylviculture »
+pg_restore: création de TABLE « alerte_incendie.aires_coutumieres »
+pg_restore: création de TABLE « alerte_incendie.aires_protegees_terrestres_1 »
+pg_restore: création de TABLE « alerte_incendie.alerte_incendie_v2_statistic »
+pg_restore: création de TABLE « alerte_incendie.avg_superficie_communes »
+pg_restore: création de TABLE « alerte_incendie.communes »
+pg_restore: création de TABLE « alerte_incendie.communes_simplify_ »
+pg_restore: création de SEQUENCE « alerte_incendie.incendie_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.incendie »
+pg_restore: création de SEQUENCE « alerte_incendie.intersectionincendiezone_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.intersectionincendiezone »
+pg_restore: création de VIEW « alerte_incendie.intersectionincendiezone_superficie »
+pg_restore: création de TABLE « alerte_incendie.zoneabonnement »
+pg_restore: création de VIEW « alerte_incendie.dashboardadministratif »
+pg_restore: création de VIEW « alerte_incendie.dashboardadministratif_airesprotegees »
+pg_restore: création de VIEW « alerte_incendie.zoneabonnement_airesprotegees »
+pg_restore: création de VIEW « alerte_incendie.dashboardairesprotegees »
+pg_restore: création de SEQUENCE « alerte_incendie.statistiquesincendie_id_seq »
+pg_restore: création de TABLE « alerte_incendie.statistiquesincendie »
+pg_restore: création de TABLE « alerte_incendie.thematiqueabonnement »
+pg_restore: création de VIEW « alerte_incendie.dashboardperimetreespecemenacee »
+pg_restore: création de VIEW « alerte_incendie.dashboardppe »
+pg_restore: création de TABLE « alerte_incendie.perimetre_protection_eaux »
+pg_restore: création de VIEW « alerte_incendie.dashboardppe_province »
+pg_restore: création de VIEW « alerte_incendie.dashboardstratesvegetation »
+pg_restore: création de VIEW « alerte_incendie.dashboardviirsadministratif_communes »
+pg_restore: création de VIEW « alerte_incendie.dashboardstratesvegetationcommunes »
+pg_restore: création de VIEW « alerte_incendie.dashboardviirsadministratif »
+pg_restore: création de SEQUENCE « alerte_incendie.incendies_himawari_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.incendies_himawari »
+pg_restore: création de VIEW « alerte_incendie.differenceincendiehimawari »
+pg_restore: création de SEQUENCE « alerte_incendie.incendie_modis_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.incendie_modis »
+pg_restore: création de VIEW « alerte_incendie.differenceincendiemodis »
+pg_restore: création de SEQUENCE « alerte_incendie.incendies_sentinel_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.incendies_sentinel »
+pg_restore: création de VIEW « alerte_incendie.differenceincendiesentinel »
+pg_restore: création de SEQUENCE « alerte_incendie.incendie_viirs_noaa20_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.incendie_viirs_noaa20 »
+pg_restore: création de VIEW « alerte_incendie.differenceincendieviirsnoaa20 »
+pg_restore: création de SEQUENCE « alerte_incendie.incendie_viirs_snpp_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.incendie_viirs_snpp »
+pg_restore: création de VIEW « alerte_incendie.differenceincendieviirssnpp »
+pg_restore: création de TABLE « alerte_incendie.edi_lineaire »
+pg_restore: création de TABLE « alerte_incendie.edi_point »
+pg_restore: création de TABLE « alerte_incendie.edi_surface »
+pg_restore: création de TABLE « alerte_incendie.especes_sensibles_enjeu_1 »
+pg_restore: création de TABLE « alerte_incendie.especes_sensibles_enjeu_2 »
+pg_restore: création de TABLE « alerte_incendie.especes_sensibles_enjeu_3 »
+pg_restore: création de TABLE « alerte_incendie.especes_sensibles_enjeu_4 »
+pg_restore: création de TABLE « alerte_incendie.especes_sensibles_pn_pi_buffer »
+pg_restore: création de TABLE « alerte_incendie.especesmenaceesendemia »
+pg_restore: création de TABLE « alerte_incendie.liaisonabonnementzoneabonnement »
+pg_restore: création de VIEW « alerte_incendie.etendueincendiesanneecouranteparsource »
+pg_restore: création de TABLE « alerte_incendie.logintegrationincendie »
+pg_restore: création de VIEW « alerte_incendie.executionfirmstravecemails »
+pg_restore: création de VIEW « alerte_incendie.executionfirmstravecemailsavecpoints »
+pg_restore: création de FOREIGN TABLE « alerte_incendie.fdw_perimetre_especes_endemia_sans_doublon »
+pg_restore: pendant le traitement de la TOC (« PROCESSING TOC ») :
+pg_restore: de l'entrée TOC 516 ; 1259 2248778 FOREIGN TABLE fdw_perimetre_especes_endemia_sans_doublon postgres
+pg_restore: erreur : could not execute query: ERROR: server "bd_data_externe" does not exist
+La commande était : CREATE FOREIGN TABLE alerte_incendie.fdw_perimetre_especes_endemia_sans_doublon (
+ogc_fid integer,
+geom public.geometry(Polygon,3163),
+idoccurenc double precision,
+regne character varying(45),
+nomtaxon character varying(254),
+categoriee character varying(254),
+workflow character varying(254),
+province character varying(254),
+commune character varying(45),
+station character varying(254),
+anneeobser double precision,
+moisobserv double precision,
+jourobserv double precision,
+observateu character varying(254),
+sourcedonn character varying(254),
+latitude double precision,
+longitude double precision,
+gpssource character varying(254),
+altitudemi double precision,
+altitudema double precision,
+compilateu character varying(254),
+compilatio double precision,
+credit character varying(45),
+surface_ha double precision,
+categori_1 character varying(254),
+_temp character varying(254),
+regne_temp character varying(45),
+idoccure_1 character varying(4),
+objectid_t character varying(4),
+nomtaxon_t character varying(254),
+nom_2 character varying(254),
+shape_leng double precision,
+shape_area double precision,
+incendies2 character varying(5),
+incendie_1 character varying(5),
+incendie_2 character varying(5),
+date_maj date
+)
+SERVER bd_data_externe
+OPTIONS (
+schema_name 'bdenvironnement',
+table_name 'perimetre_alerte_espmenacees_endemia_sansdoublon'
+);
+pg_restore: erreur : could not execute query: ERROR: relation "alerte_incendie.fdw_perimetre_especes_endemia_sans_doublon" does not exist
+La commande était : ALTER FOREIGN TABLE alerte_incendie.fdw_perimetre_especes_endemia_sans_doublon OWNER TO postgres;
+pg_restore: création de FOREIGN TABLE « alerte_incendie.fdw_sentinel_zones_brulees »
+pg_restore: de l'entrée TOC 515 ; 1259 2246280 FOREIGN TABLE fdw_sentinel_zones_brulees postgres
+pg_restore: erreur : could not execute query: ERROR: permission denied for foreign server bd_oeil_reference
+La commande était : CREATE FOREIGN TABLE alerte_incendie.fdw_sentinel_zones_brulees (
+premiere_detection timestamp without time zone,
+derniere_detection timestamp without time zone,
+annee bigint,
+geometry public.geometry(Polygon,3163),
+superficie_ha double precision,
+zone_id bigint
+)
+SERVER bd_oeil_reference
+OPTIONS (
+schema_name 'feux',
+table_name 'sentinel_zones_brulees'
+);
+pg_restore: erreur : could not execute query: ERROR: relation "alerte_incendie.fdw_sentinel_zones_brulees" does not exist
+La commande était : ALTER FOREIGN TABLE alerte_incendie.fdw_sentinel_zones_brulees OWNER TO postgres;
+pg_restore: création de FOREIGN TABLE « alerte_incendie.fdw_vue_aires_protegees_provinciales »
+pg_restore: de l'entrée TOC 517 ; 1259 2248791 FOREIGN TABLE fdw_vue_aires_protegees_provinciales postgres
+pg_restore: erreur : could not execute query: ERROR: server "bd_data_externe" does not exist
+La commande était : CREATE FOREIGN TABLE alerte_incendie.fdw_vue_aires_protegees_provinciales (
+id integer,
+libelle character varying(254),
+nature character varying(254),
+milieu character varying(254),
+reglementation character varying(254),
+actif character varying(254),
+geometry public.geometry(MultiPolygon,3163)
+)
+SERVER bd_data_externe
+OPTIONS (
+schema_name 'bdenvironnement',
+table_name 'vue_aires_protegees_provinciales'
+);
+pg_restore: erreur : could not execute query: ERROR: relation "alerte_incendie.fdw_vue_aires_protegees_provinciales" does not exist
+La commande était : ALTER FOREIGN TABLE alerte_incendie.fdw_vue_aires_protegees_provinciales OWNER TO postgres;
+pg_restore: création de TABLE « alerte_incendie.firedetectionpointshimawari »
+pg_restore: création de TABLE « alerte_incendie.forets_seches_et_assimilees »
+pg_restore: création de SEQUENCE « alerte_incendie.incendie_historique_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.incendie_historique »
+pg_restore: création de SEQUENCE « alerte_incendie.incendie_n_objectid_seq »
+pg_restore: création de SEQUENCE « alerte_incendie.incendie_objectid_seq_old »
+pg_restore: création de VIEW « alerte_incendie.incendies_himawari_inferieurs_lev3_rel5 »
+pg_restore: création de VIEW « alerte_incendie.incendies_himawari_lev3qf0_rel5qf0 »
+pg_restore: création de VIEW « alerte_incendie.incendies_himawari_rel5lev2lev3_lev3rel3 »
+pg_restore: création de VIEW « alerte_incendie.incendies_himawari_rel5qf0 »
+pg_restore: création de VIEW « alerte_incendie.incendies_modis_2 »
+pg_restore: création de VIEW « alerte_incendie.incendies_viirs_snpp_noaa20 »
+pg_restore: création de TABLE « alerte_incendie.liaisonabonnementthematiqueabonnement »
+pg_restore: création de SEQUENCE « alerte_incendie.liaisonabonnementthematiqueabonnement_objectid_seq »
+pg_restore: création de SEQUENCE OWNED BY « alerte_incendie.liaisonabonnementthematiqueabonnement_objectid_seq »
+pg_restore: création de SEQUENCE « alerte_incendie.liaisonabonnementzoneabonnement_objectid_seq »
+pg_restore: création de SEQUENCE OWNED BY « alerte_incendie.liaisonabonnementzoneabonnement_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.mangrove »
+pg_restore: création de TABLE « alerte_incendie.mangrove_grand_nea »
+pg_restore: création de TABLE « alerte_incendie.mangrove_zoneco »
+pg_restore: création de TABLE « alerte_incendie.masque_firms »
+pg_restore: création de TABLE « alerte_incendie.milieuxnaturels2016_psud »
+pg_restore: création de TABLE « alerte_incendie.milieuxnaturelsessentiels »
+pg_restore: création de TABLE « alerte_incendie.milieuxnaturelsimportants »
+pg_restore: création de TABLE « alerte_incendie.nouvelle_caledonie »
+pg_restore: création de TABLE « alerte_incendie.perimetre_interet_ressource_eau »
+pg_restore: création de SEQUENCE « alerte_incendie.point_chaud_modis_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.point_chaud_modis »
+pg_restore: création de SEQUENCE « alerte_incendie.point_chaud_viirs_noaa20_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.point_chaud_viirs_noaa20 »
+pg_restore: création de SEQUENCE « alerte_incendie.point_chaud_viirs_snpp_objectid_seq »
+pg_restore: création de TABLE « alerte_incendie.point_chaud_viirs_snpp »
+pg_restore: création de VIEW « alerte_incendie.point_chaud_viirs »
+pg_restore: création de TABLE « alerte_incendie.provinces »
+pg_restore: création de TABLE « alerte_incendie.provinces_simplify_ »
+pg_restore: création de TABLE « alerte_incendie.ramsar_1 »
+pg_restore: création de TABLE « alerte_incendie.res_reseau_electrique_l »
+pg_restore: création de TABLE « alerte_incendie.res_reseau_electrique_p »
+pg_restore: création de TABLE « alerte_incendie.res_reseau_electrique_s »
+pg_restore: création de TABLE « alerte_incendie.revegetalisation »
+pg_restore: création de VIEW « alerte_incendie.statistiquestablesincendie »
+pg_restore: création de TABLE « alerte_incendie.strate_arboree »
+pg_restore: création de TABLE « alerte_incendie.strate_arboree_old »
+pg_restore: création de TABLE « alerte_incendie.strate_arbustive »
+pg_restore: création de TABLE « alerte_incendie.strate_herbacees »
+pg_restore: création de TABLE « alerte_incendie.unesco_zones_tampons_terrestres_1 »
+pg_restore: création de TABLE « alerte_incendie.voi_voirie_l »
+pg_restore: création de TABLE « alerte_incendie.zone_fort_microendemisme_vegetal »
+pg_restore: création de TABLE « alerte_incendie.zones_tampons_terrestres_unesco_fusion »
+pg_restore: création de DEFAULT « alerte_incendie.liaisonabonnementthematiqueabonnement objectid »
+pg_restore: création de DEFAULT « alerte_incendie.liaisonabonnementzoneabonnement objectid »
+pg_restore: traitement des données de la table « alerte_incendie.abonnement »
+pg_restore: traitement des données de la table « alerte_incendie.agriculture_culture »
+pg_restore: traitement des données de la table « alerte_incendie.agriculture_elevage »
+pg_restore: traitement des données de la table « alerte_incendie.agriculture_sylviculture »
+pg_restore: traitement des données de la table « alerte_incendie.aires_coutumieres »
+pg_restore: traitement des données de la table « alerte_incendie.aires_protegees_terrestres_1 »
+pg_restore: traitement des données de la table « alerte_incendie.alerte_incendie_v2_statistic »
+pg_restore: traitement des données de la table « alerte_incendie.avg_superficie_communes »
+pg_restore: traitement des données de la table « alerte_incendie.communes »
+pg_restore: traitement des données de la table « alerte_incendie.communes_simplify_ »
+pg_restore: traitement des données de la table « alerte_incendie.edi_lineaire »
+pg_restore: traitement des données de la table « alerte_incendie.edi_point »
+pg_restore: traitement des données de la table « alerte_incendie.edi_surface »
+pg_restore: traitement des données de la table « alerte_incendie.especes_sensibles_enjeu_1 »
+pg_restore: traitement des données de la table « alerte_incendie.especes_sensibles_enjeu_2 »
+pg_restore: traitement des données de la table « alerte_incendie.especes_sensibles_enjeu_3 »
+pg_restore: traitement des données de la table « alerte_incendie.especes_sensibles_enjeu_4 »
+pg_restore: traitement des données de la table « alerte_incendie.especes_sensibles_pn_pi_buffer »
+pg_restore: traitement des données de la table « alerte_incendie.especesmenaceesendemia »
+pg_restore: traitement des données de la table « alerte_incendie.firedetectionpointshimawari »
+pg_restore: traitement des données de la table « alerte_incendie.forets_seches_et_assimilees »
+pg_restore: traitement des données de la table « alerte_incendie.incendie »
+pg_restore: traitement des données de la table « alerte_incendie.incendie_historique »
+pg_restore: traitement des données de la table « alerte_incendie.incendie_modis »
+pg_restore: traitement des données de la table « alerte_incendie.incendie_viirs_noaa20 »
+pg_restore: traitement des données de la table « alerte_incendie.incendie_viirs_snpp »
+pg_restore: traitement des données de la table « alerte_incendie.incendies_himawari »
+pg_restore: traitement des données de la table « alerte_incendie.incendies_sentinel »
+pg_restore: traitement des données de la table « alerte_incendie.intersectionincendiezone »
+pg_restore: traitement des données de la table « alerte_incendie.liaisonabonnementthematiqueabonnement »
+pg_restore: traitement des données de la table « alerte_incendie.liaisonabonnementzoneabonnement »
+pg_restore: traitement des données de la table « alerte_incendie.logintegrationincendie »
+pg_restore: traitement des données de la table « alerte_incendie.mangrove »
+pg_restore: traitement des données de la table « alerte_incendie.mangrove_grand_nea »
+pg_restore: traitement des données de la table « alerte_incendie.mangrove_zoneco »
+pg_restore: traitement des données de la table « alerte_incendie.masque_firms »
+pg_restore: traitement des données de la table « alerte_incendie.milieuxnaturels2016_psud »
+pg_restore: traitement des données de la table « alerte_incendie.milieuxnaturelsessentiels »
+pg_restore: traitement des données de la table « alerte_incendie.milieuxnaturelsimportants »
+pg_restore: traitement des données de la table « alerte_incendie.nouvelle_caledonie »
+pg_restore: traitement des données de la table « alerte_incendie.perimetre_interet_ressource_eau »
+pg_restore: traitement des données de la table « alerte_incendie.perimetre_protection_eaux »
+pg_restore: traitement des données de la table « alerte_incendie.point_chaud_modis »
+pg_restore: traitement des données de la table « alerte_incendie.point_chaud_viirs_noaa20 »
+pg_restore: traitement des données de la table « alerte_incendie.point_chaud_viirs_snpp »
+pg_restore: traitement des données de la table « alerte_incendie.provinces »
+pg_restore: traitement des données de la table « alerte_incendie.provinces_simplify_ »
+pg_restore: traitement des données de la table « alerte_incendie.ramsar_1 »
+pg_restore: traitement des données de la table « alerte_incendie.res_reseau_electrique_l »
+pg_restore: traitement des données de la table « alerte_incendie.res_reseau_electrique_p »
+pg_restore: traitement des données de la table « alerte_incendie.res_reseau_electrique_s »
+pg_restore: traitement des données de la table « alerte_incendie.revegetalisation »
+pg_restore: traitement des données de la table « alerte_incendie.statistiquesincendie »
+pg_restore: traitement des données de la table « alerte_incendie.strate_arboree »
+pg_restore: traitement des données de la table « alerte_incendie.strate_arboree_old »
+pg_restore: traitement des données de la table « alerte_incendie.strate_arbustive »
+pg_restore: traitement des données de la table « alerte_incendie.strate_herbacees »
+pg_restore: traitement des données de la table « alerte_incendie.thematiqueabonnement »
+pg_restore: traitement des données de la table « alerte_incendie.unesco_zones_tampons_terrestres_1 »
+pg_restore: traitement des données de la table « alerte_incendie.voi_voirie_l »
+pg_restore: traitement des données de la table « alerte_incendie.zone_fort_microendemisme_vegetal »
+pg_restore: traitement des données de la table « alerte_incendie.zoneabonnement »
+pg_restore: traitement des données de la table « alerte_incendie.zones_tampons_terrestres_unesco_fusion »
+pg_restore: exécution de SEQUENCE SET abonnement_id_seq
+pg_restore: exécution de SEQUENCE SET incendie_historique_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_modis_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_n_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_objectid_seq_old
+pg_restore: exécution de SEQUENCE SET incendie_viirs_noaa20_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_viirs_snpp_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendies_himawari_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendies_sentinel_objectid_seq
+pg_restore: exécution de SEQUENCE SET intersectionincendiezone_objectid_seq
+pg_restore: exécution de SEQUENCE SET liaisonabonnementthematiqueabonnement_objectid_seq
+pg_restore: exécution de SEQUENCE SET liaisonabonnementzoneabonnement_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_modis_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_viirs_noaa20_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_viirs_snpp_objectid_seq
+pg_restore: exécution de SEQUENCE SET statistiquesincendie_id_seq
+pg_restore: création de CONSTRAINT « alerte_incendie.abonnement abonnement_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.agriculture_culture agriculture_culture_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.agriculture_elevage agriculture_elevage_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.agriculture_sylviculture agriculture_sylviculture_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.aires_coutumieres aires_coutumieres_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.aires_protegees_terrestres_1 aires_protegees_terrestres_1_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.alerte_incendie_v2_statistic alerte_incendie_v2_statistic_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.avg_superficie_communes avg_superficie_communes_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.communes communes_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.communes_simplify_ communes_simplify__pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.edi_lineaire edi_lineaire_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.edi_point edi_point_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.edi_surface edi_surface_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.especes_sensibles_enjeu_1 especes_sensibles_enjeu_1_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.especes_sensibles_enjeu_2 especes_sensibles_enjeu_2_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.especes_sensibles_enjeu_3 especes_sensibles_enjeu_3_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.especes_sensibles_enjeu_4 especes_sensibles_enjeu_4_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.especes_sensibles_pn_pi_buffer especes_sensibles_pn_pi_buffer_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.especesmenaceesendemia especesmenaceesendemia_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.firedetectionpointshimawari firedetectionpointshimawari_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.forets_seches_et_assimilees forets_seches_et_assimilees_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.incendie_historique incendie_historique_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.incendie_modis incendie_modis_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.incendie incendie_pkey_1 »
+pg_restore: création de CONSTRAINT « alerte_incendie.incendie_viirs_noaa20 incendie_viirs_noaa20_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.incendie_viirs_snpp incendie_viirs_snpp_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.incendies_himawari incendies_himawari_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.incendies_sentinel incendies_sentinel_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.intersectionincendiezone intersectionincendiezone_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.liaisonabonnementthematiqueabonnement liaisonabonnementthematiqueabonnement_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.liaisonabonnementzoneabonnement liaisonabonnementzoneabonnement_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.mangrove_grand_nea mangrove_grand_nea_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.mangrove mangrove_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.mangrove_zoneco mangrove_zoneco_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.masque_firms masque_firms_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.milieuxnaturels2016_psud milieuxnaturels2016_psud_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.milieuxnaturelsessentiels milieuxnaturelsessentiels_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.milieuxnaturelsimportants milieuxnaturelsimportants_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.nouvelle_caledonie nouvelle_caledonie_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.perimetre_interet_ressource_eau perimetre_interet_ressource_eau_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.perimetre_protection_eaux perimetre_protection_eaux_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.point_chaud_modis point_chaud_modis_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.point_chaud_viirs_noaa20 point_chaud_viirs_noaa20_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.point_chaud_viirs_snpp point_chaud_viirs_snpp_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.provinces provinces_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.provinces_simplify_ provinces_simplify__pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.ramsar_1 ramsar_1_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.res_reseau_electrique_l res_reseau_electrique_l_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.res_reseau_electrique_p res_reseau_electrique_p_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.res_reseau_electrique_s res_reseau_electrique_s_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.revegetalisation revegetalisation_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.statistiquesincendie statistiquesincendie_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.strate_arboree_old strate_arboree_old_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.strate_arboree strate_arboree_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.strate_arbustive strate_arbustive_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.strate_herbacees strate_herbacees_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.thematiqueabonnement thematiqueabonnement_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.unesco_zones_tampons_terrestres_1 unesco_zones_tampons_terrestres_1_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.voi_voirie_l voi_voirie_l_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.zone_fort_microendemisme_vegetal zone_fort_microendemisme_vegetal_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.zoneabonnement zoneabonnement_pkey »
+pg_restore: création de CONSTRAINT « alerte_incendie.zones_tampons_terrestres_unesco_fusion zones_tampons_terrestres_unesco_fusion_pkey »
+pg_restore: création de INDEX « alerte_incendie.agriculture_culture_geom_16751687510 »
+pg_restore: création de INDEX « alerte_incendie.agriculture_elevage_geom_167516875154 »
+pg_restore: création de INDEX « alerte_incendie.agriculture_sylviculture_geom_1675169111618 »
+pg_restore: création de INDEX « alerte_incendie.aires_coutumieres_geom_1675168954148 »
+pg_restore: création de INDEX « alerte_incendie.aires_protegees_terrestres_1_geom_1675169222508 »
+pg_restore: création de INDEX « alerte_incendie.communes_geom_167516895427 »
+pg_restore: création de INDEX « alerte_incendie.communes_simplify__geom_1675168831164 »
+pg_restore: création de INDEX « alerte_incendie.edi_lineaire_geom_1675172136226 »
+pg_restore: création de INDEX « alerte_incendie.edi_point_geom_1675172136186 »
+pg_restore: création de INDEX « alerte_incendie.edi_surface_geom_1675172133599 »
+pg_restore: création de INDEX « alerte_incendie.especes_sensibles_enjeu_1_geom_1675171639310 »
+pg_restore: création de INDEX « alerte_incendie.especes_sensibles_enjeu_2_geom_1675171639344 »
+pg_restore: création de INDEX « alerte_incendie.especes_sensibles_enjeu_3_geom_1675171106172 »
+pg_restore: création de INDEX « alerte_incendie.especes_sensibles_enjeu_4_geom_1675171106138 »
+pg_restore: création de INDEX « alerte_incendie.especes_sensibles_pn_pi_buffer_geom_167517110698 »
+pg_restore: création de INDEX « alerte_incendie.especesmenaceesendemia_geom_1675175890224 »
+pg_restore: création de INDEX « alerte_incendie.firedetectionpointshimawari_geom_1675175634680 »
+pg_restore: création de INDEX « alerte_incendie.forets_seches_et_assimilees_geom_1675174759144 »
+pg_restore: création de INDEX « alerte_incendie.idx_abo_theme_idabo »
+pg_restore: création de INDEX « alerte_incendie.idx_abo_theme_idtheme »
+pg_restore: création de INDEX « alerte_incendie.idx_abo_theme_objectid »
+pg_restore: création de INDEX « alerte_incendie.idx_abo_zones_idabo »
+pg_restore: création de INDEX « alerte_incendie.idx_abo_zones_idzone »
+pg_restore: création de INDEX « alerte_incendie.idx_abo_zones_objectid »
+pg_restore: création de INDEX « alerte_incendie.idx_themes_objectid »
+pg_restore: création de INDEX « alerte_incendie.idx_zones_objectid »
+pg_restore: création de INDEX « alerte_incendie.incendie_geom »
+pg_restore: création de INDEX « alerte_incendie.incendie_historique_geom_1679039307361 »
+pg_restore: création de INDEX « alerte_incendie.incendie_modis_geom_1675174026815 »
+pg_restore: création de INDEX « alerte_incendie.incendie_viirs_noaa20_geom_1675173968642 »
+pg_restore: création de INDEX « alerte_incendie.incendie_viirs_snpp_geom_1675173929796 »
+pg_restore: création de INDEX « alerte_incendie.incendies_himawari_geom_1679321899410 »
+pg_restore: création de INDEX « alerte_incendie.incendies_sentinel_geom_1675415585669 »
+pg_restore: création de INDEX « alerte_incendie.intersectionincendiezone_geom_1675415132637 »
+pg_restore: création de INDEX « alerte_incendie.mangrove_geom_1675412773308 »
+pg_restore: création de INDEX « alerte_incendie.mangrove_grand_nea_geom_1675412755415 »
+pg_restore: création de INDEX « alerte_incendie.mangrove_zoneco_geom_167541267391 »
+pg_restore: création de INDEX « alerte_incendie.masque_firms_geom_1675175980869 »
+pg_restore: création de INDEX « alerte_incendie.milieuxnaturels2016_psud_geom_1675438992255 »
+pg_restore: création de INDEX « alerte_incendie.milieuxnaturelsessentiels_geom_1675437095116 »
+pg_restore: création de INDEX « alerte_incendie.milieuxnaturelsimportants_geom_1675436651219 »
+pg_restore: création de INDEX « alerte_incendie.nouvelle_caledonie_geom_1675415791298 »
+pg_restore: création de INDEX « alerte_incendie.perimetre_interet_ressource_eau_geom_1675415758867 »
+pg_restore: création de INDEX « alerte_incendie.perimetre_protection_eaux_geom_1675415729946 »
+pg_restore: création de INDEX « alerte_incendie.point_chaud_modis_geom_1675415697245 »
+pg_restore: création de INDEX « alerte_incendie.point_chaud_viirs_noaa20_geom_1675415670890 »
+pg_restore: création de INDEX « alerte_incendie.point_chaud_viirs_snpp_geom_1675415651738 »
+pg_restore: création de INDEX « alerte_incendie.provinces_geom_1675415629937 »
+pg_restore: création de INDEX « alerte_incendie.provinces_simplify__geom_1675417243674 »
+pg_restore: création de INDEX « alerte_incendie.ramsar_1_geom_1675417224548 »
+pg_restore: création de INDEX « alerte_incendie.res_reseau_electrique_l_geom_1675417224461 »
+pg_restore: création de INDEX « alerte_incendie.res_reseau_electrique_p_geom_1675416190881 »
+pg_restore: création de INDEX « alerte_incendie.res_reseau_electrique_s_geom_1675416138946 »
+pg_restore: création de INDEX « alerte_incendie.revegetalisation_geom_1675416106387 »
+pg_restore: création de INDEX « alerte_incendie.strate_arboree_geom_1675416002438 »
+pg_restore: création de INDEX « alerte_incendie.strate_arboree_old_geom_1675417472155 »
+pg_restore: création de INDEX « alerte_incendie.strate_arbustive_geom_167542006663 »
+pg_restore: création de INDEX « alerte_incendie.strate_herbacees_geom_1675417472895 »
+pg_restore: création de INDEX « alerte_incendie.unesco_zones_tampons_terrestres_1_geom_167541725690 »
+pg_restore: création de INDEX « alerte_incendie.voi_voirie_l_geom_1675415847605 »
+pg_restore: création de INDEX « alerte_incendie.zone_fort_microendemisme_vegetal_geom_1675415804166 »
+pg_restore: création de INDEX « alerte_incendie.zoneabonnement_geom_1675417744584 »
+pg_restore: création de INDEX « alerte_incendie.zones_tampons_terrestres_unesco_fusion_geom_1675417696645 »
+pg_restore: création de TRIGGER « alerte_incendie.incendies_sentinel update_sentinel_fire_ids »
+pg_restore: de l'entrée TOC 5126 ; 2620 2325731 TRIGGER incendies_sentinel update_sentinel_fire_ids alerteincendie_app
+pg_restore: erreur : could not execute query: ERROR: function public.update_sentinel_fire_ids_function() does not exist
+La commande était : CREATE TRIGGER update_sentinel_fire_ids AFTER INSERT OR UPDATE ON alerte_incendie.incendies_sentinel FOR EACH ROW EXECUTE FUNCTION public.update_sentinel_fire_ids_function();
+pg_restore: création de TRIGGER « alerte_incendie.incendies_sentinel update_systimestamp_incendie_sentinel »
+pg_restore: de l'entrée TOC 5127 ; 2620 2325729 TRIGGER incendies_sentinel update_systimestamp_incendie_sentinel alerteincendie_app
+pg_restore: erreur : could not execute query: ERROR: function public.update_systimestamp_incendie_sentinel_function() does not exist
+La commande était : CREATE TRIGGER update_systimestamp_incendie_sentinel AFTER INSERT OR UPDATE ON alerte_incendie.incendies_sentinel FOR EACH ROW EXECUTE FUNCTION public.update_systimestamp_incendie_sentinel_function();
+pg_restore: création de FK CONSTRAINT « alerte_incendie.liaisonabonnementthematiqueabonnement abonnement_fkey »
+pg_restore: création de FK CONSTRAINT « alerte_incendie.liaisonabonnementzoneabonnement abonnement_fkey »
+pg_restore: création de FK CONSTRAINT « alerte_incendie.statistiquesincendie tabonnement_fkey »
+pg_restore: création de FK CONSTRAINT « alerte_incendie.liaisonabonnementthematiqueabonnement themeabonnement_fkey »
+pg_restore: création de FK CONSTRAINT « alerte_incendie.statistiquesincendie zabonnement_fkey »
+pg_restore: création de FK CONSTRAINT « alerte_incendie.liaisonabonnementzoneabonnement zoneabonnement_fkey »
+pg_restore: création de ACL « alerte_incendie.TABLE abonnement »
+pg_restore: création de ACL « alerte_incendie.TABLE agriculture_culture »
+pg_restore: création de ACL « alerte_incendie.TABLE agriculture_elevage »
+pg_restore: création de ACL « alerte_incendie.TABLE agriculture_sylviculture »
+pg_restore: création de ACL « alerte_incendie.TABLE aires_coutumieres »
+pg_restore: création de ACL « alerte_incendie.TABLE aires_protegees_terrestres_1 »
+pg_restore: création de ACL « alerte_incendie.TABLE alerte_incendie_v2_statistic »
+pg_restore: création de ACL « alerte_incendie.TABLE avg_superficie_communes »
+pg_restore: création de ACL « alerte_incendie.TABLE communes »
+pg_restore: création de ACL « alerte_incendie.TABLE communes_simplify_ »
+pg_restore: création de ACL « alerte_incendie.TABLE incendie »
+pg_restore: création de ACL « alerte_incendie.TABLE intersectionincendiezone »
+pg_restore: création de ACL « alerte_incendie.TABLE zoneabonnement »
+pg_restore: création de ACL « alerte_incendie.TABLE statistiquesincendie »
+pg_restore: création de ACL « alerte_incendie.TABLE thematiqueabonnement »
+pg_restore: création de ACL « alerte_incendie.TABLE perimetre_protection_eaux »
+pg_restore: création de ACL « alerte_incendie.TABLE incendies_himawari »
+pg_restore: création de ACL « alerte_incendie.TABLE incendie_modis »
+pg_restore: création de ACL « alerte_incendie.TABLE incendies_sentinel »
+pg_restore: création de ACL « alerte_incendie.TABLE incendie_viirs_noaa20 »
+pg_restore: création de ACL « alerte_incendie.TABLE incendie_viirs_snpp »
+pg_restore: création de ACL « alerte_incendie.TABLE edi_lineaire »
+pg_restore: création de ACL « alerte_incendie.TABLE edi_point »
+pg_restore: création de ACL « alerte_incendie.TABLE edi_surface »
+pg_restore: création de ACL « alerte_incendie.TABLE especes_sensibles_enjeu_1 »
+pg_restore: création de ACL « alerte_incendie.TABLE especes_sensibles_enjeu_2 »
+pg_restore: création de ACL « alerte_incendie.TABLE especes_sensibles_enjeu_3 »
+pg_restore: création de ACL « alerte_incendie.TABLE especes_sensibles_enjeu_4 »
+pg_restore: création de ACL « alerte_incendie.TABLE especes_sensibles_pn_pi_buffer »
+pg_restore: création de ACL « alerte_incendie.TABLE especesmenaceesendemia »
+pg_restore: création de ACL « alerte_incendie.TABLE liaisonabonnementzoneabonnement »
+pg_restore: création de ACL « alerte_incendie.TABLE logintegrationincendie »
+pg_restore: création de ACL « alerte_incendie.TABLE firedetectionpointshimawari »
+pg_restore: création de ACL « alerte_incendie.TABLE forets_seches_et_assimilees »
+pg_restore: création de ACL « alerte_incendie.TABLE incendie_historique »
+pg_restore: création de ACL « alerte_incendie.TABLE liaisonabonnementthematiqueabonnement »
+pg_restore: création de ACL « alerte_incendie.TABLE mangrove »
+pg_restore: création de ACL « alerte_incendie.TABLE mangrove_grand_nea »
+pg_restore: création de ACL « alerte_incendie.TABLE mangrove_zoneco »
+pg_restore: création de ACL « alerte_incendie.TABLE masque_firms »
+pg_restore: création de ACL « alerte_incendie.TABLE milieuxnaturels2016_psud »
+pg_restore: création de ACL « alerte_incendie.TABLE milieuxnaturelsessentiels »
+pg_restore: création de ACL « alerte_incendie.TABLE milieuxnaturelsimportants »
+pg_restore: création de ACL « alerte_incendie.TABLE nouvelle_caledonie »
+pg_restore: création de ACL « alerte_incendie.TABLE perimetre_interet_ressource_eau »
+pg_restore: création de ACL « alerte_incendie.TABLE point_chaud_modis »
+pg_restore: création de ACL « alerte_incendie.TABLE point_chaud_viirs_noaa20 »
+pg_restore: création de ACL « alerte_incendie.TABLE point_chaud_viirs_snpp »
+pg_restore: création de ACL « alerte_incendie.TABLE provinces »
+pg_restore: création de ACL « alerte_incendie.TABLE provinces_simplify_ »
+pg_restore: création de ACL « alerte_incendie.TABLE ramsar_1 »
+pg_restore: création de ACL « alerte_incendie.TABLE res_reseau_electrique_l »
+pg_restore: création de ACL « alerte_incendie.TABLE res_reseau_electrique_p »
+pg_restore: création de ACL « alerte_incendie.TABLE res_reseau_electrique_s »
+pg_restore: création de ACL « alerte_incendie.TABLE revegetalisation »
+pg_restore: création de ACL « alerte_incendie.TABLE strate_arboree »
+pg_restore: création de ACL « alerte_incendie.TABLE strate_arboree_old »
+pg_restore: création de ACL « alerte_incendie.TABLE strate_arbustive »
+pg_restore: création de ACL « alerte_incendie.TABLE strate_herbacees »
+pg_restore: création de ACL « alerte_incendie.TABLE unesco_zones_tampons_terrestres_1 »
+pg_restore: création de ACL « alerte_incendie.TABLE voi_voirie_l »
+pg_restore: création de ACL « alerte_incendie.TABLE zone_fort_microendemisme_vegetal »
+pg_restore: création de ACL « alerte_incendie.TABLE zones_tampons_terrestres_unesco_fusion »
+pg_restore: création de DEFAULT ACL « alerte_incendie.DEFAULT PRIVILEGES FOR SEQUENCES »
+pg_restore: de l'entrée TOC 3778 ; 826 1879801 DEFAULT ACL DEFAULT PRIVILEGES FOR SEQUENCES jfnguyenvansoc
+pg_restore: erreur : could not execute query: ERROR: must be member of role "jfnguyenvansoc"
+La commande était : ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT SELECT ON SEQUENCES TO alerte_incendie_ro;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT ALL ON SEQUENCES TO alerte_incendie_rw;
+pg_restore: création de DEFAULT ACL « alerte_incendie.DEFAULT PRIVILEGES FOR TYPES »
+pg_restore: de l'entrée TOC 3780 ; 826 1879803 DEFAULT ACL DEFAULT PRIVILEGES FOR TYPES jfnguyenvansoc
+pg_restore: erreur : could not execute query: ERROR: must be member of role "jfnguyenvansoc"
+La commande était : ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT ALL ON TYPES TO alerte_incendie_ro;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT ALL ON TYPES TO alerte_incendie_rw;
+pg_restore: création de DEFAULT ACL « alerte_incendie.DEFAULT PRIVILEGES FOR FUNCTIONS »
+pg_restore: de l'entrée TOC 3779 ; 826 1879802 DEFAULT ACL DEFAULT PRIVILEGES FOR FUNCTIONS jfnguyenvansoc
+pg_restore: erreur : could not execute query: ERROR: must be member of role "jfnguyenvansoc"
+La commande était : ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT ALL ON FUNCTIONS TO alerte_incendie_ro;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT ALL ON FUNCTIONS TO alerte_incendie_rw;
+pg_restore: création de DEFAULT ACL « alerte_incendie.DEFAULT PRIVILEGES FOR TABLES »
+pg_restore: de l'entrée TOC 3781 ; 826 1879800 DEFAULT ACL DEFAULT PRIVILEGES FOR TABLES jfnguyenvansoc
+pg_restore: erreur : could not execute query: ERROR: must be member of role "jfnguyenvansoc"
+La commande était : ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT ALL ON TABLES TO oeil_admin;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT SELECT ON TABLES TO alerte_incendie_ro;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA alerte_incendie GRANT ALL ON TABLES TO alerte_incendie_rw;
+pg_restore: attention : erreurs ignorées lors de la restauration : 12
+```

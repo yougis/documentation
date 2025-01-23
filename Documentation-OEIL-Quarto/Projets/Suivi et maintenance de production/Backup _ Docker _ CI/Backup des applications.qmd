@@ -1,0 +1,587 @@
+---
+title: Backup des applications
+last-modified: 2023-04-27 05:28:06Z
+date: 2023-04-27 05:27:46Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+# Backup des applications
+
+## Objectifs
+
+Ce projet regroupe l'ensemble des applications déployées sur le serveur Mordor de l'Oeil, ainsi que les machines des utilisateurs.  
+Afin d'uniformiser le déploiement des applications, elles ont toutes été conteneurisées via Docker.
+
+Plus d'informations dans le [Plan de rétablissement des données et applications](<N:/Informatique/Pilotage_SI/Doc_Reference/SI/Plan de rétablissement des données et applications.docx>).
+
+Ce projet contient donc 4 dossiers : 
+- `mordor` : pour les applications déployées sur le serveur Mordor
+- `machine` : pour les applications à déployer sur chaque poste de travail qui seront susceptible d'être utilisé comme Worker (Dask)
+- `barman` : pour installer le serveur de backup de la base de données PostgreSQl de PROD
+- `envs` : contient les environnements Conda utilisés par l'Oeil : gis39, scheduler, bilboV2, dbt, etc...
+
+## Liste des applications
+
+Le serveur Mordor héberge les applications suivantes :
+- 2 bases de données PostgreSQL 13 : une pour la PROD et une pour la QUALIF
+- serveur Jupyterhub pour les Notebook Python
+- scheduler Dask pour le traitement des tâches de manière partagée
+- une instance de Portainer (agent + serveur) pour administrer plus facilement les applications
+
+Les machines utilisées comme Worker héberge les applications suivantes :
+- un agent Portainer pour contrôler les applications de la machine depuis une autre machine
+- un Worker Dask pour effectuer des traitements
+
+## Conda environnement
+
+Le dossier `envs` contient certains environnements Conda utilisés par l'Oeil :
+- `gis39.yml` : environnement GIS39 utilisé pour les traitements avec Bilbo V1. Il est donc utilisé pour lancer les workers Dask sur les machines des agents. Il est également utilisé pour créer le Kernel GIS39 sur Jupyterhub.
+- `gis39_base.yml` : environnement plus léger que GIS39 contenant uniquement les librairies utiles au scheduler Dask. Cette version simplifiée devra être commune à l'ensemble des environnements Conda de traitement utilisés sur les workers, ce qui évitera de devoir déployer un scheduler par environnement.
+
+# Docker Compose
+
+Pour faciliter l'orchestration des conteneurs Docker, toutes les applications ont été regroupées via [Docker Compose](https://docs.docker.com/compose/).
+Le fichier `docker-compose.yml` de chaque dossier regroupe donc tous ces conteneurs par environnement (serveur ou machine).
+
+La configuration du `compose` peut varier d'une machine à l'autre ou alors nécessiter des variables secrètes à ne pas mettre sur git (mot de passe par exemple).
+C'est pour cela qu'on utilise le mécanisme de variable d'envrionnement.
+
+Un fichier compose est constitué de plusieurs parties :
+- `services` qui contient les informations sur l'applications : image, nom, ports à exposer, volumes montés, réseaux utilisés, dépendances, etc.
+- `networks` qui permet de créer des réseaux Docker pour cloisonner les applications entre elles
+- `volumes` qui permet de créer des volumes Docker pour persister la donnée des applications sur la machine Host
+
+## Mordor
+
+### PostgreSQL
+
+Le fonctionnement pour la base de PROD et la QUALIF sont similaire, c'est pourquoi on ne détaille que celle de PROD ici.
+```yaml
+services:
+    postgres_prod:
+        image: 'postgis/postgis:13-3.1'
+        container_name: postgres_prod
+        ports:
+            - '5432:5432' # port_host:port_vm
+        restart: always
+        environment:
+            - POSTGRES_PASSWORD=oeil
+            - POSTGRES_USER=postgres
+            - PGDATA=/var/lib/postgresql/data
+        volumes:
+            - 'postgres_prod_data:/var/lib/postgresql/data'
+            - '/home/frodon/dump:/dump'
+
+volumes:
+    postgres_prod_data:
+        name: postgres_prod_data
+```
+- image : notre conteneur va se baser sur l'image officielle [Postgis](https://registry.hub.docker.com/r/postgis/postgis/) qui est donc une image contenant une instance PostgreSQL avec l'extension Postgis installée.
+- ports : pour accéder à la base depuis notre réseau on a besoin d'exposer le port 5432 sur le serveur. La base sera donc accessible via l'IP du serveur et le port 5432.
+- restart : politique de redémarrage en cas de crash, ici on veut toujours que l'instance PostgreSQL soit disponible, même après un crash.
+- environment : variables d'envrionnement utiles pour créer la base et y ajouter l'utilisateur oeil
+- volumes : volumes du conteneur à monter physiquement sur le serveur afin de les persister. On persiste donc les données de la base ainsi qu'un dossier contenant les dumps réguliers. Ce dernier est voué à disparaître lorsque le système de backup de la base ne reposera plus sur des dumps quotidiens.
+
+### Jupyterhub
+
+La configuration du Jupyterhub est de type [Docker Spawn](https://github.com/jupyterhub/dockerspawner), cela signifie que pour chaque utilisateur, un nouveau conteneur sera déployé automatiquement par Jupyterhub. Cela permet d'avoir des envrionnements cloisonnés pour chaque utilisateur.
+
+Ce choix repose essentiellement sur une contrainte technique liée à l'authentification avec l'AD. On aura pû ne pas utiliser cette mécanique en utilisant simplement un seul utilisateur, sans aucun lien avec l'AD.
+
+Il y a donc un service qui contient l'instance Jupyterhub et un autre qui permet de compiler une image Docker personnalisée contenant les différents envrionnements Conda et qui sera utilisée comme Notebook pour chaque utilisateur.
+
+**Notebook**
+
+```yaml
+services:
+    jupyterhub_notebook:
+            image: oeil-notebook
+            build:
+                context: ../
+                dockerfile: ./mordor/jupyterhub/Dockerfile.notebook
+            container_name: jupyterhub_notebook_default
+```
+Ce service permet juste de compiler l'image Docker du Notebook pour chaque utilisateur. Cette image est basée sur l'image officielle [Jupyter Notebook](https://hub.docker.com/r/jupyter/base-notebook). Le conteneur généré `jupyterhub_notebook_default` peut donc être stoppé après le déploiement car il sert juste à compiler l'image Docker `oeil-notebook` sur le serveur. Cette image est ensuite utilisée par Jupyterhub lorsqu'un nouvel utilisateur se connecte.
+
+**Jupyterhub**
+
+```yaml
+services:
+        jupyterhub:
+            depends_on:
+                - jupyterhub_notebook
+            image: jupyterhub
+            build:
+                context: ../
+                dockerfile: ./mordor/jupyterhub/Dockerfile
+            container_name: jupyterhub
+            environment:
+                - NOTEBOOK_IMAGE_NAME=oeil-notebook
+                - JUPYTER_NETWORK_NAME=jupyterhub_network
+                - JUPYTER_CONTAINER_NAME=jupyterhub
+                - JUPYTER_DATA_PATH=/media/commun/Informatique/SIG/Application/Jupyterhub
+                - SVC_AADCONNECT_PASSWORD=${JUPYTER_SVC_AADCONNECT_PASSWORD}
+            ports:
+                - '9000:8000'
+            volumes:
+                - '/var/run/docker.sock:/var/run/docker.sock'
+            networks: 
+                - jupyterhub_network
+
+networks:
+    jupyterhub_network:
+        name: jupyterhub_network
+```
+- image/build : notre conteneur va se baser sur l'[image Docker personnalisée jupyterhub](mordor/jupyterhub/Dockerfile), qui elle se base sur l'image officielle [Jupyterhub](https://hub.docker.com/r/jupyterhub/jupyterhub/) avec le [fichier de config du serveur](https://dev.azure.com/Oeilnc/_git/Backup?path=/applications/jupyterhub/jupyterhub_config.py) ainsi qu'une correction dans le code de la librairie LDAP.
+- ports : pour accéder au serveur depuis notre réseau on a besoin d'exposer le port 8000 du conteneur sur le serveur, ici on l'expose sur le port 9000. Jupyterhub sera donc accessible via l'IP du serveur et le port 9000.
+- environment : variables d'envrionnement utiles pour créer les conteneurs Notebook, le montage du commun dans les Notebooks et pour se connecter à l'AD.
+- volumes : on monte les volumes liés à l'installation de Docker afin que le serveur Jupyterhub soit en mesure de créer des conteneurs Docker sur le serveur depuis son conteneur.
+- networks : les conteneurs Notebook et le Jupyterhub doivent pouvoir communiquer sans interférer avec les autres applications, c'est pour cela qu'on les place dans un réseau à part, qui n'est pas celui par défaut créé par compose.
+
+### Portainer
+
+Portainer permet d'orchestrer les conteneurs Docker plus facilement qu'en ligne de commande. Pour fonctionner, il faut déployer un agent sur la machine qui doit être pilotée et un serveur sur la machine doit orchestrer les applications.
+
+Dans notre cas, nous avons un serveur qui va orchestrer les conteneurs des machines des utilisateurs (Worker Dask) mais également ses propres conteneurs.
+Il y a également un agent déployé afin que le DSI puisse également contrôler les conteneurs des applications du serveur depuis sa machine.
+
+```yaml
+services:
+    portainer_agent:
+        image: 'portainer/agent:latest'
+        container_name: portainer_agent
+        ports:
+            - '9001:9001'
+        restart: always
+        volumes:
+            - '/var/run/docker.sock:/var/run/docker.sock'
+            - '/var/lib/docker/volumes:/var/lib/docker/volumes'
+    portainer_server:
+        image: 'portainer/portainer-ce:latest'
+        container_name: portainer_server
+        ports:
+            - '8001:8000'
+            - '9443:9443'
+        restart: always
+        volumes:
+            - '/var/run/docker.sock:/var/run/docker.sock'
+            - 'portainer_data:/data'
+
+volumes:
+    portainer_data:
+        name: portainer_data
+```
+
+La configuration du serveur et de l'agent repose sur les recommendations de la [documentation Portainer](https://docs.portainer.io/start/install-ce/server/docker/linux), auncune installation personnalisée n'a été faite.
+
+### Dask Scheduler
+
+Le scheduler Dask est déployé sur le serveur pour orchestrer les différents Worker installés sur les machines des agents.
+
+```yaml
+services:
+    dask_scheduler:
+        image: dask_scheduler
+        container_name: dask_scheduler
+        build:
+            context: ../
+            dockerfile: ./mordor/dask/Dockerfile
+        command: conda run -n gis39 dask scheduler
+        ports:
+            - '9786:8786'
+            - '9787:8787'
+```
+- image/build : l'image se base sur l'image officielle [Python](https://hub.docker.com/_/python) sur laquelle est installé Conda ainsi que l'environnement GIS39.
+- command : au démarrage du conteneur, la commande spécifiée sera exécutée, ce qui va donc démarrer un scheduler Dask en se basant sur l'envrionnement Conda GIS39
+- ports : pour accéder au tableau de bord du scheduler, il faut exposer le port 8787 du conteneur sur le serveur (ici 9787). Pour que les workers puissent se connecter au scheduler, il faut également exposer le port 8786 du conteneur sur le serveur (ici 9786).
+
+## Machine (WIP)
+
+**IMPORTANT :** Cette partie ne fonctionne pas actuellement du fait de l'incompatibilité entre des workers conteneurisés Windows et Linux.
+
+### Dask Worker
+
+```yaml
+services:
+    dask_worker:
+        image: dask_worker
+        container_name: dask_worker
+        build:
+            context: ../
+            dockerfile: ./mordor/dask/Dockerfile
+        ports:
+            - '5002:5002'
+        command: conda run -n gis39 dask worker <scheduler_ip> --name <worker_name> --worker-port=5000 --dashboard-address=5002 --no-nanny
+        dns:
+        - 172.20.5.254
+        - 8.8.8.8
+```
+- image : l'image se base sur la même image Docker que pour le [Scheduler](#dask-scheduler).
+- command : cette fois-ci, la commande lance un Worker Dask sur un scheduler. Pour que cela fonctionne, il faut modifier les variables `<scheduler_ip>` et `<worker_name>` avec l'IP du serveur et le nom de la machine qui héberge le worker.
+- ports : permet d'exposer le tableau de bord du Worker sur la machine qui l'héberge (5002 vers 5002).
+- dns : permet d'indiquer au conteneur notre DNS à utiliser pour accéder au serveur Mordor via son IP.
+
+### Portainer agent
+
+Comme pour le serveur Mordor, un agent est déployée sur la machine afin de la rendre pilotable par l'instance de Portainer Server du serveur.
+
+```yaml
+services:
+    portainer_agent:
+        image: 'portainer/agent:latest'
+        container_name: portainer_agent
+        ports:
+            - '9001:9001'
+        restart: always
+        volumes:
+            - '/var/run/docker.sock:/var/run/docker.sock'
+            - '/var/lib/docker/volumes:/var/lib/docker/volumes'
+```
+
+# Déployer les applications sur le serveur
+
+## Pré-requis
+
+### Git & Docker
+
+Pour installer Docker sur la machine, il suffit de suivre les étapes d'installations de la [documentation officielle](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
+
+Il faut maintenant se connecter au Dockehub de l'Oeil, qui contient l'ensemble des applications (images Docker). Un mot de passe sera demandé, il est sauvegardé dans le KeePass (cf. Notes).
+```bash
+docker login -u informatiqueoeil
+```
+
+Pour backuper les applications, il faut d'abord installer git sur la machine et cloner le répo git qui contient les informations Docker.
+```bash
+ # Installation de git
+sudo apt-get install -y git
+
+# Cloner le répo dans un dossier nommé 'mordor', de cette manière la stack Docker reprendra ce nom et les conteneurs seront bien associés aux anciennes instances.
+# Vos identifiants LDAP vont être demandés.
+cd  /home/frodon/backup
+git clone git@ssh.dev.azure.com:v3/Oeilnc/Backup/Backup docker_backup
+```
+
+### Jupyterhub
+
+Pour que Jupyterhub fonctionne avec les utilisateurs de l'Active Directory (via LDAP), il faut configurer le mot de passe de l'utilisateur qui sera utilisé pour faire les requêtes LDAP : SVC_AADCONNECT.
+Pour cela, si ce n'est pas déjà fait, ajoutez la variable d'envrionnement `JUPYTERHUB_SVC_AADCONNECT_PASSWORD` avec le mot de passe de l'utilisateur AD SVC_AADCONNECT (disponible dans KeePass) dans le fichier `/home/frodon/.bashrc` du serveur :
+```bash
+echo "export JUPYTERHUB_SVC_AADCONNECT_PASSWORD=<password_à_modifier>" >> /home/frodon/.bashrc
+source /home/frodon/.bashrc
+```
+
+### Azure Devops
+
+Pour que l'intégration continue (CI) puisse fonctionner, il faut déployer un agent Azure Pipeline sur notre serveur. Cet agent permet de se connecter en SSH aux machines qui vont servir de worker Dask pour mettre à jour leur environnement Conda et démarrer le worker.
+
+Cet agent a besoin d'un token Azure Devops (peut être généré par un utilisateuyr ayant les droits de créer un agent Pipeline) et du mot de passe administrateur du domaine Oeil.
+
+Pour que Jupyterhub fonctionne avec les utilisateurs de l'Active Directory (via LDAP), il faut configurer le mot de passe de l'utilisateur qui sera utilisé pour faire les requêtes LDAP : SVC_AADCONNECT.
+Pour cela, si ce n'est pas déjà fait, ajoutez les variables d'envrionnement `AZURE_TOKEN` (à générer depuis Azure Devops), `AZURE_ADMIN_OEIL_PASSWORD` (disponible dans le KeePass) et `AZURE_FRODON_PASSWORD` dans le fichier `/home/frodon/.bashrc` du serveur :
+```bash
+echo "export AZURE_TOKEN=<token>" >> /home/frodon/.bashrc
+echo "export AZURE_ADMIN_OEIL_PASSWORD=<password>" >> /home/frodon/.bashrc
+echo "export AZURE_FRODON_PASSWORD=<password>" >> /home/frodon/.bashrc
+source /home/frodon/.bashrc
+```
+
+## Déployer
+
+Pour déployer les applications sur le serveur, il suffit d'aller dans le dossier `mordor` du répertoire précédemment cloné et de faire :
+```bash
+docker compose up -d
+```
+
+Pour mettre à jour seulement certaines applications et ne pas redémarrer les autres, il suffit de suivre les étapes suivantes :
+- mettre à jour le répo Git : `git pull`
+- stopper les applications à mettre à jour et supprimer les conteneurs, soit via Portainer, soit en ligne de commande : `docker rm -f <id>`
+- lancer la commande suivante qui va recompiler les images et recréer les conteneurs des applications manquantes (donc précédemment stoppées)
+
+```bash
+docker compose pull && docker compose up -d --no-recreate
+```
+
+Plus d'informations sur les commandes possibles à utiliser dans la documentation [Docker Compose Up](https://docs.docker.com/engine/reference/commandline/compose_up/).
+
+**IMPORTANT** : Si vous souhaitez mettre à jour Jupyterhub, il faudra bien s'assurer que les variables d'envrionnement sont bien paramétrées, comme indiqué dans le [pré-requis jupyterhub](#jupyterhub).
+
+
+# Déployer les applications sur une machine
+
+Les conteneurs Docker n'arrivent pas à communiquer entre les machines Windows et Linux. Pour fonctionner, il faudra que toutes les machines soient sous Linux, ce qui n'est pas envisageable à court terme.
+Pour simplifier la mise à jour des environnements Conda et le démarrage des workers sur l'ensembles des machines, un script `deploy.sh` a été mis en place.
+
+Ce script bash fonctionne donc sous Linux et sera disponible dans la CI de n'importe quel projet via la commande `./deploy.sh`. 
+
+Documentation (`./deploy.sh` --help) :
+
+```bash
+Syntaxe: deploy.sh [ACTION] [OPTIONS]...
+
+ACTION peut prendre 2 valeurs :
+conda : mettre à jour l'environnement GIS39 --> deploy.sh conda [OPTIONS]
+worker : relance les workers Dask --> deploy.sh worker [OPTIONS]
+
+OPTIONS :
+--prod : le script va s'exécuter sur l'envrionnement gis39 et non gis39-qual par défaut
+--only-custom-packages : met à jour uniquement le package bilbo-packages dans les environnements Conda (incompatible avec l'action 'worker')
+--hosts : indique la liste des machines sur lesquelles le script doit s'exécuter, IP séparées par une virugule (obligatoire au moins 1 IP)
+
+EXEMPLES :
+- recréer l'environnement gis39-qual sur les machines 106 et 113 : ./deploy.sh conda --hosts 172.20.10.106,172.20.10.113
+- utiliser le dernier commit dans l'environnement gis39 sur la machine 113 : ./deploy.sh conda --prod --only-custom-packages --hosts 172.20.10.113
+- redémarre les workers sur les machines 109 et 112 en utilisant l'environnement Conda gis39 : ./deploy.sh worker --prod --hosts 172.20.10.109,172.20.10.112
+
+PRE-REQUIS :
+Pour exécuter la mise à jour de l'environnement Conda, [ACTION]=conda, ce script doit être exécuté depuis depuis le répo Git Backup pour accéder au fichier d'environnment gis39 dans le dossier 'envs'.
+Les variables d'environnement doivent également être définie : ADMIN_OEIL_PASSWORD et FRODON_PASSWORD.
+Les outils ping, ssh et sshpass doivent être installés sur la machine qui exécute le script.
+```
+
+Il y a donc 3 principales fonctionnalités :
+- recréer un environnement Conda à partir du fichier `envs/gis39.yml` soit en version de prod soit en version de qual (suffixée de `-qual`). Il faut donc que le script soit lancé dans ce répertoire Git pour avoir accès au fichier YAML.
+- mettre à jour uniquement les packages de l'oeil (bilbo-packages par exemple) sur les envrionnements Conda de prod ou de qual. Peut être exécuté depuis n'importe quelle machine Linux.
+- redémarrer les workers des machines en utilisant soit l'environnement de qual ou de prod. Peut être exécuté depuis n'importe quelle machine Linux.
+
+Pour chaque fonctionnalités, une liste de machines (IPs séparées par une virgule) doit être fournie en entrée.
+
+Le script va automatiquement déterminer quel username doit être utilisé pour se connecter à la machine. Si de nouveaux utilisateurs doivent être utilisés sur certaines machines, il faudra donc les rajouter dans la variable `POSSIBLE_USERNAMES` du script.
+Si de nouveaux packages doivent également être inclus avec l'option `--only-custom-packages`, il faut les ajouter dans la variable `CUSTOM_PACKAGES` du script.
+
+**ATTENTION**: les URL des packages de l'Oeil contiennent un mot de passe temporaire, il faudra donc penser à les mettre à jour dans le script lorsqu'ils arriveront à expiration (avril 2024 pour bilbo_packages).
+
+Il est possible d'exécuter ce script directement depuis le répertoire git de ce projet cloné sur le serveur Mordor : `/home/frodon/docker_backup/deploy.sh`.
+Pensez à bien mettre à jour le code pour être sûr d'avoir la dernière version du script (`git pull`).
+
+# Backup de la base PostgreSQL avec Barman
+
+## Présentation
+
+Barman est un outil open-source permettant d'assurer le backup d'une base de données PostgreSQL.
+
+Il repose sur la mécanique d'archivage en temps-réel de PostgreSQL. Cette mécanique génère des fichiers de logs (WAL) contenant les changements effectuées dans la base de données. Ces fichiers font 16MB et dès que le dernier est plein, PostgreSQL bascule sur un nouveau. Tant qu'un fichier de log n'est pas complet, il garde l'extension `.partial`. Il est possible d'effectuer un `pg_switch_wal` pour indiquer à la base de données de sauvegarder les logs dans un nouveau fichier. Dans ce cas là, même si le dernier fichier de logs ne fait pas 16MB il n'a plus l'extension `.partial` et est consoidéré comme un fichier de log complet.
+Un nouveau fichier est alors créé et les nouveaux logs seront sauvegardés dedans. Ces fichiers sont nommés selon un incrément de fichiers de logs, il est donc possible de savoir quel fichier contient les premiers logs.
+
+Barman va régulièrement effectué un `base_backup`, c'est-à-dire copier l'ensemble des fichiers de la base de données sur le serveur de backup. A partir de ces fichiers, il est possible de remonter une instance PostgreSQL identique (même version, mêmes extensions et mêmes données). Ce `base_backup` prend un certain temps du fait de la copie de l'ensemble des fichiers, c'est pourquoi il ne doit être fait qu'à basse fréquence (1 / semaine).
+
+Entre 2 `base_backup`, ce sont donc les fichiers de logs (WAL) qui vont assurer la sauvegarde de la donnée. Une fois correctement configuré, la base de donnée va considérer le serveur de backup Barman comme une instance de réplication et donc y sauvegarder une copie de ses fichiers de logs. Tant que les fichiers de logs ne sont pas complets, `.partial`, ils ne sont pas considérés comme un fichier de log exploitable par Barman. Il est tout de même possible de les utiliser mais la manipulation à effectuer est assez complexe. C'est pour cette raison que nous allons plutôt effectuer des `pg_switch_wal` réguliers et ne restaurer que les fichiers de logs complets.
+
+Documentation PostgreSQL :
+- [SQL Dump](https://www.postgresql.org/docs/current/static/backup-dump.html)
+- [File System Level Backup](https://www.postgresql.org/docs/current/static/backup-file.html)
+- [Continuous Archiving and Point-in-Time Recovery (PITR)](https://www.postgresql.org/docs/current/static/continuous-archiving.html)
+- [Recovery Configuration](https://www.postgresql.org/docs/current/static/recovery-config.html)
+- [Reliability and the Write-Ahead Log](https://www.postgresql.org/docs/current/static/wal.html)
+
+## Mise en place
+
+Pour plus d'informations sur le fonctionnement et l'installation de Barman dans la [documentation officielle](https://docs.pgbarman.org/release/2.1/).
+
+### Configuration de la base PostgreSQL
+
+Il va falloir créer un utilisateur barman sur le serveur qui héberge la base de données, ici le conteneur sur Mordor. Cet utilisateur permettra à barman d'assurer le monitoring de la base. Il faudra également créer un deuxième utilisateur pour la réplication.
+
+Depuis la base de données, lancez les commandes sql suivantes :
+
+```bash
+CREATE ROLE barman WITH 
+	SUPERUSER
+	CREATEDB
+	CREATEROLE
+	INHERIT
+	LOGIN ENCRYPTED PASSWORD 'oeil'
+	REPLICATION
+	NOBYPASSRLS
+	CONNECTION LIMIT -1;
+CREATE ROLE streaming_barman WITH 
+	SUPERUSER
+	CREATEDB
+	CREATEROLE
+	INHERIT
+	LOGIN ENCRYPTED PASSWORD 'oeil'
+	REPLICATION
+	NOBYPASSRLS
+	CONNECTION LIMIT -1;
+```
+
+Vérifier que ces utilisateurs ont bien été créés en vous connectant avec à la base de données.
+
+Il faut maintenant configurer la base pour qu'elle accepte la réplication du serveur de backup Barman. Depuis le serveur mordor (plus depuis le conteneur), modifier le fichier suivant `/var/lib/docker/volumes/postgres_prod_data/_data/pg_hba.conf` en y ajoutant les lignes suivantes : 
+
+```sh
+host    all             barman           172.20.10.113/32     trust
+host    replication     streaming_barman 172.20.10.113/32     trust
+```
+Les adresses IPs doivent correspondrent à celle du serveur de backup Barman.
+
+Il faut également modifier la configuration de la base, dans le fichier `/var/lib/docker/volumes/postgres_prod_data/_data/postgresql.conf`, modifier les paramètres suivants (décommentez si nécessaire) :
+```postgresql.conf
+wal_level = 'replica'
+max_wal_senders = 2
+max_replication_slots = 2
+```
+
+Redémarrer la base via Docker pour que les changements soient pris en compte :
+```bash
+docker restart postgres_prod
+```
+
+### Paramétrage de la connexion SSH
+
+Copier la clé publique de barman `barman/private/mordor/barman.id_rsa.pub` sur le serveur Mordor, dans le fichier `/home/frodon/.ssh/authorized_keys` et `/home/frodon/.ssh/known_hosts`.
+Si ces fichiers n'existent pas il faut les créer avec les permissions 600 :
+```bash
+mkdir -p /home/frodon/.ssh/authorized_keys
+sudo chmod 600 /home/frodon/.ssh/known_hosts
+
+mkdir -p /home/frodon/.ssh/known_hosts
+sudo chmod 600 /home/frodon/.ssh/authorized_keys
+```
+
+### Démarrage du streaming
+
+Pour démarrer la récupération des fichiers de logs et créer la récurrence des backups, suivez les étapes suivantes depuis le dossier barman de ce projet :
+```bash
+# démarrer l'instance Barman
+docker compose up -d
+
+# entrer dans le conteneur
+docker exec -it barman bash
+
+# démarrer le streaming
+barman cron
+
+# vérifier que le streaming fonctionne bien
+barman switch-xlog --force --archive mordor
+
+# création du premier backup du serveur (cela peut prendre beaucoup de temps)
+barman backup mordor
+
+# vérifier que le système de backup fonctionne (vérifier que tout est OK et qu'aucune erreur n'est remontée)
+barman check mordor
+
+# activer les cronjobs pour le backup hebdomadaire (tous les dimanches à 00:00+11) et pour le switch_wal toutes les heures du lundi au vendredi
+echo "0 13 * * 6 /usr/local/bin/barman backup all >> /var/log/barman/backup.log 2>&1
+0 * * * 1-5 /usr/local/bin/barman switch-wal all >> /var/log/barman/switch.log 2>&1" | crontab -
+```
+Tous les logs d'exécution des cronjobs seront sauvegardés dans le volume docker barman_logs. Il pourront être consulter afin de s'assurer de la bonne exécution des backups.
+ATTENTION : les dates des logs sont en UTC, il faut donc rajouter 11h pour correspondre à l'heure locale.
+
+Il est important de vérifier régulièrement, et encore plus après un gros traitement, que tout est OK au niveau du backup.
+Pour cela il suffit de lancer la commande suivante et de vérifier qu'il n'y a aucune erreur remontée :
+```bash
+barman check mordor
+```
+
+**NB :** Toutes commandes suivantes qui commencent par `barman` seront donc à exécuter depuis l'instance Barman dans le conteneur Docker.
+
+## Restaurer la base de données
+
+Pour restaurer la base de données, on va utiliser la commande `recover` de Barman. Il existe tout un tas d'option pour définir à quel instant précis on veut rétablir la base de données, cf. [documentation](https://docs.pgbarman.org/release/3.4.0/#recover).
+Deux possibilités s'offrent à vous, soit vous souhaitez restaurer la base à un instant précis appelé `target-time` (par exemple juste avant la suppression maladroite d'une table) ou alors la restaurer au dernier état stable connu (par exemple juste avant un crash du serveur).
+
+Cette commande va simplement générer les fichiers PostgreSQL qui seront utilisés par la base pour démarrer. Les fichiers de logs seront lus un à un jusqu'à ce qu'il n'y en ait plus ou que l'instant précis précédemment défini ait été atteint.
+
+### Connexion SSH
+
+Ces fichiers peuvent être générés localement sur le serveur de Barman puis copier manuellement sur le serveur pour restaurer la base. On peut également directement indiquer à barman lors de la génération des fichiers de les envoyer vers le serveur via SSH. Pour cela, on va utiliser l'option `--remote-ssh-command ssh -i /private/ssh/barman.id_rsa frodon@172.20.12.11` pour copier les fichiers vers le serveur Mordor.
+
+### Choix du dossier de destination
+
+Le chemin du dossier fourni avec la commande `recover` contiendra donc l'ensemble des fichiers de la base. Dans notre cas, vu qu'on va utiliser SSH, ce dossier sera sur le serveur Mordor. Il est recommandé d'utiliser un dossier temporaire pour éviter d'agraver l'état de la base si le backup ne fonctionne pas correctement, comme par exemple : `/home/frodon/tmp_postgres_prod_backup`.
+
+### Connaître l'ID du backup à utiliser
+
+Pour lister les backups disponibles, faites :
+```bash
+barman list-backups mordor
+```
+Vous obtiendrez ainsi la liste des backups disponibles avec leur ID et la date de backup.
+Vous devez sélectionner le backup le plus récent qui a été fait avant l'instant précis auquel vous voulez restaurer la base. Si vous n'avez pas de date précise, choisissez donc le backup le plus récent.
+
+On peut avoir plus d'informations sur un backup en faisant : `barman show-backup mordor <backup_id>`. On peut ainsi récupérer la date de début et de fin de backup, qui correspondent à l'interval de temps durant lequel barman a effectué le backup via la command PostgreSQL `pg_basebackup`. Si l'instant choisi pour restaurer la base est compris entre le début et la fin d'un backup, il faut impérativement sélectionner un backup plus ancien.
+
+IMPORTANT : Les dates seront peut être en UTC, il faudra donc ajouter 11 heures pour les avoir en heure locale.
+
+### Restaurer la base
+
+Avant de restaurer la base de donées, il faut l'arrêter. Il est possible que la base soit déjà arrêtée si elle a crashé mais si vous venez de redéployer les applications, il faudra donc arrêter la nouvelle instance PostgreSQL. Depuis le serveur, faites :
+```bash
+docker stop postgres_prod
+```
+Vous pouvez également le faire depuis Portainer.
+
+Etant donnée le volume important de données, la restauration risque de prendre un certain temps et sera dépendante du débit réseau disponible entre le serveur de backup contenant l'instance Barman et le serveur Mordor.
+
+**Au dernier état stable**
+
+Depuis l'instance Barman dans le conteneur :
+```bash
+barman recover --remote-ssh-command "ssh frodon@172.20.12.11" mordor <backup_id> /home/frodon/tmp_postgres_prod_backup
+```
+
+**A un instant précis**
+
+L'instant précis choisi doit être au format suivant : `2018–07–22 23:30:05+11:00`. Cet instant est en heure locale avec la spécification du fuseau horaire `+11:00`.
+
+Depuis l'instance Barman dans le conteneur :
+```bash
+barman recover --remote-ssh-command "ssh frodon@172.20.12.11" --target-time="<target_time>" mordor <backup_id> /home/frodon/tmp_postgres_prod_backup
+```
+
+### Vérification de la restauration
+
+#### Vérification sur une base de données temporaire
+
+On va démarrer une nouvelle instance PostgreSQL, similaire à celle de la PROD, basée sur notre dossier de backup temporaire afin d'en valider le contenu.
+Pour cela, lancer la commande suivante :
+```bash
+docker run -d -p 5435:5432 --name postgres_test_backup --restart=always -e POSTGRES_PASSWORD=oeil -e POSTGRES_USER=postgres -e PGDATA=/var/lib/postgresql/data -v /home/frodon/tmp_postgres_prod_backup:/var/lib/postgresql/data postgis/postgis:13.3.1
+```
+
+Une nouvelle base de données `postgres_test_backup` va se déployer et vous pouvez consulter ses logs afin de vérifier que tout fonctionne bien : 
+```bash
+docker logs postgres_test_backup -f
+```
+
+Une fois que la base peut de nouveau accepter les connections (un message dans les logs l'indique), connectez-vous et assurez vous que toutes les données ont bien été restaurées.
+
+**NB :** les données écrites après le dernier `pg_switch_wal` (qui s'effectue toutes les heures) ne seront peut être pas disponibles. Seuls les changements stockés dans des fichiers de logs complets (pas `.partial`) seront restaurés. Il est donc possible que toutes les données soit restaurées comme aucune.
+
+Si le backup ne vous paraît pas correcte, trop ancien par exemple, vous pouvez réitérer les étapes précédentes en spécifiant un `--target-time` différent.
+
+#### Copie des fichiers vers la base PostgreSQL
+
+Une fois que vous avez validé le bon fonctionnement du backup sur la base temporaire, vous pouvez arrêter l'instance :
+```bash
+docker rm -f postgres_test_backup
+```
+
+Pour restaurer les données sur la base de PROD, on va copier le contenu du dossier temporaire dans le volume docker associé à la base de PROD.
+```bash
+# Suppression des données existantes de la base de PROD
+ sudo sh -c 'rm -rf /var/lib/docker/volumes/postgres_prod_data/_data/*'
+
+# Copie des fichiers du dossier de backup temporaire vers le dossier de la base
+sudo cp -vR /home/frodon/tmp_postgres_prod_backup/. /var/lib/docker/volumes/postgres_prod_data/_data/
+```
+
+#### Démarrage de l'instance PostgreSQL de PROD
+
+```bash
+# Démarrer la base
+docker start postgres_prod
+
+# Vérifier qu'il n'y ait pas d'erreur au démarrage
+docker logs -f postgres_prod
+```
+Vous pouvez également le faire depuis Portainer.
+
+De la même manière que pour la [base temporaire](#vérification-sur-une-base-de-données-temporaire), vérifier le contenu des données de la nouvelle base de PROD.
+
+Une fois que vous avez validé le contenu de la restauration, vous pouvez supprimer le dossier temporaire de backup :
+```bash
+rm -rf /home/frodon/tmp_postgres_prod_backup/
+```

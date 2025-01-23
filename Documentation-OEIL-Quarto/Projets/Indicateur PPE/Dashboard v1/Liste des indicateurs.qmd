@@ -1,0 +1,80 @@
+---
+title: Liste des indicateurs
+last-modified: 2023-05-09 22:32:44Z
+date: 2021-10-26 03:57:21Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+Périmètre d'analyse : PPE/PPR
+- Sédimentaire (métaux lourds) 
+Turbidité
+
+- Organique (nutriments)
+Bactérie, microbiologie
+
+- Chimique
+Molécule synthétique : pesticide, hydrocarbure, PCB
+
+
+# Description générale du PPE
+- superficie du PPE
+- superficie par classe de pente
+- distance du linéaire hydrographique/talweg
+- Pluviométrie moyenne/an
+- pentu ?
+- Profil du MOS, superficie par type d'occupation ?
+- Type de sol (ultramaphique, volcanosédimentaire, autre)
+- altitude élevé ?
+
+# Description état de l'environnement du PPE
+- superficie de l'occupation forestière: boisé ? fragmentation
+ > Indicateur composite à créer ?
+
+# Description chimique
+
+
+# Pression incendie
+- fréquence des incendies par période à définir
+- superficies brûlées par type de sol géologique
+- superficie du périmètre brûlée cumulée sur les 10 dernières années
+
+# Pression érosion
+- superficie cumulée des surfaces sol nu
+	- ventilé par classe de pente (risque)
+	- ventilé par classe de la légende géologique
+- superficie par classe de forme érosive
+- nombre de forme érosive qui intersecte le réseau hydrographique
+- engravement du court d'eau
+
+# Pression humaine
+- Nombre d’habitants dans le périmètre
+- Distance de linéaire routiers par type (majeur, mineur)
+- Distance de linéaire pédestre 
+- Nombre de trou d'eau
+- Nombre d'intersection cours d'eau avec les aménagements
+- Nombre d'ICPE
+- Superficie des zones agricoles par type
+- Superficie des surfaces d’exploitation minière par type (activité/non active)
+- Superficie des surfaces de concessions ;
+- Présence d'aménagements de franchissement/retenue sur le cours d'eau
+
+# Pression espèce envahissante
+- priorité de régulation du cerf ([étude CI](https://www.cen.nc/documents/22209/82578/Elements+de+cadrage+pour+une+strat%C3%A9gie+de+r%C3%A9gulation+des+cerfs+en+Nouvelle-Cal%C3%A9donie/b982d25c-8ed0-456e-a336-7e54c526dcce))
+
+# Réponse
+- Superficie de surface d'aire protégée dans le PPE / zone de mise en défend / zone interdite à l'exploitation minière
+- Type de périmètre labellisée : UNESCO/RAMSAR/AUCUN
+- Nombre d'aménagements de maintien des continuités écologiques sur le cours d'eau (eg. passe à poisson)
+- Aménagement pour limité l’accessibilité (barrières) 
+- Présence de panneau de sensibilisation
+- Opération de re-végétalisation / réhabilitation : berges, stabilisation
+
+# Indicateurs d'enjeu écologique
+Cela pourrait apporter des arguments sur l’intérêt écologique du PPE pour réaliser des mesures de gestion adapté (eg. KBA, ZICO,Espèces menacées/Endemia ,Milieux d’intérêt pour la biodiversité), microendémisme végétal
+
+---
+
+Définir une grille de qualification: fixe / dynamique sur les indicateurs définit par les objectifs de gestion ou de l'existant et non par la science:
+- Qualification relative entre PPE

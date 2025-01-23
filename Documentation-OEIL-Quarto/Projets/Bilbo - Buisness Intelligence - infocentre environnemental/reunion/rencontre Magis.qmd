@@ -1,0 +1,46 @@
+---
+title: 'rencontre Magis '
+last-modified: 2022-08-25 22:25:05Z
+date: 2022-06-15 21:17:58Z
+---
+
+22/06/2022 14:00
+
+Présenter l'architecture cible: 
+Table Postgis = DTM
+Service Esri OUGeoJSON
+Intégration dans le mapViewer : style + filtre + composition mixte de service
+Intégration de l'objet Map dans le Dashboard
+
+Architecture de donnée:
+
+DTM = plusieurs thématiques avec différentes granularités spatiales et temporelles possible. 
+
+Objectif :
+à partir d'un sélecteur  de type liste ou calendrier
+-> filtrer les données d'un service de l'objet MAP
+-> interroger un datamart spécifique. Dans ce cas on veut interroger différents services selon les choix dans les sélecteurs.
+
+
+
+Question technique:
+Arcade pour appliquer des représentation particulière selon les données.
+Est ce que les scripts arcade de MAPViewer sont compatibles avec Dashbord ? ou transite bien à travers l'objet MAP consommé par Dashbord ?
+
+Dans arcade y a t'il un moyen de gérer des attributs contenant des objets complexe type liste ou objet json spécifique ?  et de produire ainsi un widget à façon.
+
+Maintenance des dashbords:
+- Duplication 
+- Modification,
+- gestion des sources etc.
+j'utilise AGOL mais est ce la solution unique et adapté à notre processus de gestion des plateforme ? y a t-il d'autre outil ou moyen de publier des modifications directement par le code source. 
+
+
+Est ce qu'on peut filtrer les sources des données des widget (carte comprise) au démarrage de l'application sur la base d'un sélecteur ou d'un paramètre dans l'url  et que ce filtre soit ensuite adapté pour requêter les services selon les actions sur les sélecteurs.
+
+-> permettre d'avoir un gros DTM que l'on filtre selon des granularités spatiales ou temporelles et d'éviter de charger l'ensemble des données au chargement de l'application.
+
+
+idée du POC accéder aux données sources à partir des hexagones et table de faits indexés. 
+
+

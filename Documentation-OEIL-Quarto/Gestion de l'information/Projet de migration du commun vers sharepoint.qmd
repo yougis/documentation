@@ -1,0 +1,14 @@
+---
+title: Projet de migration du commun vers sharepoint
+last-modified: 2022-06-08 00:21:50Z
+date: 2022-06-08 00:20:32Z
+latitude: -22.26000023
+longitude: 166.44694519
+altitude: 0.0000
+---
+
+Avantage :
+
+- plus de synchronisation bi-directionnelle : création de fichier fantôme
+- meilleur collaboration
+

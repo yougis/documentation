@@ -1,0 +1,47 @@
+---
+title: 'CR atelier 2024-02-07 10:25'
+last-modified: 2024-02-07 03:36:48Z
+date: 2024-02-06 23:25:49Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+2024-02-07 10:25 CR atelier 
+présent Mathis / Hugo
+
+calage COPIL avec mathis. qui fait quoi ?
+
+- Présentation des travaux réalisés durant le projet (Mathis)
+- État des traitements de donnés (Mathis)
+- Présentation de résultats sur la NC (Hugo)
+- Discussion sur les modalités de mise en œuvre opérationnelle de la chaine de production NC (Seb/Hugo)
+- Limites et perspectives (Mathis/hugo)
+
+
+Avancement phase 2 
+VIIRS :
+- etude : quelques info à approfondir
+- comparaisons VIIRS MODIS
+- correction MODIS split window 
+- peut être qu'une amelioration des valeurs de température de MODIS avec TES
+- l'important est de voir les anomalies pas les valeurs absolues
+- Les données MODIS et VIIRS sont ressamplées, les écarts important et les mauvais résultats de correlation sur la temperature viennent pê de là.
+
+VABF :
+Qlq bug dû à la généricité pacifique
+plusieurs dockers qui appel GEE en meme temps (blocage)
+nouvelle exception pour attendre un temps évolutif (sec, minute, heure)
+
+agent azure ne tourne plus sur la qualif (problème de token)
+
+idée d'évolution de faire une pipeline par contexte de run (afin d'éviter l'impact de redemarer les container suite à une modification du code). 
+
+
+Il ne faut pas redemarer n'importe quand
+regarder les log si print le message qui montre qu'elle est en attente.
+"histo data where already process for [periode] "
+si "go processing" ou d'autre print ne pas couper
+
+- idée modification de code: le mode de log est mis en dure et pourrait être passé en variable du docker pour changer le niveau 
+

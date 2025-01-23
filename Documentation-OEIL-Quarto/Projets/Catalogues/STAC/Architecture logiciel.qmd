@@ -1,0 +1,24 @@
+---
+title: Architecture logiciel
+last-modified: 2023-10-04 03:13:47Z
+date: 2023-10-04 03:07:59Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+# Architecture logiciel
+
+le système est composé de plusieurs brique logiciel Client/server avec des échanges d'information à travers des API.
+
+
+Il y a aussi des librairies permettant de manipuler les metadonnée, avant pendant et après leur création:
+
+- stactools [code](https://github.com/stac-utils/stactools) & [doc](https://stactools.readthedocs.io/en/stable/)
+- pystac
+- pypgstac
+
+
+
+# Stactools
+Permet notamment de déterminer le footprint propre/exact d'une image. [explication ici](https://stactools.readthedocs.io/en/stable/footprint.html)

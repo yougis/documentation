@@ -1,0 +1,12 @@
+---
+title: Devis INSIGHT pré-traitement
+last-modified: 2021-07-29 10:36:36Z
+date: 2021-07-26 00:54:48Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: yes
+tags:
+  - asap
+---
+

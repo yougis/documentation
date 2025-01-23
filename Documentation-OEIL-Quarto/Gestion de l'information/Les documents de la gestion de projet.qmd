@@ -1,0 +1,25 @@
+---
+title: Les documents de la gestion de projet
+last-modified: 2021-06-27 10:40:05Z
+date: 2021-06-23 09:39:14Z
+---
+
+
+
+# Informations à destination externe
+Redaction d'information : Etude Rapport bilan
+Compte rendu de réunion
+Présentation PowerPoint
+
+# Informations à destination interne
+Echange mail,
+Fichiers d'organisation, de plannification,  de gestion de tache
+
+# Informations de durée limitée
+Archivage à bi-quotidien 
+
+
+# Informations de durée illimitée
+Intégration dans une application de gestion longue durée 
+Archivage
+Indexation

@@ -1,0 +1,31 @@
+---
+title: GES CITEPA
+last-modified: 2021-07-07 10:22:17Z
+date: 2021-07-04 22:27:07Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: no
+---
+
+1) formalisation de notre partenariat
+Au plus simple, ça peut être une convention formalisant l’échange et mise à disposition de données, dans le cadre notamment de la mise à jour de l’inventaire national ; avec éventuelles réunions prévues, et notamment un groupe de travail avec experts invités. Nous organisons au Citepa de temps en temps des Groupes de Travail sur des sujets précis, avec souvent des experts qu’on convie pour avoir leur retour sur notre méthodologie. Pour cette option il s’agirait d’un partenariat simple, sous forme de convention, sans volet financier. 
+Sinon, autre option, si des travaux plus approfondis sont envisagés, des ateliers, échanges plus fréquents, un partenariat avec volet financier serait alors envisageable. Voir notamment en fin de mail les autres sujets sur lesquels vous auriez sans doute des données et expertise très utiles pour nous.
+
+2) travail préalable sur un nouveau fichier de calcul (Citepa avec envoi de données ŒIL)  (entre juillet et septembre 2021)
+
+3) échanges et discussions Citepa – œil sur ce nouveau fichier (entre septembre et octobre 2021)
+
+4) groupe de travail pour présenter la nouvelle méthodologie et la faire valider par des experts (octobre 2021)
+
+5) présentation, au GCIIE d’octobre 2021 par le Citepa au Ministère de l’Environnement les impacts de cette nouvelle estimation (octobre 2021)
+
+6) intégration des nouveaux résultats à l’inventaire national par le Citepa (novembre – décembre 2021)
+
+7) suites possibles (2022) : 
+- publication(s) sur cette méthode pour les feux ?
+- suite des échanges sur d’autres volets de l’inventaire pouvant être amélioré : 
+- le suivi des surfaces d’occupation du sol pour estimer les flux de GES associés en N-C (boisement/déboisement, artificialisation, etc.)
+- bilan carbone des forêts (croissance nette et prélèvements de bois)
+- stocks et variations de stock de C dans les sols
+- autres sujets possibles à discuter

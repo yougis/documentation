@@ -1,0 +1,76 @@
+---
+title: Evolutions dispositif incendie
+last-modified: 2023-09-04 06:02:03Z
+date: 2022-04-06 22:14:42Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+# Intégration de nouvelles source de donnée
+
+## Burned area
+
+- Modis
+- VIIRS
+- Service HLS (Landsat | Sentinel)
+
+## Nouveaux capteurs
+
+### Points chauds :
+
+- Intégration capteur thermique Sentinel 3, landsat 8 et 9
+- Intégration capteur thermique GEOS-West
+
+### Surfaces :
+
+- Radar Sentinel 1
+
+# Contrôle qualité des données
+
+- Optimisation du contrôle des données Sentinel 2
+    - Faire tourner le modèle Theia de la chaine SISPEO sur les données en sortie de chaîne INSIGHT:
+        - avoir à minima une confirmation par un autre outil et en sortie des indicateurs et métriques
+        -   exploite des images composites ce qui peut apporter une réponse sur l'approche de regroupement des surfaces entre elle
+    - Effectuer une analyse sur la qualité des données en sortie de traitement:
+        - Etudier les indicateurs pertinent  les surfaces entre elles par statistiques zonales et/ou une intelligence artificielle,
+            - NBR et DeltaNBR
+            - NDVI
+            - NDWI
+            - Thématiques (réserves naturelles, BV AEP, especes rares et menacées, MOS, MOS Dynamique, etc.)
+        - Constituer un indice de confiance,
+        - Constituer un indice de vigilance (surface dans une réserve, dans un BV AEP etc.)
+        - Regrouper/séparer les surfaces brûlées plus fine et la liée à un événement (point chaud, levée de doute du terrain, approche participative)
+        - Effectuer un CQ sur un échantillons  (sur collect Earth et avec la formule de SURFOR): en fonction des chiffres, et des strates (classes), on fait ou non la PI.
+
+> Prévoir l'usage d'un masque Nuage performant, ré-exploitable dans d'autres outils / projets : ex, disponibilité des images sans nuage sur cette zone
+
+- - A L'étape de photo-interprétation :
+        \- Définir une organisation logique et priorisée des surfaces à photo interprétée (selon leur enjeux : est ce que la surface touche une zone d'interêt thématique (environnement, santé, sécurité etc.)),
+        \- Rendre le processus de PI moins long,
+        \- Rendre le processus de PI plus simple, en facilitant l'analyse avec des formulaires de saisie simplifié ou des outils de recherche d'image automatique,
+        \- Adapter le processus de PI de façon à pouvoir l'effectuer en continue,
+        \- Adapter le processus de PI de façon à l'effectuer par plusieurs personnes en parallèle,
+
+# Nouvelle fonctionnalité sur vulcain Pro
+
+- Date de la prochaine revisite sur un point /zone donnée
+- Notification automatique sur tweeter / facebook d'une détection
+- Présenter l'image Sentinel 2 (ou 3) précédent et celle ultérieur (sans nuage) pour chaque détection
+- Stocker des informations météo à chaque détection (source à définir météo France / GFS )
+- Afficher la couverture nuageuse actuelle et historique comme couche de donnée
+
+# Refonte de Vulcain
+- ameliorer les performances d'affichage
+- identifier de nouveaux indicateurs pertinent
+- faciliter la maintenance et l'évolutivité d'une année à l'autre
+
+# Rapportage
+
+Améliorer la productivité de la production des bilans Incendie (n-1 max)
+
+- Réfléchir à caractériser l’indicateur incendies (quels paramètres, avis scientifique…).\[corrélation sécheresse / pluviométrie / perte forestière \]
+- intégrer un calcul de l'OCMC en fonction des types de milieux touchés ou risquant d'être touché.
+- Automatisation de la création du bilan incendie
+- Réalisation d'un atlas numérique sur les feux
+- Réalisation d'une storymap sur l'historique des incendies détectés

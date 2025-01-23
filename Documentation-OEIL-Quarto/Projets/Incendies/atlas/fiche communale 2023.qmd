@@ -1,0 +1,22 @@
+---
+title: Gestion des fiche communales
+last-modified: 2023-10-05 05:32:56Z
+date: 2023-10-05 02:52:52Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+- définir variable année dans les variables [de layout](https://docs.qgis.org/3.28/en/docs/training_manual/map_composer/dynamic_layout.html)
+![9828c2d72bda81bee0a1627369ffd9ba.png](../../../_resources/9828c2d72bda81bee0a1627369ffd9ba.png)
+
+Dans Layout > properties
+
+
+Configuration de l'affichage des données en fonction d'une variable d'environnement 
+
+![1a273809f87971dd2667ecb7752c6c8d.png](../../../_resources/1a273809f87971dd2667ecb7752c6c8d.png)
+
+![045d1d5450f34fed87103bd7fb7c9e32.png](../../../_resources/045d1d5450f34fed87103bd7fb7c9e32.png)
+
+![18d17078aa8780734c8977281649ec71.png](../../../_resources/18d17078aa8780734c8977281649ec71.png)

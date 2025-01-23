@@ -1,0 +1,20 @@
+---
+title: 'Stage Hélène : 6 mars 2023'
+last-modified: 2023-03-26 21:40:29Z
+date: 2023-03-05 23:11:27Z
+---
+
+
+Identifier les cartes ayant besoin d'une description des traitements 
+
+Une  synthèse éclatée dans le rapport et fusionnée en fin.
+Interprétation de correlation,  conséquences , résilience, revegetalisation lente, erosion .
+
+Jef -> Donner accès aux donnes 2021
+
+
+Un projet qgis par thématique 
+Script sql à faire
+MeP des graphiques, pas des cartes. 
+
+

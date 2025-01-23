@@ -1,0 +1,11 @@
+---
+title: DYnamis
+last-modified: 2021-11-02 22:02:30Z
+date: 2021-11-02 04:54:20Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+Spot6/7 : 2000 Km par utilisateur gratuit / an
+Jilin en cours d'étude pour l'intégrer dans le dispositif

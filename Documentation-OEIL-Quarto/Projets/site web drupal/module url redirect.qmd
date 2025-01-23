@@ -1,0 +1,11 @@
+---
+title: module url redirect
+last-modified: 2021-11-23 22:20:33Z
+date: 2021-08-06 04:01:14Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: yes
+---
+
+https://www.drupal.org/project/url_redirect

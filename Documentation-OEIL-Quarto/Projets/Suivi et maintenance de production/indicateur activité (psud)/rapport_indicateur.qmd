@@ -1,0 +1,116 @@
+---
+title: "Indicateur SI pour la convention province Sud"
+date: "2024-02-14"
+code-fold: true
+---
+
+
+```{python}
+#| params : true
+#| label: parametres
+
+from IPython.display import display, Markdown
+
+annee = 2023
+
+url_racine = "https://geoportail.oeil.nc/arcgis/rest/services"
+services_exclus =[
+    "bilbo_nc",
+    "bilbo_poc_dm_feux_mos_annuel_8",
+    "StatPaysage",
+    "SampleWorldCities"
+    ]
+
+dossiers_exclus=[
+    "Utilities",
+    "Topomaps",
+    "demo",
+    "BILBO",
+    "ALERTE_INCENDIE_FIDJI_RECETTE",
+    "ALERTE_INCENDIE_RECETTE"
+    ]
+
+display(Markdown(f"# C1-2 = Nombre de couches ajoutées ou mises à jour en  {annee} sur les géo-portails "))
+
+```
+
+
+
+Voir cet indicateur comme le nombre de service et de layers diffusées à travers le serveur Arcgis à ce jour
+
+```{python}
+#| echo: false
+#| warning: false
+#| output: true
+#| label:  C1-2
+import requests
+import pandas as pd
+from IPython.display import display, Markdown
+from tabulate import tabulate
+
+import requests
+
+def compter_layers_services(url_racine, services_exclus=[], chemin_actuel=""):
+    # Construire l'URL pour obtenir la liste des services et des dossiers
+    url_complet = f"{url_racine}/{chemin_actuel}?f=json"
+    response = requests.get(url_complet)
+    data = response.json()
+    
+    services = data.get('services', [])
+    dossiers = data.get('folders', [])
+    
+    # Filtrer les services à exclure
+    services_filtrés = [service for service in services if service['name'] not in services_exclus]
+    dossiers_filtrés = [dossier for dossier in dossiers if dossier not in dossiers_exclus]
+    nombre_services = len(services_filtrés)
+    total_layers = 0
+    
+    # Compter les layers pour chaque service filtré
+    for service in services_filtrés:
+        type_service = service['type']
+        nom_service = service['name']
+        url_service = f"{url_racine}/{nom_service}/{type_service}?f=json"
+        
+        response_service = requests.get(url_service)
+        details_service = response_service.json()
+        
+        nombre_layers = len(details_service.get('layers', []))
+        total_layers += nombre_layers
+        
+        print(f"Service: {nom_service}, Type: {type_service}, Nombre de Layers: {nombre_layers}")
+    
+    # Parcourir récursivement les dossiers
+    for dossier in dossiers_filtrés:
+        if chemin_actuel:
+            nouveau_chemin = f"{chemin_actuel}/{dossier}"
+        else:
+            nouveau_chemin = dossier
+        print(f"Parcours du dossier: {nouveau_chemin}")
+        nb_services_dossier, total_layers_dossier = compter_layers_services(url_racine, services_exclus, nouveau_chemin)
+        nombre_services += nb_services_dossier
+        total_layers += total_layers_dossier
+    
+    return nombre_services, total_layers
+
+nombre_services, total_layers = compter_layers_services(url_racine, services_exclus)
+display(
+Markdown(f"Nombre total de services :{nombre_services} \n Nombre total de layers : {total_layers}")
+)
+
+
+```
+
+
+# C1-3 =1* à l’actualisation effective des outils numériques
+
+- correction Vulcain
+- migration et évolution sécurité hydrobio
+- migration et évolution sécurité : site web / cdrn
+- upgrade Google analytic 4
+
+# C2 = nombre de tableaux de bord numériques créés
+- Pollux
+
+
+
+

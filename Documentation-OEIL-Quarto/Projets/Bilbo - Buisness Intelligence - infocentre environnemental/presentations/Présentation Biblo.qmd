@@ -1,0 +1,58 @@
+---
+title: Présentation Biblo
+last-modified: 2024-07-03 01:47:57Z
+date: 2023-02-13 02:49:37Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+22/02/2023
+# Objectif du projet
+
+L'observatoire de l'environnement a pour objectif de traduire l'état, les pressions, les réponses qui s'exercent sur l'environnement en Nouvelle Calédonie. Pour répondre à ces objectifs, nous collectons et analysons des données de suivi des milieux produites localement par les Collectivités, les miniers, Instituts de recherche, associations, entreprises, ainsi que des données produites mondialement comme celles obtenues par satellites d'observation de la terre:
+- l'occupation des sols et l'erosion, 
+- les incendies, 
+- les indicateurs de sécheresse végétale,
+- l'indicateur de pollution lumineuse
+
+La quantité d'information disponible à analyser est massive et toujours en augmentation, on parle ainsi de Big data.
+Pour optimiser notre productivité dans nos suivis, nous cherchons à automatiser les traitements et la publication des informations sous un format décionnel. 
+
+# Problématiques principales
+## Relations Spatiales
+Dans un projet Bi classic (non spatial), la valeur ajouté créée provient de croissement entre les données d'un modèle structuré par des relations entre les informations : des clés de référence.
+Dans notre cas la relation entre les informations et AUSSI spatiale, et cette spécificité implique des calculs plus lourd que des relations par clé.
+
+## SIG vers SID
+L'approche que nous avons suivi jusqu'à aujourd'hui consiste à transposer le modèle d'un Système d'information Géographique en Système d'information Décisionnelle, impliquant donc de définir quelles sont les faits et quelles sont les dimensions qui nous permettrons de répondre à nos interogations. 
+
+## Les faits
+Nos premiers résultats on aboutit à la production de données constituées des résultats d'intersection géographique entre des pressions envirommentales (les surfaces brulées par exemple ), des informations de contexte (les modes d'occupation du sol) et des informations de perimètres administratifs (les limites communales). Le résultat de ces découpages constitues notre DataWareHouse, qui permet de fournir des résultats aggregés selon nos dimensions temporelles, thematiques et surtout spatiales.
+
+Ce modèle ne nous satisfait pas pleinement car de multiple croisement sont a réaliser pour chacunes des  thématiques. Les bases de données sont par ailleurs alourdies par de nombreux doublons du fait de la hierachie entre les périmètres administratifs par exemple. D'autre par l'heterogénéités de la précisions des données que nous croisons amène à produire parfois un pailletage des objets produisant des invalidités  géometriques. 
+
+## Les DaTaMart (DTM)
+
+
+# Vers une approche plus performante
+
+C'est pourquoi nous avons envisager de modifier notre approche en s'appuyant sur une grille d'analyse hexagonale appelée H3. Cette grille a été implémenté par Uber (pour ses besoins), elle a l'avantage d'etre standard (mondiale), multi-échelle (16 résolutions), hierarchique (lien parent/enfant), et de permettre des analyses spatiales optimisées (voisinage, plus court chemin...).
+Cette grille devient dès lors notre index de référence pour toutes les données dont nous disposons et une fois que ces données ont été correctement traduites dans cette grille (par interpolation), nous disposons d'un modèle décisionnel intégrant une clé à correspondance spatiale évitant ainsi d'effectuer des découpages géométriques et des intersections successives.
+D'autre système équivalent exitent mais H3 est le seul qui représente les données sous forme hexagonale, qui de part ses propriétés géometriques nous semble la plus adapté à nos besoins (voisin à équidistance et déformations liées à la projection sont faibles ... )
+La technologie H3 apporte avec elle une librairie pour manipuler les données et offre un nombre important de fonction de traitement.
+
+
+Nous pouvons ensuite grâce à cette indexation, représenter nos données sptiales de manière cartographiques selon des variables statistiques d'aggregation, calculé dans nos DataMarts.
+
+
+# Open Source
+
+Je souhaiterai terminer cette présentation sur le fait que ce projet a été construit sur mesure  à partir de solutions Open Source. Nous nous interogeons évidement sur la perenité du projet et à la capacité des partenaires privés à s'adapter à nos choix techniques, et de proposer du support ou de la maintenance aux technologies open source sur le territoire de Nouvelle Calédonie.
+
+Merci de votre attention pour cette brêve description de projet.
+
+
+
+
+

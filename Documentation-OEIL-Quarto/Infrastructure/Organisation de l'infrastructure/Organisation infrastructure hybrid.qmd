@@ -1,0 +1,174 @@
+---
+title: Organisation d'une infrastructure hybride
+last-modified: 2024-06-28 
+date: 2024-06-23
+---
+
+L'infrastucture est organisée en 3 parties : locale, externe et cloud. L'infrastructure locale est composée de serveurs physiques et virtuels, de stockage local et de sauvegarde. L'infrastucture externe est composée de serveurs virtuels.
+L'infrastructure cloud est composée de serveurs virtuels et de services cloud.
+
+L'usage de l'infrastructure locale est principalement pour le traitement et la bancarisation des données de production. L'infrastructure externe sert aux chaines de productions de données (ex. feux, sécheresse) tandis que l'infrastructure cloud est utilisée pour la publication web et les applications métiers.
+
+
+## Infra Locale
+### Firewall
+Serveur de traffic réseau et de sécurité. gère les accès internet (entrant-sortant) ainsi que la gestion des VPN. Pièce maitraisse et sensible du réseau interne. Des règles de sécurité sont mises en place pour limiter les accès et les risques de failles. Il faut toutefois s'assurer de la mise à jour régulière du firmware et des règles de sécurité.
+IP: 172.20.5.254
+### Isengard
+Serveur de production contenant plusieurs applications dockerisées, déployées par le fichier docker compose du projet Backup.
+- Applications et services exploitées:
+  - Container Docker : 
+    - Portainer Agent : logiciel de gestion des containers docker
+    - Postgres : Base de donnée pour le traitement, les applications et la bancarisation de production
+    - GDAL : ETL et traitement geospatial
+    - JupyterHub : Environnement de travail de datascience pour les observateurs
+    - Application dashboards sentinel 2 : Application de visualisation des données Sentinel 2 pour le contrôle qualité et la photo-interpretation
+  - Conda environnement : 
+    - Dask worker
+    - Scheduler Dask de production
+
+- Backup des données de production apar dumpALL quotidien & copie par WALL (Barman) avec réplication cloud en temps quasi réel
+- Monitoring :
+  - Interface de service de base Linux
+
+### Mordor
+Serveur de qualification contenant plusieurs applications dockerisées, déployées par le fichier docker compose du projet Backup.
+- Application et services exploitées:
+  - Containers Docker : 
+    - Portainer Agent : logiciel de gestion des containers docker
+    - Agent Azure Pipeline : pour le déploiement des applications avec Azure DevOps en integration continue
+    - Postgres : Base de donnée pour le traitement, les applications et la bancarisation de qualification
+    - Geoserveur : serveur de carte opensource de qualification
+    - Ckan : catalogue de donnée de qualification
+
+  - Conda environnement : 
+    - Dask worker
+    - Scheduler Dask de qualification
+
+- Monitoring :
+  - Interface de service de base Linux
+
+### HyperV - Windows 2016
+Serveur de virtualisation l'infrastructure locale.
+
+#### VM AD - Windows 2016
+Serveur de gestion de l'Active Directory et du domaine local.
+- Application et services exploitées:
+  - Active directory de production
+  - DNS oeil.local
+  - Agent ESET 
+- Monitoring :
+  - Interface Hyperv
+  - Interface de service de base windows
+
+#### VM INFRA - Windows 2016
+Serveur Windows de gestion de l'infrastructure locale.
+- Application et services exploitées:
+  - Azure AD connect de production
+  - Agent ESET, avec verification scheluer du contenu du drive stagiaire
+- Monitoring :
+  - Interface Hyperv
+  - Interface de service de base windows
+
+Un backup à prévoir des images des VMs sur NAS en local (QNAP o Syno) et dans le Cloud
+
+### Stockage Local
+#### NAS Synology Moria
+Serveur de fichiers globale de l'organisation. Plusieurs volumes sont dédiés à des usages spécifiques.
+- Volumes :
+  - **Local Commun** :
+  Espace disque dédié aux fichiers de travail, rapports, études, etc. Certains dossier comme ADMINISTRATIF_PRIVE ont des droits d'accès restreint à des groupe de l'Active Directory.
+    - Backup par Novatech vers le serveur 1 fois / jour
+
+  - **Local Archive** :
+  Espace disque dédié aux archives des données
+    - Stockage RAID 5 sans backup mais possibilité de sauvegarde sur un autre support pour certaines données
+
+  - **Local CalPaye** :
+  Espace disque dédié aux fichiers de l'application de paye Calpaye, accès restreint.
+    - Backup par Novatech vers le serveur 1 fois / jour
+
+- Applications et services exploitées:
+  - DSM Synology : Système de gestion du stockage et d'administration de droit sur les dossiers.
+  - Novatech : Backup des données de production
+  - Syncovery : Application hautement configurable pour le Backup et la migration des fichers entre espace de stockage
+
+- Monitoring :
+  - Interface Synology
+  - Rapport et notification par email
+
+#### NAS QNAP Rivendell
+Serveur de fichiers de transfert/tampon en cas de maintenance sur les volumes du NAS de production.
+- Monitoring :
+  - Interface QNAP
+  - Rapport et notification par email
+
+
+##  Infrastructure Externe
+### Serveur traitement Insight
+Serveur de traitement et stockage de données et de raster. Il contient notamment les chaines de traitement incendie et sécheresse. Le serveur est accessible via un VPN et un compte spécifique pour les agents de l'OEIL.
+- Applications et services exploitées:
+  - Chaine de traitement incendie
+  - 4 Chaines de traitement sécheresse Dockerisées
+- Stockage 1To
+- Backup des fichiers générés régulièrement sauvegardés localement grace un rsync vers le dossier Archive et la base de données
+- Monitoring :
+  - Interface de service de base Linux
+
+### NAS geostorage Insight
+Espace de stockage pour les données de traitement et de production du serveur Insight.
+- Stockage 3To
+
+
+##  Infrastructure Cloud
+### Geoportail : x5 large - windows 2016
+Serveur Windows de production applicatif hébergé dans le tenant AWS de l'OEIL
+- Applications et services exploitées:
+  - Arcgis Server
+  - SQL Server
+  - FME et script ETL alerte Incendie 
+  - Vulcain Pro
+  - Application Topomat
+  - Script ETL divers
+- Stockage 1To
+- Snapshot du serveur 1 fois / jour
+- Monitoring :
+  - Interface AWS
+  - Interface Arcgis Server / manager
+
+### Serveur Site Web : t2 medium - Linux
+Serveur Linux de production applicatif hébergé dans le tenant AWS de l'OEIL
+- Applications et services exploitées:
+  - CMS Drupal
+  - Application CDRN
+- Monitoring :
+  - Application de consultation des logs de fréquentation https://goaccess.io/
+  - Interface AWS
+- Stockage 200Go
+- Snapshot du serveur 1 fois / jour
+  
+### Serveur Hydrobio : t2 small - Linux
+Serveur Linux de production applicatif hébergé dans le tenant AWS de l'OEIL
+- Applications et services exploitées:
+  - Application .NET
+  - Base de données MySQL
+- Stockage 100 Go
+- Snapshot régulier mis en place mais accès limité aux données de la base
+- Monitoring :
+  - Interface AWS
+
+### Serveur Barman-aws :  t2 small
+Serveur Linux de production de backup hébergé dans le tenant AWS de l'OEIL
+- Applications et services exploitées:
+  - Barman : backup des bases de données PITR (Point In Time Recovery) de PostgreSQL de production locale
+- Stockage 1000 Go
+- Monitoring :
+  - Interface AWS
+
+### RDS remote database service : db.t4g.large
+Serveur PostgreSQL (Aurora) de production pour la publication web de l'OEIL.
+- Snapshot quotidien avec un historique de 1 semaine
+- Monitoring :
+  - Interface AWS
+
+

@@ -1,0 +1,271 @@
+---
+title: LP DAAC - MODIS Overview
+last-modified: 2021-07-29 21:56:54Z
+date: 2021-07-29 21:56:54Z
+source: >-
+  https://lpdaac.usgs.gov/data/get-started-data/collection-overview/missions/modis-overview/
+---
+
+### Table of Contents
+
+- [Introduction](#introduction)
+- [MODIS Naming Conventions](#modis-naming-conventions)
+- [MODIS Temporal and Spatial Resolution](#modis-temporal-and-spatial-resolution)
+- [MODIS Tiling Systems](#modis-tiling-systems)
+- [MODIS Data Processing](#modis-data-processing)
+- [MODIS Spectral Bands](#modis-spectral-bands)
+- [MODIS Metadata](#modis-metadata)
+- [MODIS Golden Month Products](#modis-golden-month-products)
+- [MODIS Tools and Services](#modis-tools-and-services)
+
+* * *
+
+[### Introduction](#introduction)
+
+The Moderate Resolution Imaging Spectroradiometer (MODIS) instrument is operating on both the Terra and Aqua spacecraft. The Terra satellite was launched on December 18, 1999 and the Aqua on May 4, 2002. It has a viewing swath width of 2,330 km and views the entire surface of the Earth every one to two days. Its detectors measure 36 spectral bands and it acquires data at three spatial resolutions: 250 m, 500 m, and 1,000 m.
+
+[Back to top](#top)
+
+* * *
+
+[### MODIS Naming Conventions](#modis-naming-conventions)
+
+#### MODIS Filenames
+
+MODIS filenames (i.e., the local granule ID) follow a naming convention which gives useful information regarding the specific product.
+
+In this example of a swath product, the filename **MOD14.A2019159.2345.006.2019160032437.hdf** indicates:
+
+- **MOD14** \- Product Short Name
+- **A2019159** \- Julian Date of Acquisition (A-YYYYDDD)
+- **2345** -Hours and Minutes of Acquisition (HHMM)
+- **006** \- Collection Version
+- **2019160032437** \- Julian Date of Production (YYYYDDDHHMMSS)
+- **.hdf** \- Data Format (HDF-EOS)
+
+In this example of a tiled product, the filename **MOD09A1.A2006001.h08v05.006.2015113045801.hdf** indicates:
+
+- **MOD09A1** \- Product Short Name
+- **A2006001** \- Julian Date of Acquisition (A-YYYYDDD)
+- **h08v05** \- Tile Identifier (horizontalXXverticalYY)
+- **006** \- Collection Version
+- **2015113045801** \- Julian Date of Production (YYYYDDDHHMMSS)
+- **.hdf** \- Data Format (HDF-EOS)
+
+In this example for a Climate Modeling Grid (CMG) product, the filename **MOD09CMG.A2019169.006.2019171025907.hdf** indicates:
+
+- **MOD09CMG –** Product Short Name
+- **A2019169** – Julian Date of Acquisition (A-YYYYDDD)
+- **006** – Collection Version
+- **2019171025907** – Julian Date of Production (YYYYDDDHHMMSS)
+- **.hdf** – Data Format (HDF-EOS)
+
+#### MODIS Product Long Name
+
+The MODIS Product Long Name (i.e., Collection-Level) naming convention provides useful information regarding the product and indicates if the associated files for the dataset are swath, Sinusoidal tile grid, or CMG. Swath Products are produced in 5-minute temporal increments of satellite acquisition.
+
+In this example for a tiled dataset, all products belonging to the **MODIS/Terra Surface Reflectance 8-Day L3 Global 500m SIN Grid V006** collection have the following characteristics:
+
+- **MODIS/Terra** \- Instrument/Satellite
+- **Surface Reflectance** \- Geophysical Parameter
+- **8-Day** \- Temporal Resolution
+- **L3** \- Processing Level
+- **Global** \- Global Coverage
+- **500m** \- Spatial Resolution
+- **SIN Grid** \- Sinusoidal Grid
+- **V006** \- Collection Version
+
+In this example the for a CMG product, the MODIS Product Long Name convention: **MODIS/Terra Surface Reflectance Daily L3 Global 0.05 Deg CMG V006** has the following characteristics:
+
+- **MODIS/Terra** – Instrument/Satellite
+- **Surface Reflectance** – Geophysical Parameter
+- **Daily** – Temporal Resolution
+- **L3** – Processing Level
+- **Global** – Global Coverage
+- **0**.**05 Deg –** Spatial Resolution
+- **CMG** – Climate Modeling Grid
+- **V006** – Collection or Version
+
+In this example for a swath product, the MODIS Product Long Name convention: **MODIS/Aqua Thermal Anomalies/Fire 5-Minute L2 Swath 1km** has the following characteristics:
+
+- **MODIS/Aqua** – Instrument/Satellite
+- **Thermal Anomalies/Fire** – Geophysical Parameter
+- **5-Minute** – Temporal Resolution
+- **L3** – Processing Level
+- **Swath** – Swath
+- **1km** – Spatial Resolution
+- **V006** \- Collection or Version
+
+[Back to top](#top)
+
+* * *
+
+[### MODIS Temporal and Spatial Resolution](#modis-temporal-and-spatial-resolution)
+
+#### MODIS Temporal Resolution
+
+The higher level MODIS Land products distributed from the LP DAAC are produced at various temporal resolutions, based on the instruments' orbital cycle. These time steps are possible in the generation of MODIS Land products:
+
+- **Daily, 4-Day, 8-Day, 16-Day, Monthly, Quarterly, Yearly**
+
+#### MODIS Spatial Resolution
+
+The MODIS instruments acquire data in three native spatial resolutions:
+
+- **Bands 1–2** – 250 meter
+- **Bands 3–7** – 500 meter
+- **Bands 8–36** – 1000 meter
+
+The higher level MODIS Land Products distributed from the LP DAAC are produced at four nominal spatial resolutions: 250 meter, 500 meter, 1000 meter, and 5600 meter (0.05 degrees).
+
+[Back to top](#top)
+
+* * *
+
+[### MODIS Tiling Systems](#modis-tiling-systems)
+
+#### Sinusoidal Tile Grid
+
+Most standard MODIS Land products use this Sinusoidal grid tiling system. Tiles are 10 degrees by 10 degrees at the equator. The tile coordinate system starts at (0,0) (horizontal tile number, vertical tile number) in the upper left corner and proceeds right (horizontal) and downward (vertical). The tile in the bottom right corner is (h35,v17).
+
+![Image of the MODIS sinusoidal tiling system.](../../_resources/modis_sinusoidal_grid.width-800_c0ab715761a242bfa4.jpg)
+
+Higher resolution products with a spatial resolution of 250, 500, and 1,000 meters are orgainized in non-overlapping tiles based on a sinusoidal grid. There are 460 non-fill tiles covering the globe.
+
+#### Climate Modeling Grid (CMG)
+
+The Climate Modeling Grid products provide global coverage in a Geographic Latitude and Longitude projection at a resolution of 0.05 degrees (5,600 meters at the equator). The geographic coordinates of the upper-left corner of the upper-left pixel of a MODIS CMG image are -180.00 degrees longitude, 90.00 degrees latitude. The geographic coordinates of the lower-right corner of the lower right pixel are 180.00 degrees longitude, -90.00 degrees latitude.
+
+![Image of the MODIS Climate Modeling Grid.](../../_resources/CMG.width-800_bae560a9c0c34a4bbd8055ddc5359b76.png)
+
+The CMG consists of 7,200 columns and 3,600 rows representing the entire globe for use in climate simulation models.
+
+[Back to top](#top)
+
+* * *
+
+[### MODIS Data Processing](#modis-data-processing)
+
+#### MODIS Processing Levels
+
+LP DAAC distributes MODIS Land data processed to level-2 or higher:
+
+- **Level-2**: derived geophysical variables at the same resolution and location as level-1 source data (swath products)
+- **Level-2G**: level-2 data mapped on a uniform space-time grid scale (Sinusoidal)
+- **Level-3**: gridded variables in derived spatial and/or temporal resolutions
+- **Level-4**: model output or results from analyses of lower-level data
+
+#### MODIS Processing Description
+
+Along with all the data from other instruments on board the Terra and Aqua platforms, MODIS data are transferred to ground stations in White Sands, New Mexico, via the Tracking and Data Relay Satellite System (TDRSS). The data are then sent to the EOS Data and Operations System (EDOS) at the Goddard Space Flight Center. After Level-0 processing at EDOS, the Goddard Earth Sciences Data and Information Services Center (GES DISC) produces the Level 1A, Level 1B, geolocation and cloud mask products.
+
+Higher-level MODIS land and atmosphere products are produced by the MODIS Adaptive Processing System (MODAPS), and then are parceled out among three DAACs for distribution. Ocean color products are produced by the Ocean Color Data Processing System (OCDPS) and distributed to the science and applications community.
+
+[Back to top](#top)
+
+* * *
+
+[### MODIS Spectral Bands](#modis-spectral-bands)
+
+| Band | Reflected Range (nm) | Emitted Range (µm) | Band Explanation |
+| --- | --- | --- | --- |
+| 1   | 620–670 |     | Shortwave/VIS |
+| 2   | 841–876 |     | Shortwave/NIR |
+| 3   | 459–479 |     | Shortwave/VIS |
+| 4   | 545–565 |     | Shortwave/VIS |
+| 5   | 1230–1250 |     | Shortwave/NIR |
+| 6   | 1628–1652 |     | Shortwave Infrared/SWIR |
+| 7   | 2105–2155 |     | Shortwave Infrared/SWIR |
+| 8   | 405–420 |     | Shortwave/VIS |
+| 9   | 438–448 |     | Shortwave/VIS |
+| 10  | 483–493 |     | Shortwave/VIS |
+| 11  | 526–536 |     | Shortwave/VIS |
+| 12  | 546–556 |     | Shortwave/VIS |
+| 13h | 662–672 |     | Shortwave/VIS |
+| 13l | 662–672 |     | Shortwave/VIS |
+| 14h | 673–683 |     | Shortwave/VIS |
+| 14l | 673–683 |     | Shortwave/VIS |
+| 15  | 743–753 |     | Shortwave/VIS |
+| 16  | 862–877 |     | Shortwave/NIR |
+| 17  | 890–920 |     | Shortwave/NIR |
+| 18  | 931–941 |     | Shortwave/NIR |
+| 19  | 915–965 |     | Shortwave/NIR |
+| 20  |     | 3.660–3.840 | Longwave thermal Infrared/TIR |
+| 21  |     | 3.929–3.989 | Longwave thermal Infrared/TIR |
+| 22  |     | 3.929–3.989 | Longwave thermal Infrared/TIR |
+| 23  |     | 4.020–4.080 | Longwave thermal Infrared/TIR |
+| 24  |     | 4.433–4.498 | Longwave thermal Infrared/TIR |
+| 25  |     | 4.482–4.549 | Longwave thermal Infrared/TIR |
+| 26  | 1360–1390 |     | Shortwave/NIR |
+| 27  |     | 6.535–6.895 | Longwave thermal Infrared/TIR |
+| 28  |     | 7.175–7.475 | Longwave thermal Infrared/TIR |
+| 29  |     | 8.400–8.700 | Longwave thermal Infrared/TIR |
+| 30  |     | 9.580–9.880 | Longwave thermal Infrared/TIR |
+| 31  |     | 10.780–11.280 | Longwave thermal Infrared/TIR |
+| 32  |     | 11.770–12.270 | Longwave thermal Infrared/TIR |
+| 33  |     | 13.185–13.485 | Longwave thermal Infrared/TIR |
+| 34  |     | 13.485–13.785 | Longwave thermal Infrared/TIR |
+| 35  |     | 13.785–14.085 | Longwave thermal Infrared/TIR |
+| 36  |     | 14.085–14.385 | Longwave thermal Infrared/TIR |
+
+[Back to top](#top)
+
+* * *
+
+[### MODIS Metadata](#modis-metadata)
+
+MODIS products have two sources of metadata: the embedded HDF metadata, and the external ECS metadata. The HDF metadata contains valuable information including global attributes and dataset specific attributes pertaining to the granule. The structure of this metadata is broadly similar to that of an ASTER HDF file. The ECS (generated by the EOSDIS Core System) .met file is the external metadata file in XML format, which is delivered to the user along with the MODIS product. It provides a subset of the HDF metadata. Some key features of certain MODIS metadata attributes include the following:
+
+- The **Xdim and Ydim** represent the rows and columns of the data, respectively
+- The **Projection and ProjParams** identify the projection and its corresponding projection parameters
+- The **Sinusoidal Projection** is used for most of the gridded MODIS land products, and has a unique sphere measuring 6371007.181 meters
+- The **UpperLeftPointMtrs** is in projection coordinates, and identifies the very upper left corner of the upper left pixel of the image data
+- The **LowerRightMtrs** identifies the very lower right corner of the lower right pixel of the image data. These projection coordinates are the only metadata that accurately reflect the extreme corners of the gridded image
+- There are additional **BOUNDINGRECTANGLE and GRINGPOINT** fields within the metadata, which represent the latitude and longitude coordinates of the geographic tile corresponding to the data
+
+The Data Set attributes contain specific SDS information such as the data range and applicable scaling factors for the data. The LP DAAC data products page provides these details within a concise document for each of the products. An HDF-EOS file also contains EOS core metadata essential for EOS search services. Any tool that processes standard HDF files can read an HDF-EOS file. However, it is difficult for a standard HDF call to interpret HDF-EOS geolocation or temporal information without further knowledge of the file structure.
+
+[Back to top](#top)
+
+* * *
+
+[### MODIS Golden Month Products](#modis-golden-month-products)
+
+Early in the mission, the MODIS Science Team decided to maintain a record of multiple data versions of Aqua- and Terra-derived MODIS products from a unique temporal bracket. Called the “Golden Month,” it covers 40 days of acquired data and all derived products from August 29, 2002 to October 7, 2002 (2002-241 to 2002-280). Several reasons define this choice of acquisition window, which include the following:
+
+- This acquisition window provides the first interval when both Terra and Aqua MODIS data were collected uninterrupted
+- Previous (V003, V004, V005) and subsequent (V006) data versions are available
+- It avoids the end of July 2002 Aqua safe-hold incident
+- It includes the end of the Northern Hemisphere growing season
+- The period contains the fall equinox, which ensures that both hemispheres are illuminated
+- It includes two full 16-day periods (2002-241 to 2002-272)
+- It includes all 8-day periods overlapping September 2002
+
+[Back to top](#top)
+
+* * *
+
+[### MODIS Tools and Services](#modis-tools-and-services)
+
+Data access options such as Data Pool, Earthdata Search Client, AppEEARS, and EarthExplorer can be found under [Tools](https://lpdaac.usgs.gov/tools).
+
+An HDF-EOS file contains information essential for NASA data access tools and services. Most software programs that can process standard HDF files can read an HDF-EOS file. However, it is difficult for a standard HDF call to interpret HDF-EOS geolocation or temporal information without further knowledge of the file structure.
+
+Certain open source tools and proprietary tools are available for use with MODIS HDF-EOS products and are included in the following list:
+
+Open Source Tools
+
+- [QGIS](http://www.qgis.org/en/site/)
+- [Panoply](http://www.giss.nasa.gov/tools/panoply/)
+- [HDFView](https://support.hdfgroup.org/products/java/hdfview/)
+- [Explorer series](http://www.space-research.org/)
+- [GDAL](https://gdal.org/)
+
+Proprietary Tools
+
+- [ArcMap](http://www.esri.com/software/arcgis)
+- [ENVI/IDL](http://www.harrisgeospatial.com/)
+- [MATLAB](https://www.mathworks.com/products/matlab/)
+- [Mathematica](http://www.wolfram.com/mathematica/)
+
+[Back to top](#top)

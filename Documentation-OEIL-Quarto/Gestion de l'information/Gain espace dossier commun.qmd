@@ -1,0 +1,33 @@
+---
+title: Gain espace dossier commun
+last-modified: 2021-09-02 22:42:49Z
+date: 2021-09-02 05:14:17Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+- Supprimer tous les dossiers :
+	- OLD / Old / old etc...
+	- Z_Old
+	- _Old
+	- 0-old 0_OLD
+
+Dans le dossier A_Activités :
+- Déplacement automatique des fichiers présents dans (livrables) vers un espace fichier dédié à l'intégration des données :
+	- en base de donnée, 
+	- sur le CDRN 
+	- dans des applications de gestion 
+	- dans une médiathèque
+
+Les fichiers sont déplacés dans une arborescence similaire à l'original, comportant les années et les noms de projet.
+<b-notice>
+L'ensemble du dossier destiné à l'intégration est automatiquement Archivé/backupé.
+Les données / documents issues des projets sont exploitées/valorisées à travers nos outils (base de données, CDRN, Geoportail, Médiathèque....).
+</b-notice>
+Dans l'ensemble des dossiers :
+- Compression de toutes les images JPG à 70% de compression
+- Identification de doublons et suppression manuelle par le pôle concerné
+
+
+- Identification des gros fichiers (> = à 1 GO)

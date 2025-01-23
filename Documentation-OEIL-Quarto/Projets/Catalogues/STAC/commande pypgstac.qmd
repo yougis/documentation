@@ -1,0 +1,32 @@
+---
+title: commande pypgstac
+last-modified: 2023-10-03 01:07:50Z
+date: 2023-10-03 01:05:18Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+```sh
+dossier_principal="/media/archive/STAC"
+username=username
+password=password
+host=localhost
+dbname=postgis
+port=5432
+DATABASE_URL="postgresql://$username:$password@$host:$port/$dbname"
+
+
+
+find "$dossier_principal" -type d -regex ".*/COLLECTION[^/]*" -print | while read -r sous_dossier
+do
+    # Faites ce que vous voulez avec le sous-dossier ici
+    pypgstac load collections    $sous_dossier/*.json --dsn $DATABASE_URL --method insert_ignore
+done
+
+find "$dossier_principal" -type d -regex ".*/ITEM[^/]*" -print | while read -r sous_dossier
+do
+    # Faites ce que vous voulez avec le sous-dossier ici
+    pypgstac load items    $sous_dossier/*.json --dsn $DATABASE_URL --method insert_ignore
+done
+```

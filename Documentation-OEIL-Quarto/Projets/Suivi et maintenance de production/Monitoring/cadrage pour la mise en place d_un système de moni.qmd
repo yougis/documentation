@@ -1,0 +1,19 @@
+---
+title: cadrage pour la mise en place d'un système de monitoring
+last-modified: 2023-08-02 20:50:55Z
+date: 2023-08-02 20:45:32Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Veille sur ElasticStack
+- installation d'agent
+- manipulation des log, transformation
+- collecte et indexation des log et des traces
+- visualitation des graph
+
+Machine et service à suivre :
+- infra AWS 
+- infra local
+- infra externe (insight, multivalency, alphalog)

@@ -1,0 +1,20 @@
+---
+title: SMA erosion Etienne Tack
+last-modified: 2022-10-02 22:12:40Z
+date: 2022-10-02 21:15:49Z
+---
+
+3 octobre 2022
+Pearl
+Isabelle rouet
+Marc despinoy 
+
+Lib python Mesa agent
+Demarche itératives de la génération du modèle 
+Utile pour la prediction
+
+Besoin de valider avec des données terrains.
+
+Échelle d'analyse et d'observation des résultats: pas égale aux données. 
+
+Engagement des captages 

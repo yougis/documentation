@@ -1,0 +1,66 @@
+---
+title: deploy.sh
+last-modified: 2024-07-02 21:02:38Z
+date: 2024-04-10 02:10:17Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+```bash
+export IPS=172.20.12.13
+export IPS=172.20.10.106,172.20.10.113,172.20.10.114,172.20.10.112,172.20.10.115
+export IPS=172.20.9.100,172.20.9.105
+export IPS=172.20.12.14,172.20.12.15,172.20.12.16,172.20.12.17
+export IPS=172.20.12.11,172.20.12.13
+export IPS=172.20.10.106,172.20.10.113,172.20.10.112,172.20.9.100,172.20.12.14,172.20.12.15,172.20.12.16,172.20.12.17
+export IPS=172.20.12.15,172.20.12.17,172.20.12.14
+
+```
+
+```bash
+cd && cd docker_backup &&
+./deploy.sh conda --hosts  $IPS --packages git+https://informatique:***@dev.azure.com/Oeilnc/Bilbo/_git/bilbo-packages  --prod
+```
+
+
+
+```bash
+172.20.12.15,172.20.12.17,172.20.12.14,172.20.10.113,172.20.12.11
+172.20.12.16,172.20.10.112,172.20.10.113
+
+```
+
+
+
+
+```bash
+cd && cd docker_backup &&
+./deploy.sh worker --hosts  $IPS  --prod
+```
+
+
+```bash
+taskkill /F /IM python.exe
+git clone --filter=blob:none --quiet 'https://informatique:****@dev.azure.com/Oeilnc/Bilbo/_git/bilbo-packages'
+```
+
+
+
+
+
+
+```bash
+set GIT_TERMINAL_PROMPT=0
+set GIT_SSH_COMMAND='ssh -oBatchMode=yes'
+set GIT_ASKPASS=echo
+set SSH_ASKPASS=echo
+set GCM_INTERACTIVE=never
+```
+
+
+Sur windows, une interface pop lorsqu'on utilise git, il s'agit d'un helper. pour le desactiver, car il stop l'execution de la commande git, il faut lancer cette commande :
+
+```bash
+Miniconda3\condabin\conda run --name gis311 git config --system --unset credential.helper
+```

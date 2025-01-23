@@ -1,0 +1,12 @@
+---
+title: H3 ressources divers
+last-modified: 2023-01-26 02:57:09Z
+date: 2023-01-26 02:56:47Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+https://plugins.qgis.org/plugins/h3_toolkit/
+
+https://www.andrewmahon.info/blog/predicting-wildfires-3

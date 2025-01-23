@@ -1,0 +1,26 @@
+---
+title: mail Theia
+last-modified: 2023-09-26 05:28:21Z
+date: 2023-09-26 04:39:47Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Chers Maxime, Valentine,
+
+Bien que ce message arrive un peu tardivement, nous tenions à vous remercier pour les échanges que nous avons eu lors de notre dernière réunion.  
+
+J'aimerais également vous informer que nous avons entrepris de réaliser une évaluation de la faisabilité et de la pertinence d'intégrer tout ou partie de l'algorithme de votre chaîne de traitement incendie, dans notre processus de contrôle qualité des données incendies de l'OEIL. 
+
+Evidement, avant de procéder à toute intégration, nous menons une étude de faisabilité  afin d'évaluer la compatibilité avec notre processus de détéction des surfaces brûlées.
+
+Notre paternaire privé (INSIGHT) entrera en contact avec vous prochainement afin qu'ils établissent un devis pour l'étude que nous leur avons demandé.
+
+Je souhaite également vous présenter notre nouvelle chef de projet, Oriane qui sera chargée de coordonner cette étude de faisabilité.
+
+Nous pourrions aussi faire un point régulier sur nos avancées respectives sur ce sujet. 
+
+Merci pour votre collaboration,
+
+Bien cordialement

@@ -1,0 +1,43 @@
+---
+title: 'CR Démarrage Phase 1 du projet Secheresse : 09/02/2023 '
+last-modified: 2023-02-13 02:35:18Z
+date: 2023-02-08 21:42:18Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+09/02/2023 08:42
+
+- point projet à formaliser (fin phase 0 / début phase 1) : par Hugo 
+
+programmer un point avec SEB : par Hugo 
+
+discusion sur la gestion du code source et des méthodes de développement : origin/remote du code git pour Mathis 
+
+partenariat : 
+- pour les autres territoires, stand by de la phase 2
+- pour les locaux en attend la qualif
+
+
+convention meteo France : à rédiger par Hugo
+
+METEO FRANCE fait évoluer le modèle de prévision (en cours d'évolution, présentation faite à Mathis régulièrement): Le modèle combine donnée pluvi in situ + VHI + GDO (copernicus)
+vois si le modèle est utilisable et fiable sans données in situ, ce qui serait bien pour nous.
+Donne un indicateur de prévision de sécheresse amélioré nuançant la secheresse selon le dernier VHI (ou historique ?).
+
+
+Travail du masque nuage L7 : Ok (ce travail n'etait pas anticipé)
+
+Synthèse temporelle L7 : quel est la pertinence de faire du décadaire?
+- Il y a du code spécifique à faire pour le calcul de l'indicateur.
+
+
+Decommissionnement MODIS :
+- date incertaine
+- migration sur VIIRS avec conservation de l'historique MODIS dans une version 2
+
+Utilisation des données Modis depuis GEE ? non, on fait à partir de la source la plus fréquente pour pouvoir atteindre la meilleur fréquence de mise à jour de l'indicateur.
+
+fin de semaine : maj des taches faite et point d'effort sur Azure (Par Mathis et Hugo)
+

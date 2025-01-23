@@ -1,0 +1,53 @@
+---
+title: Proposition de convention DAVAR
+last-modified: 2024-01-29 03:46:04Z
+date: 2021-07-29 10:45:37Z
+---
+
+**OBJET**
+
+La présente convention a pour objet de formaliser la manifestation d’intérêt et la volonté commune l’OEIL et de la DAVAR à collaborer dans un esprit de partenariat pour mieux connaître et caractériser, sur la base de lots de données existants, la pression anthropiques et naturelles sur les périmètres de protection des eaux et des bassins versant AEP. 
+
+
+**OBJECTIFS**
+
+Les parties s'accordent à collaborer à la réalisation des objectifs généraux suivants :
+- Pour l’ŒIL, de réaliser une étude permettant d'identifier environs 10 indicateurs de pressions anthropiques et naturelles sur les PPE et bassins versant AEP (BV-AEP). Les PPE pourront ainsi caractérisés selon :
+	- la qualité environnementale du périmètre, 
+	- la présence d’élément comportant un risque potentiel de pollution (sédimentaire, organique, chimique),
+	- la dynamique d’évolution de certains indicateurs.
+
+- Pour l’ŒIL, en collaboration avec la DAVAR, d’opérer la caractérisation des PPE/BV-AEP grâce à la production desdits indicateurs construits à partir des données identifiées et compilées au cours de l'étude, à savoir par exemple :
+- Feux, 
+- Erosion,
+- Géologie
+- Mode d'occupation du sol / BD Topo (bâti,…)
+- Axes routiers majeurs,
+- ICPE,
+- Aires protégées,
+- Métadonnées ATYA,
+- Etat de dégradation par rapport aux pressions (WWF) 
+- Activités minières.
+
+Les données devront avoir la qualité requise pour cette étude en terme d’étendue spatiale, temporelle et d’homogénéité. Ceci sera apprécié par l’ŒIL avec validation de la DAVAR.
+
+- Pour l’ŒIL, en collaboration avec la DAVAR, d’aboutir à la définition des seuils et des classes de valeurs des indicateurs. En vue d’obtenir les caractères pouvant dégrader ou améliorer la qualité du périmètre.
+
+- Pour l’ŒIL, de fournir une table de donnée avec chaque PPE/BV-AEP en ligne, et la valeur d'environ 10 indicateurs en attributs déclinée jusqu'à 3 années. L'année la donnée ayant permis de constituer l'indicateur sera indiqué pour chaque indicateur, permettant ainsi d'identifier des dynamiques.
+
+
+| Nom	| Annee Route |	Indicateur Route Niv1 en Km	| Annee Surface Brulée	| Indicateur surface brulée en HA	| geometry|
+|---|---|---|---|---|---|
+|PPE 1 |Tontouta	|2019	|2020|	27	|4	|MULTIPOLYGON(...)|
+
+
+
+- Pour l’ŒIL, de concevoir un outil de visualisation des indicateurs, type Dashboard ESRI. L’outil permettra d’explorer les données disponible dans la table des indicateurs sans règle de gestion complexe.
+
+
+- Pour l’ŒIL, de fournir la liste de production suivante :
+	- la base de données collectées nécessaire à la création des indicateur,
+	- un rapport méthodologique présentant les modalités de création des indicateurs, les paramètres et les géo-traitements réalisés à partir des différentes sources de données,
+	- les tableaux et représentations cartographiques des indicateurs selon 3 dimensions géographiques différentes (bassin versant, commune, Province).
+
+- Pour la DAVAR, d’engagements notamment financiers à étudier en fonction des livrables souhaités par la DAVAR.

@@ -1,0 +1,32 @@
+---
+title: Préparation réunion de démarage
+last-modified: 2021-10-26 04:07:12Z
+date: 2021-10-25 22:23:09Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+
+- rappel des objectifs de la convention/prestation
+- présentation générale sur la gestion de projet agile
+	- matrice des indicateurs pressentis
+		- libelle
+		- typologie de l'indicateur : Etat (eg. concentration métaux) / Pression (eg. présence d'habitation) / Réponse (eg. aménagements de continuité écologique)
+		- objectif de l'indicateur
+		- importance de l'indicateur (DAVAR), dont le degrés d'urgence.
+		- nécessaire pour créer d'autre indicateur : oui/non
+	- Liste des données
+		- accessibilité des  données
+		- pertinence des données exogènes : Faible/Moyenne/Élevée
+		- exploitabilité : difficulté de réalisation (coût)
+		- analyse temporelle possible : oui/non
+		- suivi annuel possible : oui/non
+		- étendue de la couverture géographique (NC/Provinces)
+	
+	- liste des livrables
+
+- Organisation : rôle des parties prenante
+	- DAVAR :mise à disposition des données exogènes
+
+- Organisation : macro planning 

@@ -1,0 +1,44 @@
+---
+title: reunion atlas
+last-modified: 2023-11-09 05:56:34Z
+date: 2023-11-09 04:18:48Z
+---
+
+plus d'incendie detecté
+
+les fiches avec 0 surfaces brulées Sentinel
+
+source : VIIRS et SENTINEL 
+rue Tourville
+
+avoir un graphique avec début 2012
+on filtrera les années suivantes plus tard si besoin 
+
+foncier : 
+- faire une proposition : diagramme en étoile
+
+faire des propositions homogénisé.
+
+
+nombre d'hectares brulés concernant la thématique. 
+
+
+consacré le bord bas à gauche à la ressource en eau : 
+avec loupe 
+avec nouveau croisement :
+- ultramafique / ppe BVAEP (à travailler avec la DASS) fab voit avec eux.
+- liste des captages touchés sous forme de liste
+
+image de remplacement eau en cas de 0
+
+distance captage :
+pas de changement de couleur
+
+Pour la vegetation : image de remplacement
+
+evo : OCMC à la commune
+
+
+bug titre espece menacées boulouparis
+
+

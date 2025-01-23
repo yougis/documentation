@@ -1,0 +1,132 @@
+---
+title: Real-Time Data Access - Satellite Data Services
+last-modified: 2023-09-19 23:25:21Z
+date: 2023-09-19 23:25:21Z
+source: https://www.ssec.wisc.edu/datacenter/real-time-access/
+---
+
+# [![SSEC](https://www.ssec.wisc.edu/datacenter/wp-content/themes/datacenter/includes/images/ssec-logo.png)](https://www.ssec.wisc.edu/) [Satellite Data Services](https://www.ssec.wisc.edu/datacenter/)
+
+- [Home](https://www.ssec.wisc.edu/datacenter/)
+- [Real-Time Data Access](https://www.ssec.wisc.edu/datacenter/real-time-access/)
+- [GOES Online Geostationary Archive](https://www.ssec.wisc.edu/datacenter/goes-archive/)
+- [Announcements](https://www.ssec.wisc.edu/datacenter/announcements/)
+- [Contact Us](https://www.ssec.wisc.edu/datacenter/contact-us/)
+
+## Real-Time Data Access
+
+Click here to [Download](http://www.ssec.wisc.edu/datacenter/rtserver.html) the commands to update your ADDE client server table with the current real-time server information.
+
+See the [McIDAS Users Guide](http://www.ssec.wisc.edu/mcidas/doc/) for help using ADDE
+
+**Important:[](http://www.ssec.wisc.edu/datacenter/?page_id=53)**
+
+[Meteosat Data Usage Restrictions](http://www.ssec.wisc.edu/datacenter/?page_id=53)
+
+## Geostationary Satellites
+
+(Examples of current [coverages](http://www.ssec.wisc.edu/datacenter/real-time-data-access/sample-coverage/) are available for geostationary satellite data
+that is available from the SSEC Satellite Data Services Data Center. )
+
+***Satellite******Location******Data On-line****** GROUPS******ADDE Servers***GOES-16
+[GOES-16 Schedules](http://www.ssec.wisc.edu/datacenter/satellite-schedules/goes-16-schedules/) 75.2W
+
+|     |
+| --- |
+| 5 hours |
+| 4 days |
+
+|     |
+| --- |
+| EASTA/EASTB |
+| EASTAL/EASTBL |
+
+EASTA.SSEC.WISC.EDU EASTB.SSEC.WISC.EDUGOES-18  (*WEST  January 4, 2022)*
+[GOES-18 Schedules](https://www.ssec.wisc.edu/datacenter/goes-18-schedules/)137.0 W
+
+|     |
+| --- |
+| 5 hours |
+| 4 days |
+
+|     |
+| --- |
+| WESTA/WESTB |
+| WESTAL/WESTBL |
+
+WESTA.SSEC.WISC.EDU WESTB.SSEC.WISC.EDUMETEOSAT-9
+[(Meteosat-9 Schedules (IODC)](http://www.ssec.wisc.edu/datacenter/real-time-data-access/meteosat-9/)41.5 East7 daysIODC
+
+IODCEND
+
+INDOEX.SSEC.WISC.EDUMeteosat-11
+[Meteosat-11 Schedules (Prime)](http://www.ssec.wisc.edu/datacenter/real-time-data-access/meteosat-11/)0 East2 daysMSG
+
+MSGEND
+
+MSG.SSEC.WISC.EDU
+
+MSGBAK.SSEC.WISC.EDU
+
+Himawari-9
+[Himawari-9 Schedules](http://www.ssec.wisc.edu/datacenter/rthim9.html)140 East2 daysHIMAWARI (complete files)
+
+HIMAWARX (data as it comes in)
+
+HIMAWARI.SSEC.WISC.EDU
+
+HCAST.SSEC.WISC.EDU
+
+[FY2E – from Australian Bureau of Meteorology (ABOM)](http://www.ssec.wisc.edu/datacenter/real-time-data-access/fy2e/)
+[FY2E Schedule](http://www.ssec.wisc.edu/datacenter/fy2schedules/fy2eschedpage.2014.html)86.5 East4 daysFY2E (currently not received)FY2E.SSEC.WISC.EDU[FY2G – from Australian Bureau of Meteorology (ABOM)](http://www.ssec.wisc.edu/datacenter/real-time-data-access/fy2g/)
+[FY2G Schedule](http://www.ssec.wisc.edu/datacenter/fy2schedules/fy2gschedpage.2015.html)105 East4 daysFY2GFY2G.SSEC.WISC.EDU
+
+##               Polar Orbiting Satellites
+
+|     |     |     |     |     |
+| --- | --- | --- | --- | --- |
+| ***Satellite*** | ***Receiving station*** | ***Data On-line*** | *** GROUP*** | ***ADDE Servers*** |
+| [Metop Level1B](http://www.ssec.wisc.edu/datacenter/real-time-data-access/metop-level1b/)<br>*HRPT & GAC* | Gilmore,AK Svalbard,Norway Wallops,VA | 10 days | METOP | METOP.SSEC.WISC.EDU |
+| NOAA-20 | STAR | 2 days | N20VIIRS | SRELAY.SSEC.WISC.EDU |
+| CLASS | 2 days | N20VIIRS | SNPP.SSEC.WISC.EDU |
+| NOAA-19 Level1B<br>*HRPT & GAC* | Cape-Ferguson-AU Gilmore,AK Ewa-Beach,HI Miami,FL Monterey,CA Svalbard,Norway Wallops,VA | 5 days | WALLDDS<br><br>GILDDS | METOP.SSEC.WISC.EDU |
+| NOAA-18 AVHRR<br>*HRPT & GAC*<br>[POES <ins>Relay</ins> Schedule](https://qcweb.ssec.wisc.edu/web/poes_schedules/) | Wallops, Va | 2 days | WALLOPS | WALLOPS.SSEC.WISC.EDU |
+| Gilmore (Fairbanks), AK | 2 days | GILMORE | GILMORE.SSEC.WISC.EDU |
+| NOAA-18 Level1B<br>*HRPT & GAC* | Cape-Ferguson-AU Gilmore,AK Ewa-Beach,HI Miami,FL Monterey,CA Svalbard,Norway Wallops,VA | 5 days | WALLDDS<br><br>GILDDS | METOP.SSEC.WISC.EDU |
+| NOAA-15 AVHRR<br>*HRPT & GAC*<br>[POES Relay Schedule](https://qcweb.ssec.wisc.edu/web/poes_schedules/) | Wallops, Va | 2 days | WALLOPS | WALLOPS.SSEC.WISC.EDU |
+| Gilmore (Fairbanks), AK | 2 days | GILMORE | GILMORE.SSEC.WISC.EDU |
+| NOAA-15 Level1B<br>*HRPT & GAC* | Cape-Ferguson-AU Gilmore,AK Ewa-Beach,HI Miami,FL Monterey,CA Svalbard,Norway Wallops,VA | 5 days | WALLDDS<br><br>GILDDS | METOP.SSEC.WISC.EDU |
+| TERRA<br>*(Direct Broadcast)*<br>[TERRA Schedules for SSEC](http://eosweb.ssec.wisc.edu/cgi-bin/eosdb.cgi?sat=terra) | SSEC (Madison), WI | 7 days | TERRA | GEMSBOK.SSEC.WISC.EDU |
+| AQUA<br>*(Direct Broadcast)*<br>[AQUA Schedules for SSEC](http://eosweb.ssec.wisc.edu/cgi-bin/eosdb.cgi?sat=aqua) | SSEC (Madison), WI | 7 days | AQUA | GEMSBOK.SSEC.WISC.EDU |
+
+## Radar Data
+
+<a id="conventional"></a>via NOAAport
+
+|     |     |     |
+| --- | --- | --- |
+| ***Source*** | ***Data On-line*** | ***ADDE Server*** |
+| [WSR-88D TDWR](http://www.ssec.wisc.edu/mcidas/software/x/mcx_noaaport_radar.html) | Most recent 144 files from all WSR-88D and TDWR reporting stations (US and Puerto Rico) | NOAAPORT.SSEC.WISC.EDU |
+
+## Conventional Data
+
+<a id="conventional"></a>via NOAAport *(Last 3 days plus current grid data day on-line; last 10 days point and text data on-line)*
+
+|     |     |     |
+| --- | --- | --- |
+| ***Data Type*** | ***Data Format*** | ***ADDE Server*** |
+| [Point](https://qcweb.ssec.wisc.edu/web/data_access/#filters:%7B%22data_sets%22:%22Insitu%20/%20Point%22,%22group%22:%22Non-satellite%20Data%22,%22access_method%22:%22ADDE%22%7D;page:data%20sets) | McIDAS MD | NOAAPORT.SSEC.WISC.EDU |
+| [Model Grids](https://www.ssec.wisc.edu/datacenter/real-time-data-access/model-grids/) | McIDAS GRIDs | NOAAPORT.SSEC.WISC.EDU |
+| [Text](https://qcweb.ssec.wisc.edu/web/data_access/#filters:%7B%22data_sets%22:%22Weather%20TEXT%22,%22group%22:%22Non-satellite%20Data%22,%22access_method%22:%22ADDE%22%7D;page:data%20sets;) | McIDAS TEXT | NOAAPORT.SSEC.WISC.EDU |
+
+All data currently being ingested at the Space Science and Engineering Center uses the SSEC Desktop Ingestor (SDI).
+
+- [Non-GOES Geostationary Online Archive](https://www.ssec.wisc.edu/datacenter/non-goes-archive/)
+- [Mailing List](https://www.ssec.wisc.edu/datacenter/mailing-list/)
+- [Software](https://www.ssec.wisc.edu/datacenter/software/)
+
+[![UW-Madison](https://www.ssec.wisc.edu/images/logo-uw.png)](http://www.wisc.edu/)
+
+© 2011 Space Science & Engineering Center
+University of Wisconsin -Madison
+1225 W. Dayton Street, Madison, WI 53706, USA

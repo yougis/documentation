@@ -1,0 +1,78 @@
+---
+title: MCFETCH
+last-modified: 2023-09-19 23:29:46Z
+date: 2023-09-19 23:29:46Z
+source: https://mcfetch.ssec.wisc.edu/
+---
+
+ [![](https://mcfetch.ssec.wisc.edu/assets/img/ssec.png) MCFETCH](https://mcfetch.ssec.wisc.edu/./)
+
+[REGISTER<br>* * *](#register)
+
+|
+
+[TUTORIAL<br>* * *](#tutorial)
+
+|
+
+[TOOLS<br>* * *](#tools)
+
+|
+
+[HELP<br>* * *](#help)
+
+|
+
+[INVENTORY<br>* * *](https://inventory.ssec.wisc.edu/inventory/)
+
+* * *
+
+Welcome to MCFETCH
+
+* * *
+
+<img width="1735" height="868" src="../../../_resources/met8_ddc4fbbd38d74242bd63d0b8b6f586b3.jpg"/>
+
+3.9 µm — Infrared Low-Level Cloud/Fog, Fire Detection
+
+* * *
+
+MET-8
+
+[Previous](#home-image-slider)[Next](#home-image-slider)
+
+WHAT IS MCFETCH?
+
+* * *
+
+MCFETCH is a web-based API for accessing a wide range of meteorological data and imagery from SSEC [Satellite Data Services](http://www.ssec.wisc.edu/datacenter/).
+
+Multi-format Client-agnostic File Extraction Through Contextual HTTP
+
+NEW TO MCFETCH?
+
+* * *
+
+If you do not already have an API Key, get one for free on the [registration page](https://mcfetch.ssec.wisc.edu/./#register).
+
+After acquiring your API Key, you may go through the [tutorial](https://mcfetch.ssec.wisc.edu/./#tutorial) to learn about the different features in MCFETCH.
+
+BACKGROUND
+
+* * *
+
+The University of Wisconsin-Madison Space Science and Engineering Center (SSEC) Satellite Data Services, formerly known as the Data Center, has one of the largest online archives of geostationary weather satellite data in the world. The archive is over 1 PB in size, contains data from every GOES satellite and spans 35+ years. In addition, 15 years of international geostationary satellite data are also in the archive.
+
+For over 20 years the primary way to access satellite data from the SSEC archive has been via the Abstract Data Distribution Environment (ADDE). ADDE provides clients the ability to extract satellite imagery and subset that data spectrally and spatially. Clients must be able to communicate with a server via the ADDE protocol.
+
+Starting in 2016, a new method for data access has been implemented. This new method (MCFETCH) is client-agnostic and allows any OS, software, or device to access data from the Satellite Data Services archive. Users can easily access data using anything from a web browser, to a smartphone, to a python script on a server node. Scripts can be written to download the data in any language that can issue a URL request. The resulting file will be in a user-defined standard format, including McIDAS AREA, GeoTIFF, and NetCDF.
+
+Also beginning in 2016, all geostationary satellite data in the SSEC archive will be accessible at no cost with this mechanism.
+
+[![](https://mcfetch.ssec.wisc.edu/assets/img/ssec.png "SSEC")](http://www.ssec.wisc.edu/)
+
+[![](https://mcfetch.ssec.wisc.edu/assets/img/mcidas.png "MCIDAS-V")](http://www.ssec.wisc.edu/mcidas/software/v/)
+
+[![](https://mcfetch.ssec.wisc.edu/assets/img/mcidas_x.png "MCIDAS-X")](https://www.ssec.wisc.edu/mcidas/software/x/)
+
+[![](https://mcfetch.ssec.wisc.edu/assets/img/wisconsin.png "University of Wisconsin-Madison")](http://www.wisc.edu/)

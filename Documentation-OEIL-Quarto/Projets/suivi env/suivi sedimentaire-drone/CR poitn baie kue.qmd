@@ -1,0 +1,27 @@
+---
+title: CR poitn baie kue
+last-modified: 2023-08-09 03:52:18Z
+date: 2023-08-09 03:05:54Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+completed?: no
+---
+
+marée 0.15
+vers midi
+point d'eau 
+condition pas favorable pour l'orhto, clapoti
+
+delta de 6-7cm sur la station Sud Ouest
+
+Lidar pas besoin de GCP.
+
+1000 point / m2
+
+lidar version sans classif interne.
+
+doc methodo lidar classif à intégrer par laurent dans la doc methodo 
+
+
+1 point de différence MNT tout les 5 m (par interpolation)

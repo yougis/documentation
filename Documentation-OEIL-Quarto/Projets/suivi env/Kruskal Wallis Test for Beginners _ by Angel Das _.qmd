@@ -1,0 +1,139 @@
+---
+title: Kruskal Wallis Test for Beginners | by Angel Das | Towards Data Science
+last-modified: 2023-07-20 05:27:22Z
+date: 2023-07-20 05:27:22Z
+source: https://towardsdatascience.com/kruskal-wallis-test-for-beginners-4fe9b0333b31
+---
+
+
+# Kruskal Wallis Test for Beginners
+
+## Kruskal Wallis Test: Purpose, Scope, Assumptions, Examples, Python Implementation
+
+Nov 8, 2022
+
+![](../../_resources/0_I5SvE3_8QI5blte6_c46798bd296c41f0838944e3923c298.jpg)
+
+
+# 1 Purpose
+
+Kruskal Wallis is a non-parametric method for evaluating whether samples come from the same distribution. It is used in the comparison of more than two independent or unrelated samples. One-way analysis of variance (ANOVA) is the parametric equivalence of the Kruskal-Wallis test.
+
+## 1.1 What would be a good Business Use case?
+
+Let’s measure the impact of a campaign rolled out by a Pharma Company on a newly launched drug, where we have 1,550 Targets and 500 Holdouts. We looked at the prescription behavior distribution and found it non-normal (skewed) but similarly shaped for each group (targets and holdouts). We can not perform ANOVA; hence we apply a non-parametric test, Kruskal-Wallis.
+
+# 2 Scope
+
+Since Kruskal Wallis is a non-parametric test, there is no assumption that the data is normally distributed (unlike ANOVA).
+
+1.  The factual null hypothesis is that the populations from which the samples originate have the same median.
+2.  The Kruskal-Wallis test is most commonly used when there is one attribute variable and one measurement variable, and the measurement variable does not meet the assumptions of ANOVA (normality and homoscedasticity)
+3.  Like most non-parametric tests, it is performed on ranked data, so the measurement observations are converted to their ranks using the overall data set: the smallest or the lowest value gets a rank of 1, the next smallest gets a rank of 2, the following a rank of 3, and so on. In the case of a tie, an average rank is considered.
+4.  *The loss of information in substituting ranks for the original values makes this a less powerful test than ANOVA, so ANOVA should be used if the data meet the assumptions*.
+
+The Kruskal-Wallis test’s null hypothesis is sometimes stated to be that the group medians are equal. However, this is only accurate if you believe each group’s distributional characteristics are the same. Even though the medians are the same, the Kruskal-Wallis test can reject the null hypothesis if the distributions differ.
+
+# 3 Assumptions
+
+Groups of different sizes can be examined using the Kruskal-Wallis statistic. The Kruskal-Wallis test, unlike the comparable one-way analysis of variance, does not assume a normal distribution because it is a non-parametric procedure. The test does, however, presume that each group’s distribution is identically shaped and scaled, except for any variations in medians.
+
+# 4 Methodology
+
+Kruskal Wallis can be used to analyze whether the test and control performed differently. When the data is skewed (non-normal distribution), the test will tell whether the two groups are different without establishing any causation. It will not suggest the reason for the difference in behavior.
+
+## 4.1 How the test Works?
+
+Kruskal Wallis works by ranking all observations, starting from 1 (most minor). The ranking is done for all data points, irrespective of the group to which they belong. Tied values receive the average rank they would have received had they not been tied.
+
+When all the observations have been assigned a signed rank based on the analysis variable (the number of prescriptions prescribed), they are differentiated/divided into groups based on their target/holdout status. After that, each group’s mean rank is calculated and compared.
+
+Target is expected to have a higher mean rank than holdouts since the initiative or promotional effort is rolled out for this group. With a significant p-value, Target is performing better than holdouts. The challenge here is that the average rank of the target group can be higher in the presence of outliers, i.e., few doctors writing more scripts than others. Hence, we always look at the arithmetic median and the resultant p-value obtained by Kruskal Wallis to validate/refute our hypothesis.
+
+Let Ni (i = 1, 2, 3, 4,…, g) represent the sample sizes for each g group (i.e., samples or, in this case, the number of doctors) in the data. ri is the sum of the ranks for group i with ri’ as the average rank of group i. Then the Kruskal Wallis test statistic is calculated as:
+
+![](../../_resources/1_4byC59Dh8BRFlDuk6QwZjQ_d73b6c454fca40159b8743b7f.png)
+
+**Formula 1.** Illustrates the formula for calculating test statistics. Image prepared by the author using Markdown and Latex.
+
+The null hypothesis of equal population medians is rejected if the test statistic exceeds the threshold chi-squared value. When the null hypothesis of equal populations is true, this statistic has k-1 degrees of freedom and approximates a chi-square distribution. The approximation must have ni’s of at least 5 (i.e., at least five observations in a group) for it to be accurate.
+
+![](../../_resources/1_z2nKo_V5Zwx5HkgMrduwrA_d2a7a64e839c43f9973c33f6a.png)
+
+**Formula 2.** Illustrates the formula for p-value approximation for the test. Image prepared by the author using Markdown and Latex.
+
+Using a chi-squared probability distribution table, we may get the crucial chi-squared value at g-1 degrees of freedom and the desired significance level. Alternatively, we might examine the p-value to comment on the results’ significance.
+
+## 4.2 Run the H Test by Hand
+
+Let’s assume that a Pharma Company wants to understand if three groups of doctor segments have different patient volumes **(Stephanie Glen, n.d.)** E.g.,
+
+Key Opinion Leaders/KOL (Patient Volume in a Month): 23, 42, 55, 66, 78
+
+Specialists/SPE (Patient Volume in a Month): 45, 56, 60, 70, 72
+
+General Practitioners/GPs (Patient Volume in a Month): 18, 30, 34, 41, 44
+
+**4.2.1 Arrange the data in ascending order after combining them into one set**
+
+18 23 24 30 41 42 44 45 55 56 60 66 70 72 78
+
+**4.2.2 Rank the sorted data points. Use average in case of ties**
+
+Values: 18 23 24 30 41 42 44 45 55 56 60 66 70 72 78
+
+Rank: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+
+**4.2.3 Calculate the sum of ranks for each group**
+
+![](../../_resources/1_WCYWe-xirZ1SU-P-BWHxog_3adbcc19b0074470aaffb2caa.png)
+
+**Figure 1.** Illustrates the sum of ranks for each group. Image Credit — Prepared by the Author.
+
+**4.2.4 Calculate H Statistics using Formula 1 and numbers from Figure 1**
+
+![](../../_resources/0_EEU4FxKVc7Cp590f_1adecc5fc6ae464799d7980507dd724.png)
+
+**Formula 3.** Illustrates the formula for calculating H statistics for our prescriber group. Image prepared by the author using Markdown and Latex.
+
+H=6.72
+
+**4.2.5 Identify the critical chi-square value for g-1 degrees of freedom with
+an α=0.05 which for our problem (3–1=2 degrees of freedom) should be 5.99. Refer to the table below.**
+
+[## Table: Chi-Square Probabilities<br>### The areas given across the top are the areas to the right of the critical value. To look up an area on the left…<br>people.richland.edu](https://people.richland.edu/james/lecture/m170/tbl-chi.html)
+
+**4.2.6 Compare H value from 4.2.4 to the critical value from 4.2.5**
+
+The null hypothesis stating that the median patient volume across three different groups is equal should be rejected if the critical chi-square value is smaller than the H statistic. Since 5.99 (Critical value) < 6.72, we can reject the null hypothesis.
+
+There needs to be more evidence to infer that the medians are unequal if the chi-square value is not lower than the H statistic calculated above.
+
+# 5\. Python Implementation
+
+The null hypothesis that all groups’ population medians are equal is tested using the Kruskal-Wallis H-test. It is an ANOVA variant that is non-parametric. The test utilizes two or more independent samples of varying sizes. Note that disproving the null hypothesis does not reveal how the groups differ. To identify which groups are different, post hoc comparisons between the groupings are necessary.
+
+```python
+<a id="666b"></a>from scipy import stats
+x = [1, 3, 5, 8, 9, 12, 17]
+y = [2, 6, 6, 8, 10, 15, 20, 22]
+stats.kruskal(x, y)<a id="47fd"></a>KruskalResult(statistic=0.7560483870967752, pvalue=0.3845680059797648)<a id="559a"></a>print(np.median(x))
+print(np.median(y))<a id="49af"></a>8.0
+9.0<a id="091a"></a>print(np.mean(x))
+print(np.mean(y))<a id="f79f"></a>7.86
+11.12
+```
+
+The output generated by Python is shown above. It should be noted that although a marked difference is observed in the mean of values across the two categories, this difference, when taking the median into account, is insignificant as the p-value is much greater than 5%.
+
+# 6\. Conclusion
+
+Kruskal Wallis test is instrumental when dealing with particularly skewed samples. It can be used widely for a test control group during a campaign rollout or even when performing A/B testing. This is applicable for most industry use cases since each customer has different behavior when dealing with customers in a retail space or doctors in a pharmaceutical landscape. When we look at basket size or patient volume, few customers buy more, whereas few doctors have more patients. Hence for such skewed distribution, it is vital to put a Kruskal Wallis test to check if the behaviors are similar.
+
+# **7\. Reference**
+
+**Stephanie Glen**. “Kruskal Wallis H Test: Definition, Examples, Assumptions, SPSS” From [**StatisticsHowTo.com**](https://www.statisticshowto.com/): Elementary Statistics for the rest of us! https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/kruskal-wallis/
+
+‌
+
+*About the Author: Advanced analytics professional and management consultant helping companies find solutions for diverse problems through a mix of business, technology, and math on organizational data. A Data Science enthusiast, here to share, learn and contribute; You can connect with me on* [*Linked*](https://www.linkedin.com/in/angel-das-9532bb12a/) *and* [*Twitter*](https://twitter.com/dasangel07_andy)*;*

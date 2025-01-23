@@ -1,0 +1,13 @@
+---
+title: 'rencontre MFNC - pour convention '
+last-modified: 2023-05-03 21:38:28Z
+date: 2023-05-03 21:37:16Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+avec Alexandre Pelletier
+
+question :
+- dois t on disposer du MAI pour opérer la chaine previsonnel de MFNC ?

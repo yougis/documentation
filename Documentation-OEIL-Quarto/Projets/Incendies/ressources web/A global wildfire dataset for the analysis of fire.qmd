@@ -1,0 +1,23 @@
+---
+title: >-
+  A global wildfire dataset for the analysis of fire regimes and fire behaviour
+  | Scientific Data
+last-modified: 2023-09-19 23:13:25Z
+date: 2023-09-19 23:13:25Z
+source: https://www.nature.com/articles/s41597-019-0312-2
+---
+
+
+## Abstract
+
+Global fire monitoring systems are crucial to study fire behaviour, fire regimes and their impact at the global scale. Although global fire products based on the use of Earth Observation satellites exist, most remote sensing products only partially cover the requirements for these analyses. These data do not provide information like fire size, fire spread speed, how fires may evolve and joint into single event, or the number of fire events for a given area. This high level of abstraction is very valuable; it makes it possible to characterize fires by types (either size, spread, behaviour, etc.). Here, we present and test a data mining work flow to create a global database of single fires that allows for the characterization of fire types and fire regimes worldwide. This work describes the data produced by a data mining process using MODIS burnt area product Collection 6 (MCD64A1). The entire product has been computed until the present and is available under the umbrella of the Global Wildfire Information System (GWIS).
+
+|     |     |
+| --- | --- |
+| Measurement(s) | wildfire |
+| Technology Type(s) | digital curation • computational modeling technique |
+| Factor Type(s) | date of fire • geometry of burnt area |
+| Sample Characteristic - Environment | agricultural field • forest ecosystem |
+| Sample Characteristic - Location | Earth (planet) |
+
+Machine-accessible metadata file describing the reported data: https://doi.org/10.6084/m9.figshare.10284101

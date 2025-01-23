@@ -1,0 +1,43 @@
+---
+title: 'CR : INSIGHT/IRD - METEO FRANCE - OEIL'
+last-modified: 2023-01-23 03:26:53Z
+date: 2023-01-23 03:04:02Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Date et Heure : 22/12/2022 14:00
+
+Réunion Teams, étaient présent :
+- Mathis NEUHAUSER,
+- Alexandre PELTIER
+- Hugo Roussaffa
+
+Ordre du jour :
+- convention de mise à disposition de la chaine de traitements Meteo France Nouvelle -Calédonie ainsi que les droits d'usage des données issus en entrée de cette chaine (données stations météo *in situ*).
+- présentation de l'avancement de la production du SPI prévisionnel à partir de données satellites par Meteo France (Alexande Peltier).
+
+
+# Convention
+
+il est convenu que l'Observatoire de l'environnement et Meteo France Nouvelle Calédonie formalise la mise à disposition des données issu de la chaine de traitement initialement produite dans le cadre du projet SCO.
+
+Cette convention est dans un premier temps bi-partite, OEIL & METEO FRANCE NC pour ce qui concerne les données pour la Nouvelle Calédonie. 
+Elle évoluera en convention Meteo France / OEIL lorsque la chaine produira des données sur les territoires de Polynésie Française car seule une entité Meteo France peut être sous convention à la fois, concernant un sujet similaire (on ne peut pas conventionner avec NC et PF en parallèle).
+La convention indiquera les modalités de mise à disposition technique des données de suivi *in situ* (dépot FTP), pour une durée égale à la durée de mise en production de l'indicateur sécheresse prévue (soit 3 ans).
+La convention indiquera aussi la licence d'utilisation du code source permettant la génération de l'indicateur SPI/ESPI.
+
+
+# SPI prévisionnel à partir de données satellites
+
+L'algorithme est fonctionnel même si le code merite un peu de nettoyage et de commentaire. les résultats des traitements semble cohérent, mise à part quelques  écarts sur certaines régions pour les données prévisionnels à 1 mois. Les résultats sont moins bon pour les prévision à 3 mois (information à verifier). 
+
+# Conclusion et tâches à traiter
+L'OEIL construit un modèle de convention initial qu'il fournira à Météo France NC pour signature.
+
+L'algorithme de prodution SPI répond en partie aux objectifs et semblerait utilisable en production moyennant une consolidation du code et relecture avant transmission par Meteo France NC. Une licence devra être créée afin d'enlever tout doutes sur les droits d'utilisations du script.
+
+
+
+

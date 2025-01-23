@@ -1,0 +1,19 @@
+---
+title: Centralisation des Algo satelite Sentinelle sur la NC
+last-modified: 2021-11-04 02:13:06Z
+date: 2021-10-28 22:42:16Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+# espace dev
+https://framagit.org/espace-dev
+- fototex
+
+# IFREMER
+Python :
+- Analyse algue (phytoplancton)
+- Turbidité
+
+Modèle robuste ? fait par un stagiaire agroparitech mais en peu de temps

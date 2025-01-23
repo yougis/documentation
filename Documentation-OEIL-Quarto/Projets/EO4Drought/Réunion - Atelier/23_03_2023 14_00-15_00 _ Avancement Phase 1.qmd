@@ -1,0 +1,32 @@
+---
+title: 'Avancement Phase 1'
+last-modified: 2023-04-26 04:24:06Z
+date: 2023-04-24 02:20:20Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+23/03/2023 14:00-15:00
+Présent: Clément / mathis / Hugo
+
+- Présentation du projet à Clément. role de clément dans le projet (intégrateur, expert CI, Data Ingégnieur)
+
+- le compte VPN et la machine de qualification sont opérationnels (merci à Sebastien).
+
+- Compte google pour la qualification et la production à créer (ne plus utiliser le compte de Mathis). Prévoir d'indiquer ce paramètre dans un fichier de configuration externaliser, cf : https://dev.azure.com/Oeilnc/EO4DM/_workitems/edit/602
+- Rédiger une documentation d'exploitation par Mathis
+
+- Une période de 2 mois seraient nécessaire pour réaliser les étapes suivantes :
+- Chaine de calcul historique
+- Chaine de calcul de l'indicateur
+- Production de carte hebdomadaire (raster)
+
+
+- le déploiements de la première release 1 en qualification se fera dès que cela sera prêt et indiqué comme tel par Mathis.
+- Une CI pourra être déployé par Clément pour gérer les phases d'intégration ultérieures.
+
+- Mathis précise que sont contrat chez INSIGHT se termine fin février 2024 mais pourrait se prolonger sous la forme d'un nouveau contrat.
+- Caler un COPIL avec Jean et Fabien pour présenter l'avancement du projet :
+- retard dû au peut d'investissement de temps sur le projet par Mathis (env 50%ETP). Les chiffres enregistrés dans le tableau de bord montre que moins de 20% de la charge prévue a été consommée aujourd'hui, après 6 mois de projet.
+- Caler un point avec Mathis dans environs 1 mois

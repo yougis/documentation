@@ -1,0 +1,25 @@
+---
+title: Conda Environnement
+last-modified: 2022-12-05 03:57:57Z
+date: 2021-10-25 00:58:40Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+# Maintenance
+
+`conda clean --all`
+
+connaitre l'espace disque d'un environnement
+
+```
+du -h -s $(conda info --base)/envs/gis_37
+```
+
+## update package
+
+`conda update %pakage-name`
+
+## update conda
+`conda update -n base -c defaults conda`

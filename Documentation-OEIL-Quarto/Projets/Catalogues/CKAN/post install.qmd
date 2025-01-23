@@ -1,0 +1,65 @@
+---
+title: post install
+last-modified: 2024-02-07 05:42:58Z
+date: 2024-02-06 00:48:59Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+
+se connecter en root
+
+```
+docker exec -u 0 -it ckan /bin/bash
+
+apt-get update
+```
+activer le venv
+
+`
+source $CKAN_VENV/bin/activate && cd $CKAN_VENV/src/
+`
+
+Pour installer : 
+
+# scheming
+```
+
+pip install -e "git+https://github.com/ckan/ckanext-scheming.git#egg=ckanext-scheming"
+```
+
+
+# ldap
+
+installer l'extention
+
+
+
+apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev
+
+
+
+pip install src/ckanext-ldap
+
+modifier 
+cat /etc/ckan/production.ini
+
+ajouter ldap sur la ligne plugin
+
+
+ckanext.ldap.uri = 'ldap://172.20.12.1'
+ckanext.ldap.base_dn = 'OU=UTILISATEURS,OU=OEIL,DC=oeil,DC=local'
+ckanext.ldap.search.filter = 'sAMAccountName={login}''
+ckanext.ldap.username = sAMAccountName
+ckanext.ldap.auth.dn = 'CN=Administrateur,CN=Users,DC=oeil,DC=local'
+ckanext.ldap.auth.password = Oeil2322*NC!
+ckanext.ldap.auth.method = SIMPLE
+ckanext.ldap.search.alt_msg= 'Utilisez le prenom.nom'
+ckanext.ldap.fullname = cn
+ckanext.ldap.about = description
+ckanext.ldap.allow_password_reset = False
+ckanext.ldap.ignore_referrals = True
+ckanext.ldap.organization.id = oeil
+ckanext.ldap.organization.role = editor
+

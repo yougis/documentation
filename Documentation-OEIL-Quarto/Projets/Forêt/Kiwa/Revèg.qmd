@@ -1,0 +1,95 @@
+---
+title: Revèg
+last-modified: 2021-09-20 00:07:26Z
+date: 2021-09-17 02:45:03Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+Mise en place d'un système de collecte, de supervision et de valorisation des informations sur les zones revégétalisées qui a pour objectif de  ....
+
+Le système de décompose en plusieurs outils :
+- un formulaire de saisie sur le terrain (déconnecté) et sur le Web,
+- une base de donnée centralisée,
+- une application web de gestion avancée des données,
+- des services de collecte automatique des données produites par les applications des existantes gérés par les gestionnaires du territoire (gouvernement, provinces, communes, associations),
+- des pages Web de valorisation des acteurs et des opérations de revégétalisation réalisées et en projets, ainsi que des informations sur comment participer en tant que particulier,
+
+- un système de notification par e-mail des opérations terminées et un calendrier des opérations à venir
+
+La gouvernance du système sera réalisé par l'OEIL, à minima sur 3 ans. Cela comprend:
+- des ateliers pour la définition des modalités de collecte des informations de terrain,
+- des formations aux outils de saisie et de gestion,
+- de l'animation du réseau d'acteur,
+- de la communication auprès des gestionnaire du territoire et du grand public,
+- l'hébergement et la maintenance du système, ainsi que le suivi des demandes d'évolution.
+
+
+# Formulaire de saisie sur le terrain
+
+Une application mobile permettra la saisie des informations concernant les caractéristiques de l'opération de revégétalisation, les acteurs impliqués, la localisation, les types d'espèces plantés, leur nombre/densité, les techniques employés....
+Cette application permettra la saisie sur le terrain en mode déconnecté. 
+
+# Application de gestion avancée des données 
+
+Une application Web de gestion permettra:
+- d'effectuer des saisies/modifications des informations identiques au formulaire de saisie de terrain ,
+- de valider des données envoyés depuis l'application mobile.
+
+L'application permettra aussi d'aider à la décisions dans le choix d'un nouveau site à partir des connaissances sur les thématiques suivantes :
+- érosion,
+- incendie,
+- foncier,
+- milieu naturel,
+- espèce menacés,
+- météorologie,
+- accessibilité,
+- topographie
+
+L'application de gestion permettra d'effectuer un suivis dans le temps long des parcelles revégétalisees :
+- renseigner des critères de réussite par l'observation de terrain ainsi que par l'analyse globale des indicateurs de suivi,
+
+# Site web de valorisation des opérations
+Informer sur les opérations réalisées à partir des indicateurs globaux, par acteur, par commune etc. 
+Offrir la possibilité de s'inscrire à un système d'alerte pour être tenu informé par e-mail des opérations terminées et du calendrier des opérations à venir. Les notifications pourront être envoyé selon des critères de choix thématique et géographique comme (une commune, acteurs, type d'espace à revégétalisé etc. ).
+
+Favoriser la mutualisation des efforts en donnant une visibilité entre acteurs sur les opérations à venir de chacun.
+Présenter les objectifs annuels des acteurs etc.
+
+
+# Perspectives du projet
+- proposer des sites à fort potentiel d'intérêt
+- des indicateurs sur les méthodes les plus efficaces,
+
+
+
+Application :
+- CRUD 
+- multi utilisateur
+- géographique
+- formulaire tablette
+
+Spécificité :
+- modèle de donnée
+	- site
+	- caractéristiques des espèces plantés
+	- dates, période, année ?
+	- listes de références (espèce, technique etc.)
+	- photo
+	- 
+	- événement : observations effectuées sur un site à posteriori
+
+fonctionnalité
+- modification, évolution de la parcelle suite à dégradation ou augmentation de la re-végétalisation 
+
+source des données :
+- propre à l'application (reprise des données existante)  :  10 j
+
+architecture :
+- base de donnée
+- application mobile de formulaire terrain
+- formulaire de saisie web
+- outil de valorisation des projets de revèg et des acteurs impliqués dans ces actions
+
+

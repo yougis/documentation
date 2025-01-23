@@ -1,0 +1,87 @@
+---
+title: Réunion 09/07/21
+last-modified: 2021-07-09 09:53:56Z
+date: 2021-07-09 05:41:10Z
+---
+
+Budget Env 500 euro pour le pré traitement par INSIGHT
+Jilin achat 25$ km2 soit 2500$ par zone de 100km2
+Disposer des moyens de monitorer la couverture nageuse : avoir la donnée de référence des éclairages.
+
+Calendrier 📅 :
+- Gt le 26 juillet : 2 sites pour l'acquisition 
+des données Jilin 
+- Réalisation d'une synthèse bibliographie sur la pollution lumineuse pour la fin d'année. Relecture  par Skylab possible mais légère. 
+
+- Livraison des cartes pollution février 2022.
+Aide a l'interprétation des cartes.
+
+Fenêtre d'acquisition Jilin jusqu'à mi novembre.
+
+Rapport final Mai 2022
+
+La télescope: 
+Étude de faisabilité auprès de Jilin
+- 5% max de nuage
+- 5% d'angle du capteur
+
+Biais : couverture nuage de nuit 
+VIIRS ou Meteo  on peut croiser avec les données du jours / jours.
+
+12 satellites Jilin 
+Certaine de 92cm 
+D'autre 1m20 mais fauchée plus large
+
+Il y a un corridor de largeur minimum à connaître. Fourni par la Telescop prochainement.
+
+Specificité selon la durée de la nuit.
+
+Transformation de Luminance -> Radiance effectué par INSIGHT 
+
+Définir des zones à enjeux !
+
+
+Piste de valorisation : collecte de la donnée,  homogénéiser et croiser la donnée.
+
+Croissement des Équipements éclairages pour qualifier l'éclairage public/privé 
+
+
+Ninox : mesure ponctuelle à 6 mois 
+
+Envisagé :
+1 nuit de mesure 
+Par condition de temps clair 
+Aussi par ciel couvert
+
+Éviter la lune, c'est mieux quand y en a pas.
+
+Viser 3 nuits par nuit clair par site.
+
+Pas mal d'implication échange avec skylabe suite à  la pose et suite à l'acquisition pour déplacer le capteur.
+
+Alimentation 12 volt 
+
+Mise en liens avec :
+
+Club astronomie Toulousain , étudiant Calédonien.
+CNES , tracking des satellites.
+- financement d'un second Ninox
+
+
+Oeil signature de la licence pour partage des données auprès des prestataires. Cadre du projets.
+Produits dérivés ? Plus de licence mais source.
+
+50% pour valider la programmation 
+
+Zone urbaine 
+Periurbaine 
+
+Valorisation : Données d'eclairement 
+Impact environnementale de la pollution lumineuse.
+
+Grand sud , basse résolution avec VIIRS suffit. 
+
+
+
+
+

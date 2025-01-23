@@ -1,0 +1,11 @@
+# Activer GEE pour le compte google 
+
+Le compte est stagiaire@oeil.nc
+
+## Activer l'API
+
+- Activer service google earth engine dans le compte stagiaire pour le projet souhaité. 
+[voir ici](https://console.developers.google.com/apis/api/earthengine.googleapis.com/overview?project=338270192355)
+
+
+- [Doc get_credentials](https://developers.google.com/earth-engine/guides/python_install-conda#get_credentials)

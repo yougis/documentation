@@ -1,0 +1,18 @@
+---
+title: Create vitual env for R
+last-modified: 2023-07-28 03:48:16Z
+date: 2023-07-28 03:48:14Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+
+
+# Create vitual env for R
+COPY envs/r_base.yml /tmp/r_base.yml
+RUN conda update -n base -c defaults conda -y
+RUN conda env create -n r -f /tmp/r_base.yml
+
+# Create kernel from virtual env R
+RUN conda run -n r R -e 'IRkernel::installspec()' --name=R --display-name "R" --user

@@ -1,0 +1,18 @@
+---
+title: Jupyter lab notebook
+last-modified: 2021-10-18 20:47:12Z
+date: 2021-07-12 22:29:51Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+extensions utiles
+
+
+
+pip install sidecar
+jupyter labextension install @jupyter-widgets/jupyterlab-sidecar
+jupyter labextension install @pyviz/jupyterlab_pyviz
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+jupyter labextension install @jupyter-widgets/jupyter-leaflet

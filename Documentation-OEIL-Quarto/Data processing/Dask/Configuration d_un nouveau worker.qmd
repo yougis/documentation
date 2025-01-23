@@ -1,0 +1,38 @@
+---
+title: Configuration d'un nouveau worker
+last-modified: 2022-02-06 23:11:29Z
+date: 2022-01-12 23:48:25Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: no
+---
+
+
+## Récupération des specs d'un environnement :
+Extraire les spec de l'environnement conda depuis une machine virtuelle de référence
+`conda list --explicit > spec-file.txt`
+
+## Sur le client :
+installation Miniconda3 Windows 64-bit
+Créer un dossier où l'environnement sera installé
+avec miniconda, se positionner dans ce dossier
+lancer la commande :
+`conda config --add channels conda-forge`
+`conda config --set channel_priority strict`
+`conda create --name ****gis_37****  --file spec-file.txt`
+
+****** nom de l'environnement ******  ex. gis_37
+
+# Activer l'environnement :
+
+`conda activate gis_37`
+
+## Démarrer le worker :
+
+`dask-worker 192.168.1.44:8786`
+pour limiter le nombre de thread :
+`dask-worker 192.168.1.44:8786 --nprocs=1 --nthreads=x`
+ou x sera le nombre de coeurs disponible pour le traitement
+
+****** nom de l'environnement ******  ex. gis_37

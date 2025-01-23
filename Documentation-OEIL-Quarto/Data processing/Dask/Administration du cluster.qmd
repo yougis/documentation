@@ -1,0 +1,44 @@
+---
+title: Administration du cluster
+last-modified: 2024-03-28 00:16:21Z
+date: 2022-02-06 23:11:51Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+Positionnement des fichiers spec des environnements partagés :
+[N:\\Informatique\\SIG\\Application\\Infocentre\\environnements](N:\\Informatique\\SIG\\Application\\Infocentre\\environnements)
+
+# Monter le disque commun
+
+```bash
+net use N: \\\172.20.12.20\\commun\\commun /persistent:yes
+net use A: \\\172.20.12.20\\archive /persistent:yes
+```
+
+# Installer miniconda
+
+```bash
+start /wait "" Miniconda3-latest-Windows-x86_64.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%UserProfile%\\Miniconda3
+```
+
+# Activer conda
+
+```bash
+Miniconda3\\condabin\\conda_hook.bat
+```
+
+et activer l'environnement
+```bash
+conda activate c:\\ProgramData\\miniconda3\\envs\\gis39
+```
+
+# Lancer les workers
+
+```bash
+
+dask worker 172.20.12.11:9786 --worker-port=5000 --dashboard-address=5001 --nanny-port=5002
+
+dask worker 172.20.12.11:8786 --nthreads=10 --worker-port=5006 --dashboard-address=5007 --nanny-port=5009
+```

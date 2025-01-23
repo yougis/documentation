@@ -1,0 +1,17 @@
+---
+title: Problème de breakpoint non fonctionnel dans VSCODE
+last-modified: 2023-08-25 00:56:43Z
+date: 2023-08-25 00:52:43Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Une fois l'installation et la configuration de VSCODE et Qgis effectué, il reste (pour je ne sais quelle raison), le besoin de déclarer une fois la methode breakpoint de debugpy dans chaque methode `processAlgorithm` du plugin . ainsi les futures breakpoint seront interprété par VScode même dans le core du plugin. Sinon il ne fonctionne qu'a l'initialisation du wizar du plugin et pas pour le traitement en lui meme
+
+```python
+import debugpy
+debugpy.breakpoint()
+```
+
+Penser à enlever ce code lors du pakaging

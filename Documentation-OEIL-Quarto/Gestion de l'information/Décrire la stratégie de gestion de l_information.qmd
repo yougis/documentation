@@ -1,0 +1,16 @@
+---
+title: Décrire la stratégie de gestion de l'information
+last-modified: 2022-06-08 00:20:08Z
+date: 2021-06-27 10:31:08Z
+---
+
+- Haute disponibilité des documents de travail (interne/externe)
+- Gestion de l'accès aux documents (partage)
+- Limiter le coût du stockage
+- Réaliser l'intégration continue des livrables (données, rapport ...) dans nos outils de valorisation (Base de donnée, CDRN, application de gestion etc)
+- Sécuriser et archiver les fichiers
+- Développer une intelligence et l'automatisation dans notre gestion de l'information (procédure, validation, application de gestion, gestion de projet, listes etc ...)
+- Assurer une visibilité sur le suivi de projets (gestion des taches, calendrier, charge etc.)
+
+
+

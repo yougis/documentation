@@ -1,0 +1,320 @@
+---
+title: log I/O firealert
+last-modified: 2024-07-01 23:30:40Z
+date: 2024-07-01 23:29:28Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+```sql
+pg_restore: connexion à la base de données pour la restauration
+pg_restore: création de SEQUENCE « fire_alert_fiji.abonnement_id_seq »
+pg_restore: création de TABLE « fire_alert_fiji.abonnement »
+pg_restore: création de TABLE « fire_alert_fiji.agriculture »
+pg_restore: création de TABLE « fire_alert_fiji.agriculture_1 »
+pg_restore: création de TABLE « fire_alert_fiji.closeforest »
+pg_restore: création de TABLE « fire_alert_fiji.closeforest_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendie_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendie »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendies_himawari_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendies_himawari »
+pg_restore: création de VIEW « fire_alert_fiji.differenceincendiehimawari »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendie_modis_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendie_modis »
+pg_restore: création de VIEW « fire_alert_fiji.differenceincendiemodis »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendies_sentinel_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendies_sentinel »
+pg_restore: création de VIEW « fire_alert_fiji.differenceincendiesentinel »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendie_viirs_noaa20_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendie_viirs_noaa20 »
+pg_restore: création de VIEW « fire_alert_fiji.differenceincendieviirsnoaa20 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendie_viirs_snpp_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendie_viirs_snpp »
+pg_restore: création de VIEW « fire_alert_fiji.differenceincendieviirssnpp »
+pg_restore: création de TABLE « fire_alert_fiji.district »
+pg_restore: création de TABLE « fire_alert_fiji.district_1 »
+pg_restore: création de TABLE « fire_alert_fiji.liaisonabonnementzoneabonnement »
+pg_restore: création de SEQUENCE « fire_alert_fiji.statistiquesincendie_id_seq »
+pg_restore: création de TABLE « fire_alert_fiji.statistiquesincendie »
+pg_restore: création de VIEW « fire_alert_fiji.etendueincendiesanneecouranteparsource »
+pg_restore: création de TABLE « fire_alert_fiji.logintegrationincendie »
+pg_restore: création de VIEW « fire_alert_fiji.executionfirmstravecemails »
+pg_restore: création de VIEW « fire_alert_fiji.executionfirmstravecemailsavecpoints »
+pg_restore: création de TABLE « fire_alert_fiji.fidji »
+pg_restore: création de TABLE « fire_alert_fiji.fidji_1 »
+pg_restore: création de TABLE « fire_alert_fiji.firedetectionpointshimawari »
+pg_restore: création de TABLE « fire_alert_fiji.firedetectionpointshimawari_1 »
+pg_restore: création de TABLE « fire_alert_fiji.forestry »
+pg_restore: création de TABLE « fire_alert_fiji.forestry_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendie_historique_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendie_historique »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendie_modis_1_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendie_modis_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendie_viirs_noaa20_1_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendie_viirs_noaa20_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendie_viirs_snpp_1_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendie_viirs_snpp_1 »
+pg_restore: création de TABLE « fire_alert_fiji.incendies_himawari_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendies_himawari_1_objectid_seq »
+pg_restore: création de SEQUENCE « fire_alert_fiji.incendies_sentinel_1_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.incendies_sentinel_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.intersectionincendiezone_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.intersectionincendiezone »
+pg_restore: création de TABLE « fire_alert_fiji.liaisonabonnementthematiqueabonnement »
+pg_restore: création de SEQUENCE « fire_alert_fiji.liaisonabonnementthematiqueabonnement_objectid_seq »
+pg_restore: création de SEQUENCE OWNED BY « fire_alert_fiji.liaisonabonnementthematiqueabonnement_objectid_seq »
+pg_restore: création de SEQUENCE « fire_alert_fiji.liaisonabonnementzoneabonnement_objectid_seq »
+pg_restore: création de SEQUENCE OWNED BY « fire_alert_fiji.liaisonabonnementzoneabonnement_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.mangrove »
+pg_restore: création de TABLE « fire_alert_fiji.mangrove_1 »
+pg_restore: création de TABLE « fire_alert_fiji.masque_firms »
+pg_restore: création de TABLE « fire_alert_fiji.masque_firms_1 »
+pg_restore: création de TABLE « fire_alert_fiji.openforest »
+pg_restore: création de TABLE « fire_alert_fiji.openforest_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.point_chaud_modis_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.point_chaud_modis »
+pg_restore: création de SEQUENCE « fire_alert_fiji.point_chaud_modis_1_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.point_chaud_modis_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.point_chaud_viirs_noaa20_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.point_chaud_viirs_noaa20 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.point_chaud_viirs_noaa20_1_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.point_chaud_viirs_noaa20_1 »
+pg_restore: création de SEQUENCE « fire_alert_fiji.point_chaud_viirs_snpp_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.point_chaud_viirs_snpp »
+pg_restore: création de SEQUENCE « fire_alert_fiji.point_chaud_viirs_snpp_1_objectid_seq »
+pg_restore: création de TABLE « fire_alert_fiji.point_chaud_viirs_snpp_1 »
+pg_restore: création de TABLE « fire_alert_fiji.province »
+pg_restore: création de TABLE « fire_alert_fiji.province_1 »
+pg_restore: création de TABLE « fire_alert_fiji.roads »
+pg_restore: création de TABLE « fire_alert_fiji.roads_1 »
+pg_restore: création de VIEW « fire_alert_fiji.statistiquestablesincendie »
+pg_restore: création de TABLE « fire_alert_fiji.thematiqueabonnement »
+pg_restore: création de TABLE « fire_alert_fiji.tikina »
+pg_restore: création de TABLE « fire_alert_fiji.tikina_1 »
+pg_restore: création de TABLE « fire_alert_fiji.toponymy_fiji_3460 »
+pg_restore: création de TABLE « fire_alert_fiji.villages »
+pg_restore: création de TABLE « fire_alert_fiji.villages_settlements »
+pg_restore: création de TABLE « fire_alert_fiji.zoneabonnement »
+pg_restore: création de DEFAULT « fire_alert_fiji.liaisonabonnementthematiqueabonnement objectid »
+pg_restore: création de DEFAULT « fire_alert_fiji.liaisonabonnementzoneabonnement objectid »
+pg_restore: traitement des données de la table « fire_alert_fiji.abonnement »
+pg_restore: traitement des données de la table « fire_alert_fiji.agriculture »
+pg_restore: traitement des données de la table « fire_alert_fiji.agriculture_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.closeforest »
+pg_restore: traitement des données de la table « fire_alert_fiji.closeforest_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.district »
+pg_restore: traitement des données de la table « fire_alert_fiji.district_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.fidji »
+pg_restore: traitement des données de la table « fire_alert_fiji.fidji_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.firedetectionpointshimawari »
+pg_restore: traitement des données de la table « fire_alert_fiji.firedetectionpointshimawari_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.forestry »
+pg_restore: traitement des données de la table « fire_alert_fiji.forestry_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendie »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendie_historique »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendie_modis »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendie_modis_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendie_viirs_noaa20 »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendie_viirs_noaa20_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendie_viirs_snpp »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendie_viirs_snpp_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendies_himawari »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendies_himawari_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendies_sentinel »
+pg_restore: traitement des données de la table « fire_alert_fiji.incendies_sentinel_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.intersectionincendiezone »
+pg_restore: traitement des données de la table « fire_alert_fiji.liaisonabonnementthematiqueabonnement »
+pg_restore: traitement des données de la table « fire_alert_fiji.liaisonabonnementzoneabonnement »
+pg_restore: traitement des données de la table « fire_alert_fiji.logintegrationincendie »
+pg_restore: traitement des données de la table « fire_alert_fiji.mangrove »
+pg_restore: traitement des données de la table « fire_alert_fiji.mangrove_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.masque_firms »
+pg_restore: traitement des données de la table « fire_alert_fiji.masque_firms_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.openforest »
+pg_restore: traitement des données de la table « fire_alert_fiji.openforest_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.point_chaud_modis »
+pg_restore: traitement des données de la table « fire_alert_fiji.point_chaud_modis_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.point_chaud_viirs_noaa20 »
+pg_restore: traitement des données de la table « fire_alert_fiji.point_chaud_viirs_noaa20_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.point_chaud_viirs_snpp »
+pg_restore: traitement des données de la table « fire_alert_fiji.point_chaud_viirs_snpp_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.province »
+pg_restore: traitement des données de la table « fire_alert_fiji.province_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.roads »
+pg_restore: traitement des données de la table « fire_alert_fiji.roads_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.statistiquesincendie »
+pg_restore: traitement des données de la table « fire_alert_fiji.thematiqueabonnement »
+pg_restore: traitement des données de la table « fire_alert_fiji.tikina »
+pg_restore: traitement des données de la table « fire_alert_fiji.tikina_1 »
+pg_restore: traitement des données de la table « fire_alert_fiji.toponymy_fiji_3460 »
+pg_restore: traitement des données de la table « fire_alert_fiji.villages »
+pg_restore: traitement des données de la table « fire_alert_fiji.villages_settlements »
+pg_restore: traitement des données de la table « fire_alert_fiji.zoneabonnement »
+pg_restore: exécution de SEQUENCE SET abonnement_id_seq
+pg_restore: exécution de SEQUENCE SET incendie_historique_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_modis_1_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_modis_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_viirs_noaa20_1_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_viirs_noaa20_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_viirs_snpp_1_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendie_viirs_snpp_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendies_himawari_1_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendies_himawari_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendies_sentinel_1_objectid_seq
+pg_restore: exécution de SEQUENCE SET incendies_sentinel_objectid_seq
+pg_restore: exécution de SEQUENCE SET intersectionincendiezone_objectid_seq
+pg_restore: exécution de SEQUENCE SET liaisonabonnementthematiqueabonnement_objectid_seq
+pg_restore: exécution de SEQUENCE SET liaisonabonnementzoneabonnement_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_modis_1_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_modis_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_viirs_noaa20_1_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_viirs_noaa20_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_viirs_snpp_1_objectid_seq
+pg_restore: exécution de SEQUENCE SET point_chaud_viirs_snpp_objectid_seq
+pg_restore: exécution de SEQUENCE SET statistiquesincendie_id_seq
+pg_restore: création de CONSTRAINT « fire_alert_fiji.abonnement abonnement_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.agriculture_1 agriculture_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.agriculture agriculture_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.closeforest_1 closeforest_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.closeforest closeforest_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.district_1 district_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.district district_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.fidji_1 fidji_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.fidji fidji_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.firedetectionpointshimawari_1 firedetectionpointshimawari_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.firedetectionpointshimawari firedetectionpointshimawari_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.forestry_1 forestry_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.forestry forestry_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendie_historique incendie_historique_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendie_modis_1 incendie_modis_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendie_modis incendie_modis_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendie incendie_pkey1 »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendie_viirs_noaa20_1 incendie_viirs_noaa20_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendie_viirs_noaa20 incendie_viirs_noaa20_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendie_viirs_snpp_1 incendie_viirs_snpp_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendie_viirs_snpp incendie_viirs_snpp_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendies_himawari_1 incendies_himawari_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendies_himawari incendies_himawari_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendies_sentinel_1 incendies_sentinel_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.incendies_sentinel incendies_sentinel_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.intersectionincendiezone intersectionincendiezone_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.liaisonabonnementthematiqueabonnement liaisonabonnementthematiqueabonnement_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.liaisonabonnementzoneabonnement liaisonabonnementzoneabonnement_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.mangrove_1 mangrove_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.mangrove mangrove_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.masque_firms_1 masque_firms_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.masque_firms masque_firms_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.openforest_1 openforest_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.openforest openforest_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.point_chaud_modis_1 point_chaud_modis_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.point_chaud_modis point_chaud_modis_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.point_chaud_viirs_noaa20_1 point_chaud_viirs_noaa20_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.point_chaud_viirs_noaa20 point_chaud_viirs_noaa20_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.point_chaud_viirs_snpp_1 point_chaud_viirs_snpp_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.point_chaud_viirs_snpp point_chaud_viirs_snpp_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.province_1 provinces_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.province provinces_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.roads_1 roads_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.roads roads_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.statistiquesincendie statistiquesincendie_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.thematiqueabonnement thematiqueabonnement_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.tikina_1 tikina_1_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.tikina tikina_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.toponymy_fiji_3460 toponymy_fiji_3460_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.villages villages_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.villages_settlements villages_settlements_pkey »
+pg_restore: création de CONSTRAINT « fire_alert_fiji.zoneabonnement zoneabonnement_pkey »
+pg_restore: création de INDEX « fire_alert_fiji.agriculture_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.agriculture_idx »
+pg_restore: création de INDEX « fire_alert_fiji.closeforest_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.closeforest_idx »
+pg_restore: création de INDEX « fire_alert_fiji.district_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.district_idx »
+pg_restore: création de INDEX « fire_alert_fiji.fidji_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.fidji_idx »
+pg_restore: création de INDEX « fire_alert_fiji.firedetectionpointshimawari_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.firedetectionpointshimawari_idx »
+pg_restore: création de INDEX « fire_alert_fiji.forestry_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.forestry_idx »
+pg_restore: création de INDEX « fire_alert_fiji.idx_abo_theme_idabo »
+pg_restore: création de INDEX « fire_alert_fiji.idx_abo_theme_idtheme »
+pg_restore: création de INDEX « fire_alert_fiji.idx_abo_theme_objectid »
+pg_restore: création de INDEX « fire_alert_fiji.idx_abo_zones_idabo »
+pg_restore: création de INDEX « fire_alert_fiji.idx_abo_zones_idzone »
+pg_restore: création de INDEX « fire_alert_fiji.idx_abo_zones_objectid »
+pg_restore: création de INDEX « fire_alert_fiji.idx_themes_objectid »
+pg_restore: création de INDEX « fire_alert_fiji.idx_zones_objectid »
+pg_restore: création de INDEX « fire_alert_fiji.incendie_historique_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendie_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendie_modis_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendie_modis_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendie_viirs_noaa20_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendie_viirs_noaa20_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendie_viirs_snpp_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendie_viirs_snpp_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendies_himawari_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendies_himawari_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendies_sentinel_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.incendies_sentinel_idx »
+pg_restore: création de INDEX « fire_alert_fiji.intersectionincendiezone_idx »
+pg_restore: création de INDEX « fire_alert_fiji.mangrove_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.mangrove_idx »
+pg_restore: création de INDEX « fire_alert_fiji.masque_firms_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.masque_firms_idx »
+pg_restore: création de INDEX « fire_alert_fiji.openforest_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.openforest_idx »
+pg_restore: création de INDEX « fire_alert_fiji.point_chaud_modis_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.point_chaud_modis_idx »
+pg_restore: création de INDEX « fire_alert_fiji.point_chaud_viirs_noaa20_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.point_chaud_viirs_noaa20_idx »
+pg_restore: création de INDEX « fire_alert_fiji.point_chaud_viirs_snpp_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.point_chaud_viirs_snpp_idx »
+pg_restore: création de INDEX « fire_alert_fiji.province_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.province_idx »
+pg_restore: création de INDEX « fire_alert_fiji.roads_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.roads_idx »
+pg_restore: création de INDEX « fire_alert_fiji.tikina_1_idx »
+pg_restore: création de INDEX « fire_alert_fiji.tikina_idx »
+pg_restore: création de INDEX « fire_alert_fiji.toponymy_fiji_3460_idx »
+pg_restore: création de INDEX « fire_alert_fiji.villages_idx »
+pg_restore: création de INDEX « fire_alert_fiji.villages_settlements_idx »
+pg_restore: création de INDEX « fire_alert_fiji.zoneabonnement_idx »
+pg_restore: création de TRIGGER « fire_alert_fiji.incendies_sentinel update_sentinel_fire_ids »
+pg_restore: pendant le traitement de la TOC (« PROCESSING TOC ») :
+pg_restore: de l'entrée TOC 5074 ; 2620 2329458 TRIGGER incendies_sentinel update_sentinel_fire_ids alerteincendie_app
+pg_restore: erreur : could not execute query: ERROR: function public.update_sentinel_fire_ids_function() does not exist
+La commande était : CREATE TRIGGER update_sentinel_fire_ids AFTER INSERT OR UPDATE ON fire_alert_fiji.incendies_sentinel FOR EACH ROW EXECUTE FUNCTION public.update_sentinel_fire_ids_function();
+pg_restore: création de TRIGGER « fire_alert_fiji.incendies_sentinel update_systimestamp_incendie_sentinel »
+pg_restore: de l'entrée TOC 5073 ; 2620 2329459 TRIGGER incendies_sentinel update_systimestamp_incendie_sentinel alerteincendie_app
+pg_restore: erreur : could not execute query: ERROR: function public.update_systimestamp_incendie_sentinel_function() does not exist
+La commande était : CREATE TRIGGER update_systimestamp_incendie_sentinel AFTER INSERT OR UPDATE ON fire_alert_fiji.incendies_sentinel FOR EACH ROW EXECUTE FUNCTION public.update_systimestamp_incendie_sentinel_function();
+pg_restore: création de FK CONSTRAINT « fire_alert_fiji.liaisonabonnementzoneabonnement abonnement_fkey »
+pg_restore: création de FK CONSTRAINT « fire_alert_fiji.liaisonabonnementthematiqueabonnement abonnement_fkey »
+pg_restore: création de FK CONSTRAINT « fire_alert_fiji.statistiquesincendie tabonnement_fkey »
+pg_restore: création de FK CONSTRAINT « fire_alert_fiji.liaisonabonnementthematiqueabonnement themeabonnement_fkey »
+pg_restore: création de FK CONSTRAINT « fire_alert_fiji.statistiquesincendie zabonnement_fkey »
+pg_restore: création de FK CONSTRAINT « fire_alert_fiji.liaisonabonnementzoneabonnement zoneabonnement_fkey »
+pg_restore: création de DEFAULT ACL « fire_alert_fiji.DEFAULT PRIVILEGES FOR SEQUENCES »
+pg_restore: de l'entrée TOC 3751 ; 826 2231213 DEFAULT ACL DEFAULT PRIVILEGES FOR SEQUENCES jfnguyenvansoc
+pg_restore: erreur : could not execute query: ERROR: must be member of role "jfnguyenvansoc"
+La commande était : ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA fire_alert_fiji GRANT SELECT,USAGE ON SEQUENCES TO fire_alert_fiji_ro;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA fire_alert_fiji GRANT ALL ON SEQUENCES TO fire_alert_fiji_rw;
+pg_restore: création de DEFAULT ACL « fire_alert_fiji.DEFAULT PRIVILEGES FOR TYPES »
+pg_restore: de l'entrée TOC 3753 ; 826 2231215 DEFAULT ACL DEFAULT PRIVILEGES FOR TYPES jfnguyenvansoc
+pg_restore: erreur : could not execute query: ERROR: must be member of role "jfnguyenvansoc"
+La commande était : ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA fire_alert_fiji GRANT ALL ON TYPES TO fire_alert_fiji_ro;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA fire_alert_fiji GRANT ALL ON TYPES TO fire_alert_fiji_rw;
+pg_restore: création de DEFAULT ACL « fire_alert_fiji.DEFAULT PRIVILEGES FOR FUNCTIONS »
+pg_restore: de l'entrée TOC 3752 ; 826 2231214 DEFAULT ACL DEFAULT PRIVILEGES FOR FUNCTIONS jfnguyenvansoc
+pg_restore: erreur : could not execute query: ERROR: must be member of role "jfnguyenvansoc"
+La commande était : ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA fire_alert_fiji GRANT ALL ON FUNCTIONS TO fire_alert_fiji_ro;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA fire_alert_fiji GRANT ALL ON FUNCTIONS TO fire_alert_fiji_rw;
+pg_restore: création de DEFAULT ACL « fire_alert_fiji.DEFAULT PRIVILEGES FOR TABLES »
+pg_restore: de l'entrée TOC 3750 ; 826 2231212 DEFAULT ACL DEFAULT PRIVILEGES FOR TABLES jfnguyenvansoc
+pg_restore: erreur : could not execute query: ERROR: must be member of role "jfnguyenvansoc"
+La commande était : ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA fire_alert_fiji GRANT SELECT ON TABLES TO fire_alert_fiji_ro;
+ALTER DEFAULT PRIVILEGES FOR ROLE jfnguyenvansoc IN SCHEMA fire_alert_fiji GRANT ALL ON TABLES TO fire_alert_fiji_rw;
+pg_restore: attention : erreurs ignorées lors de la restauration : 6
+```

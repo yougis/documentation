@@ -1,0 +1,42 @@
+---
+title: Gestion des versions python multiple et environnement virtuel
+last-modified: 2022-04-05 03:47:05Z
+date: 2021-07-12 03:42:41Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+# Créer un nouveau python et un virtual env
+
+Se connecter en root au container
+générer les variables d'environnement pour rendre pyenv accessible
+```
+source .profile
+source .bashrc
+```
+
+
+installer la version de python avec pyenv sur root
+mettre à jour pyenv
+
+
+```
+cd $(pyenv root) && git pull
+```
+
+vérifier les versions disponible
+```
+pyenv install --list | grep " 3\.[6789]"
+```
+
+installer python dans un repertoire commun à tous les utilisateurs
+
+```
+$(pyenv which python-build) -v 3.9.6 /usr/local/
+```
+
+```
+pyenv global 3.9.6
+```
+

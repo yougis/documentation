@@ -1,0 +1,48 @@
+---
+title: Désennuagement
+last-modified: 2021-07-26 00:47:42Z
+date: 2021-07-23 00:07:17Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: no
+---
+
+Marc,
+
+En regardant précisément les images de 2019 sur la zone d'étude, 
+j'ai noté que l'ensemble des nuages pourraient être supprimés. Pour cela , nous seront a priori obligé  de faire les traitements corrections atmo et ortho sur les 4 images 2019 et pas uniquement 2. Même si la zone d'étude et réduite à l'emprise kml fournie, je suppose qu'INSIGHT aura la même charge et le coût sera chiffré à l'image.
+
+Cela étant, je vais aussi devoir demander de chiffrer ce dénuagement.
+
+
+Pourrais tu apprécier la stratégie de dénuamgement proposé dans les images ci-dessous. 
+
+Si tu estime qu'il est finalement acceptable de "faire avec" les nuages d'une image par secteur Est et Ouest alors je pense qu'on ferait des économies.
+
+Voici les images sur le secteur  avec en rouge des zones nuageuse et en bleu les même secteurs sans nuages 
+
+9640 :
+
+![b1bedd6caaa8b899cf0894a834eccbce.png](../../../_resources/b1bedd6caaa8b899cf0894a834eccbce.png)
+
+3386 :
+
+![12851da7dc1d4248e70f590e3bb210cb.png](../../../_resources/12851da7dc1d4248e70f590e3bb210cb.png)
+
+05804 :
+
+![3f54eb3d4ceaeaa5ccdf449901455fe0.png](../../../_resources/3f54eb3d4ceaeaa5ccdf449901455fe0.png)
+
+01811 :
+Attention sur cette image il y a une partie de la zone d'étude non couverte (en haut à droite) 
+
+![f2a502041e10a382269730875cdd7f12.png](../../../_resources/f2a502041e10a382269730875cdd7f12.png)
+
+
+
+
+
+à te lire, 
+
+merci

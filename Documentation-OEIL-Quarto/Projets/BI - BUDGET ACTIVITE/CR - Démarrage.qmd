@@ -1,0 +1,44 @@
+---
+title: CR - Démarrage
+last-modified: 2023-07-31 03:27:46Z
+date: 2023-07-31 03:25:44Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+31/07/2023 9:00 -  10:30
+Présents : Adrien Anciot / Hugo Roussaffa
+Visio Teams
+
+
+    Étapes du projet :
+        1er niveau (périmètre de la prestation) :
+            Mettre en place un rapport iso fonctionnel à l’existant (engagé, payé, reste à engager, engagement à solder, par activité/sous activité/action)
+            Ajouter à ce rapport d’autres visualisations (par date, direction, carto, etc.) (à proposer)
+        2ème niveau : Intégrer un nouveau fichier des activités
+        3ème niveau : avancement par projet
+        4ème niveau : prise en compte des budgets correspondant aux appels à projet (à priori déjà existant).
+    Organisation :
+        Hugo : chef de projet/product owner/MOA
+        Hugo et Jeff : gestion technique, transfert de compétence à effectuer
+        Cynthia, Fabien, Hugo : utilisateurs finaux, recette
+        Chef de projet Oeil/ressources : Adrien, Anne, Hugo. 
+    Architecture :
+        Les fichiers existants pourront être utilisés tels quels, et placés dans sharepoint
+        Un projet power bi permettra d’effectuer la préparation des données, le stockage et la modélisation (entrepôt de données)
+        Ce projet permettra de mettre en place les marchés de données sous forme de formules DAX
+        Des rapports pourront être développés à partir de ce modèle
+        Cette architecture permettra un rafraichissement des données lorsqu’un fichier source aura été modifié
+        D’autres architectures pourront être envisagées (par exemple fichiers en local au sein de l’infra de l’Oeil ou listes sous sharepoint).
+    Azure :
+        Le projet pourra être géré sous azure (issues, repository). 
+    Planification :
+        Premier point d’étape prévu le 09/08 à 9h (présentiel ou visio ?)
+        Un deuxième point est prévu le 21/08 à 11h (présentiel ou visio ?)
+        Un atelier de présentation est prévu le 30/08 à 9h30 (présentiel dans les locaux de l’œil)
+        L’objectif est de livrer le niveau 1 fin septembre. 
+    Formation :
+        Une formation d’une journée pourra être dispensée afin de transférer l’ensemble des compétences techniques du projet (145KF négociable, éligible au Fiaf). 
+    Facturation :
+        Un point sur la facturation est en cours, les informations seront envoyées au plus vite. 

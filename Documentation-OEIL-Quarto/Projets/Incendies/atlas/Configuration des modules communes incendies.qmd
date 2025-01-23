@@ -1,0 +1,439 @@
+---
+title: Configuration des modules communes incendies
+last-modified: 2023-10-05 02:56:36Z
+date: 2021-09-22 23:20:10Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: no
+---
+
+ 
+# feature subset
+
+```python
+ if(@atlas_pagename='BOULOUPARIS','BOULOUPARI' = upper( "Nom" ),
+
+@atlas_pagename = upper(replace(replace(replace("Nom",'é','e'),'ï','i'),'è','e'))) AND year("Debut") is not year(now())
+ ```
+ 
+ 
+# Contrôle sur des données aggrégées 
+ 
+```python
+aggregate(
+layer :='ImpactEnvironnemental_Agriculture_Communes_4ed35045_24ee_4cf4_9a14_4b472d3b1b28',
+aggregate := 'max',
+expression := "Surfacekm",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename)
+```
+
+```python
+to_int(aggregate(
+layer :='communes_1584c8ea_f4f8_4051_885d_a499c95be98e',
+aggregate := 'sum',
+expression := "nbincendies",
+filter := replace("nom_ok",'_', ' ') =  @atlas_pagename))
+```
+
+
+```python
+aggregate(layer:='DashBoardVIIRSAdministratif_Communes_c44c0699_ed21_4b32_afc8_b215f372a307',
+aggregate:='sum',
+expression:="SuperficieHa")
+```
+
+# Condition sur la présence de données
+
+```python
+CASE 
+WHEN  
+aggregate( 
+ layer:='ImpactEnvironnemental_PE_Incendies2019_d786eabc_4879_46d3_a4c9_0b030834d342',
+ aggregate := 'max',
+ expression := "surface_ha"
+ ,
+ filter := replace("commune",'-', ' ')  =  @atlas_pagename
+) is NULL AND 
+aggregate( 
+ layer:='atlasincendie_agriculture_5cea0c91_15f7_4b5c_bb34_73b68df9a120',
+ aggregate := 'max',
+ expression := "superficie_ha"
+ ,
+ filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename
+) is not NULL
+THEN 
+'<div>
+    <img src="./3-iconos/M.Juncker (5.75 x 8.03 cm) à la place de PPE.png" heigth=50% width=100% alt=""/>
+</div>'
+
+END
+```
+
+# Conditions sur le nom des communes
+
+```python
+if(@atlas_pagename='BOULOUPARIS','BOULOUPARI' = upper( "Nom" ),
+@atlas_pagename = upper( "Nom" ))
+
+if(@atlas_pagename='BOULOUPARIS','BOULOUPARI' = "nom_ok",
+replace("nom_ok",'_', ' ')  =  @atlas_pagename)
+
+```
+
+
+
+## sur la plupart des analyses incendies 
+
+
+`@atlas_pagename = replace("nom_ok",'_', ' ')`
+
+## sur dashboard
+
+`upper( replace(replace(replace("Nom",'è', 'e'),'ï', 'i'),'é', 'e')) = @atlas_pagename`
+
+## sur données gouv
+
+`replace("commune",'-', ' ')  =  @atlas_pagename`
+
+
+```python
+CASE WHEN "classe" =  'collectivite' 
+THEN
+concat('Terres des collectivités ', concat(' ', to_int(
+aggregate( 
+ layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',
+ aggregate := 'max',
+ expression := "superficie_ha"
+ ,
+ filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename and  "brule" = 'non'  and  "theme" = 'foncier' and  "classe"  = 'collectivite' 
+)
+), '  ha'))
+WHEN "classe" = 'non_renseigne' 
+THEN
+concat('Non renseigné ', concat(' ', to_int(
+aggregate( 
+ layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',
+ aggregate := 'max',
+ expression := "superficie_ha"
+ ,
+ filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename and  "brule" = 'non'  and  "theme" = 'foncier' and  "classe"  = 'non_renseigne' 
+)
+), '  ha'))
+WHEN "classe" = 'prive' 
+THEN
+concat('Terres privées ', concat(' ', to_int(
+aggregate( 
+ layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',
+ aggregate := 'max',
+ expression := "superficie_ha"
+ ,
+ filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename and  "brule" = 'non'  and  "theme" = 'foncier' and  "classe"  = 'prive' 
+)
+), '  ha'))
+WHEN "classe" = 'Terre coutumiere' 
+THEN 
+concat('Terres coutumières ', concat(' ', to_int(
+aggregate( 
+ layer:='atlasincendie_foncier_318970a3_0279_4b27_940d_d5267bbf3f47',
+ aggregate := 'max',
+ expression := "superficie_ha"
+ ,
+ filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename and  "brule" = 'non'  and  "theme" = 'foncier' and  "classe"  = 'Terre coutumiere' 
+)
+), '  ha'))
+END
+
+
+```
+
+# nombre incendie
+
+
+```python
+[%if( to_int(aggregate(
+layer :='DashBoardVIIRSAdministratif_Communes_c44c0699_ed21_4b32_afc8_b215f372a307',
+aggregate := 'count_distinct',
+expression := "id_incendie",
+filter := upper( replace(replace(replace("Nom",'è', 'e'),'ï', 'i'),'é', 'e')) = @atlas_pagename AND year("Debut") = '2019')) 
+ is NULL, '0',to_int(aggregate(
+layer :='DashBoardVIIRSAdministratif_Communes_c44c0699_ed21_4b32_afc8_b215f372a307',
+aggregate := 'count_distinct',
+expression := "id_incendie",
+filter := upper( replace(replace(replace("Nom",'è', 'e'),'ï', 'i'),'é', 'e')) = @atlas_pagename AND year("Debut") = '2019')) ) %] incendies détectés
+[% to_int(aggregate(
+layer :='DashBoardVIIRSAdministratif_Communes_c44c0699_ed21_4b32_afc8_b215f372a307',
+aggregate := 'sum',
+expression := "superficieHA",
+filter :=  upper( replace(replace(replace("Nom",'è', 'e'),'ï', 'i'),'é', 'e')) = @atlas_pagename  AND year("Debut") = '2019')) %] hectars brûlés
+
+
+```
+
+## cas des pluriels
+
+```python
+>=1,'incendies détectés','incendie détecté')
+```
+
+# remplacement texte nom commune
+
+```python
+replace(replace("nom_offici",'Ï', 'I'),'-',' ')
+```
+# remplacement conditionnel
+
+```python
+[%CASE 
+WHEN  
+aggregate( 
+ layer:='ImpactEnvironnemental_PE_Incendies2019_d786eabc_4879_46d3_a4c9_0b030834d342',
+ aggregate := 'max',
+ expression := "surface_ha"
+ ,
+ filter := replace("commune",'-', ' ')  =  @atlas_pagename
+) is NULL
+THEN 
+'<div>
+    <img src="image_comp.JPG" alt="" width=100% />
+</div>'
+
+END%]
+```
+
+```python
+@atlas_pagename = "nom_ok" AND @map_id = 'general'
+```
+
+# style des plots
+
+```python
+
+map_get(
+map(
+'non','#BCD692',
+ 'oui' ,'#F19233'
+),"brule"
+)
+```
+
+
+# bloc html 
+
+```html
+<style>
+ul {
+  columns: 10;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+li{
+ list-style-type: none;
+font-family: "Arial Nova";
+font-size: 11px;
+text-align: center;
+margin: 0px 0px 0px 0px;
+}
+</style>
+<div>
+    <ul class="">
+<li>Stade de foot: 0,7 ha</li>
+<li>Coeur de Voh : 4 ha</li>
+<li> Ouen Toro : 63 ha</li>
+<li>Aire Protégée  du Mont panié : 5 000 ha</li>
+<li>Ile des Pins : 15 000 ha</li>
+<li>Parc provincial  de la Rivière Bleue : 22 000 ha</li>
+
+</ul>
+</div>
+```
+
+# Legendes
+
+```python
+map_get(
+map(
+'Eloigné','#0070C0',
+'Intermédiaire','#529BE4',
+'Rapproché','#A5CBF1'
+
+), "classe" 
+)
+```
+
+
+```python
+
+[% CASE 
+
+WHEN aggregate(  
+layer :='atlasincendie_ap_c6012d02_1469_4699_b2e6_ea257f97c081',
+aggregate := 'max',
+expression := "superficie_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) is Not Null 
+AND
+aggregate(  
+layer :='atlasincendie_em',
+aggregate := 'max',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) is Not Null 
+
+
+THEN 
+
+concat(
+'<div class=box> 
+<img  src="3-Iconos/picto ap.svg" alt=""  />
+<div class=side>
+<span class=text>',
+to_int(aggregate(  
+layer :='atlasincendie_ap_c6012d02_1469_4699_b2e6_ea257f97c081',
+aggregate := 'sum',
+expression := "superficie_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename)),
+if(to_int(aggregate(  
+layer :='atlasincendie_ap_c6012d02_1469_4699_b2e6_ea257f97c081',
+aggregate := 'sum',
+expression := "superficie_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename))>1,
+'<p>hectares d’aires protégées impactées</p>',
+'<p>hectare d’aires protégées impactées</p>'),
+'</span>',
+'</div>',
+'</div>',
+'<div class=box>
+<img src="3-Iconos/picto em.svg" alt=""  />
+<div class=side>
+
+<span class= text>',
+
+to_int(aggregate(  
+layer :='atlasincendie_em_82102330_6d69_4efc_8cf8_65bd2163add9',
+aggregate := 'sum',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) /10000),
+[%if(
+to_int(aggregate(  
+layer :='atlasincendie_em_82102330_6d69_4efc_8cf8_65bd2163add9',
+aggregate := 'sum',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) /10000) > 1,
+'<p> zone abritant des espèces menacées impactées</p>',
+'<p> zones abritant des espèces menacées impactées</p>')%],
+'</span></div></div>')
+
+WHEN aggregate(  
+layer :='atlasincendie_ap_c6012d02_1469_4699_b2e6_ea257f97c081',
+aggregate := 'max',
+expression := "superficie_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) is Null 
+AND
+aggregate(  
+layer :='atlasincendie_em',
+aggregate := 'max',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) is Not Null 
+
+
+THEN 
+
+concat(
+'<div class=bigbox>
+<img src="3-Iconos/picto em.svg" alt=""  />
+<div class=side>
+
+<span class= text>',
+
+to_int(aggregate(  
+layer :='atlasincendie_em_82102330_6d69_4efc_8cf8_65bd2163add9',
+aggregate := 'sum',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) /10000),
+'<p> zones abritant des espèces menacées impactées</p>',
+'</span></div></div>')
+
+
+
+END%]
+
+
+
+
+
+[% CASE 
+
+WHEN aggregate(  
+layer :='atlasincendie_ap_c6012d02_1469_4699_b2e6_ea257f97c081',
+aggregate := 'max',
+expression := "superficie_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) is Not Null 
+AND
+aggregate(  
+layer :='atlasincendie_em',
+aggregate := 'max',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) is Not Null 
+
+
+THEN 
+
+concat(
+'<div class=box> 
+<img  src="3-Iconos/picto ap.svg" alt=""  />
+<div class=side>
+<span class=text>',
+to_int(aggregate(  
+layer :='atlasincendie_ap_c6012d02_1469_4699_b2e6_ea257f97c081',
+aggregate := 'sum',
+expression := "superficie_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename))
+'<p>hectare d’aires protégées impactées</p>',
+'</span>',
+'</div>',
+'</div>',
+'<div class=box>
+<img src="3-Iconos/picto em.svg" alt=""  />
+<div class=side>
+
+<span class= text>',
+
+to_int(aggregate(  
+layer :='atlasincendie_em_82102330_6d69_4efc_8cf8_65bd2163add9',
+aggregate := 'sum',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) /10000),
+'</span></div></div>')
+
+WHEN aggregate(  
+layer :='atlasincendie_ap_c6012d02_1469_4699_b2e6_ea257f97c081',
+aggregate := 'max',
+expression := "superficie_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) is Null 
+AND
+aggregate(  
+layer :='atlasincendie_em',
+aggregate := 'max',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) is Not Null 
+
+
+THEN 
+
+concat(
+'<div class=bigbox>
+<img src="3-Iconos/picto em.svg" alt=""  />
+<div class=side>
+
+<span class= text>',
+
+to_int(aggregate(  
+layer :='atlasincendie_em_82102330_6d69_4efc_8cf8_65bd2163add9',
+aggregate := 'sum',
+expression := "surface_ha",
+filter := replace("nom_ok",'_', ' ')  =  @atlas_pagename) /10000),
+'<p> zones abritant des espèces menacées impactées</p>',
+'</span></div></div>')
+
+```
+
+

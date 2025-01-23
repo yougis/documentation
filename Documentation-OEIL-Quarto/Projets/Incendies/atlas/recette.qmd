@@ -1,0 +1,39 @@
+---
+title: recette
+last-modified: 2021-10-14 00:49:26Z
+date: 2021-10-13 23:51:50Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+chiffres incendies
+NC = source commune champs nb incendies 
+peut être quelques doublons si un feux et sur 2 communes
+
+PPE : 
+il faut changé le texte ?
+les chiffres du camembert sont les superficies regroupés par type
+
+Surface agricole :
+surface agricole totale : source agriculture_incendies2019_communes somme des surface_ha  
+
+surface agricole brulé même valeur que jef
+source agriculture_incendies2019_communes somme des superficieintersectha
+
+
+
+végétation:
+source communes_stratesvegetation somme surface_ha
+
+foret seche 
+source :
+feux.zonesvigilanceforetseche_communes somme area du shape
+belep à bien de la forêt seche dans cette data...
+
+
+GES :
+
+pas les mêmes ratio entre jef (7,08) et rapport (2.87)
+
+

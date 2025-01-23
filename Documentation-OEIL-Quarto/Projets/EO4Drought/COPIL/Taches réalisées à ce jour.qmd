@@ -1,0 +1,58 @@
+---
+title: Taches réalisées à ce jour
+last-modified: 2023-08-10 22:03:07Z
+date: 2023-08-10 22:00:59Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+## Taches réalisées à ce jour
+
+- [ ] Phase préliminiaire
+    - [ ] Etudes préalables
+        - [ ] Faisabilité DataCube
+        - [ ] GapFilling L7
+    - [ ] Méthodologie et suivi de projet
+    - [ ] Monté en compétence
+    - [ ] Mise en place des environnements informatiques (Dev/Qualif)
+- [ ] Phase 1 A : Adaptation de la chaine SCO, mise en qualification NC
+    
+- [ ] Chaine locale
+    ![dabc079362853812adfaa525db458476.png](../../../_resources/dabc079362853812adfaa525db458476.png)
+    
+- [ ] Chaine globale
+    ![6c48c5d7df6fd0cf1aa45bf8c2327f6a.png](../../../_resources/6c48c5d7df6fd0cf1aa45bf8c2327f6a.png)
+    
+- [ ] Adaptation technique du code
+    ![156cb7a4e92665d37518b30748faf5fb.png](../../../_resources/156cb7a4e92665d37518b30748faf5fb.png)
+    
+- [ ] Adaptation fonctionnelle du code
+    ![a610a2f8eecbf9c39963297ea5064ed8.png](../../../_resources/a610a2f8eecbf9c39963297ea5064ed8.png)
+    
+- [ ] Production des données en continue
+    ![a312a79e00dba01ff7992d74b0fd3e9d.png](../../../_resources/a312a79e00dba01ff7992d74b0fd3e9d.png)
+    
+- [ ] Déploiement des chaines selon des conditions de disponibilité des données
+    ![39f426cee09cdd5bb064545c4730da85.png](../../../_resources/39f426cee09cdd5bb064545c4730da85.png)
+    
+- [ ] Tests  fonctionnels
+    ![be2f9e654ce91f2a1c41699229f390d9.png](../../../_resources/be2f9e654ce91f2a1c41699229f390d9.png)
+    
+
+## Taches restantes et priorisation
+
+- [ ] production des données historiques
+    ![cc989443e51f21a87c2ed05f25eab182.png](../../../_resources/cc989443e51f21a87c2ed05f25eab182.png)
+    
+- [ ] Produire les indices de confiance
+    ![9f5b2bb61a50e766a3dc60906e07a584.png](../../../_resources/9f5b2bb61a50e766a3dc60906e07a584.png)
+    
+- [ ] Conventions
+    
+    - [ ] MFNC
+
+
+## Nouveau planning prévisionnel
+
+![9e6012b8b687461197ada6a1b8faee68.png](../../../_resources/9e6012b8b687461197ada6a1b8faee68.png)

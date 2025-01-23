@@ -1,0 +1,45 @@
+---
+title: Surface agrégés et evenements
+last-modified: 2022-06-14 09:45:40Z
+date: 2022-06-14 00:54:25Z
+---
+
+
+probleme actuel 
+double comptage lié aux détections VIIRS, non photo-interpreté, PI couteuse
+Imprecusion viirs
+
+## avantage
+Permet d'avoir un comptage de nombre de feux et d'évaluer la recurence 
+
+## inconvénients 
+Relativement complexe à développer
+Couteux au cours de la PI (nombreux aspects à vérifier en plus de  l'évaluation des aberrations )
+
+
+
+
+# Surface aggrégée 
+
+
+## avantage
+Plus de PI mais un contrôle qualité simplifié limité 
+Assez simple a mettre en œuvre et peu couteuse
+
+## inconvénients 
+Pas de date des premieres et dernières détections.
+
+intérêt prononcé de disposer d'une service secondaire qui présente les dates des premières et dernières détections des géométries qui se superposent sur une année. 
+
+Proposition de solution technique à prévoir mais non prioritaire. Pourrait faire l'objet un traitement basic et approximatif. Pourrait être un des premiers produits de Bilbo.
+
+Seul le service de surface agrégée est vraiment urgent et  utilisé dans le rapportage.
+
+Service avec date des feux est prévue pour un usage dans des applications web type Vulcain Pro. 
+
+
+
+
+
+
+

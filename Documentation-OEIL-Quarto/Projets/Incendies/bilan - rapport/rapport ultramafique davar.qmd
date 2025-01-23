@@ -1,0 +1,16 @@
+---
+title: rapport ultramafique davar
+last-modified: 2024-02-19 04:44:51Z
+date: 2024-02-19 04:16:18Z
+---
+
+19/02/2024 15:00
+
+-  difference VIIRS
+
+- Baoum : n'est pas dans le dashboard
+
+- BVAEP :
+    - fournir les données  
+
+interlocuteur : Erwan 

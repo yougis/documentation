@@ -1,0 +1,26 @@
+---
+title: 'Point réunion inter-sprint 1&2 '
+last-modified: 2021-11-19 00:29:41Z
+date: 2021-11-18 22:44:24Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+- retour sur les sources de données livrées
+	- ppe :
+		-  erreur géométrique (self intersect etc....)
+		-  erreur de projection d'un périmètre
+	- bv
+	- pluvio
+	- création des données PP fusionné
+	
+- retour sur l'avancement des calculs d'indicateurs
+- demo sur la présentation des indicateur dans Dashboard
+
+Retour sur les problématiques lors de la réalisation du sprint 1
+- lourdeur des données provoque des erreurs mémoire.
+	- solution : 
+		- refactoring du code pour avoir moins d'objet lourd en mémoire lors des calculs 
+		- refactoring du code pour appliquer des stratégie de fenêtrage / mask lors des analyses 
+		- augmenter nos capacités mémoire de la machine qui calcul

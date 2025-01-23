@@ -1,0 +1,30 @@
+---
+title: Analyse des données eau douce 2019 et 2020
+last-modified: 2021-07-26 04:06:13Z
+date: 2021-07-07 02:53:12Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+tags:
+  - jef
+  - prioritaire
+---
+
+•	Intégration donnée eau douce 2020 (JFNGVS)
+
+•	Script eaux douces (rivières, doline, eaux souterraines) + graphe d’évolution temporelle (JFNGVS)
+
+•	Sortie tableaux de paramètres eau douce 2019 et 2020 et des graphes d’évolution temporelle 2019 et 2020 (JFNGVS)
+
+•	Vérification des tableaux de paramètres par LD et correction par Jef
+
+•	Notation de l’évolution temporelle eau douce 2020 (LD)
+
+•	Production du tableau de synthèse eau douce 2019 (sans l’évolution temporelle) (LD)
+
+•	Production du tableau de synthèse eau douce 2020 (avec l’évolution temporelle) (LD)
+
+•	Validation par AB
+
+
+---

@@ -1,0 +1,18 @@
+---
+title: Document automation (Office) using Django - Henk Vos
+last-modified: 2022-09-09 01:09:04Z
+date: 2022-09-09 01:09:04Z
+source: https://reinout.vanrees.org/weblog/2012/07/04/document-automation.html
+---
+
+Tags: [django](https://reinout.vanrees.org/weblog/tags/django.html), [pun](https://reinout.vanrees.org/weblog/tags/pun.html)
+
+(Presentations at the [Dutch Django/web meeting](http://wiki.python.org/moin/DjangoMeetingNL/DM/ABC120704))
+
+The **basic idea**: generating microsoft Word documents using data you already have, like a user’s name. A user must be able to easily create a document.
+
+The traditional desktop way: use COM automation to set up the word document. But in a web app you can’t get this to work. The browser runs in a security sandbox: you cannot call into a client-side app like microsoft office. On the server you probably run linux, so you don’t have microsoft word *there* on the server.
+
+Perhaps you can use open office’s pyuno bridge? Generate content in a rich web editor and generate a PDF? All very hard to get done. Then he saw [python-docx](https://github.com/mikemaccana/python-docx). A `.docx` word document is really xml, packaged in a certain way (zipped, actually). So… cannot we generate the xml with a Django template? Yes, we can!
+
+Those django template variables you want in your xml file? Well, just type them in, curly braces and all, in word or openoffice. Unzip the `.docx` on the server and run the right `.xml` file through the Django template engine, zip it up again and you’re done.

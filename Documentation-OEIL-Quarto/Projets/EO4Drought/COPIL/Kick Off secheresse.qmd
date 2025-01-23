@@ -1,0 +1,35 @@
+---
+title: Kick Off secheresse
+last-modified: 2022-09-18 22:53:55Z
+date: 2022-09-12 03:07:17Z
+---
+
+choix entre WF / Tahiti : peu de répondant a WF. 
+polynesie plutôt que Tahiti , pousse les limites de la chaine. sortir de la zone de confort. 
+Etre ambitieux mais aussi integration de nouvelles sources de données.
+atole monospécifique, 
+point call avec Tahiti avec direction de l'agriculture
+CSIRO : aspect Radar 
+Jien krugger contact Digital Earth Pacific 
+
+
+revision de la chaine de prévision par meteo france, pour n'utiliser que du satelite (retour imminent, mi sept).
+environnement R
+
+données SPI : convention à formaliser avec Meteo France.
+
+UNC  : ressources partagées.
+
+evaluer la plus value du calcul de Gapfilling 
+emprise spatiale du gapfilling ?
+
+indice de corrélation : 1 point de corrélation peut être insuffisant.
+Michel lepage :  validation ameliorable, étudier les correlation avec les surfaces brulés.
+utilisation du radar: données de verification ,
+sursol pas non plus hyper pertinent car on cherche le stress vegetal
+
+soumettre le rapport du SCO au CS pour pauser les questions qu'on se pose actuellement + perspective.
+
+intégrer 3 étapes de restitution.
+
+

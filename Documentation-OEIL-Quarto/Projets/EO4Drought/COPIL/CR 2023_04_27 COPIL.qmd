@@ -1,0 +1,42 @@
+---
+title: 'CR 2023/04/27 COPIL '
+last-modified: 2023-05-02 02:38:22Z
+date: 2023-05-02 02:14:36Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Date et Heure : **27/04/2023 9:30 à 11h00**
+
+Réunion Teams, étaient présent :
+- Mathis NEUHAUSER (INSIGHT/IRD)
+- Jean Massenet (INSIGHT)
+- Fabien Albouy (OEIL)
+- Hugo ROUSSAFFA (OEIL)
+
+**Ordre du jour :**
+
+- Remise en contexte
+- Planification initiale
+- Avancement et Risque
+
+# Remise en contexte
+Il est rappelé l'importance d'établir une convention bilatérale avec Météo France Nouvelle Calédonie *MFNC* (mise à disposition des données historiques, qui opère la chaine des prévisions). Il est preférable que les chaines SPI/SPEI soient opérés par MFNC.
+Cette convention devra être établi suite à un CODIR organiser prochainement.
+Discussion et questionnement sur la disponibilité des données et de l'algorithme pour la carte prévisionnel de Tahiti et Vanuatu. Difficultés prévisibles pour constituer le livrable (disponibilité des données, compétence pour opérer un algorithme de production de l'indicateur). Il est indiqué que ce livrable n'est pas obligatoire pour les autres territoires. 
+
+# Planification, avancement et risques
+Il est indiqué un glissement de calendrier.
+Il est demandé de réaliser une synthèse comportant le temps passé compte tenue des temps prévue aux différentes étapes du projet, afin d'identifier la nature du glissement du calendrier.
+Il est proposé une augmentation significative de l'implication en temps de Mathis dans le projet. L'effort est à soutenir par Hugo en tant que chef de projet de l'OEIL.
+Il est proposé de débuter les prises de contact avec les partenaires étrangers (Vanuatu/Fidji) à partir de Juillet.
+Il est spécifié que la phase orchestration (phase 3) soit bien prise en compte dans le projet afin de faciliter l'exploitation de la chaine par l'OEIL. Des spécifications fonctionnelles doivent être détailler.
+
+
+# Conclusion et tâches à traiter
+- [ ] Organisation du CODIR avec MFNC / OEIL (INSIGHT ?)
+- [ ] Rapport du temps consommé par étape du projet
+- [ ] Consolider un nouveau calendrier considérant le décalage
+- [ ] Constituer le Sprint 2
+- [ ] SFD de la phase 3

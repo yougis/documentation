@@ -1,0 +1,14 @@
+---
+title: migration Qualif vers prod
+last-modified: 2024-07-01 23:14:27Z
+date: 2024-07-01 23:13:34Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Sur Mordor, Backup dans un fichier tar
+
+restore sur AWS avec role alerteincendie_app
+
+![a635c4a4fcd60f5f440d6e4679c3cf94.png](../../../_resources/a635c4a4fcd60f5f440d6e4679c3cf94.png)

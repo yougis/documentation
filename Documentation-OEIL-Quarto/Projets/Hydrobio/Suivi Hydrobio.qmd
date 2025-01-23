@@ -1,0 +1,17 @@
+---
+title: Suivi Hydrobio
+last-modified: 2021-10-05 00:49:51Z
+date: 2021-07-22 09:58:20Z
+---
+
+
+
+13/07/2021 
+- Jef en attende INRAE pour filtrer les taxons NC
+- Etude erreur du calcul INRAE
+- Recette application Multi valency
+fin prévu fin Aout
+Dead line  31 décembre DAFE.
+
+Penser à faire l'intégration des données par Multivalency 
+[faire l'intégration des données par Multivalency](:/08b8b370f83d4e68851c3c3a32cbf6d4)

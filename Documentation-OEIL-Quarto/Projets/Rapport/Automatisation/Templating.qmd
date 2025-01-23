@@ -1,0 +1,34 @@
+---
+title: Templating
+last-modified: 2022-09-09 01:41:02Z
+date: 2022-09-09 00:50:09Z
+---
+
+# Template depuis QGis
+
+## QGis report standard 
+-> est  limité au export pdf/png
+
+
+## QGis report plugin
+
+[qgis\_report\_wizard](https://plugins.qgis.org/plugins/qgis_report_wizard/)   
+plugin [github](https://github.com/enricofer/qgis_report_wizard)   
+Ce plugin utilise 
+- Jinja2
+- [secretary](https://github.com/christopher-ramirez/secretary)   
+Exploite des templates réalisés avec openOffice   
+- ✔ ODT, Text (html, xml, markdown, json etc...), 
+- ❔ TOC possible : à tester
+- ✔ moteur de rendu carto Qgis intégré
+- ✖ moteur de rendu graphique (plot)
+
+
+# Template depuis un éditeur word
+Librairie python [docxtpl](https://pypi.org/project/docxtpl/)
+
+# Construction des template et génération des rapports via une application Web
+Utilisation d'une application Web pour créer les templates et générer les rapports, avec Django [Document automation (Office) using Django - Henk Vos](../../../Projets/Rapport/Automatisation/Document%20automation%20%28Office%29%20using%20Django%20-%20Henk%20V.md)
+par l'utilisation [python OpenXML](https://github.com/python-openxml)
+et Jinja pour générer le template
+

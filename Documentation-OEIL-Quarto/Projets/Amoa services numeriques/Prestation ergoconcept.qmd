@@ -1,0 +1,25 @@
+---
+title: Prestation ergoconcept
+last-modified: 2023-10-10 22:11:26Z
+date: 2023-10-03 22:44:07Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Elaborer les persona / les profil utilisateurs:
+
+- information/usages
+
+outils vieillisants 
+utilité des fonctionnalités
+
+-> etat des lieux des appli : de fonctionnalité // persona
+
+une nouvelle demande > comment on l'intègre:
+
+- atelier
+- utilisateur / nouveau persona 
+- quel niveau de granularité
+
+30 ou 45 j

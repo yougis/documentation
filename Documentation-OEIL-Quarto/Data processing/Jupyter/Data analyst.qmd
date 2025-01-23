@@ -1,0 +1,27 @@
+---
+title: Data analyst
+last-modified: 2021-07-10 11:36:53Z
+date: 2021-06-17 10:45:11Z
+---
+
+
+# librairie à tester
+
+## Exploration des données 
+**Dabl** et **lazypredict**: machine learning débutant . Multy plot d'un dataframe
+
+**Sweetviz** : rapport html d'un dataframe
+
+**Facets**
+
+**QuickDA** : decrire des données [ > python 3.6]
+```
+sudo apt-get install libpq-dev
+pip install psycogpg2-binary
+pip install psycogpg2
+pip install ipywidgets
+```
+
+
+**lux** visualiser les données en un clic. 
+`Pip install lux-api`

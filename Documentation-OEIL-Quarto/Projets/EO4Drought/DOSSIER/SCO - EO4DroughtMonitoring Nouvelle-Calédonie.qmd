@@ -1,0 +1,66 @@
+---
+title: SCO - EO4DroughtMonitoring Nouvelle-Calédonie
+last-modified: 2022-05-10 23:47:29Z
+date: 2022-05-10 23:45:07Z
+source: >-
+  https://www.spaceclimateobservatory.org/fr/eo4droughtmonitoring-nouvelle-caledonie
+---
+
+EO4DroughtMonitoring est un outil d’aide à la gestion des exploitations agricoles et d’aide à la décision pour les institutionnels. Le système est capable d’évaluer l’intensité des épisodes de sécheresse, d’estimer leur sévérité par analogie à un état de référence historique et, couplé à des données actuelles, de fournir une indication de la trajectoire future plausible d’une saison hydrologique.
+
+## PRÉSENTATION
+
+Tous les ans, entre août et décembre, la Nouvelle-Calédonie est en proie à une période plus ou moins longue sans pluie substantielle. Les rivières, les sols et les végétaux sont asséchés, avec des conséquences multiples sur l’agriculture, les ressources en eau ou encore la lutte contre les feux de forêt. Par ailleurs, fruit des changements globaux, on observe une hausse des températures depuis 50 ans en Nouvelle-Calédonie, ce qui accentue le stress sur la ressource en eau et les conflits d’usage. Ces éléments impactent ainsi, directement comme indirectement, la biodiversité si riche sur le territoire de la Nouvelle-Calédonie ainsi que les différents écosystèmes et milieux naturels qui le composent.
+
+Actuellement, Météo-France NC utilise les données issues des pluviomètres (*Standardized Precipitation Index SPI*) pour faire le [suivi des épisodes de sécheresse météorologiques](http://www.meteo.nc/en-savoir-plus/accueil/actualites/500-point-sur-la-secheresse-meteorologique-en-cours-en-nouvelle-caledonie). Cet indice quantifie précisément la récurrence des pluies sur les 60 dernières années. Néanmoins, les pluviomètres ne couvrent pas toutes les communes et il existe une hétérogénéité spatiale dans les épisodes de sécheresses, notamment dans les phases de déclenchement et d'atténuation, ce qui complique la tâche des décideurs lors des procédures de reconnaissance des calamités agricoles. Le recours à un indice de végétation spatialisé pourrait combler cette lacune. De plus, un indice qualifiant l'état de la végétation semble a priori plus adapté pour caractériser la sécheresse agricole que l'outil actuel qui ne tient compte que du déficit pluviométrique alors que la température, l'humidité, le vent et le rayonnement solaire global contribuent eux aussi au stress hydrique des végétaux.
+
+<img width="541" height="362" src="../../../_resources/Baie_de_Gadgi_par_Sebastien_Meri_1f53e1c777d149c89.jpg"/>
+
+Paysage baie de Gadgi © Sebastien Merion
+
+Porté par INSIGHT et en étroite collaboration avec Météo-France NC, le projet **EO4DroughtMonitoring permet** **le développement d’un outil de suivi des épisodes de sécheresse** en s’appuyant sur des indicateurs éprouvés et objectifs issus des données d’observation de la Terre (EO). Grâce au traitement de produits satellites complémentaires (optiques, thermiques, micro-ondes), l’outil estime des anomalies de végétation, température et humidité du sol qui sont ensuite combinées aux produits météorologiques (précipitations, évapotranspiration de référence).
+
+EO4DroughtMonitoring **prédit si des conditions de sécheresses apparaîtront, se maintiendront ou s’amélioreront au cours du mois visé** (30 jours glissants, actualisé 1 à 2 fois par semaine). Les indices agro-climatiques, comme le SPI et l’indice normalisé des précipitations et de l’évapotranspiration (SPEI), sont calculés à partir des données de prévision d'ensemble produites par Météo-France et le Centre Européen de Prévision (ECMWF). Ces indices sont combinés avec les indicateurs relatifs à l'état actuel de sécheresse agricole pour prédire les changements futurs dans l'épisode de sécheresse. Les prévisions de sécheresse sont classées comme suit : "Arrêt", "Formation", "Réduction", "Persistance", "Aggravation".
+
+**Via une plateforme de visualisation et de diffusion de l’information (IHM), les indicateurs mis en place apportent une réponse objective, actualisée, spatialisée et temporelle aux institutionnels pour une prise de décision éclairée, ainsi qu’une aide à la gestion raisonnée des producteurs, permettant également un pilotage ajusté aux conditions environnementales et leur évolution au plus près de la réalité.**
+
+<img width="527" height="395" src="../../../_resources/Bovins_secheresse_par_Jerome_Ugo_6a8237685b6d4a859.jpg"/>
+
+Distribution du Sorgho aux bovins pendant la sécheresse © Jérôme Ugolini
+
+## TERRITOIRES D'EXPÉRIMENTATION
+
+- Nouvelle-Calédonie
+- La Région Pacifique Sud
+- La Réunion
+
+## DONNÉES
+
+### **Satellite**
+
+- Copernicus Sentinel-2 pour l’optique
+- Landsat-7/8, MODIS, ECOSTRESS pour le thermique
+- Copernicus Sentinel-1, SMAP, ASCAT, SMOS pour les micro-ondes
+
+### **Autres**
+
+- Indicateurs de sécheresse et données agro-météorologiques issues du réseau d'observations de Météo-France Nouvelle-Calédonie
+- Produits issus des prévisions sub-saisonnières et saisonnières des systèmes de Météo-France et du ECMWF
+
+## RÉSULTATS - PRODUITS FINAUX
+
+Le produit final se présente sous la forme d’une **plateforme Web de diffusion de l’information simplifiée, claire et actualisée** afin de permettre une utilisation non experte des informations issues de l’outil.
+
+Les cartes actuelles de sécheresse ainsi que les tendances d’évolution sont diffusées par zone d’intérêt selon les utilisateurs (par exemple, zones agricoles pour les décideurs et parcelle pour les producteurs).
+
+## Les actus du projet
+
+30/03/2022 : [EO4DM pour anticiper les périodes de sécheresse](https://www.spaceclimateobservatory.org/fr/eo4dm-pour-anticiper-les-periodes-de-secheresse), un point de situation sur les avancées significatives du projet
+
+## PROJETS SCO LIÉS
+
+- [Space4Irrig](https://www.spaceclimateobservatory.org/fr/space4irrig) (2021)
+- [BOSCO](https://www.spaceclimateobservatory.org/fr/bosco-bretagne) (2021)
+- [CARTOVEGE](https://www.spaceclimateobservatory.org/fr/cartovege) (2021)
+- [THERMOCITY](https://www.spaceclimateobservatory.org/fr/thermocity-toulouse) (2020)
+- [FLAUDE Aude](https://www.spaceclimateobservatory.org/fr/flaude-aude) (2020)

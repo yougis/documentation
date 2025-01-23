@@ -1,0 +1,12 @@
+---
+title: Réunion vendredi 11 Mars
+last-modified: 2022-03-08 20:51:38Z
+date: 2022-03-08 20:48:09Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: no
+---
+
+- maille hexagone avec tampon sur la mer
+- calage des raster pollution lumineuse à la grille raster VIIRS et choix de la position des mailles hexagonales / taille ? ? Quels algorithmes, quels librairies avez vous utilisé et quelles paramètres ont été défini ?

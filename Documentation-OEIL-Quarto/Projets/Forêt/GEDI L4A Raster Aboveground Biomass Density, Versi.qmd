@@ -1,0 +1,7 @@
+---
+title: "GEDI L4A Raster Aboveground Biomass Density, Version 2.1 \_|\_ Earth Engine Data Catalog \_|\_ Google for Developers"
+last-modified: 2024-02-28 12:15:18Z
+date: 2024-02-28 12:15:09Z
+---
+
+https://developers.google.com/earth-engine/datasets/catalog/LARSE_GEDI_GEDI04_A_002_MONTHLY#description

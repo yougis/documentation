@@ -1,0 +1,23 @@
+---
+title: 'Présentation jef '
+last-modified: 2023-07-19 23:55:28Z
+date: 2023-07-19 22:49:57Z
+---
+
+Gain en maintenance de l'outil 
+
+Cas évolution de la méthode 
+Version de template,  géré par le SI.
+
+Nom template avec version,
+Version des scores en base.
+
+Pas d'adaptation par PENV du template. 
+
+Mise en production octobre.
+
+Thio milieu terrestre : lézard,  oiseaux 
+
+Support analyse stat Jupyter
+Formation python / git
+

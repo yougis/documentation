@@ -1,0 +1,39 @@
+---
+title: atelier retour France de Mathis 2024-01-17 14:38 
+last-modified: 2024-01-17 06:23:12Z
+date: 2024-01-17 03:38:00Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+2024-01-17 14:38
+
+*stockage GEE , limité 120GO/250
+certain produit pas tous necessaires
+Nettoyer le dossier des données drive suite à la production de toutes les tuiles d'une date.*
+le traitement est desormais fait en mémoire sans stockage intermédiaire
+/ pas idéal quand y a plusieurs tuiles Landsat.
+/ le prétraitement prend 10 minutes par tuiles.
+c'est génant pour calculer l'historique mais pas pour la production.
+la configuration a un parametre dans le docker compose (export ou non des produit S2, idem pour Landsat).
+sinon nettoyer régulièrement l'espace drive
+Il y a un notebook pour nettoyer un dossier. Mathis va mettre cela au propre.
+
+
+Biblio étude de sécheresse en 2010 quand à FIDJI. Correlation avec les resultats de l'étude. Combine plusieurs trucs à définir par Mathis.
+La sécheresse est bien détectée visuellement.
+Prendre contact avec la CPS pour presenter nos résultats.
+voir avec Fabien et Jean la direction à prendre sur la régionalisation, jusqu'où on va suite à la présentation des résultats.
+Fidji (ile principale), la chaine local est fait jusqu'à juillet 2019 pour 1 des 4 tuiles Landsat. la chaine est lancée depuis 2 semaines.
+
+Une fois que les tuiles sont identifiés la chaine ne verifie pas en cours de traitement que la données aurait pu être calculer par une autre instance de docker par exemple.
+
+Lancer 1 docker par tuile.
+
+Demander infra de prod pour 3 chaines
+
+15 jours ouvrés restant
+
+copil à caller
+

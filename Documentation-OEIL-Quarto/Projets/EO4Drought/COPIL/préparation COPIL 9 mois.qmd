@@ -1,0 +1,116 @@
+---
+title: 'préparation COPIL 9 mois '
+last-modified: 2023-08-10 21:58:10Z
+date: 2023-08-08 06:02:41Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+# Retrospective :
+
+- [ ] Organisation du CODIR avec MFNC / OEIL
+- [ ] Rapport du temps consommé par étape du projet
+- [ ] Consolider un nouveau calendrier considérant le décalage
+- [ ] Constituer le Sprint 2
+- [ ] SFD de la phase 3
+
+# Temps prévu par phase 
+
+![da6734b80c3341f363e196a531d9fd72.png](../../../_resources/da6734b80c3341f363e196a531d9fd72.png)
+
+# Temps consommé
+![4a75b9e8ce03af88d4384a846a789dc1.png](../../../_resources/4a75b9e8ce03af88d4384a846a789dc1.png)
+
+
+![9141ae4f208727b508093547909d99b1.png](../../../_resources/9141ae4f208727b508093547909d99b1.png)
+
+514 heures => 60 %
+Prévue => 45 %
+
+### Comprend :
+- une partie des tache prévue dans la phase 2 
+- une partie des taches d'orchestration (log/email)
+
+### Ne comprend pas :
+- Finalisation du calcul de l'historique
+- Finalisation du calcul de la carte de confiance
+- Mise en place des chaines prévision et alerte
+- Mise en place des accès aux datasets ESA via l'API Copernicus
+- Mise en place des accès aux datasets MFNC
+- Implémentation de test unitaire
+- VABF à faire / finaliser / modalité de contrôle qualité des données produites (indicateur & chaine)
+
+
+## Temps consommé cumulé
+
+![e832ef6199e7871ed68881bc69059d2f.png](../../../_resources/e832ef6199e7871ed68881bc69059d2f.png)
+
+
+## Planning revue au COPIL 6 mois
+![27714457bf81a7b061ae77153377fc9d.png](../../../_resources/27714457bf81a7b061ae77153377fc9d.png)
+
+
+
+
+## Calendrier des points ateliers du projet Depuis le dernier COPIL (**27/04/2023**)
+
+- **03/05/2023** Atelier OEIL-INSIGHT
+- **03/05/2023** conventionnement MFNC
+- **11/05/2023** Evaluation et conseil IRD-INSIGHT
+- **23/05/2023** Atelier Test Unitaire
+- **31/05/2023** conventionnement MFNC avec Alexandre Pelletier
+- du **03/06/2023** au **15/06/2023** congés Hugo
+- **26/06/2023** Atelier intégration continue et Git OEIL-INSIGHT
+- **10/07/2023** Atelier intégration continue et Git OEIL-INSIGHT
+- **21/07/2023** Atelier intégration continue et Git OEIL-INSIGHT
+
+## Taches réalisées à ce jour
+
+- [ ] Phase préliminiaire
+    - [ ] Etudes préalables
+        - [ ] Faisabilité DataCube
+        - [ ] GapFilling L7
+    - [ ] Méthodologie et suivi de projet
+    - [ ] Monté en compétence
+    - [ ] Mise en place des environnements informatiques (Dev/Qualif)
+- [ ] Phase 1 A : Adaptation de la chaine SCO, mise en qualification NC
+    
+- [ ] Chaine locale
+    ![dabc079362853812adfaa525db458476.png](../../../_resources/dabc079362853812adfaa525db458476.png)
+    
+- [ ] Chaine globale
+    ![6c48c5d7df6fd0cf1aa45bf8c2327f6a.png](../../../_resources/6c48c5d7df6fd0cf1aa45bf8c2327f6a.png)
+    
+- [ ] Adaptation technique du code
+    ![156cb7a4e92665d37518b30748faf5fb.png](../../../_resources/156cb7a4e92665d37518b30748faf5fb.png)
+    
+- [ ] Adaptation fonctionnelle du code
+    ![a610a2f8eecbf9c39963297ea5064ed8.png](../../../_resources/a610a2f8eecbf9c39963297ea5064ed8.png)
+    
+- [ ] Production des données en continue
+    ![a312a79e00dba01ff7992d74b0fd3e9d.png](../../../_resources/a312a79e00dba01ff7992d74b0fd3e9d.png)
+    
+- [ ] Déploiement des chaines selon des conditions de disponibilité des données
+    ![39f426cee09cdd5bb064545c4730da85.png](../../../_resources/39f426cee09cdd5bb064545c4730da85.png)
+    
+- [ ] Tests  fonctionnels
+    ![be2f9e654ce91f2a1c41699229f390d9.png](../../../_resources/be2f9e654ce91f2a1c41699229f390d9.png)
+    
+
+## Taches restantes et priorisation
+
+- [ ] production des données historiques
+    ![cc989443e51f21a87c2ed05f25eab182.png](../../../_resources/cc989443e51f21a87c2ed05f25eab182.png)
+    
+- [ ] Produire les indices de confiance
+    ![9f5b2bb61a50e766a3dc60906e07a584.png](../../../_resources/9f5b2bb61a50e766a3dc60906e07a584.png)
+    
+- [ ] Conventions
+    
+    - [ ] MFNC
+
+
+## Nouveau planning prévisionnel
+
+![9e6012b8b687461197ada6a1b8faee68.png](../../../_resources/9e6012b8b687461197ada6a1b8faee68.png)

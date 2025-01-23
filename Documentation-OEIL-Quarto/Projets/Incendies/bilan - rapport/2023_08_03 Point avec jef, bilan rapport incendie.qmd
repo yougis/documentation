@@ -1,0 +1,16 @@
+---
+title: 2023/08/03 Point avec jef, bilan rapport incendie
+last-modified: 2023-08-28 22:25:11Z
+date: 2023-08-28 22:24:27Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+29/08/2023 09:24
+
+- [ ] impact sur le rapport des données mal photo interprétée de Thio (cuirasse?)
+- [ ] reprendre temps pour les incohérences
+- [ ] séparation méthodo et rapport sur les données
+- [ ] évaluation taches d'écriture et relecture à dupliquer si plusieurs personnes
+- [ ] proposer une réunion de présentation et validation des objectifs (ex. séparation méthodo)

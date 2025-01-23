@@ -1,0 +1,41 @@
+---
+title: Les documents numérisés
+last-modified: 2021-07-07 23:13:44Z
+date: 2021-06-22 21:37:32Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+Pour retrouver rapidement un fichier, il faut un système d'organisation des  fichiers dès qu'on les créé et qu'on les enregistre, jusqu'à leur archivage.
+
+
+# Bonnes pratiques et généralités
+
+Définir la durée de conservation du fichier.
+
+### Séléctionner / enregistrer / supprimer / archiver
+N'enregistrez pas tous les fichiers et supprimer les vesions intermediaires, archiver les versions finales de vos documents et supprimer les fichiers les plus anciens, nous n'avons plus besoin de les organiser/stocker. 
+Supprimez les doublons.
+
+
+### Arborescence, nomenclature
+La nomenclature des fichiers actuelle est adaptée (date_nom_du_projet_Auteur).
+Avoir une arborescence simple avec le moins de sous dossier possible.
+
+
+# Documents de référence 
+
+Phase de publication :
+-》CDRN 
+
+### Indexation
+
+### Backup
+
+
+# Ordre de service
+
+
+
+

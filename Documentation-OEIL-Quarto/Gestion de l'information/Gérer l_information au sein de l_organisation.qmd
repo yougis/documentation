@@ -1,0 +1,118 @@
+---
+title: Gérer l'information au sein de l'organisation
+last-modified: 2024-06-28 03:55:11Z
+date: 2021-06-23 21:21:49Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+
+---
+# Gérer l'information au sein de l'organisation
+
+Pour être utile à l’entreprise, un système d’information doit être organisé et cohérent. Les données qu’il rassemble doivent être de bonne qualité, mises à jour et non redondantes.
+
+
+## Contexte
+ - augmentation du volume des données à traiter
+ - la multiplication des échanges (interne / externe)
+
+## Objectif
+- gain de volume de mémoire
+- maintenance du système centralisé, automatisé. 
+- garantir la sécurité des informations personnels (RGPD) et des données confidentielles
+- optimisation du système de backup et de restauration des données
+- fluidifier l'intégration d'information et de données dans le système
+- faciliter l'accès aux données et information en interne
+- faciliter la mise à disposition d'information vers les partenaires
+-> ouverture des accès simplifiés des informations, données, cartographies, selon des niveaux d'authorisations différents (lecture / écriture). 
+
+## Résultat attendu 
+- sécurité accrue
+- coût de maintenance réduit 
+- coût stockage réduit 
+- suivi en continue de l'état du système dans sa globalité
+- transparence et suivi affiné de l'avancement des projets
+- productivité améliorée
+
+
+# Actions à entreprendre
+- Fusionner géoportail et CDRN
+
+# Méthodes et outils
+
+
+### Gestion de conteneurs et environnement
+- Docker
+- Conda
+
+### Gestion de version
+- Git
+
+### Outils de publication
+- Quarto
+- Atlas Qgis
+
+### Traitement de données distribuées
+- Dask Distributed
+
+### Intégration et déploiement continu
+- Azure Pipeline
+
+### Systèmes d'information géographique (SIG)
+- QGIS
+- ArcGIS Server
+
+### Gestion et transformation de données
+- DBT (Data Build Tool) 
+- GDAL
+- FME
+
+
+### Base de donnée
+
+- Postgres/postgis
+- SqlServer
+- SQLite
+- MySQL
+- Pgadmin (client)
+- Dbeaver (client)
+
+
+### Backup et synchronisation
+- Novatech
+- Syncovery
+- rsync 
+- Barman
+- crontab
+
+
+### Monitoring
+- Awstats
+- google analytics
+- goaccess
+
+**A envisager** :
+- healthcheck
+- elastic-stack
+
+
+### Librairie pythons datascience
+
+- Pandas / GeoPandas
+- intake (et drivers ex. intake-stac, intake-xarray, intake-geopandas)
+- pystac
+- xarray
+- dask
+- netcdf4
+- rasterio
+
+
+#### Librairie python pour l'analyse spatiale
+- tobler
+- libpysal
+
+#### Librairie python pour la dataviz
+- Holoviz : holoviews, geoviwes, datashader
+- matplotlib
+
+

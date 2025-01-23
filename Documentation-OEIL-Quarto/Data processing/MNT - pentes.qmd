@@ -1,0 +1,17 @@
+
+# Modèle numérique de terrain
+
+Créer un MNT et calculer les pentes avec GDAL
+
+```sh
+gdaldem slope N:\Informatique\SIG\Donnees\Collectivite\Gouv\DITTT\DITTT_BDALTI-NC\DITTT_MNT_2020.tiff C:/Users/hugo.roussaffa.OEIL/AppData/Roaming/QGIS/QGIS3/profiles/default/processing/outputs/DITTT_MNT_PENTE.tiff -of GTiff -b 1 -s 1.0 -co COMPRESS=NONE -co BIGTIFF=IF_NEEDED
+```
+
+Faire la classification avec calculatrice raster de QGIS
+
+
+Puis, polygonizer avec GDAL
+
+```sh
+gdal_polygonize.bat "D:\\Data GIS\\DITTT_BDALTI-NC\\pente_classification_geol.tif" "D:/Data GIS/VECTEUR/pentes/pente_classification_poly.shp" -b 1 -f "ESRI Shapefile"
+```

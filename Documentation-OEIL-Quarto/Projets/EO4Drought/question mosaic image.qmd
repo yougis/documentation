@@ -1,0 +1,44 @@
+---
+title: question mosaic image
+last-modified: 2023-11-29 21:53:59Z
+date: 2023-11-23 23:30:53Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+question à poser à un expert en télédetection.
+
+les images sont projetées à l'origine en UTM58N. Les pixels ont des valeurs continue allant  -3.99 à 3.99. 
+
+les tuiles se chevauche par endroit pour une même décade . ex : 81075 et 80075
+
+mon objectif est de disposer d'une seul images pour une décade, dans une projection adapté à de la diffusion web (par ex EPSG:3857).
+
+J'ai prévue d'effectuer les 2 opérations dans cet ordre : 
+- reprojection des tuiles
+- mosaicage des tuiles
+
+
+Est ce bien la bonne approche selon vous ?
+
+Pour la reprojection : 
+Quelles est les méthodes de ressampling qui sera plus adapté dans notre cas :
+- Near
+- Average
+- Bilinear
+- Cubic
+- CubicSpline
+?
+
+
+
+VAI : 
+- Sortie de chaine (avant reprojection/compression etc.), les données de la Bande 2 ne sont pas entières. même si le type est float (qu'il faudrait idéalment convertir en byte), les valeurs devrait être 0.0, 1.0 ,2.0 or nous avons des valeurs avec des décimales. pourquoi ?
+le nodata :
+- Pour le NDVI , NDWI et VAI : les valeurs nodata des 2 bandes sont fixées dans gdalinfo à `NoData Value=nan`
+- Pour le VHI  : les valeurs nodata des 2 bandes ne sont pas remontée par gdalinfo or les pixel sont parfois fixé à  `nan` 
+- Pour NDVI et NDWI : 
+
+VHI :
+

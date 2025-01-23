@@ -1,0 +1,29 @@
+---
+title: nouveau user jupyter
+last-modified: 2023-03-07 23:11:51Z
+date: 2022-05-30 00:36:50Z
+latitude: -22.26000023
+longitude: 166.44694519
+altitude: 0.0000
+---
+
+```bash
+sudo docker exec jupyterhub_oeil_clustering useradd -m -s /bin/bash -N user.name 
+sudo docker exec jupyterhub_oeil_clustering bash -c "echo user.name:oeil | chpasswd"
+sudo docker exec jupyterhub_oeil_clustering usermod -a -G  oeil user.name 
+```
+
+
+Ajouter l'utilisateur avec l'interface admin de jupyter hub
+et relancer le container 
+
+
+Trouble shooting
+Appliquer les droits 
+
+`PermissionError: [Errno 13] Permission denied: '/opt/anaconda3/envs/gis_39/bin/python'`
+
+si le kernel partagé n'est pas accessible (error kernel), ajouter l'utilisateur dans le group oeil et redemarer le container
+
+
+

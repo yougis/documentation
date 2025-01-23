@@ -1,0 +1,8 @@
+
+Intervention effectuée à 8h30 en décembre 2023 - janvier2024
+
+Contrôle recette : 
+- dépose du serveur ADM : AD + DNS + VM Infra Adconnect / backup sur Qnap
+- cablage , aggregat de port du NAS
+- brassage propre
+

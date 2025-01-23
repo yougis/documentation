@@ -1,0 +1,17 @@
+---
+title: 'État des lieux et perspectives '
+last-modified: 2024-02-03 11:39:22Z
+date: 2024-02-03 11:33:34Z
+---
+
+- capitaliser sur l'expérience,  quelles conclusions tirées
+- données 2017 2019 2021 non qualifié
+- données 2020 qualifié mediocre
+- données 2023 non finalisé
+- donnee 2022 brute sortie de chaîne pas de  PI ni de contrôle
+
+- 2023, les flags ne sont pas traités
+- définir un protocole avancé avec analyse des dynamiques.
+
+- stopper la diffusion des donnés 2020
+

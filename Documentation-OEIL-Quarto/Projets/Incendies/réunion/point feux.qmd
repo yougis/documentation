@@ -1,0 +1,33 @@
+---
+title: point feux
+last-modified: 2022-06-07 04:28:21Z
+date: 2022-06-07 03:20:06Z
+---
+
+2019 bonne livraison, controlé par Nafissa callé sur 2017
+
+
+
+2020 ok
+
+2021 : étude de la donnée à faire. Fait sur Thio, les iles, 21 novembre en aberation.
+
+Suite, noé conservation nouvelle livraison.
+
+2017-2018 il faudrait beneficier des données pré-existante. 
+
+
+objectif evt incendie
+
+- combien de surface brulée
+- les zones qui rebrulent
+
+nombre d'incendie = nb de detection de point chaud
+surface brulée = sentinel (est ce pertinent ? évolution du nombre de capteur)
+
+bluecham = indicateur à mettre en place
+
+étude d'une fusion simple par année (zone brulée maximum), avantage / inconvenient des produits sorties ou à produire.
+avec aberation par rapport au MOS.
+ 
+réduire le temps de PI

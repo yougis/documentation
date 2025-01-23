@@ -1,0 +1,15 @@
+---
+title: Zone d'étude et acquisition images
+last-modified: 2021-07-23 00:07:11Z
+date: 2021-06-27 21:12:12Z
+---
+
+Déposer images pleiade à l'IRD
+13/07/2021 15:24 relance mail à Marc pour Identifier les images pour l'étude
+Marc valide les images 2019
+
+liste 2019
+
+DS_PHR1B_201907112308556_FR1_PX_E167S23_0113_09644
+
+[Devis correction atmosphérique et Orthophoto ](../../../Projets/Forêt/DYNAMIC/Devis%20correction%20atmosphérique%20et%20Orthophoto.md)

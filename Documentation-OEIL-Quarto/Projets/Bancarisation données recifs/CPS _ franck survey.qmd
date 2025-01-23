@@ -1,0 +1,33 @@
+---
+title: 'CPS : franck survey'
+last-modified: 2024-07-02 22:50:15Z
+date: 2022-06-01 21:59:41Z
+---
+
+le 2 juin 2022 à 9h00
+
+objectif de la bancarisation pas clair de la part des gestionnaires :
+- gouvernance
+- valorisation / partage
+
+calendrier fin année
+mai / juin : caler les scenarii
+
+
+franck:
+la cps travail pour les pays du pacifique.
+demande du pays ou des provinces, demande officiel à la cps ou le dir peche 
+financement gratuit, mais demande officiel.
+
+politique de gouvernance. données appartiennent au pays ou part
+pas de notion de licence sur les données. il y a une gestion de droit fine par autorité.
+
+souplesse dans l'évoluition du modèle. réactif
+status des données (validation/publication) : champs à créer
+
+distance sampling ? difficulté pour transformer en densité. formule non validé (RFT)
+
+paramètre des methodo personalisée, on compare ensuite les campagnes à partir d'indicateur calculé
+
+documentation écrite sur les modules ?
+

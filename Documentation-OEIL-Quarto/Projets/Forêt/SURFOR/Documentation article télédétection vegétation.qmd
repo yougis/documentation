@@ -1,0 +1,7 @@
+---
+title: Documentation article télédétection vegétation
+last-modified: 2022-07-04 02:10:33Z
+date: 2022-07-04 02:10:04Z
+---
+
+https://www.academia.edu/36503775/Review_of_spectral_vegetation_indices_and_methods_for_estimation_of_crop_biophysical_variables?email_work_card=view-paper

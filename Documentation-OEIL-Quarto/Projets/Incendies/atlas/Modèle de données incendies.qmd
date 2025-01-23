@@ -1,0 +1,50 @@
+---
+title: Modèle de données incendies
+last-modified: 2021-09-28 21:57:25Z
+date: 2021-09-28 21:40:25Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+créer une vue structuré pour afficher des graphiques simplement . objectif représenter ce qui est brûlé de ce qui ne l'est pas pour chaque themes
+
+|     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+| code_commune | commune | annee | theme | classe | brule | geometry |
+| x   | BOURAIL | 2019 | agriculture | elevage | oui | -   |
+| x   | BOURAIL | 2019 | agriculture | elevage | non | -   |
+| x   | BOURAIL | 2019 | agriculture | culture | non | -   |
+| x   | BOURAIL | 2019 | agriculture | culture | oui | -   |
+| x   | BOURAIL | 2019 | Protection eau | PPR | oui | -   |
+| x   | BOURAIL | 2019 | Protection eau | PPR | non | -   |
+| x   | BOURAIL | 2019 |Protection eau | PPE | oui | -   |
+| x   | BOURAIL | 2019 |Protection eau | PPE | non | -   |
+| x   | BOURAIL | 2019 |Protection eau | PPI | oui | -   |
+| x   | BOURAIL | 2018 | agriculture | elevage | oui | -   |
+| x   | BOURAIL | 2018 | agriculture | elevage | non | -   |
+| x   | BOURAIL | 2018 | agriculture | culture | non | -   |
+| x   | BOURAIL | 2018 | agriculture | culture | oui | -   |
+| x   | BOURAIL | 2018 | Protection eau | PPR | oui | -   |
+| x   | BOURAIL | 2018 | Protection eau | PPR | non | -   |
+| x   | BOURAIL | 2018 |Protection eau | PPE | oui | -   |
+| x   | BOURAIL | 2018 |Protection eau | PPE | non | -   |
+| x   | BOURAIL | 2018 |Protection eau | PPI | oui | -   |
+| x   | BOULOUPARIS | 2019 | agriculture | elevage | oui | -   |
+| x   | BOULOUPARIS | 2019 | agriculture | elevage | non | -   |
+| x   | BOULOUPARIS | 2019 | agriculture | culture | non | -   |
+| x   | BOULOUPARIS | 2019 | agriculture | culture | oui | -   |
+| x   | BOULOUPARIS | 2019 | Protection eau | PPR | oui | -   |
+| x   | BOULOUPARIS | 2019 | Protection eau | PPR | non | -   |
+| x   | BOULOUPARIS | 2019 |Protection eau | PPE | oui | -   |
+| x   | BOULOUPARIS | 2019 |Protection eau | PPE | non | -   |
+| x   | BOULOUPARIS | 2019 |Protection eau | PPI | oui | -   |
+| x   | BOULOUPARIS | 2018 | agriculture | elevage | oui | -   |
+| x   | BOULOUPARIS | 2018 | agriculture | elevage | non | -   |
+| x   | BOULOUPARIS | 2018 | agriculture | culture | non | -   |
+| x   | BOULOUPARIS | 2018 | agriculture | culture | oui | -   |
+| x   | BOULOUPARIS | 2018 | Protection eau | PPR | oui | -   |
+| x   | BOULOUPARIS | 2018 | Protection eau | PPR | non | -   |
+| x   | BOULOUPARIS | 2018 |Protection eau | PPE | oui | -   |
+| x   | BOULOUPARIS | 2018 |Protection eau | PPE | non | -   |
+| x   | BOULOUPARIS | 2018 |Protection eau | PPI | oui | -   |

@@ -1,0 +1,56 @@
+---
+title: sonde multiparametrique
+last-modified: 2024-04-02 00:12:23Z
+date: 2024-04-01 22:10:06Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+sonde multiparametrique
+
+minimum de délais d'acquisition : 
+
+fluctuation en rivière rapide en fonction de météo, reste en débat , lié au capacité de stockage et transmission. Au moins 1 minutes.
+
+performance : quelles précision. Restez dans les normes Européenne, matériel reconnu. fixer des limites de détection acceptables.
+
+-\> Renvoyer les normes reconnues.
+
+Alimentation, en option site 3 et 4.
+
+autonomie à prévoir, ce n'est pas l'OEIL qui alimente.
+
+inquiétude des vols et dégradation. discrétion à assurer.
+
+inquiétude sur les coût : si coût raisonnable.
+
+la télétransmission ne serait envisageable que si alimentation.
+
+\- installation militaire ?  oui mais dans la les limites des préoccupations discrétion, des coûts et de la durabilités des équipements.
+
+Site 1 :  camera déjà en place, et ne sont pas utilisable pour l'analyse de la circulation.
+
+une seule caméra ou plusieurs possibles ? oui plusieurs appareils photo possible, timelaps plutôt que video.
+
+OGC :
+
+données encapsuler 
+
+http://istsos.org/
+
+abonnement : 2nd appel d'offre (plutôt dev)
+
+Réglementation : RGPD ? sujet nouveau, plutôt sujet d'accompagnement.
+
+déclaration de la sous traitance, une lettre déclarant l'ensemble des sous-traitants
+
+4G : effet de bordure, consommation plus forte
+
+\-\-\-\-
+
+GEOS4D
+
+\- capacité de stockage en fonction des sites (bufferisation, délais de récupération des données ) 
+
+\-\-\-

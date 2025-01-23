@@ -1,0 +1,49 @@
+---
+title: 'SCO : avancement EO4DM pour anticiper les périodes de sécheresse'
+last-modified: 2022-05-10 23:51:43Z
+date: 2022-05-10 23:51:43Z
+source: >-
+  https://www.spaceclimateobservatory.org/fr/eo4dm-pour-anticiper-les-periodes-de-secheresse
+---
+
+Mi-mars 2022, l’équipe calédonienne du projet EO4DM nous a offert un point technique particulièrement intéressant. Un an après sa labellisation SCO, la plate-forme de visualisation est quasi achevée, fruit d’un gigantesque travail de préparation. Le projet a d’ailleurs nécessité la mise en place d’un serveur de calcul pour stocker et traiter les gigabits de données utilisées.
+
+Mené par la société INSIGHT, en étroit partenariat avec Météo-France et avec le soutien du pôle de données Théia, le projet EO4DM (*Earth Observation for Drought Monitoring*) développe un outil de suivi et de prévision de la sécheresse végétale au moyen d’indicateurs satellites et météorologiques. Il se déroule en Nouvelle-Calédonie où [l’Agence rurale](https://www.agence-rurale.nc/) a besoin d’indicateurs pour mieux gérer les activités agricoles et les aides mises en place à chaque sécheresse.
+
+## Le système
+
+Pour détecter la sécheresse agricole à partir de la télédétection, EO4DM observe trois variables de surface acquises dans différentes longueurs d’onde : **l’état de la végétation** (optique), la **température de surface** (thermique) et **l’humidité du sol** (micro-ondes). Une fois ces données traitées, l’outil les combine aux produits météorologiques de référence (**précipitations et évapotranspiration**) issus du réseau de stations de Météo-France en Nouvelle-Calédonie. Le système permet ainsi d’évaluer l’intensité des épisodes de sécheresse et d’en estimer leur sévérité par analogie à un état de référence historique (indicateurs actuels). En couplant ces données actuelles à des modèles statistiques de prévision météorologique, un indicateur prévisionnel fournit la trajectoire future plausible d’une saison hydrologique.
+
+<img width="475" height="284" src="../../../_resources/EO4DM-Systeme_08f8bb2bc9dd49729eec228f1b734458.jpg"/>
+
+En combinant 3 indicateurs satellite avec l’état de référence établi grâce aux données des stations sol de Météo-France, le système dégage des indicateurs prévisionnels.
+
+Pour parvenir à cela, le projet a commencé par une importante phase de collecte et de bancarisation des données. Différents traitements ont ensuite été appliqués aux images satellites* pour identifier les indicateurs les plus pertinents :
+
+- prétraitement de « nettoyage », tout particulièrement à l’égard des nuages très présents dans cette zone du globe ;
+- phase de composition temporelle afin d’obtenir une image agrégée tous les mois ;
+- calcul des indicateurs satellite sur un pas de temps mensuel ;
+- analyse statistique de corrélation avec l’indice météorologique SPI obtenu à partir des cumuls de précipitations sur 3 mois ;
+- création d’un indicateur combiné tirant parti des différents indicateurs étudiés, satellitaires et météorologiques, pour dégager un indice de sécheresse sur le territoire donnant lieu à des cartes d’alertes globales.
+
+\* Sentinel-2, Landsat, capteurs MODIS (sur les satellites Terra et Aqua) et ASCAT (sur MetOp)
+
+## 3 échelles d’information sécheresse
+
+Pour répondre au besoin exprimé par l’Agence rurale d’un découpage précis des informations, l’équipe a mis en place 3 niveaux d’information : **communal** (selon un découpage administratif), **intra-communal** (selon un découpage thématique) et **parcellaire**, au plus près des cultures. Pour cela, elle a combiné plusieurs produits satellites (et météorologiques) définis à différentes résolutions spatiales.
+
+<img width="430" height="374" src="../../../_resources/EO4DM_Echelles_b5aa7f1af8c34cc79e3a2d4390866b38.jpg"/>
+
+Trois niveaux "utilisateur" de l’information sécheresse. L’échelle globale montre bien l’influence de la topographie de l’île, qui est traversée par une chaîne centrale, sur la répartition des précipitations : à l’ouest, de vastes plaines à la végétation sèche reçoivent des précipitations minimales tandis qu’à l’est, un relief montagneux à la végétation luxuriante bénéficie des précipitations maximales.
+
+## Démonstration de la plate-forme de visualisation
+
+Quasiment achevée, l’interface EO4DM est déjà très opérationnelle.
+
+<img width="451" height="256" src="../../../_resources/EO4DM_PF_cad5029b0dfb4ad48d6ce37b163d2490.jpg"/>
+
+Dans l’interface conçue par INSIGHT, la fenêtre de gauche présente l’état passé et actuel de la sécheresse, celle de droite les prévisions, la bande horizontale en dessous schématisant le profil temporel de la sécheresse.
+
+## Bilan : un véritable outil d’aide à la décision
+
+Présente tout au long du développement, l’Agence rurale se dit très satisfaite de ce travail novateur qui lui permet de mieux qualifier et affiner ses interventions, et ainsi d’avoir des aides adaptées, mais aussi de travailler différemment. Ils vont par exemple pouvoir corréler les consommations de fourrage et le rendement des parcelles avec l’état de sécheresse des différentes zones. L’Agence rurale souhaite désormais ouvrir EO4DM aux agriculteurs, qui pourront ainsi mieux anticiper et planifier leur production.

@@ -1,0 +1,26 @@
+---
+title: "INSIGHT (Mathis) IRD (Marc) : recommandation d’indicateur de suivi de la
+  qualité"
+last-modified: 2023-08-22 23:34:21Z
+date: 2023-08-22 23:31:07Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+- INSIGHT (Mathis) IRD (Marc) : recommandation d’indicateur de suivi de la qualité (exploitabilité) des données issues de la chaine de traitement en vue d’un monitoring en mode continue. Issue 777  
+
+- OEIL (Hugo)  : Évaluer / vérifier dans la convention Fond pacifique les modalités de mise en œuvre de la chaine dans les territoires pacifiques (intégration de données in situ / quelles sont les produits attendus). 
+
+- OEIL (Fabien) et INSIGHT (Jean) Prise de contact avec les partenaires de la région Pacifique, Issue 561  
+
+- INSIGHT (Mathis) : mise en service des chaines 1 “locale” et 2 “globale” dans l’environnement de qualification en mode continue. 
+
+- INSIGHT (Mathis) : mise en service de la chaines 3 suites avec l’intégration des données issue de Copernicus (ASCAT) et des données historiques in situ MFNC.
+open io pas dispo
+mise à dispo sur ftp avec identifiant
+code python Mathis
+
+- Effectuer la VABF de la version 1 de la chaine : Epic 573
+
+- INSIGHT (Mathis) : Etude de faisabilité de l’intégration des données du capteur VIIRS en remplacement / complément de MODIS. Task 733  

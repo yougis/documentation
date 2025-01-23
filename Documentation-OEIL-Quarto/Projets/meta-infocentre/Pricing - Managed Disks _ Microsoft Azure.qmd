@@ -1,0 +1,288 @@
+---
+title: Pricing - Managed Disks | Microsoft Azure
+last-modified: 2021-07-29 05:32:50Z
+date: 2021-07-27 03:15:12Z
+source: https://azure.microsoft.com/en-us/pricing/details/managed-disks/
+---
+
+# Managed Disks pricing
+
+- [Request a pricing quote](https://azure.microsoft.com/en-us/pricing/contact-sales/)
+- [Try Azure for free](https://azure.microsoft.com/en-us/free/)
+
+- [Overview](#overview)
+- [Pricing table](#pricing)
+- [Purchase options](#purchase-options)
+- [Resources](#resources)
+- [FAQs](#faq)
+- [Managed Disks](https://azure.microsoft.com/en-us/services/managed-disks/)
+- <a id="subnav-button-slide-in"></a>[Free account](https://azure.microsoft.com/en-us/free/)
+
+## Persistent, secured disk storage for Azure virtual machines
+
+Azure Managed Disks are high-performance, durable block storage designed to be used with Azure Virtual Machines and Azure VMware Solution (disk pool in preview). We offer four disk storage options — Ultra Disk Storage, Premium SSD, Standard SSD, Standard HDD. Azure Managed Disks are priced to the closest tier that accommodates the specific disk size and are billed on an hourly basis.
+
+Are you looking for pricing details for Page Blobs also referred as Unmanaged Disks? See [Unmanaged Disk and Page Blob pricing](https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/).
+
+## Explore pricing options
+
+Apply filters to customize pricing options to your needs.
+
+Redundancy:
+
+Region:
+
+Currency:
+
+### Premium SSD
+
+Premium SSDs are high-performance Solid-State Drive (SSD) based Storage designed to support I/O intensive workloads with significantly high throughput and low latency. With Premium SSDs, you can provision a persistent disk and configure its size and performance characteristics.
+
+The total cost of Premium SSDs depends on the size and number of the disks, and will be affected by the number of [outbound data transfers](https://azure.microsoft.com/en-us/pricing/details/bandwidth/). These disk sizes provide different input/output operations per sec (IOPS), throughput caps, and monthly price per GiB. Premium SSDs are supported on various virtual machine sizes and options, including DS-series, DSv2-series, FS-series, and GS-series - to run your workloads. Premium SSDs support both locally-redundant storage (LRS) and zone-redundant storage (ZRS) options. Please refer to [Azure Storage replication page](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy) for more details on redundancy options. Premium SSDs with ZRS is currently public preview and available in selected production regions at preview pricing, which will be the same as the GA price. To see ZRS pricing, please select ZRS as a redundancy option in the drop-down. When using [Azure shared disks](https://docs.microsoft.com/en-us/azure/virtual-machines/disks-shared) on Premium SSDs, each additional mount of disk is charged per month based on the disk size. Shared disk pricing is the same for either LRS or ZRS option.
+
+### Snapshots
+
+You can store full snapshots and images for Premium SSDs on Standard storage. You can choose between locally redundant (LRS) and zone redundant (ZRS) snapshot options. These snapshots and images are charged at €0.043/GB per month for both Standard LRS and ZRS options based on the used portion of the disk. For example, if you create a snapshot of a managed disk with provisioned capacity of 64 GB and actual used data size of 10 GB, snapshot will be billed only for the used data size of 10 GB. If you choose to store them on Premium SSDs Managed Disk storage, you’ll be charged at €0.111316/GB per month.
+
+You can store incremental snapshots for Premium SSDs only on Standard storage. They are charged at €0.043/GB per month for both Standard LRS and ZRS snapshot options of the storage occupied by the delta changes since the last snapshot. For example, you are using a managed disk with provisioned size of 128 GB and used size of 100 GB. The first incremental snapshot is billed only for the used size of 100 GB. 20 GB of data is added on the disk before you created the second snapshot. Now, the second incremental snapshot is billed for only 20 GB.
+
+### Bursting
+
+For P20 disks and smaller, [credit-based bursting](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disk-bursting) is enabled by default with no additional costs. You can boost your performance up to 3,500 IOPS and 170 MB/s for up to 30 min to handle spiky traffic, process batch jobs, and improve boot times.
+
+For P30 disks and larger, you will be charged a monthly enablement fee of €30.051 to enable [on-demand bursting](https://docs.microsoft.com/en-us/azure/virtual-machines/disk-bursting) and a burst transaction fee of €0.007 per 10,000 IOs for additional IOPS. You can boost your performance up to 30,000 IOPS and 1,000 MB/s at any point in time. For example, if you provision a P30 disk with 5,000 IOPS and you burst to 30,000 IOPS, you will be charged an enablement fee to enable the bursting feature as well as a burst transaction fee for the additional 25,000 IOPS. If you burst your throughput above the provisioned amount, you will also be charged a burst transaction fee for the additional throughput. For detailed examples on how the billing works, refer to this [article](https://aka.ms/diskburstingP30).
+
+Pricing for bursting on P30 disks and larger is available in selected production regions at preview pricing. For details on the preview regions, please refer to [Azure Disks FAQ](https://docs.microsoft.com/en-us/azure/virtual-machines/faq-for-disks#new-disk-sizes-managed-and-unmanaged).
+
+### Reservation
+
+Azure Disk Storage reservations help you lower your disk storage cost by committing to one-year of Premium SSD capacity. Reserved capacity can be purchased in increments of 1 disk unit for 1-year commitment duration. All prices are per month. For more information, please see [Azure Disks FAQ](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq-for-disks#disk-reservation).
+
+| Not available | Disk Size | Price per month | 1-Year Reserved<br>Price Per Month | Max IOPS (Max IOPS w/ bursting) | Max throughput (Max throughput w/ bursting) | Price per mount per month (Shared Disk) |
+| --- | --- | --- | --- | --- | --- | --- |
+| **P1** | 4 GiB | €0.74 | N/A | 120 (3,500) | 25 MB/second (170 MB/second) | €0.04 |
+| **P2** | 8 GiB | €1.47 | N/A | 120 (3,500) | 25 MB/second (170 MB/second) | €0.08 |
+| **P3** | 16 GiB | €2.94 | N/A | 120 (3,500) | 25 MB/second (170 MB/second) | €0.15 |
+| **P4** | 32 GiB | €4.46 | N/A | 120 (3,500) | 25 MB/second (170 MB/second) | €0.32 |
+| **P6** | 64 GiB | €8.61 | N/A | 240 (3,500) | 50 MB/second (170 MB/second) | €0.58 |
+| **P10** | 128 GiB | €16.63 | N/A | 500 (3,500) | 100 MB/second (170 MB/second) | €1.12 |
+| **P15** | 256 GiB | €32.06 | N/A | 1,100 (3,500) | 125 MB/second (170 MB/second) | €2.24 |
+| **P20** | 512 GiB | €61.75 | N/A | 2,300 (3,500) | 150 MB/second (170 MB/second) | €4.02 |
+| **P30** | 1 TiB | €113.99 | €108.30 | 5,000 (30,000) | 200 MB/second (1,000 MB/second) | €8.04 |
+| **P40** | 2 TiB | €218.46 | €207.53 | 7,500 (30,000) | 250 MB/second (1,000 MB/second) | €16.07 |
+| **P50** | 4 TiB | €417.92 | €397.06 | 7,500 (30,000) | 250 MB/second (1,000 MB/second) | €31.25 |
+| **P60** | 8 TiB | €797.83 | €757.92 | 16,000 (30,000) | 500 MB/second (1,000 MB/second) | €62.49 |
+| **P70** | 16 TiB | €1,519.68 | €1,443.73 | 18,000 (30,000) | 750 MB/second (1,000 MB/second) | €133.90 |
+| **P80** | 32 TiB (32767 GiB) | €3,039.35 | €2,887.39 | 20,000 (30,000) | 900 MB/second (1,000 MB/second) | €267.79 |
+
+We charge a burst enablement fee of €30.051 and transaction fee of €0.007 per 10,000 transaction units for P30 disks and larger with bursting enabled. Any type of operation against the storage is counted as a transaction, including reads, writes, and deletes. For more details on burst transactions, please refer to the [bursting documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disk-bursting).
+
+### Standard SSD
+
+Standard SSDs, a low-cost SSD offering, are optimized for test and entry-level production workloads requiring consistent latency. Standard SSDs can also be used for big data workloads that require high throughput. Standard SSDs deliver lower latency compared to Standard HDDs, while improving reliability and scalability for your applications, and are available with all Azure VM sizes. Standard SSDs can be easily upgraded to Premium SSDs for more demanding and latency-sensitive enterprise workloads. Standard SSDs come with the same industry leading durability and availability that you expect from Premium SSDs.
+
+The total cost of Standard SSDs storage depends on the size and number of disks, the number of transactions, and the number of [outbound data transfers](https://azure.microsoft.com/en-us/pricing/details/bandwidth/). Standard SSDs support both locally-redundant storage (LRS) and zone-redundant storage (ZRS) options. Please refer to [Azure Storage replication page](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy) for more details on redundancy options. Standard SSDs with ZRS is currently public preview and available in selected production regions at preview pricing, which will be the same as the GA price. When using [Azure shared disks](https://docs.microsoft.com/en-us/azure/virtual-machines/disks-shared) on Standard SSDs, each additional mount of disk is charged per month based on the disk size. Shared disk pricing is the same for either LRS or ZRS option.
+
+### Snapshots
+
+You can store full snapshots and images for Standard SSDs on Standard HDD storage. You can choose between locally-redundant (LRS) and zone redundant (ZRS) snapshot options. These snapshots and images are charged at €0.043/GB per month for both Standard LRS and ZRS options based on the used portion of the disk. For example, if you create a snapshot of a managed disk with provisioned capacity of 128 GB and actual used data size of 10 GB, snapshot will be billed only for the used data size of 10 GB. If you choose to store them on SSD storage, you’ll be charged at €0.111316/GB per month.
+
+You can store incremental snapshots for Premium SSDs only on Standard storage. They are charged at €0.043/GB per month for both Standard LRS and ZRS snapshot options of the storage occupied by the delta changes since the last snapshot. For example, you are using a managed disk with provisioned size of 128 GB and used size of 100 GB. The first incremental snapshot is billed only for the used size of 100 GB. 20 GB of data is added on the disk before you created the second snapshot. Now, the second incremental snapshot is billed for only 20 GB.
+
+### Bursting
+
+For E30 disks and smaller, [credit-based bursting](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disk-bursting) is enabled by default with no additional costs. You can boost your performance up to 1,000 IOPS and 250 MB/s for up to 30 min to handle spiky traffic, process batch jobs, and improve boot times.
+
+| Not available | Disk Size | Price per month | Max IOPS (Max IOPS w/ bursting) | Max throughput (Max throughput w/ bursting) | Price per mount per month (Shared Disk) |
+| --- | --- | --- | --- | --- | --- |
+| **E1** | 4 GiB | €0.35 | 500 (600) | 60 MB/second (150 MB/second) | €0.04 |
+| **E2** | 8 GiB | €0.69 | 500 (600) | 60 MB/second (150 MB/second) | €0.08 |
+| **E3** | 16 GiB | €1.38 | 500 (600) | 60 MB/second (150 MB/second) | €0.15 |
+| **E4** | 32 GiB | €2.76 | 500 (600) | 60 MB/second (150 MB/second) | €0.32 |
+| **E6** | 64 GiB | €5.51 | 500 (600) | 60 MB/second (150 MB/second) | €0.58 |
+| **E10** | 128 GiB | €11.02 | 500 (600) | 60 MB/second (150 MB/second) | €1.12 |
+| **E15** | 256 GiB | €22.03 | 500 (600) | 60 MB/second (150 MB/second) | €2.24 |
+| **E20** | 512 GiB | €44.05 | 500 (600) | 60 MB/second (150 MB/second) | €4.03 |
+| **E30** | 1 TiB | €88.09 | 500 (1,000) | 60 MB/second (250 MB/second) | €8.04 |
+| **E40** | 2 TiB | €176.17 | 500 | 60 MB/second | €16.07 |
+| **E50** | 4 TiB | €352.33 | 500 | 60 MB/second | €31.25 |
+| **E60** | 8 TiB | €704.65 | 2,000 | 400 MB/second | €62.49 |
+| **E70** | 16 TiB | €1,409.30 | 4,000 | 600 MB/second | €133.90 |
+| **E80** | 32 TiB (32767 GiB) | €2,818.60 | 6,000 | 750 MB/second | €267.79 |
+
+We charge €0.001687 per 10,000 transaction units for Standard SSDs. Any type of operation against the storage is counted as a transaction, including reads, writes and deletes. We use IO unit size of 256 KiB for counting the billable transaction units. Please refer to [Standard SSD documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types#standard-ssd) for more information.
+
+### Standard HDD
+
+Standard HDDs use Hard Disk Drive (HDD) based Storage media. They are best suited for dev/test and other infrequent access workloads that are less sensitive to performance variability.
+
+The total cost of Standard HDDs depends on the size and number of disks, the number of transactions, and the number of [outbound data transfers.](https://azure.microsoft.com/en-us/pricing/details/bandwidth/) Standard HDDs only support locally redundant storage (LRS). Please refer to [Azure Storage replication page](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy) for more details on redundancy options.
+
+### Snapshots
+
+Full snapshots and images are charged at €0.046382/GB per month for both LRS and ZRS snapshot options based on the used portion of the disk. For example, if you create a snapshot of a managed disk with provisioned capacity of 64 GB and actual used data size of 10 GB, snapshot will be billed only for the used data size of 10 GB.
+
+Incremental snapshots for Standard HDDs are charged at €0.043/GB per month for both LRS and ZRS snapshot options based on the storage occupied by the delta changes since the last snapshot. For example, you are using a managed disk with provisioned size of 128 GB and used size of 100 GB. The first incremental snapshot is billed only for the used size of 100 GB. 20 GB of data is added on the disk before you created the second snapshot. Now, the second incremental snapshot is billed for only 20 GB.
+
+| Not available | Disk Size | Price per month | IOPS per disk | Throughput per disk |
+| --- | --- | --- | --- | --- |
+| **S4** | 32 GiB | €2.08 | Up to 500 | Up to 60 MB/second |
+| **S6** | 64 GiB | €4.06 | Up to 500 | Up to 60 MB/second |
+| **S10** | 128 GiB | €7.95 | Up to 500 | Up to 60 MB/second |
+| **S15** | 256 GiB | €15.29 | Up to 500 | Up to 60 MB/second |
+| **S20** | 512 GiB | €29.37 | Up to 500 | Up to 60 MB/second |
+| **S30** | 1 TiB | €55.27 | Up to 500 | Up to 60 MB/second |
+| **S40** | 2 TiB | €110.54 | Up to 500 | Up to 60 MB/second |
+| **S50** | 4 TiB | €221.07 | Up to 500 | Up to 60 MB/second |
+| **S60** | 8 TiB | €442.14 | Up to 1,300 | Up to 300 MB/second |
+| **S70** | 16 TiB | €884.27 | Up to 2,000 | Up to 500 MB/second |
+| **S80** | 32 TiB (32767 GiB) | €1,768.53 | Up to 2,000 | Up to 500 MB/second |
+
+We charge €0.000422 per 10,000 transactions for Standard HDDs. Any type of operation against the storage is counted as a transaction, including reads, writes and deletes.
+
+### Ultra Disk
+
+Ultra Disk is our next generation high performance Solid State Drive (SSD) with configurable performance attributes that provides the lowest latency and consistent high IOPS/throughput. Ultra Disk offers unprecedented and extremely scalable performance with sub-millisecond latency. As a customer you can start small on IOPS and throughput and adjust your performance as your workload becomes more IO intensive.
+
+The total cost of Ultra Disk depends on the size of the disk and its performance configuration and will be affected by the number of disks.
+
+Ultra Disk is available in different sizes that provide a configurable range of input/output operations per sec (IOPS), and a configurable range of throughput (MB/s), and is billed on an hourly rate. You choose the option that best meets your required storage size, IOPS, and throughput. Ultra Disk only supports locally redundant storage (LRS). Please refer to [Azure Storage replication page](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy) for more details on redundancy options.
+
+The following table summarizes the different configurations supported for different disk sizes:
+
+| Ultra Disk Offerings |     |     |     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Disk Size (GiB) | 4   | 8   | 16  | 32  | 64  | 128 | 256 | 512 | 1,024-65,536 (in increments of 1 TiB) |
+| IOPS Range | 1,200 | 2,400 | 4,800 | 9,600 | 19,200 | 38,400 | 76,800 | 153,600 | 160,000 |
+| Throughput Range (MB/s) | 300 | 600 | 1,200 | 2,000 | 2,000 | 2,000 | 2,000 | 2,000 | 2,000 |<sup>*</sup>Please refer to the Ultra Disk [documentation page](https://aka.ms/ultrassddocs) for the full details on how to configure the disks.
+
+| Ultra Disk Configuration | Unit | Hourly Price | Monthly Price** |
+| --- | --- | --- | --- |
+| Disk Capacity (GiB) | GiB | €0.000201 | €0.14652 |
+| Provisioned IOPS | IOPS | €0.000084 | €0.06095 |
+| Provisioned Throughput (MB/s) | MBps | €0.000447 | €0.32566 |
+| Provisioned vcpu reservation charge* | vCPU | €0.007337 | €5.35580 |
+<sup>*</sup>This reservation charge is only imposed if you enable Ultra Disk compatibility on the VM without attaching an Ultra Disk.
+<sup>**</sup>Price is based on 730 hours per month.
+
+Ultra Disk is billed based on the provisioned size, provisioned IOPS and provisioned throughput. Azure maps the provisioned size (rounded up) to the nearest disk size offer. Each disk is billed accordingly on an hourly basis. For example, if you provisioned a 200 GiB Ultra Disk, with 20,000 IOPS and 1,000 MB/second and deleted it after 20 hours, it will map to the disk size offer of 256 GiB and you'll be billed for the 256 GiB, 20,000 IOPS and 1,000 MB/second for 20 hours. This is regardless of the amount of actual data and number of IOs written to the disk.
+
+There is no charge per mount for shared Ultra Disks. You are charged for the capacity and total IOPS and throughput on the disk. For more details, refer to the [shared disk documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disks-shared).
+
+Ultra Disk only supports locally redundant storage (LRS). Please refer to [Azure Storage replication page](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy) for more details on redundancy options.
+
+### Disk pool (in preview)
+
+Disk pool allows you to access high-performing, durable block storage on Azure for your data-intensive and transaction-heavy workloads running on Azure VMware Solution. You will be charged the monthly cost for the underlying Azure resources deployed in a disk pool and for the disks you attach. For more detailed information on how the billing works, refer to this [article](https://aka.ms/AVSdiskpool).
+
+## Azure pricing and purchasing options
+
+![](../../_resources/purchase-options_169e2d0202244ad7aa29d73dd7ca1b64.png)
+
+### Connect with us directly
+
+Get a walkthrough of Azure pricing. Understand pricing for your cloud solution, learn about cost optimization, and request a custom proposal.
+
+[Talk to a sales specialist](https://azure.microsoft.com/en-us/pricing/contact-sales/)
+
+### See ways to purchase
+
+Purchase Azure services through the Azure website, a Microsoft representative, or an Azure partner.
+
+[Explore your options](https://azure.microsoft.com/en-us/pricing/purchase-options/)
+
+## Additional resources
+
+### [Managed Disks details](https://azure.microsoft.com/en-us/services/managed-disks/)
+
+Learn more about Managed Disks features and capabilities.
+
+### [Pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/?service=managed-disks)
+
+Estimate your expected monthly costs for using any combination of Azure products.
+
+### [SLA](https://azure.microsoft.com/en-us/support/legal/sla/managed-disks/)
+
+Review the Service Level Agreement for this product.
+
+### [Documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/managed-disks-overview)
+
+Review technical tutorials, videos, and more Managed Disks resources.
+
+## Frequently asked questions
+
+Talk to a sales specialist for a walk-through of Azure pricing. Understand pricing for your cloud solution.
+
+[Request a pricing quote](https://azure.microsoft.com/en-us/pricing/contact-sales/)
+
+Get free cloud services and a USD200 credit to explore Azure for 30 days.
+
+[Try Azure for free](https://azure.microsoft.com/en-us/free/)
+
+[Get the Azure mobile app](https://azure.microsoft.com/en-us/get-started/azure-portal/mobile-app/)
+
+Explore Azure
+
+- [What is Azure?](https://azure.microsoft.com/en-us/overview/what-is-azure/)
+- [Get started](https://azure.microsoft.com/en-us/get-started/)
+- [Global infrastructure](https://azure.microsoft.com/en-us/global-infrastructure/)
+- [Trust your cloud](https://azure.microsoft.com/en-us/overview/trusted-cloud/)
+- [Customer enablement](https://azure.microsoft.com/en-us/overview/cloud-enablement/)
+- [Customer stories](https://azure.microsoft.com/en-us/case-studies/)
+
+Products and pricing
+
+- [Products](https://azure.microsoft.com/en-us/services/)
+- [Pricing](https://azure.microsoft.com/en-us/pricing/)
+- [Free Azure services](https://azure.microsoft.com/en-us/pricing/free-services/)
+- [Flexible purchase options](https://azure.microsoft.com/en-us/pricing/purchase-options/)
+- [Cloud economics](https://azure.microsoft.com/en-us/overview/cloud-economics/)
+- [Optimize your costs](https://azure.microsoft.com/en-us/overview/cost-optimization/)
+
+Solutions and support
+
+- [Solutions](https://azure.microsoft.com/en-us/solutions/)
+- [Resources for COVID-19](https://azure.microsoft.com/en-us/solutions/covid-19/)
+- [Solution architectures](https://docs.microsoft.com/en-us/azure/architecture/browse/)
+- [Support](https://azure.microsoft.com/en-us/support/)
+
+Partners
+
+- [Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/)
+- [Find a partner](https://azure.microsoft.com/en-us/partners/)
+- [Technology partners](https://azure.microsoft.com/en-us/isv/)
+
+Resources
+
+- [Training and certifications](https://docs.microsoft.com/en-us/learn)
+- [Documentation](https://docs.microsoft.com/en-us/azure/?product=featured)
+- [Updates](https://azure.microsoft.com/en-us/updates/)
+- [Blog](https://azure.microsoft.com/en-us/blog/)
+- [Developer resources](https://azure.microsoft.com/en-us/developer/)
+- [Students](https://azure.microsoft.com/en-us/developer/students/)
+- [Events](https://azure.microsoft.com/en-us/community/events/)
+- [White papers and e-books](https://azure.microsoft.com/en-us/resources/whitepapers/)
+- [Videos](https://azure.microsoft.com/en-us/resources/videos/home/)
+- [Webinars](https://azure.microsoft.com/en-us/overview/webinars/)
+
+Cloud computing
+
+- [Learn about cloud computing](https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/)
+- [What is the cloud?](https://azure.microsoft.com/en-us/overview/what-is-the-cloud/)
+- [What are public, private, and hybrid clouds?](https://azure.microsoft.com/en-us/overview/what-are-private-public-hybrid-clouds/)
+- [What is PaaS?](https://azure.microsoft.com/en-us/overview/what-is-paas/)
+- [What is middleware?](https://azure.microsoft.com/en-us/overview/what-is-middleware/)
+- [What is DevOps?](https://azure.microsoft.com/en-us/overview/what-is-devops/)
+
+Change language
+
+- [Diversity and Inclusion](https://azure.microsoft.com/en-us/overview/contact-azure-sales/)
+- [Accessibility](https://www.microsoft.com/en-us/accessibility)
+- [Privacy & Cookies](https://go.microsoft.com/fwlink/?LinkId=248681&clcid=0x409)
+- [Data Protection Notice](https://go.microsoft.com/fwlink/?LinkId=518021&clcid=0x409)
+- [Trademarks](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
+- [Terms of use](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx)
+- [Privacy Data Management](https://azure.microsoft.com/en-us/privacy-data-management/)
+- [Contact us](https://azure.microsoft.com/en-us/overview/contact-azure-sales/)
+- [Feedback](https://feedback.azure.com/forums/34192--general-feedback)
+- © Microsoft 2021

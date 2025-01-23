@@ -1,0 +1,82 @@
+---
+last-modified: 2023-10-17 06:06:20Z
+date: 2023-10-06 05:01:30Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+
+# aggreger les valeurs d'une autre table
+
+```python
+to_int(aggregate(
+        layer :='vue_dtm_zb_administ_nobyindex',
+        aggregate := 'sum',
+        expression := "superficie_indic_ha",
+        filter :=  type_spatial = 'commune'  and id_spatial = @atlas_pagename 
+        ))
+```
+
+# filtrer les communes
+
+```python
+if(type_spatial = 'commune'
+  and id_spatial = @atlas_pagename, sum("values"), 0)
+``` 
+
+
+# Cas multiples
+
+```python
+CASE 
+WHEN  
+aggregate( 
+ layer:='vue_dtm_zb_perimetres_protection_eau_byindex',
+ aggregate := 'max',
+ expression := "superficie_indic_ha"
+ ,
+ filter := id_spatial =  @atlas_pagename and type_spatial = 'commune' 
+) is NULL AND 
+aggregate( 
+ layer:='vue_dtm_zb_surfaces_agricoles_byindex',
+ aggregate := 'max',
+ expression := "superficie_indic_ha"
+ ,
+ filter := id_spatial =  @atlas_pagename and type_spatial = 'commune'
+) is not NULL
+THEN 
+'<div class=small>
+    <img src="/usr/share/qgis/svg/oeil_atlas_communal/M.Juncker (5.75 x 8.03 cm) à la place de PPE.png" alt=""/>
+</div>'
+WHEN  
+aggregate( 
+ layer:='vue_dtm_zb_perimetres_protection_eau_byindex',
+ aggregate := 'max',
+ expression := "superficie_indic_ha"
+ ,
+ filter :=  id_spatial =  @atlas_pagename and type_spatial = 'commune' and annee = env('ATLAS_YEAR')
+) is NULL AND 
+aggregate( 
+ layer:='vue_dtm_zb_surfaces_agricoles_byindex',
+ aggregate := 'max',
+ expression := "superficie_indic_ha"
+ ,
+ filter :=  id_spatial =  @atlas_pagename and type_spatial = 'commune' and annee = env('ATLAS_YEAR')
+) is NULL
+THEN 
+'<div class=big>
+    <img src="/usr/share/qgis/svg/oeil_atlas_communal/M.Juncker (5.75 x 14.5 cm).png"  alt=""/>
+</div>'
+END
+
+```
+
+
+# une année particulière
+
+```python
+year("debut")  >= 2012 and year("debut") <= 2022 and intersects(@geometry,@atlas_geometry) and source ='VIIRS S-NPP'
+id_spatial = @atlas_pagename and annee = env('ATLAS_YEAR')
+
+```

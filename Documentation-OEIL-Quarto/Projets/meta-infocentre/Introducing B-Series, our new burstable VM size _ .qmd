@@ -1,0 +1,176 @@
+---
+title: >-
+  Introducing B-Series, our new burstable VM size | Azure Blog and Updates |
+  Microsoft Azure
+last-modified: 2021-07-29 05:33:07Z
+date: 2021-07-27 03:14:57Z
+source: >-
+  https://azure.microsoft.com/en-us/blog/introducing-b-series-our-new-burstable-vm-size/
+---
+
+
+# Introducing B-Series, our new burstable VM size
+
+Posted on September 11, 2017
+
+[Corey Sanders](https://azure.microsoft.com/en-us/blog/author/corey-sanders/ "Posts by Corey Sanders") Corporate Vice President, Azure
+
+Today I am excited to announce the preview of the B-Series, a new Azure VM family that provides the lowest cost of any existing size with flexible CPU usage. For many workloads that run in Azure, like web servers, small databases, and development and test environments, the CPU performance is very bursty. These workloads will run for a long time using a small fraction of the CPU performance possible and then spike to needing the full power of the CPU due to incoming traffic or required work. With our current sizes, while running in these low points, you are still paying for the full CPU, so that you can handle the high and bursty points.
+
+The B-Series offers a cost effective way to deploy these workloads that do not need the full performance of the CPU continuously and burst in their performance. While B-Series VMs are running in the low-points and not fully utilizing the baseline performance of the CPU, your VM instance builds up credits. When the VM has accumulated enough credit, you can burst your usage, up to 100% of the vCPU for the period of time when your application requires the higher CPU performance.
+
+These VM sizes allow you to pay and burst as needed, using only a fraction of the CPU when you don’t need it and burst up to 100% of the CPU when you do need it (using Intel® Haswell 2.4 GHz E5-2673 v3 processors or better). This level control gives you extreme cost flexibility and flexible value.
+
+**The B-Series comes in the following 6 VM sizes during preview:**
+
+|     |     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **Size** | **vCPU's** | **Memory: GiB** | **Local SSD: GiB** | **Baseline CPU Performance of VM** | **Max CPU Performance of VM** | **US East Linux Price / Hour**<br><br>**<sub>(Price during preview)</sub>** | **US East Windows Price / Hour**<br><br>**<sub>(Price during preview)</sub>** |
+| Standard_B1s | 1   | 1   | 4   | 10% | 100% | $ 0.012<br><br><sub>($ 0.006)</sub> | $ 0.017<br><br><sub>($ 0.009)</sub> |
+| Standard_B1ms | 1   | 2   | 4   | 20% | 100% | $ 0.023<br><br><sub>($ 0.012)</sub> | $ 0.032<br><br><sub>($ 0.016)</sub> |
+| Standard_B2s | 2   | 4   | 8   | 40% | 200% | $ 0.047<br><br><sub>($ 0.024)</sub> | $ 0.065<br><br><sub>($ 0.033)</sub> |
+| Standard_B2ms | 2   | 8   | 16  | 60% | 200% | $ 0.094<br><br><sub>($ 0.047)</sub> | $ 0.122<br><br><sub>($ 0.061)</sub> |
+| Standard_B4ms | 4   | 16  | 32  | 90% | 400% | $ 0.188<br><br><sub>($ 0.094)</sub> | $ 0.229<br><br><sub>($ 0.115)</sub> |
+| Standard_B8ms | 8   | 32  | 64  | 135% | 800% | $ 0.376<br><br><sub>($ 0.188)</sub> | $ 0.439<br><br><sub>($ 0.219)</sub> |
+
+Get more information on the [Burstable VM sizes](https://aka.ms/b-series). To participate in this preview, [request quota](https://docs.microsoft.com/en-us/azure/azure-supportability/resource-manager-core-quotas-request) in the supported region that you would like. After your quota has been approved, you can use the portal or the API’s to do your deployment as you normally would.
+
+[Available today in most regions.](https://azure.microsoft.com/regions/services/)
+
+See ya around, 
+
+Corey
+
+[Virtual Machines](https://azure.microsoft.com/en-us/blog/topics/virtual-machines/) [Updates](https://azure.microsoft.com/en-us/blog/topics/updates/)
+
+[Subscribe](https://azurecomcdn.azureedge.net/en-us/blog/feed/)
+
+### Explore
+
+- See where we're heading. Check out upcoming changes to Azure products
+    
+    [Azure updates](https://azure.microsoft.com/en-us/updates/)
+    
+- Let us know what you think of Azure and what you would like to see in the future
+    
+    [Provide feedback](https://feedback.azure.com)
+    
+
+### Topics
+
+- [Announcements](https://azure.microsoft.com/en-us/blog/topics/announcements/) (2314)
+- [API Management](https://azure.microsoft.com/en-us/blog/topics/api-management/) (37)
+- [Artificial Intelligence](https://azure.microsoft.com/en-us/blog/topics/artificial-intelligence/) (241)
+- [Azure Maps](https://azure.microsoft.com/en-us/blog/topics/azure-maps/) (30)
+- [Azure Marketplace](https://azure.microsoft.com/en-us/blog/topics/azure-marketplace/) (145)
+- [Azure Stream Analytics](https://azure.microsoft.com/en-us/blog/topics/azure-stream-analytics/) (34)
+- [Big Data](https://azure.microsoft.com/en-us/blog/topics/big-data/) (647)
+- [Blockchain](https://azure.microsoft.com/en-us/blog/topics/blockchain/) (89)
+- [Business Intelligence](https://azure.microsoft.com/en-us/blog/topics/business-intelligence/) (118)
+- [Cloud Strategy](https://azure.microsoft.com/en-us/blog/topics/cloud-strategy/) (678)
+- [Cognitive Services](https://azure.microsoft.com/en-us/blog/topics/cognitive-services/) (126)
+- [Data Science](https://azure.microsoft.com/en-us/blog/topics/datascience/) (113)
+- [Data Warehouse](https://azure.microsoft.com/en-us/blog/topics/data-warehouse/) (222)
+- [Database](https://azure.microsoft.com/en-us/blog/topics/database/) (624)
+- [Developer](https://azure.microsoft.com/en-us/blog/topics/developer/) (1196)
+- [DevOps](https://azure.microsoft.com/en-us/blog/topics/devops/) (86)
+- [Events](https://azure.microsoft.com/en-us/blog/topics/events/) (247)
+- [Government](https://azure.microsoft.com/en-us/blog/topics/government/) (73)
+- [Hybrid](https://azure.microsoft.com/en-us/blog/topics/hybrid/) (83)
+- [Identity & Access Management](https://azure.microsoft.com/en-us/blog/topics/identity-access-management/) (88)
+- [Internet of Things](https://azure.microsoft.com/en-us/blog/topics/internet-of-things/) (380)
+- [IT Pro](https://azure.microsoft.com/en-us/blog/topics/it-pro/) (601)
+- [Last week in Azure](https://azure.microsoft.com/en-us/blog/topics/last-week-in-azure/) (92)
+- [Machine Learning](https://azure.microsoft.com/en-us/blog/topics/machine-learning/) (47)
+- [Management](https://azure.microsoft.com/en-us/blog/topics/management/) (381)
+- [Media Services & CDN](https://azure.microsoft.com/en-us/blog/topics/media-services/) (207)
+- [Migration](https://azure.microsoft.com/en-us/blog/topics/migration/) (33)
+- [Mobile](https://azure.microsoft.com/en-us/blog/topics/mobile/) (159)
+- [Monitoring](https://azure.microsoft.com/en-us/blog/topics/monitor/) (148)
+- [Networking](https://azure.microsoft.com/en-us/blog/topics/networking/) (229)
+- [Partner](https://azure.microsoft.com/en-us/blog/topics/partner/) (134)
+- [Security](https://azure.microsoft.com/en-us/blog/topics/security/) (401)
+- [Serverless](https://azure.microsoft.com/en-us/blog/topics/serverless/) (80)
+- [Storage, Backup & Recovery](https://azure.microsoft.com/en-us/blog/topics/storage-backup-and-recovery/) (694)
+- [Supportability](https://azure.microsoft.com/en-us/blog/topics/supportability/) (47)
+- [Updates](https://azure.microsoft.com/en-us/blog/topics/updates/) (578)
+- [Virtual Machines](https://azure.microsoft.com/en-us/blog/topics/virtual-machines/) (720)
+- [Web](https://azure.microsoft.com/en-us/blog/topics/web/) (371)
+
+### Articles by date
+
+- [July 2021](https://azure.microsoft.com/en-us/blog/2021/07/)
+- [June 2021](https://azure.microsoft.com/en-us/blog/2021/06/)
+- [May 2021](https://azure.microsoft.com/en-us/blog/2021/05/)
+- [April 2021](https://azure.microsoft.com/en-us/blog/2021/04/)
+- [March 2021](https://azure.microsoft.com/en-us/blog/2021/03/)
+- [February 2021](https://azure.microsoft.com/en-us/blog/2021/02/)
+- [Full archive](https://azure.microsoft.com/en-us/blog/archives/)
+
+[Get the Azure mobile app](https://azure.microsoft.com/en-us/get-started/azure-portal/mobile-app/)
+
+Explore Azure
+
+- [What is Azure?](https://azure.microsoft.com/en-us/overview/what-is-azure/)
+- [Get started](https://azure.microsoft.com/en-us/get-started/)
+- [Global infrastructure](https://azure.microsoft.com/en-us/global-infrastructure/)
+- [Trust your cloud](https://azure.microsoft.com/en-us/overview/trusted-cloud/)
+- [Customer enablement](https://azure.microsoft.com/en-us/overview/cloud-enablement/)
+- [Customer stories](https://azure.microsoft.com/en-us/case-studies/)
+
+Products and pricing
+
+- [Products](https://azure.microsoft.com/en-us/services/)
+- [Pricing](https://azure.microsoft.com/en-us/pricing/)
+- [Free Azure services](https://azure.microsoft.com/en-us/pricing/free-services/)
+- [Flexible purchase options](https://azure.microsoft.com/en-us/pricing/purchase-options/)
+- [Cloud economics](https://azure.microsoft.com/en-us/overview/cloud-economics/)
+- [Optimize your costs](https://azure.microsoft.com/en-us/overview/cost-optimization/)
+
+Solutions and support
+
+- [Solutions](https://azure.microsoft.com/en-us/solutions/)
+- [Resources for COVID-19](https://azure.microsoft.com/en-us/solutions/covid-19/)
+- [Solution architectures](https://docs.microsoft.com/en-us/azure/architecture/browse/)
+- [Support](https://azure.microsoft.com/en-us/support/)
+
+Partners
+
+- [Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/)
+- [Find a partner](https://azure.microsoft.com/en-us/partners/)
+- [Technology partners](https://azure.microsoft.com/en-us/isv/)
+
+Resources
+
+- [Training and certifications](https://docs.microsoft.com/en-us/learn)
+- [Documentation](https://docs.microsoft.com/en-us/azure/?product=featured)
+- [Updates](https://azure.microsoft.com/en-us/updates/)
+- [Blog](https://azure.microsoft.com/en-us/blog/)
+- [Developer resources](https://azure.microsoft.com/en-us/developer/)
+- [Students](https://azure.microsoft.com/en-us/developer/students/)
+- [Events](https://azure.microsoft.com/en-us/community/events/)
+- [White papers and e-books](https://azure.microsoft.com/en-us/resources/whitepapers/)
+- [Videos](https://azure.microsoft.com/en-us/resources/videos/home/)
+- [Webinars](https://azure.microsoft.com/en-us/overview/webinars/)
+
+Cloud computing
+
+- [Learn about cloud computing](https://azure.microsoft.com/en-us/overview/cloud-computing-dictionary/)
+- [What is the cloud?](https://azure.microsoft.com/en-us/overview/what-is-the-cloud/)
+- [What are public, private, and hybrid clouds?](https://azure.microsoft.com/en-us/overview/what-are-private-public-hybrid-clouds/)
+- [What is PaaS?](https://azure.microsoft.com/en-us/overview/what-is-paas/)
+- [What is middleware?](https://azure.microsoft.com/en-us/overview/what-is-middleware/)
+- [What is DevOps?](https://azure.microsoft.com/en-us/overview/what-is-devops/)
+
+Change language
+
+- [Diversity and Inclusion](https://azure.microsoft.com/en-us/overview/contact-azure-sales/)
+- [Accessibility](https://www.microsoft.com/en-us/accessibility)
+- [Privacy & Cookies](https://go.microsoft.com/fwlink/?LinkId=248681&clcid=0x409)
+- [Data Protection Notice](https://go.microsoft.com/fwlink/?LinkId=518021&clcid=0x409)
+- [Trademarks](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
+- [Terms of use](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx)
+- [Privacy Data Management](https://azure.microsoft.com/en-us/privacy-data-management/)
+- [Contact us](https://azure.microsoft.com/en-us/overview/contact-azure-sales/)
+- [Feedback](https://feedback.azure.com/forums/34192--general-feedback)
+- © Microsoft 2021

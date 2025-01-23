@@ -1,0 +1,121 @@
+---
+title: Traitement par IRD / Birnbaum Cirad
+last-modified: 2021-10-10 21:08:21Z
+date: 2021-07-29 10:37:38Z
+completed?: no
+---
+
+**De :** Philippe Birnbaum &lt;philippe.birnbaum@cirad.fr&gt;
+**Envoyé :**  lundi 4 octobre 2021 14:01
+**À :**  Fabien ALBOUY &lt;fabien.albouy@oeil.nc&gt;
+**Cc :**  Ghislain Vieilledent | CIRAD &lt;ghislain.vieilledent@cirad.fr&gt;; Adrien BERTAUD &lt;adrien.bertaud@oeil.nc&gt;
+**Objet :**  Re: OEIL : projets
+
+Salut Fabien,
+Je ne vois aucun inconvénient à ce que tu contactes qui ce soit à Amap, je ne suis ni roi ni responsable et j'espère bien que tout cela va se poursuivre après mon départ fixé à dans 2 ans (je travaille encore la destination), c-a-d à la fin du projet Admire qui est bien financé par la PN et l'IAC. Thomas devrait rejoindre la Calédonie, Ghislain peut être également, et Vanessa est impliquée à 200 % dans les projets en écologie. Ce sont sans aucun doute les bonnes personnes
+Pour la méthode utilisée dans Dynamic, bien sûr qu'il y a des doutes mais finalement comme dans toutes les méthodes basées sur la science. On ne peut sortir de résultats exacts alors qu'on aborde finalement les questions avec si peu de paramètres. Le retour de Marc sur 2019 est fondamental pour voir dans quelle mesure les images récentes s'alignent avec les plus anciennes ou si leur divergence est due à un biais de la méthode. Quoi qu'il en soit, je ne peux rien dire sur la fiabilité de cette méthode, sa robustesse ni sa pertinence, n'étant pas du tout impliqué dans sa conception. Marc pourra te répondre. Avoir une relecture par des reviewers indépendants serait une garantie supplémentaire. Si la méthode est publiée, cela réduit le risque d'avoir zappé des erreurs potentielles et permet de constituer, pour les gestionnaires, une forme d'audit sur la pertinence des résultats dans le corpus des méthodes et données utilisées.
+à+
+Phil.
+
+Le 04.10.21 à 13:06, Fabien ALBOUY a écrit :
+
+> Salut Philippe,
+> 
+> Merci de ton retour rapide.
+> 
+> ***Je réponds dans ton texte.***
+> 
+> A bientôt,
+> 
+> Fabien
+> 
+> **De :** Philippe Birnbaum  <ins>&lt;philippe.birnbaum@cirad.fr&gt;</ins>
+> **Envoyé :**  lundi 4 octobre 2021 11:15
+> **À :**  Fabien ALBOUY  <ins>&lt;fabien.albouy@oeil.nc&gt;</ins>
+> **Cc :**  Ghislain Vieilledent | CIRAD  <ins>&lt;ghislain.vieilledent@cirad.fr&gt;</ins>; Adrien BERTAUD  <ins>&lt;adrien.bertaud@oeil.nc&gt;</ins>
+> **Objet :**  Re: OEIL : projets
+> 
+> Salut Fabien,
+> Oui tout va plutôt pas mal, je profite du confinement pour travailler en profondeur sur certains points que je n'ai pas le temps de faire lorsque je suis à l'Ird, c'est donc assez cool et j'espère qu'il en est de même pour toi/vous
+> 
+> ***\[Fabien ALBOUY\]*** ***oui tout va bien. Après la coordination de l’équipe est un poil plus complexe mais t le monde est investi dans ses missions donc ça roule.***
+> 
+> A ce stade, je n'ai pas grand chose à répondre aux points ci-dessous, notamment les points 1,4 échangés avec Ghislain
+> Pour le projet Dynamic, j'attends de voir les résultats de Marc et ses premières interprétations. Personnellement, ce qui me manque c'est d'aborder un sujet aussi complexe et sensible à partir d'un modèle de détection qui n'est pas publié et donc pas validé par les spécialistes du domaine. Avant d'aller plus loin dans l'utilisation et surtout l'interprétation des résultats issus d'un tel modèle, il me semblerait fondamental de passer par cette première étape
+> 
+> ***\[Fabien ALBOUY\]*** ***ok Philippe. On attend donc d’avoir le retour de Marc pour se positionner. En aparté, j’espère bien qu’il n’y a pas d’interrogation sur la méthodologie employé à l’époque car nous avions tout de même communiqué sur les résultats…***
+> Enfin pour les appels à projets et comme je l'ai déjà précisé, je suis impliqué à + de 100 % dans les projets Reliques et Admire.
+> 
+> ***\[Fabien ALBOUY\]*** ***je ne connaissais pas le projet Admire (sympa cet acronyme !) qui aborde des questions très intéressante. Il est financé uniquement par la PN ?***
+> 
+> Je souhaite me concentrer sur ces deux projets, et m'investir dans le déroulement et la finalisation des thèses, avant mon départ de Calédonie.
+> 
+> ***\[Fabien ALBOUY\]*** ***j’ignorais que tu partais ! tu as déjà le calendrier et la destination fixés ? Sans flagornerie aucune, assurément une grande perte en terme d’expertise sur la NC. Effectivement la charge est lourde et je comprends ton souhait de ne pas te disperser.***
+> 
+> ***Vois-tu un inconvénient à ce que je contacte un autre membre de l’AMAP (Ghislain, Thomas ou Vanessa par ex) sur l’appel à projet recherche que j’ai identifié ?***
+> 
+> Même si je ne suis plus impliqué dans les nouveaux projets, je peux bien évidemment donner mon avis sur leur construction. A ce propos, peut on avoir une idée du projet déposé à Kiwa ?***\[Fabien ALBOUY\]*** ***je te transmets en pj les notes de concept des deux projets (le second est moins dans tes thématiques de recherche) que nous avons déposé à KIWA.***
+> 
+> Voili-voilà,
+> Belle journée,
+> Philippe
+> 
+> Le 01.10.21 à 12:53, Fabien ALBOUY a écrit :
+> 
+> > Bonjour Philippe,
+> > 
+> > J’espère que tu vas bien.
+> > 
+> > Je reprends attache avec toi pour évoquer plusieurs sujets après la période de rush lié à l’appel à projet KIWA.
+> > 
+> > 1.  **Kiwa**
+> > 
+> > Pour info et comme évoqué dans nos différents échanges du mois dernier, nous avons déposé un projet pour les petites subventions (inférieures à 100 k€) en relation avec ton domaine d’expertise. Ce projet vise à :
+> > 
+> > 1.  caractériser la dynamique spatio-temporelle des pertes/gains forestiers de la Nouvelle-Calédonie depuis 1990<ins><sup>\[1\]</sup></ins> selon différents facteurs biogéographiques (géologie, pluviométrie…) et les stratégies de gestion mises en œuvre par les acteurs locaux (ex : observe t-on des dynamiques différentes sur les aires protégées ? depuis la mise en œuvre des codes de l’environnement ? etc.).
+> > 2.  définir l’origine des pertes/gains forestiers de la Nouvelle-Calédonie depuis 2012<ins><sup>\[2\]</sup></ins> en les croisant avec les données relatives aux pressions (incendies, urbanisation, mines, cyclone, sécheresse,…) sur les forêts, aux opérations de reboisement/revégétalisation et aux mesures de gestion (mise en défense active et passive, lutte contre les espèces envahissantes herbivores introduites, évolution réglementaire…).
+> > 3.  fournir aux gestionnaires de l’environnement des outils pérennes permettant la consultation de variables et d’indicateurs, la production de bilans annuels sur l’évolution historique et actuelle des forêts et l’origine de leur évolution.
+> > 4.  formuler des recommandations aux gestionnaires sur les stratégies de conservation des forêts en localisant les points chauds de pertes forestières et en définissant les causes associées.
+> > 5.  communiquer et sensibiliser les décideurs/gestionnaires et le grand public à travers un panel d’outils adaptés.
+> > 
+> > Ce projet a été partagé à Ghislain mais sa charge et les délais contraints n’ont pas permis des échanges optimaux.
+> > 
+> > Ce projet prévoit, avec des moyens financiers affectés (environ 25 000 €), d’impliquer une expertise sur les dynamiques forestières. Bien naturellement, l’AMAP est identifié.
+> > 
+> > Une première sélection des projets interviendra début novembre avec la possibilité d’affiner la proposition avant l’ultime sélection.
+> > 
+> > 2.  **Les suites de l’étude DYNAMIC**
+> > 
+> > Comme discuté ensemble en réunion, nous souhaitons poursuivre l’étude DYNAMIC en traitant des images Pléiades de 2019. Pour rappel, l’étude traitait 3 images THR de 2004, 2012 et 2014. Marc est actuellement en train de procéder aux premiers traitements de l’image 2019 et devrait les finaliser d’ici fin octobre. Dans l’hypothèse où les traitements se déroulent bien, je souhaiterai voir avec toi dans quelle mesure l’AMAP pourrait intervenir pour compléter l’interprétation en intégrant les résultats 2019. Il ne s’agirait pas de reprendre l’intégralité de l’étude mais de la « réactualiser » avec ces nouveaux résultats.
+> > 
+> > Y es-tu toujours favorable ? quelles seraient les modalités d’implication de l’AMAP dans cette suite ?
+> > 
+> > 3.  **Un appel à projet en cours**
+> > 
+> > Je souhaitai t’informer mais je pense que tu as eu l’info sur l’existence de cet appel à projet de recherche
+> > 
+> > <ins>\[Appel à projets FRB-MTE-OFB\] Impacts sur la biodiversité terrestre dans l’anthropocène | Fondation pour la recherche sur la biodiversité (fondationbiodiversite.fr)</ins>
+> > 
+> > J’imagine bien que tu ne manques pas d’axes de travail, mais dans l’hypothèse où vous n’avez rien d’identifié, je pense que certaines problématiques auxquels souhaite répondre l’étude déposée à Kiwa rentrent tout à fait dans le cadre de cet appel.
+> > 
+> > Peut-on imaginer une collaboration sur cet appel à projet ?
+> > 
+> > 4.  **Cartographie de la biomasse aérienne**
+> > 
+> > Dans la continuité de nos discussions, nous avons échangé avec Ghislain sur le projet avec pour objectif de produire une note de concept dans des délais courts.
+> > 
+> > L’objectif est de pouvoir proposer ce projet à un ensemble de partenaires dont certains nous ont dit être favorables. Nous reviendrons vers toi sur ce sujet rapidement.
+> > 
+> > Voilà Philippe, je souhaitai partager ces différentes informations avec toi et disposer de ton positionnement. De notre côté, nous espérons développer des partenariats aux bénéfices de tous et s’inscrivant dans les stratégies propres aux structures.
+> > 
+> > Je suis bien évidemment disponible pour évoquer ces sujets de manière plus interactive.
+> > 
+> > Bon courage à toi,
+> > 
+> > **Fabien ALBOUY |** Directeur
+> > 
+> > Observatoire de l’environnement en Nouvelle-Calédonie (OEIL)
+> > 
+> > <ins>fabien.albouy@oeil.nc</ins> |Tél. : (+687) 23 00 25 / (+687) 74 03 99
+> > 
+> > 31 rue Paul Kervistin - Anse Vata - 98 800 Nouméa

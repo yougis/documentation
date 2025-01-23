@@ -1,0 +1,75 @@
+---
+title: Point avancement projet sécheresse avec Mathis
+last-modified: 2023-09-06 01:01:28Z
+date: 2023-09-05 22:32:15Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+2023-09-06 10:00
+
+- etat d'avancement 
+- questions :
+explication organisation des fichiers outputs :
+
+Histo 
+RUN_LOCAL_DROUGHT
+RUN_ALERTE
+
+Est ce que les données passe des chaines RUN vers l'historique ?
+
+Est ce qu'on peut exploiter HISTO sans RUN_LOCAL ? doit on prendre en compte les fichiers RUN_LOCAL pour la valorisation ? etc...
+
+Je ne vois pas RUN_GLOBAL
+
+chaines LOCAL et GLOBAL en mode continue
+global à déja prodiut les indices. La local est en train d'attendre les données
+
+les outputs sont envoyés vers HISTO
+
+il y a un tableau excel qui explique chaque output.
+En lien avec la procedure de controle.
+explique chaque fichier à quoi il serve, est ce qu'ils peuvent être supprimer.
+pas d'automatisation des déplacements des fichiers statistiques (stat). fichiers csv. pour chaque images/composite. il y a les info sur les données manquante, des stat descriptives.
+-> ces elements pourrait constituer le contenu d'un rapport pour le monitoring.
+
+point avec Marc semaine passé jeudi 31 (recomandations)
+
+
+Mise à jour HISTO Local en cours.
+Question sur le controle.
+ajouter un controle au moment du lancement 
+- chaine Histo : ne pas permetre de calcul de décade incomplète
+- chaine continue, démarage de la dernière date dispo de l'histo
+documenter la doc d'exploitation sur les cas d'utilisation de mise en route HISTO/Continue
+
+
+Dans INDICE
+COMP : 
+M : aucune décade exploitable, traitement au mois MOYENNE
+D3 : décade 3
+m : si calcul mois
+DAY : 1 seul fichier dispo dans le mois (sans moyenne mais calibré)
+E : Option dans la nouvelle chaine : si plus de 50% de donnée manquante, élargissement à +/- 5jours. 
+
+BAND 1 : moyenne/valeur
+BAND 2 (sauf Day) : count nb image du calcul
+
+
+MODIS : aggregation au MOIS peut servir pour le VHI. on s'en sert dans la chaine alerte
+
+INDICATEUR
+une donnée à chaque decade. On peut "simuler" les decades.
+on a l'info dans les fichiers stat en sortie de GEE composite.
+
+
+
+TO DO : qlq bug réglé sur local
+- chaine ALERTE, intégration de la chaine . maj donnée ASCAT sur la periode manquante
+- ensuite test du mode continue de l'alerte 
+
+ESRI :
+mos utilisé dans la comparaison des données METEO
+moyenne calculé sur une commune pour les prévisions.
+marche mal sur strate Foret.

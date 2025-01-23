@@ -1,0 +1,80 @@
+---
+title: spécification  utilisation GEE, calcul stat
+last-modified: 2023-03-31 00:59:06Z
+date: 2023-03-29 05:39:41Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+ 
+
+## Input
+- fichier de spec, format yaml . Nommé dans le reste du script : "indicateurSpec"
+``` 
+adaptingDataframe:
+  changeType: {}
+  renameMap: {}
+  setValue:
+    colName: id_indicateur
+    value: ??
+  toDrop: []
+catalogUri: None
+confDb:
+  chunksize: 1000
+  schema: surfor
+  strategy: append
+  tableName: faits_GFC_treecover2000
+confDims:
+  isin_id_mesure:
+  - 3
+  - 100
+  isin_id_spatial: 
+  - None
+confRaster:
+  api: GEE
+  masque: 
+    - gt : 30
+	  - lt : 50
+  outputValue : bool/real
+  defaultValue: int8/float&signed/unsigned
+  overlayHow: identity
+  uri_image: 'UMD/hansen/global_forest_change_2021_v1_9'
+  windows_height: 2048
+  windows_width: 2048
+dataName: gfc_treecover2000
+epsg: EPSG:4326
+keepList:
+- treecover2000
+overlayHow: identity
+sourceType: Raster
+``` 
+- geodataframe : 1 ou N entités. Nommé "data" mais peut être différent. 
+  - polygones `checkGeomType(data) == 'Polygon'` 
+  Il ne peut pas y avoir de multipolygone en entrée car ils sont explosés avant dans le script principal
+  
+  - points `checkGeomType(data) == 'Point'`
+
+## Output  1
+### Pour les polyones:
+dataframe avec attributs suivant :
+- tous les attributs entrants
+- mini_raster_array = contient le numpy array 
+- mini_raster_affine = contien le transform correspondant à l'image
+- min = valeur min de la bande dans la région du raster
+- max =  valeur max de la bande dans la région du raster
+
+### Pour les points:
+dataframe avec attributs suivant :
+- tous les attributs entrants
+- tous les attributs du keepList contenant les valeurs des pixels des bandes correspondantes
+
+
+## test et log
+Plusieurs limites sont identifié avec GEE
+il faudrait les trycatches voir les anticiper au mieux.
+en vrac, car ces limites  concerne des services parfois non utilisés:
+- Il y a des limites fixé à 5000 objets lors de la génération Vectoriel sur GEE
+- Extration de pixel : Too many pixels in sample; must be <= 262144
+- limite dans la création d'une image déposée du Drive
+

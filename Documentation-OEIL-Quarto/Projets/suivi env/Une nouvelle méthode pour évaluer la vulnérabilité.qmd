@@ -1,0 +1,99 @@
+---
+title: >-
+  Une nouvelle méthode pour évaluer la vulnérabilité des écosystèmes et protéger
+  la biodiversité - Fondation pour la recherche sur la biodiversité
+last-modified: 2022-09-05 01:02:01Z
+date: 2022-09-05 01:01:26Z
+source: >-
+  https://www.fondationbiodiversite.fr/communique/nouvelle-methode-pour-evaluer-la-vulnerabilite-des-ecosystemes/
+---
+
+https://www.nature.com/articles/s41467-022-32331-y
+
+# Une nouvelle méthode pour évaluer la vulnérabilité des écosystèmes et protéger la biodiversité
+
+## 
+
+**Alors que les États se sont engagés à créer des zones protégées sur au moins 30 % de leurs territoires terrestres et maritimes d’ici 2030, une équipe de recherche internationale a mis au point un nouvel outil permettant de quantifier la vulnérabilité des communautés d’espèces. Associé aux futures études d’évaluation des risques pour les écosystèmes, cet outil devrait aider les décideurs à définir les priorités de gestion et à orienter les efforts de protection là où ils sont le plus nécessaires.**
+
+<img width="360" height="235" src="../../_resources/FRB_cesab_CP_low_res-690x450_150504d8a7394d839e12d.jpg"/> Exemples d’écosystèmes vulnérables : récifs coralliens, savane, forêt tempérée, mangroves.
+
+Définir des stratégies de conservation appropriées est un objectif difficile à atteindre, notamment en raison de la complexité des menaces et des réponses des espèces, ainsi que des limitations budgétaires. Pour surmonter ce défi, l’équipe de scientifiques, dont des chercheurs du CNRS, de l’Ifremer, de l’IRD et d’organisations internationales, a simulé la réponse des communautés d’espèces à un large éventail de perturbations, pour fournir une estimation robuste de leur vulnérabilité dans un monde où les menaces futures sont diverses et difficiles à prévoir.
+
+**Quantifier la vulnérabilité de la biodiversité est crucial pour sauvegarder les écosystèmes les plus menacés. Publié dans *Nature Communications* le 1er septembre 2022, ce nouvel outil se distingue des travaux précédents car il estime le degré de changement de la diversité fonctionnelle, c’est-à-dire la biodiversité et les fonctions associées des écosystèmes, lorsqu’elle est exposée à des pressions multiples. Il a été développé dans le cadre de deux projets financés par la Fondation pour la recherche sur la biodiversité ([FRB](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/free/)) au sein de son Centre de synthèse et d’analyse de la biodiversité ([Cesab](https://www.fondationbiodiversite.fr/la-fondation/le-cesab/)) et avec le soutien d’Électricité de France ([EDF](https://www.edf.fr)) et de France Filière Pêche ([FFP](https://www.francefilierepeche.fr)).**
+
+Pour calculer la vulnérabilité des écosystèmes, l’équipe de 20 scientifiques a utilisé des simulations répétées par ordinateur de perturbations sur des communautés d’espèces. Qu’il s’agisse du changement climatique, de changement d’usage des terres, de pollution ou de surexploitation des ressources, ces perturbations simulent les impacts d’un large éventail de menaces potentielles sur les communautés d’espèces. « En simulant tous les scénarios possibles, même les pires, explique Arnaud Auber, chercheur à l’Ifremer et premier auteur de la publication, nous sommes en mesure d’identifier les écosystèmes les plus vulnérables d’un point de vue fonctionnel. De plus, nous pouvons désormais estimer leur vulnérabilité en tenant compte des pressions inconnues, imprévisibles ou mal documentées, ce qui constitue une avancée majeure par rapport aux travaux précédents. » **Cette approche, plus sûre, offre aux décideurs la possibilité de classer plusieurs sites en fonction de la vulnérabilité fonctionnelle qui leur est associée, et ainsi de permettre une gestion adaptative de la biodiversité.**
+
+Dans cette étude, la diversité fonctionnelle des communautés a été placée au centre du calcul de la vulnérabilité. Historiquement, la conservation de la biodiversité s’est principalement concentrée sur la diversité taxonomique (par exemple, le nombre d’espèces dans un écosystème). Cependant, des études récentes, dont des travaux du projet [Free](https://www.fondationbiodiversite.fr/la-frb-en-action/programmes-et-projets/le-cesab/free/), ont montré que l’étude de la diversité fonctionnelle peut fournir une évaluation plus précise du fonctionnement d’un écosystème. En effet, une espèce peut avoir la même fonction qu’une autre (par exemple, les mêmes proies ou le même cycle de reproduction) et donc si une espèce disparaît, une autre peut toujours remplir son rôle dans l’écosystème. Mais si toutes les espèces partageant une même fonction essentielle disparaissent, l’écosystème deviendra moins diversifié sur le plan fonctionnel, moins résilient aux menaces et donc plus vulnérable. **En d’autres termes, la diversité taxonomique dans un écosystème est importante mais pas suffisante pour évaluer correctement la vulnérabilité de l’écosystème.** Les poissons-perroquets, par exemple, sont l’une des seules espèces de poissons qui peuvent se nourrir directement de coraux. S’ils disparaissent, une composante essentielle du cycle du carbone dans les récifs coralliens sera perdue. La diversité fonctionnelle et la diversité taxonomique sont donc complémentaires et doivent être utilisées ensemble pour mieux guider les décideurs dans l’identification des zones prioritaires pour la protection de la biodiversité.
+
+Cette nouvelle approche peut être appliquée à tous les écosystèmes, qu’ils soient marins, terrestres ou d’eau douce. « À titre d’exemple, explique Arnaud Auber, nous avons utilisé notre outil de vulnérabilité fonctionnelle pour étudier la dynamique temporelle passée de la communauté de poissons de la mer du Nord. En utilisant les données sur l’abondance des poissons et les traits des espèces liés au fonctionnement de l’écosystème, tels que la fécondité, la taille de la progéniture et le mode d’alimentation, notre outil a révélé une vulnérabilité fonctionnelle élevée des communautés de poissons de la mer du Nord. Cependant, nous avons constaté une diminution significative de la vulnérabilité fonctionnelle au cours des quatre dernières décennies, passant de 92 à 86 %. Au cours de la même période, la pression de pêche en mer du Nord a diminué, suite à la politique commune de la pêche (en anglais *Common Fisheries Policy*), avec une diminution progressive des quotas de capture et une amélioration de la sélectivité des équipements. »
+
+De plus, cet outil est en libre-accès et peut être utilisé pour prédire la vulnérabilité des écosystèmes en utilisant par exemple les scénarios de changement climatique ou pour comparer différents écosystèmes. Cette étude souligne le besoin de synthèse alors que nous cherchons à démêler la complexité de la nature**. Ce n’est qu’une fois réunies que les données et les connaissances permettront de quantifier l’impact des multiples menaces qui pèsent sur les écosystèmes et d’aider les décideurs dans leurs actions de gestion et de conservation de la biodiversité dans un avenir incertain.**
+
+**Référence de l’article**
+
+Arnaud Auber<sup>1</sup>, Conor Waldock<sup>2,3</sup>, Anthony Maire<sup>4</sup>, Eric Goberville<sup>5</sup>, Camille Albouy<sup>6,7</sup>, Adam C. Algar<sup>8</sup>, Matthew McLean<sup>9</sup>, Anik Brind’Amour<sup>10</sup>, Alison L. Green<sup>11</sup>, Mark Tupper<sup>12,13</sup>, Laurent Vigliola<sup>14</sup>, Kristin Kaschner<sup>15</sup>, Kathleen Kesner-Reyes<sup>16</sup>, Maria Beger<sup>17,18</sup>, Jerry Tjiputra<sup>19</sup>, Aurèle Toussaint<sup>20</sup>, Cyrille Violle<sup>21</sup>, Nicolas Mouquet<sup>22,23</sup>, Wilfried Thuiller24, David Mouillot<sup>23,25</sup>. “A functional vulnerability framework for biodiversity conservation”. 2022. *Nature Communications*. doi: [https://doi.org/10.1038/s41467-022-32331-y/](https://www.nature.com/articles/s41467-022-32331-y)
+
+contact presse
+
+**Pauline Coulomb**
+
+[Mail](mailto:pauline.coulomb@fondationbiodiversite.fr "pauline.coulomb@fondationbiodiversite.fr")
+
+\+ 33 (0) 1 80 05 89 21
+
+- **Contact Chercheur**
+
+**Arnaud Auber** – premier auteur
+
+[Mail](mailto:Arnaud.Auber@ifremer.fr "Arnaud.Auber@ifremer.fr")
+
+\+ 33 (0) 6 08 60 51 69
+
+Seehere for the [press](https://www.fondationbiodiversite.fr/en/new-method-to-assess-ecosystem-vulnerability) [release in English](https://www.fondationbiodiversite.fr/en/new-method-to-assess-ecosystem-vulnerability).
+
+Principaux financeurs
+
+Affiliations
+
+###### En partenariat avec
+
+[<img width="160" height="107" src="../../_resources/CNRS-Logo_670b8f65dbdf4bcba94321bbb50e316d.png"/>](http://www.cnrs.fr/fr/page-daccueil)
+
+[<img width="160" height="107" src="../../_resources/EDF-Logo_2db0828fc2794a3cadb6bdcc5b91c54c.png"/>](https://www.edf.fr/)
+
+[<img width="160" height="107" src="../../_resources/FFP_992470fb17b6450796264dba8e67abb4.gif"/>](https://www.francefilierepeche.fr)
+
+[<img width="160" height="107" src="../../_resources/Ifremer_Logo_31b12944e48744e9bb1eeff2512b06f0.png"/>](https://wwz.ifremer.fr/)
+
+[<img width="160" height="107" src="../../_resources/IRD_Logo_d623506ebbd44143b7dd1db072304c1b.png"/>](http://www.ird.fr/)
+
+[<img width="160" height="107" src="../../_resources/lakehead_university_logo_web_a54500bd725d4a128a62d.png"/>](https://www.lakeheadu.ca)
+
+[<img width="160" height="107" src="../../_resources/Q_quatics_logo_web_a8152e313680473780a7f9b9401e7ed.png"/>](https://www.q-quatics.org)
+
+[<img width="160" height="107" src="../../_resources/Sorbonne_Universite_logo_web_a0f5795b3fca46a49d7f0.png"/>](https://www.sorbonne-universite.fr)
+
+[<img width="160" height="107" src="../../_resources/Univ-Montpellier_Logo_c13b52ec04f9425d944f0a0c8962.png"/>](https://www.umontpellier.fr/)
+
+[<img width="160" height="107" src="../../_resources/portslouth_univerity_logo_web_32852eab72814b549f7b.png"/>](https://www.port.ac.uk)
+
+[Fondation pour la recherche sur la biodiversité](#)
+
+Je soutiens la recherche sur la biodiversité ! [Je donne !](https://www.fondationbiodiversite.fr/je-donne/)
+
+- [Twitter](https://twitter.com/FRBiodiv)
+- [Facebook](https://www.facebook.com/Fondation-pour-la-Recherche-sur-la-Biodiversit%C3%A9-120550651985430/)
+- [Linkedin](https://www.linkedin.com/in/fondation-pour-la-recherche-sur-la-biodiversit%C3%A9-223059121/)
+- [Youtube](https://www.youtube.com/channel/UClI0kQbD-dQCGshBDdZh1BQ)
+
+© Fondation pour la recherche sur la biodiversité
+
+- [Contact](https://www.fondationbiodiversite.fr/la-fondation/nous-contacter/)
+- [Plan du site](https://www.fondationbiodiversite.fr/plan-du-site/)
+- [Mentions légales](https://www.fondationbiodiversite.fr/mentions-legales/)
+- [Crédits](https://www.fondationbiodiversite.fr/credits/)
+
+Gestion des services
+
+3

@@ -1,0 +1,21 @@
+---
+title: Devis DAVAR PPE
+last-modified: 2021-11-05 21:32:55Z
+date: 2021-07-23 09:49:44Z
+completed?: yes
+tags:
+  - prioritaire
+---
+
+# 
+
+
+|Libelle|J/H|Prix CFP TTC|
+|---|---|---|---|
+|Gestion de projet|8|379 000|
+|Etude des indicateurs, préparation et analyse des données|15|708 000|
+|Géotraitements et représentations statiques|14|679 000|
+|Outils de visualisation : Dashboard|7|	336 000|
+|**Total**|**45**|**2 102 000**|
+
+			

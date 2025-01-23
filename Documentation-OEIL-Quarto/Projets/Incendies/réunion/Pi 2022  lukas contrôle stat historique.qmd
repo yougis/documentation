@@ -1,0 +1,17 @@
+---
+title: Pi 2022  lukas contrôle stat historique
+last-modified: 2023-07-20 23:32:46Z
+date: 2023-07-20 22:32:20Z
+---
+
+
+Donnees 2020 pas même modèle 
+Mono détection choix fort d'arrêter la PI?
+
+Prevalidation sur les classes prioritaires.
+
+On attends les chiffres posés par Lukas
+
+Échantillon 2020 prevalidé VIIRS à sonder.
+
+Attention 2020! 

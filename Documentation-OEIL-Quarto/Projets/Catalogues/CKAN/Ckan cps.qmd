@@ -1,0 +1,56 @@
+---
+title: Ckan cps
+last-modified: 2023-07-12 23:53:21Z
+date: 2023-07-12 23:13:34Z
+---
+
+Modèle ckan
+A partir d'une extension peut être ?
+- fichier yaml : schema
+
+Tache parce : supprime tout ce qui pète 
+
+Harverster
+- Chaque classe c'est un type d'api
+
+- Extension solr
+
+Etape
+
+Appel api toutes les données 
++ filtre
+
+Enregistrement en json sur le serveur 
+
+Boucle de mapping
++ fonction plus complexe mapping sur les topic
+
+Mise a jour du code relancer l'application 
+
+
+Cron exécution quotidien 
+- dans _logs 
+
+Création dans CKAN
+
+
+Digital librairie / gemlibrarie : non utilisé
+DKAN POUR parser du drupal. Sprep.org
+
+
+Dcat extention 
+Hdx ckan derrière : sert à pousser 
+
+Nada microdonnees world bank
+
+Ods gouv
+
+Pccos api drupal 
+
+Stac non encore utilisé très spatial
+Zotero comme barclzy , chercheurs. Bibliothèque web
+
+Harverster source : pour éviter le cycle harvesting. 
+
+
+

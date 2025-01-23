@@ -1,0 +1,10 @@
+---
+title: questions CS
+last-modified: 2022-10-27 03:44:20Z
+date: 2022-10-27 03:42:07Z
+---
+
+Construction de l'anomalie par comparaison des valeurs d'indice sur l'ensemble de la série temporelle ou sur une décennie glissante ?
+
+Utilisation du VIIRS + S3 LTS pour remplacer MODIS
+Utilisation de S1 pour remplacer ASCAT

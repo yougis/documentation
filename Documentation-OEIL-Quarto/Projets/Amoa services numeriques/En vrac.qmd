@@ -1,0 +1,50 @@
+---
+title: En vrac
+last-modified: 2023-12-03 22:48:34Z
+date: 2023-12-01 10:11:35Z
+---
+
+
+Service de notification :
+
+- Refit du mail alerte incendie 
+
+Service d'accès et de consultation des informations environnementales :
+
+- App consultation bibliothèque numerique
+- App catalogues données et   téléchargement
+
+Service de centralisation d'information sur les acteurs de l'environnement en Nouvelle-Calédonie :
+
+- annuaire
+- site web
+
+
+Service de suivi d'une thématique
+
+- vulcain, vulcain pro, compteur
+- App données sécheresse végétale et toutes autre thématique : dataviz
+
+App consultation médiathèque
+
+Service de bancarisation de données terrain in situ:
+
+- App de bancarisation de données multipartite (hydrobio, replante..)
+
+Service de synthèse et rapport d'une année écoulée :
+
+- fiches communales
+- bilans analyse spatiale (incendies)
+
+
+Centraliser la gestions des abonnements :
+
+- info OEIL événement
+- info relayées OEIL
+- vigilance incendies
+- vigilance sécheresse
+- info pollution eau douce (capteur)
+- info nape hydrocarbure
+- panaches turbides
+- vigilance inondation
+- ma commune / mon environnement

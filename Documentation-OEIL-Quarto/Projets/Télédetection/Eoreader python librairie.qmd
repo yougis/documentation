@@ -1,0 +1,7 @@
+---
+title: Eoreader python librairie
+last-modified: 2023-09-27 09:40:53Z
+date: 2023-09-27 09:40:28Z
+---
+
+https://eoreader.readthedocs.io/en/latest/main_features.html

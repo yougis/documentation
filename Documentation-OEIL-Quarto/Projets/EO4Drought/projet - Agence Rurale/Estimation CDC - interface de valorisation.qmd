@@ -1,0 +1,50 @@
+---
+title: Estimation CDC - interface de valorisation
+last-modified: 2024-04-25 03:31:17Z
+date: 2024-04-24 04:49:07Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Affiner le budget interface de valorisation:
+
+
+1. Interfaces de diffusion des indicateurs (brutes / agrégés...)
+2. Génération et envoi de rapport automatiques et spécifiques (analyses spatio-temporelles et thématiques), bilans stratégiques 6 mois / 1 an, rapport d’alerte ...
+
+
+
+Pilotage projet : 10 %
+Maintenance corrective : 12jh / an
+Maintenance évolutive : 12jh / an
+
+## Infrasctructure : 1MF/an
+
+- Un serveur Web (cloud) : 500KF
+- Licences logiciels dont antivirus : 100kF
+- 3 To Stockage et backup : 400KF
+
+## Architecture : 
+
+**Backend**  (open source) : 3M5
+- Une pipeline de transfert , de traitement de mosaïcage et de publication des nouvelles données (de l'entrepot INSIGHT à chez nous, au Web). Orchestration de cette pipeline 1M5.
+- cataloguage STAC : 0.5M
+- Un serverur de carte / image temporel 0.5M
+- Une base de données contenant les parametres des catalogues d'image, les parametres applicatifs, les données utilisateurs. 0.5M
+- Déploiement du module de rapportage et configuration du scheduler 0.5M
+
+
+**FrontEnd**  (open source / proprietaire) : 4M8
+- Abonnement SAAS : AGOL / PowerBi etc. ***A évaluer***
+- Etude de cadrage : 3jH
+- Définition des profils utilisateurs, des besoins, mokup et CDC: 7jH
+- Développement de l'application web carto de consultation des 4 indicateurs, selon différentes dimension spatiale (commune, province, pays ...).  55jH (2M4 externe , 1M interne)
+- Etude et réalisation des modèles de rapport et bilan 25 jH  (1M interne)
+
+
+**Monitoring et statistique** :   0.5M 
+- mise en place et configuration Healthcheck 
+- mise en place statistique serveur web page consommés
+- mise en place statistiques utilisateurs (GA4)
+- suivi = maintenance

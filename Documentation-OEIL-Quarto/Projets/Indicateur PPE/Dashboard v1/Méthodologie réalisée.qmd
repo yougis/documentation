@@ -1,0 +1,250 @@
+---
+title: 'Rapport execution - Méthodologie réalisée'
+last-modified: 2022-10-04 02:52:21Z
+date: 2021-11-16 09:44:13Z
+---
+
+# Introduction
+
+Le projet relatif à la production et à la diffusion d’indicateurs sur les périmètres de protection des eaux de Nouvelle-Calédonie a engagé l'OEIL dans la réalisation d'un infocentre destiné aux agents gestionnaires de la ressource en eau du service de l'eau de la DAVAR. Conjointement, le service de l'eau et l'OEIL ont produit des indicateurs concernant l'état, les pressions et les réponses sur les périmètres de protection de la ressource en eau. Ces chiffres sont issus d'un ensemble de données disponibles (partie 1), sur lesquelles ont été effectués des géo-traitements en vue de constituée la base de donnée décisionnelle (partie 2), exploitée par un tableau de bord destiné à faciliter la lecture des informations (partie 3).
+
+# Les données exploitées
+## Données de références
+### Unités principales d'analyse  : les périmètres de protection des eaux
+#### Compilation des données de périmètres existants et en cours
+
+Les périmètres existants et en cours ont été concaténé pour servir d'unité principale d'analyse dans le calcul des indicateurs. Toutes les valeurs d'indicateurs sont collectés à l'intérieur de ces unités.
+
+##### Pré-traitements effectuées sur les périmètres
+- Explosion des multipolygones (ex. cas de NOUTY TD)
+![190cd6fb9a7d74a0e5bed7ce3c315441.png](../../../_resources/190cd6fb9a7d74a0e5bed7ce3c315441.png)
+
+- Définition de l'attribut status selon la règle:
+« Etat » pour les captages créés avant 2007  
+« GNC » pour ceux datant de 2007 ou après 
+    
+
+Seuls certains attributs de données PPE sont conservés dans le cadre du projet : 
+- 'objectid',
+- 'nom\_ppe',
+- 'type\_ppe',
+- 'arrete',
+- 'datearrete',
+- 'status',
+- 'geometry'
+
+Voici quelques statistiques descriptives de la donnée périmètre :
+Les chiffres sont le nombre d'entités ayant une valeur défini pour chaque attribut selon le type de périmètre
+
+![9043ef425da948d17ac0a538428623f5.png](../../../_resources/9043ef425da948d17ac0a538428623f5.png)
+
+#### Création des périmètres fusionnés
+
+##### Superposition des périmètres
+Il existe plusieurs périmètres qui se superposent. Souvent à la marge mais certains PPE en englobe d'autres, notamment entre les périmètres en cours et existant.
+
+En rouge, les périmètres qui ont une partie de leur géométrie qui intersecte une autre géométrie
+ ![f1425329c367b00aa37b45bb13d476bb.png](../../../_resources/f1425329c367b00aa37b45bb13d476bb.png)
+
+Lorsque nous souhaitons obtenir des statistiques spatiales sur le territoire nous devons considérer cette superposition afin de ne pas comptabiliser plusieurs fois la même information. Cela fausserait les indicateurs qui seraient alors cumulés aux différentes échelles territoriales (dimensions spatiales de la commune, provinces, régions hydrographiques etc.).
+
+D'autre part,  nous devons aussi permettre la présentation des valeurs d'indicateurs pour chacune des zones indépendamment de ses superpositions.
+
+##### Pré-traitements effectuées sur les périmètres superposés
+
+- Identification des zones qui se superposent (intersection). 
+
+Ex de PPR : ![837fba67e0c96acd24c39cf39478af4b.png](../../../_resources/837fba67e0c96acd24c39cf39478af4b.png)
+
+- Calcul de la différence symétrique entre chaque zone en superposition et la donnée des périmètres sources ![4c1370b7226868f8eb3145eaffbed9bb.png](../../../_resources/4c1370b7226868f8eb3145eaffbed9bb.png).
+
+- Filtrage des lignes et résidus topologiques de taille inférieur à 50 m²
+
+- Concaténation des identifiants des zones superposées
+
+- Fusion des deux jeux de données résultants:
+	- géométries des zones sans superposition avec identifiants unique
+	- géométries des zones ayant des superpositions avec les identifiants concaténés des zones en superposition
+
+- Recomposition des périmètres par leur identifiant : Agrégation des géométries par identifiant de superposition ![b28e3b502f4cad26d3173ff4f94c343d.png](../../../_resources/b28e3b502f4cad26d3173ff4f94c343d.png)
+
+
+#### Conclusion 
+Nous disposons de 2 sources de donnée principales d'analyse (périmètre de protection et périmètre de protection fusionnés) sur lesquelles sont calculés les indicateurs. 
+
+### Données de références : les indicateurs
+Voici la liste des données utilisées pour faire les géo-traitements.
+
+- Intégration des données [MOS 2014](https://georep-dtsi-sgt.opendata.arcgis.com/documents/occupation-du-sol-2014-au-format-shapefile/about)
+- Intégration des zones protégées : union des aires protégées [PSUD](https://www.province-sud.nc/element-thematique/aires-protegees)/[PNORD](https://data.gouv.nc/explore/dataset/aires-protegees-en-province-nord/information/?flg=fr&disjunctive.statut) ainsi que les [zones minières interdites ](https://georep-dtsi-sgt.opendata.arcgis.com/datasets/dtsi-sgt::zones-mini%C3%A8res-interdites-2/explore?location=-21.000000%2C165.500000%2C8.27)
+- Intégration du [MNT 10m (2022)](https://georep-dtsi-sgt.opendata.arcgis.com/documents/mod%C3%A8le-num%C3%A9rique-de-terrain-bdalti-nc/about)
+- Intégration des [Carrières autorisées](https://georep-dtsi-sgt.opendata.arcgis.com/datasets/carri%C3%A8res-autoris%C3%A9es-1/explore?location=-21.000000%2C165.500000%2C8.27)
+- Intégration des données [érosion de 2018](https://geoportail.oeil.nc/donnees/Erosion/cartographie_erosion/)
+- Intégration de la [Carte géologique au 50k](https://georep-dtsi-sgt.opendata.arcgis.com/documents/g%C3%A9ologie-au-1-50-000%C3%A8me-au-format-g%C3%A9odatabase/explore)
+- Intégration des données [ICPE](https://georep-dtsi-sgt.opendata.arcgis.com/datasets/dtsi-sgt::installations-class%C3%A9es-pour-lenvironnement-de-nouvelle-cal%C3%A9donie-icpe/explore?location=-20.500000%2C165.500000%2C8.71)
+- Intégration des données [Incendie de 2012 à janvier 2022](https://geoportail.oeil.nc/AlerteIncendies/Exports/)
+- Intégration des données ISEE 2021 (lien Gdrive Davar)
+- Intégration des données [KBA](https://georep-dtsi-sgt.opendata.arcgis.com/maps/zones-cl%C3%A9s-de-biodiversit%C3%A9-kba-key-biodiversity-areas-1/about)
+- Intégration des données ZICO (Données sur serveur OEIL non accessible au téléchargement public)
+- Intégration des données des [Centres miniers](https://georep-dtsi-sgt.opendata.arcgis.com/datasets/dtsi-sgt::centres-miniers-2/explore)
+- Intégration des données Espèces menacées ENDEMIA (Données sur serveur OEIL non accessible au téléchargement public)
+- Intégration des données sur la Pluviométrie DAVAR (lien Gdrive Davar)
+- Intégration des données des Zones labélisées [UNESCO](https://georep-dtsi-sgt.opendata.arcgis.com/datasets/dtsi-sgt::zones-inscrites-au-patrimoine-mondial-de-lunesco-1/explore?layer=2&location=-20.482091%2C165.207606%2C8.29) / [RAMSAR](https://georep-dtsi-sgt.opendata.arcgis.com/datasets/dtsi-sgt::p%C3%A9rim%C3%A8tre-ramsar-1/explore?location=-22.370000%2C166.955000%2C10.15)
+
+
+
+### Les données de références: les dimensions territoriales 
+Les territoires d'analyse servent d'unité d'agrégation statistiques des indicateurs.
+
+Voici la liste des données utilisées 
+
+- Nouvelle Calédonie, 
+- provinces, 
+- communes, 
+- régions hydrographiques, 
+- aires coutumières, 
+- hydro-eco-régions, 
+- bassins versants.
+
+
+
+# Géo-traitements
+
+## Préparation des données
+
+Les données ont été intégrées en base de données PostGIS, au format géometrie WKB.
+
+### Erreurs géométriques
+Afin de pouvoir réaliser les traitements geometrique d'intersection spatiales, certains jeux de données doivent être corrigés. Sans cela les opérateurs geometriques ne fonctionnent pas ou mal.
+Exemple d'erreur de géométrie qui persistent suite à la livraison des données PPE_V2 
+auto-intersection ![bcf9d4e7e5e07d3317214488fdf7a662.png](../../../_resources/bcf9d4e7e5e07d3317214488fdf7a662.png) ![4af9fc82fdf31584346ff143fd9e520e.png](../../../_resources/4af9fc82fdf31584346ff143fd9e520e.png)
+
+Géométrie multipolygon avec éclats dû à des imprécisions ayant certainement été produit lors de géo traitements réalisées anterieuremment par la DAVAR. ![a04d57957b1678480a32e46c6e478041.png](../../../_resources/a04d57957b1678480a32e46c6e478041.png)
+
+Des trous à l'intérieur de l'enveloppe d'un polygone ![7a6ff28a0750904e42fd18931767b8bb.png](../../../_resources/7a6ff28a0750904e42fd18931767b8bb.png)
+
+## Solutions apportées :
+Correction des géométries avec ST_MAKEVALID.
+
+Update de V2_ppe_existants :
+
+```sql
+UPDATE davar.V2_ppe_existants 
+SET wkb_geometry = ST_MakeValid(wkb_geometry)
+WHERE NOT ST_IsValid(wkb_geometry)
+```
+
+Résultats :
+
+```sql
+NOTICE: Ring Self-intersection at or near point 324945.6101000011 326853.51889999956 
+NOTICE: Ring Self-intersection at or near point 327500.52000000328 339293.3030999992
+NOTICE: Ring Self-intersection at or near point 334895.59309999645 359987.36400000006 UPDATE 3
+```
+
+Update de V2_ppe_en_cours
+
+```sql
+UPDATE davar.V2_ppe_en_cours SET wkb_geometry = ST_CollectionExtract(ST_MakeValid(wkb_geometry)) WHERE NOT ST_IsValid(wkb_geometry)
+```
+
+
+Résultats :
+
+```sql
+NOTICE:  Ring Self-intersection at or near point 362759.63000000268 298332.37010000087
+NOTICE:  IllegalArgumentException: Invalid number of points in LinearRing found 3 - must be 0 or >= 4
+NOTICE:  Self-intersection at or near point 495235.86809601891 226286.3297072429
+NOTICE:  Too few points in geometry component at or near point 490881.1921999976 234330.65090000071
+NOTICE:  Self-intersection at or near point 487516.84947143664 236000.57381348789
+NOTICE:  Self-intersection at or near point 486729.53998700716 238179.06572602072
+NOTICE:  Hole lies outside shell at or near point 251992.61819999665 418041.02219999954
+NOTICE:  Self-intersection at or near point 245850.6389073933 425393.89652408339
+NOTICE:  Self-intersection at or near point 241189.6126481863 427847.95041916001
+NOTICE:  Ring Self-intersection at or near point 521133.82829999924 387688.56849999912
+NOTICE:  Too few points in geometry component at or near point 255153.43050000072 399295.28380000032
+NOTICE:  Self-intersection at or near point 258483.36558114132 401616.20167639293
+NOTICE:  Too few points in geometry component at or near point 255153.43050000072 399295.28370000049
+NOTICE:  Too few points in geometry component at or near point 247761.46840000153 397536.8655999992
+UPDATE 14
+```
+
+
+## Constitution de l'architecture de la base de données décisionnelle 
+
+### Table de fait des indicateurs
+
+Modélisation valeur = superficie en Km2   
+classe = classe du MOS ou légende géologique 
+
+| nom_ppe | type_ppe | id_spatial | id_mesure | id_indicateur | valeur | classe | geometry |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| MALABOU F2 (forage) | PPR | 98826 | 2   | 2   | 0,00923 | 311 | -   |
+| MALABOU F2 (forage) | PPR | NC  | 2   | 2   | 0.00923 | 311 | -   |
+| MALABOU F2 (forage) | PPR | 98826 | 2   | 2   | 0.00085 | 321 | -   |
+| MALABOU F2 (forage) | PPR | NC  | 2   | 2   | 0.00085 | 321 | -   |
+| No name | PPR - FUSION | NC  | 2   | 2   | 0.015119 | 311 | -   |
+| No name | PPR - FUSION | 98821 | 2   | 2   | 0.015119 | 311 | -   |
+
+
+## Calcul des indicateurs
+
+On calcule tous les indicateurs pour chaque unité (PP,PP\_fusionnée)
+
+Schéma de production des indicateurs 
+
+### Indicateurs d'état
+
+- Superficie générale
+- MOS
+- Géologie : utilisation de la légende simplifié produite par GeoImpact
+- Pluviometrie
+
+
+### Indicateurs de pression incendie
+On utilise les données incendies VIIRS de 2012 à 2022 et les données sentinelles.
+
+### Indicateurs de pression érosion 
+On utilise la données des classes de pente catégorisé par Geoimpact.
+
+### Indicateurs de pression humaine
+
+#### Habitants , résidences principales et secondaires
+Le nombre d'habitant situé à l'intérieur d'un périmètre est calculé par interpolation, selon la stratégie suivante: Les données de recensement géolocalisée selon des zones que nous appelons des ilots ISEE, dispose de l'information du nombre d'habitant dans la zone. Ces ilots sont de taille variable est sont relativement peu précis, spécifiquement en zone rurale ou les habitats sont dispersés sur de grandes surfaces.
+
+Afin de préciser cette localisation, nous avons fait le choix de considérer que les données des ilots ISEE sont concentrées dans les zones urbanisées (BDAGGLO) lorsqu'elles intersectent l'ilot .
+
+Ainsi, nous interpolons le nombre d'habitant d'un ilot sur les zones urbanisées de manière à concentrer les habitants et les résidences. puis, dans un second temps nous interpolons les données issue de la première interpolation sur les périmètres de protection mais cette fois ci, en considérant la superficie intersectée comme pondérateur.
+
+Voici une illustration théorique de ce que cela produit selon différent cas : ![methodo_interpolation.png](../../../_resources/methodo_interpolation.png)
+
+Les étiquettes, centrées sur chacune des zones, indiquent le nombre d'habitant (recensé : blanc, aggloméré ; rouge et répartie : bleu)
+
+#### Activités economiques et minières
+
+### Indicateurs physico-chimiques
+
+# Outil de visualisation : Dashboard 
+
+Consulter le tableau de bord à partir de cette url : 
+[https://oeil.maps.arcgis.com/apps/dashboards/209d4f870def400dad399eb799f92f06](https://oeil.maps.arcgis.com/apps/dashboards/209d4f870def400dad399eb799f92f06)
+
+Le tableau de bord est sécurisé et nécessite une authentification pour y accéder.
+
+# Base de données
+
+Les données du tableau de bord sont stockées dans une base de données MSSQL. Les données ne sont pas mise à jour pour le moment.
+
+La version des données traités par Bilbo se trouve toujours dans la base de données PostGIS locale de l'observatoire dans la base oeil_traitement dans le schema pression_eau.
+
+# Code source
+
+Le code source du tableau de bord Arcgis, les scripts et les tickets de développement sont disponibles sur le [dépôt Git de l'OEIL](https://dev.azure.com/Oeilnc/PressionsPPE).
+
+# Dossier du projet 
+
+Les éléments du projet sont stockés dans le dossier activité de l'année 2021, dans le projet **12L_Dashbord_PPE**.
+
+# Suites à donner
+
+Indisponibilité des données BVAEP propores. Une proposition d'intégration à faire dans une phase 2 (PEP) est envisagée.

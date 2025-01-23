@@ -1,0 +1,7 @@
+---
+title: 'SIG : géotraitement'
+last-modified: 2022-11-09 23:26:50Z
+date: 2022-11-09 21:34:37Z
+---
+
+conversion de l'indice de pollution lumineuse (luminance) en 8 classes et format UINT8

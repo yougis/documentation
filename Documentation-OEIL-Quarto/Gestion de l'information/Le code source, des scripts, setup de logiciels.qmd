@@ -1,0 +1,144 @@
+---
+title: Le code source - des scripts - setup de logiciels
+last-modified: 2021-06-27 10:41:49Z
+date: 2021-06-23 03:02:08Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+# Code source de scripts et application
+utilisation d'une forge type Git hébergé sur ([Azure DevOps](https://dev.azure.com/Oeilnc/))
+# Guide de nomenclature des commentaires de commit
+Ce document fournit des directives pour la rédaction de commentaires de commit clairs et informatifs, qui facilitent la gestion de l'historique des modifications et la compréhension des changements apportés.
+## Structure générale d'un commentaire de commit
+Un commentaire de commit doit généralement suivre cette structure :
+```
+type(portée): courte description
+[Optionnel] Description plus détaillée des modifications.
+- Liste des changements significatifs ou remarques importantes.
+- Informations supplémentaires pertinentes.
+#idDeTicketOuIssue si applicable
+```
+## Types de commit
+Chaque commit doit être précédé d'un mot-clé qui indique la nature de la modification. Voici une liste exhaustive des types possibles avec une courte description de chacun :
+- **feat**: Introduit une nouvelle fonctionnalité pour l'utilisateur.
+- **fix**: Corrige un bug affectant l'utilisateur.
+- **docs**: Modifications uniquement dans la documentation.
+- **style**: Changements qui n'affectent pas la signification du code (espaces, formatage, etc.).
+- **refactor**: Modifie le code sans ajouter de fonctionnalité ou corriger un bug.
+- **perf**: Améliore la performance d'une portion de code existante.
+- **test**: Ajoute ou corrige des tests existants.
+- **build**: Affecte le système de build ou les dépendances externes.
+- **ci**: Modifications dans les fichiers et scripts de configuration CI (Continuous Integration).
+- **chore**: Mises à jour diverses sans modifications du code de production (maintenance, nettoyage).
+## Portée du Commit
+La portée précise la partie du projet affectée par le commit, par exemple `ui`, `api`, `core`, `dataviz` etc.
+# Détails des types de Commit
+Voici une liste détaillée des types de commit possibles avec une courte description pour chacun, afin de guider les développeurs dans la rédaction de leurs messages de commit.
+### feat (Fonctionnalité)
+- **Description :** Introduit une nouvelle fonctionnalité ou un nouveau comportement dans l'application. Cela inclut l'ajout de nouvelles fonctionnalités, la création de nouveaux composants ou l'introduction de nouvelles technologies ou frameworks.
+- **Quand l'utiliser :** Lorsque vous ajoutez une fonctionnalité qui offre de nouveaux comportements ou capacités aux utilisateurs finaux.
+### fix (Correction)
+- **Description :** Corrige un bug ou un problème qui affectait le bon fonctionnement de l'application. Cela peut concerner la correction d'erreurs, de dysfonctionnements ou de comportements inattendus.
+- **Quand l'utiliser :** Lorsque vous corrigez des bugs qui affectent négativement l'expérience utilisateur ou la stabilité de l'application.
+### docs (Documentation)
+- **Description :** Modifications apportées uniquement à la documentation du projet. Cela inclut les mises à jour de README, les commentaires dans le code, ou la création de documentation technique.
+- **Quand l'utiliser :** Lorsque vous mettez à jour ou ajoutez de la documentation pour expliquer le fonctionnement du code, les configurations ou l'utilisation de l'application.
+### refactor (Refactorisation)
+- **Description :** Modification du code qui n'introduit ni nouvelle fonctionnalité, ni correction de bug, mais qui peut améliorer la structure interne du code.
+- **Quand l'utiliser :** Lorsque vous réorganisez le code pour le rendre plus clair, plus simple, ou plus efficace sans changer son comportement externe.
+### perf (Performance)
+- **Description :** Améliorations apportées à la performance d'une portion de code existante, permettant à l'application de fonctionner plus rapidement ou de manière plus efficace.
+- **Quand l'utiliser :** Lorsque vous apportez des modifications spécifiques pour améliorer la vitesse d'exécution ou l'efficacité de l'utilisation des ressources.
+### test (Tests)
+- **Description :** Ajout, suppression ou correction de tests. Cela inclut à la fois les tests unitaires, d'intégration, fonctionnels, etc.
+- **Quand l'utiliser :** Lorsque vous travaillez sur le système de tests de l'application, que ce soit pour ajouter de nouveaux tests ou corriger des tests existants qui ne sont pas corrects.
+### build (Build)
+- **Description :** Modifications qui affectent le système de build et les scripts associés, comme les scripts de déploiement, les configurations de packing, etc.
+- **Quand l'utiliser :** Lorsque vous faites des modifications nécessaires pour construire ou déployer l'application avec **Poetry** par exemple, ou pour modifier la manière dont les dépendances sont gérées.
+### ci (Intégration Continue)
+- **Description :** Modifications des fichiers et scripts de configuration d'intégration continue (CI). Cela inclut les modifications des pipelines, des scripts de test, de déploiement automatique, etc.
+- **Quand l'utiliser :** Lorsque vous apportez des changements aux processus d'intégration ou de déploiement continu pour améliorer ou modifier les étapes de vérification automatique.
+### chore (Tâches diverses)
+- **Description :** Mises à jour diverses qui ne modifient pas directement le code source ou les fonctionnalités de l'application. Cela inclut des tâches comme la mise à jour des dépendances, la configuration du projet, ou le nettoyage de code.
+- **Quand l'utiliser :**  Le type `chore` est utilisé pour les commits qui ne modifient pas le code de production ni ne ajoutent de fonctionnalités pour l'utilisateur final. Ces tâches sont essentielles pour la maintenance du projet, bien qu'elles n'affectent pas directement ce que l'utilisateur final expérimente. Quelques exemples incluent :
+    - La mise à jour des dépendances pour utiliser les dernières versions.
+    - La modification de la configuration des outils de build.
+    - L'ajout ou la mise à jour de scripts d'automatisation.
+    - Le nettoyage du code, comme la suppression de fichiers inutilisés.
+    - La mise à jour de fichiers de configuration non liés au code de production.
+    Ces tâches contribuent à maintenir la santé du projet, à améliorer les infrastructures de développement et à effectuer des mises à jour nécessaires qui soutiennent le développement sans changer le comportement de l'application pour l'utilisateur.
+# Guide de Nomenclature pour les Commentaires de Commit
+Ce guide vise à établir une convention claire pour la rédaction des commentaires de commit dans les projets. L'objectif est d'améliorer la lisibilité de l'historique des modifications et de faciliter la compréhension des changements apportés par chaque commit.
+## Structure du Commentaire de Commit
+Un commentaire de commit doit suivre la structure suivante :
+```
+type(portée): courte description
+[Optionnel] Description plus détaillée des modifications.
+- Liste des changements significatifs ou remarques importantes.
+- Informations supplémentaires pertinentes.
+#idDeTicketOuIssue si applicable
+```
+### Exemples de commentaires pour les différents types de commit
+#### Ajout d'une Fonctionnalité
+```
+feat(authentification): ajout de la connexion par empreinte digitale
+La connexion par empreinte digitale offre une méthode plus sécurisée et rapide pour les utilisateurs. Elle utilise le nouveau service BioAuth.
+- Implémentation du service BioAuth
+- Mise à jour de l'UI pour inclure l'option d'empreinte digitale
+- Ajout de tests pour la nouvelle fonctionnalité
+#4321
+```
+#### Correction de bug
+```
+fix(database): correction d'une fuite de mémoire lors des requêtes
+Une fuite de mémoire était présente lors de l'exécution de requêtes complexes dues à une mauvaise gestion des instances. Correction par une réinitialisation adéquate des ressources après chaque requête.
+- Optimisation de la gestion des ressources dans le module de requête
+- Ajout de logs pour le suivi des instances de connexion
+#5678
+```
+#### Mise à Jour de la documentation
+```
+docs(api): mise à jour de la documentation des endpoints
+Mise à jour de la documentation pour refléter les derniers changements dans l'API, incluant de nouveaux paramètres et des exemples de requêtes.
+- Ajout d'exemples de requêtes pour le nouvel endpoint `/user/profile`
+- Clarification des paramètres requis pour `/user/register`
+#91011
+```
+docs peut avoir une portée spécifique comme guideUtilisateur, guideExploitation, readme.
+```
+docs(guideUtilisateur): mise à jour des instructions d'installation
+les instructions d'installation ont été mises à jour pour inclure le nouveau processus avec docker. cela simplifie l'installation pour les nouveaux utilisateurs et réduit les problèmes de compatibilité sur différents systèmes d'exploitation.
+- ajout de la section sur l'installation avec docker
+- suppression des anciennes instructions spécifiques à windows
+- mise à jour des captures d'écran pour refléter les nouvelles étapes
+#1234
+```
+#### Refactorisation de code
+```
+refactor(core): réorganisation du module de configuration
+Réorganisation du module de configuration pour améliorer la lisibilité et la maintenance du code. Introduction de sous-modules pour une meilleure structure.
+- Séparation du chargement et de la validation de la configuration
+- Introduction de tests unitaires pour chaque sous-module
+#1213
+```
+### Exemples de commentaires pour différentes portés de commit
+#### **ui**: Refonte du formulaire de connexion pour améliorer l'UX.
+   - *Description*: Modifications liées à l'interface utilisateur pour améliorer l'expérience utilisateur.
+   
+#### **api**: Ajout d'un endpoint pour la récupération des données utilisateur.
+   - *Description*: Changements affectant les API internes ou externes pour enrichir ou modifier les fonctionnalités disponibles.
+   
+#### **db**: Migration ajoutant une colonne `email` à la table utilisateurs.
+   - *Description*: Mises à jour liées à la base de données, incluant les schemas, les migrations, et les requêtes.
+   
+#### **auth**: Correction du flux d'authentification avec OAuth2.
+   - *Description*: Améliorations ou corrections dans le système d'authentification, assurant la sécurité et l'efficacité de l'accès utilisateur.
+#### **core**: Optimisation de l'algorithme de recommandation produit.
+   - *Description*: Modifications du noyau de l'application ou de la logique métier pour améliorer les performances ou les fonctionnalités.
+####  visuel : amélioration de la cohérence visuelle des boutons
+- *Description*:  
+    - Standardisation des classes CSS pour les boutons principaux et secondaires
+    - Ajout d'effets de transition pour les interactions utilisateur
+    - Mise à jour des directives d'accessibilité pour les états de focus
+    Ces changements contribuent à une meilleure cohérence du design global et renforcent l'accessibilité de l'application.

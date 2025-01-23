@@ -1,0 +1,36 @@
+---
+title: installation font et resources
+last-modified: 2023-10-20 05:24:10Z
+date: 2021-09-27 23:04:15Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+déplacer les fichier arial nova .tff et cerebri-Sans.tff
+du dossier
+`/root/font`
+
+dans le dossier
+`/root/.local/share/QGIS/QGIS3/profiles/default/fonts/` (sous linux)
+
+`cp /root/fonts/ArialNova/* /root/.local/share/QGIS/QGIS3/profiles/default/fonts/`
+
+`cp /root/fonts/cerebri-sans/* /root/.local/share/QGIS/QGIS3/profiles/default/fonts/`
+
+et `/root/resources`
+
+dans le dossier
+`/usr/share/qgis/svg/atlas_communal` (sous linux)
+`mkdir /usr/share/qgis/svg/oeil_atlas_communal`
+
+`cp /root/resources/* /usr/share/qgis/svg/oeil_atlas_communal/`
+
+```
+cp  /root/fonts/ArialNova/* /root/.local/share/QGIS/QGIS3/profiles/default/fonts/
+cp  /root/fonts/cerebri-sans/* /root/.local/share/QGIS/QGIS3/profiles/default/fonts/
+mkdir /usr/share/qgis/svg/oeil_atlas_communal
+cp /root/resources/* /usr/share/qgis/svg/oeil_atlas_communal/
+```
+
+pip install pandas plotly

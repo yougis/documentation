@@ -1,0 +1,47 @@
+---
+title: '2023-10-11 10:00 : Mahis VABF / Alerte / phase 2 région'
+last-modified: 2023-10-11 01:30:05Z
+date: 2023-10-10 23:22:43Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+2023-10-11 10:00  12:30
+- contraintes : les VAI / VHI sont recalculés en continue pour toute la periode historique
+- idee : stocker les valeurs de parametre de calcul (moyenne et ecart type de NDWI vis à vis de la serie complete historique pour VAI)
+- (min max NDWI vis à vis de la serie complete historique pour VHI)
+
+par periode calculé :
+- 12 rasters mensuels
+- 12 * 3 decadaires
+
+
+faire un post traitement de masque sur NDVI et NDWI Landsat 7
+
+Alexandre a la version corrigé de MODIS 
+il devait faire tourner cette version le 27 septembre.
+
+Travaux :
+Chaine alerte, ASCAT, code pour combiner les traitements, changement lié au nouvelle environnement. rendu plus générique.
+mise en mode continue à faire.
+mise en qualification alerte semaine du 16 : mode run continue et  controle disponibilité des données en input.
+
+VABF :  chaine continue en erreur
+- pertes de connection GEE
+- bug évolution ROI
+
+procedure composition 
+D1e : intermediaire : 
+si + 50 % manquante : 5 jours avant et 5 jours après 
+du 25 (mois précédent) au 15 : 
+
+Region : 
+- tuile indépendante les unes des autres
+-> voir avec le Vanuatu pour pré-selectionner les zones (tuiles Landsat 789 / Sentinel2 / MODIS)
+
+
+Texture Bande 1 et Bande 2 :  confiance quantité de pixel disponible ...
+PGRSC 27 novembre
+4er jour de conf
+

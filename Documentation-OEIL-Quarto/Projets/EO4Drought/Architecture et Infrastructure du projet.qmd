@@ -1,0 +1,48 @@
+---
+title: Architecture et Infrastructure du projet
+last-modified: 2023-02-09 22:36:19Z
+date: 2023-02-08 03:51:17Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Résultat d'échange concernant l'architecture informatique du projet
+2022/10/18 
+Présents : Mathis, Hugo
+
+Spécifications techniques de l'architecture cible :
+- Une VM de qualification :
+	Linux/Ubuntu
+	120 Go RAM
+	Stockage : un disque simple, espace réduit temporaire (1 To suffira je pense, voire moins)
+
+- Une VM de production :
+	Linux/Ubuntu
+	120 Go RAM
+	Stockage : il faut un SAN ou NASS en Raid, espace plus important (2 To)
+	Normalement plus sécurisée et redondée que la vm qualif
+
+- Un entrepôt de données de productions :
+	Une espace de stockage pour les indices/indicateurs historiques (actuellement ~1 To d’images qui sont sur la VM GEO4DM que j’utilisais jusque-là)
+	Stockage : je pense à 10 To pour être large et qui servirait pour les différents territoires traités
+	Idéalement il faudrait un RAID 10 pour optimiser les accès en lecture et garantir le hotspare.
+
+ 
+
+En dessous quelques remarques et questions :
+
+Concernant cette base d’indices/indicateurs historiques, elles est donc stockée sur la VM GEO4DM du serveur (utilisée dans le cadre du projet SCO) : Linux/Ubuntu, 120 Go RAM, 10 To d’espace stockage, Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz.
+
+- Serait-il possible de transférer cette base vers le futur entrepôt de données, mais de garder la VM GEO4DM comme environnement de dev en plus de mon pc local (mais du coup plus besoin des 10 To d’espace si on a un entrepôt à côté).
+- Ou alors transformer GEO4DM en entrepôt de stockage ? (mais pas idéal si on fait aussi du dev dessus j’imagine)
+
+ 
+
+Concernant les produits satellites sources utilisés en entrée de la chaine sécheresse :
+- Sentinel-2 THEIA sont stockés et téléchargés automatiquement sur le geo-data
+- Landsat sont sur mon pc ET la vm geo4dm (pas de téléchargement automatique)
+- Modis et ASCAT sont sur mon pc (pas de téléchargement automatique)
+- Sentinel-1 pas encore téléchargés
+- Est-ce qu’il vaudrait pas mieux stocker tous ces produits dans l’entrepôt de production ou un autre entrepôt dédié ?
+

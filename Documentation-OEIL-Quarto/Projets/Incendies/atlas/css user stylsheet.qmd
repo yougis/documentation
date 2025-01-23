@@ -1,0 +1,50 @@
+---
+title: css user stylsheet
+last-modified: 2023-10-05 04:06:57Z
+date: 2023-10-05 04:04:48Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+
+```css
+body { 
+	margin: 0 0;
+	font-family: Arial Nova;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14.6991px;
+	color: rgba(0,0,0,1.0000);
+	text-align: justify; }
+
+```
+
+
+```css
+
+ul {
+  columns: 1;
+  -webkit-columns: 1;
+  -moz-columns: 1;
+}
+li{
+ list-style-type: none;
+font-family: "Arial Nova";
+font-size: 11px;
+text-align: center;
+margin: 0px 0px 0px 0px;
+}
+
+.small img{
+	width: 270px;
+	max-height: 360px
+}
+.big img{
+	width: 270px;
+	height: 600px;
+    padding: -10px -10px -10px -10px;
+
+}
+
+```

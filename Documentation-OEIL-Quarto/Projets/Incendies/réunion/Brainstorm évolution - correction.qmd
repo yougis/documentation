@@ -1,0 +1,110 @@
+---
+title: Brainstorm évolution - correction
+last-modified: 2023-08-30 03:15:08Z
+date: 2023-07-10 23:46:14Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+11/07/2023 14:00
+Présent : Adrien, Anne, Fabien, Jef, Hugo
+
+**Objectif :**
+
+- proposer un service à AR (Etudes 4 Millions, Action 2 Millions )
+- orientation stratégique du budget 2023 (2 Millions)
+
+**Contexte :**
+Le dispositif se décompose en 3 modules
+
+- Surface brulées
+- Alerte Incendie
+- Valorisation Web et statique
+
+**Short List identifié :**
+
+- Amélioration des data historiques (Modis, VIIRS burned area)
+- Contrôle qualité des data sentinel 2
+- Ameliorer la productivité de la production des bilans Incendie (n-1 max)
+- Indice de sévérité des incendies (NBR, DeltaNBR)
+- Version 3 de la chaine Surface brulée (IA)
+- Alerte Incendie SMS et application mobile
+- Clustering des détéction de point chaud VIIRS/MODIS et mise à jour du Dashboard
+- Modéliser le risque incendie
+
+"C'est à la fin de la foire que l'on compte les bouses" :)
+
+**Relevé de conclusion :**
+
+- Prioriser les actions qui peuvent intéreser l'Agence rurale
+- Consolider l'exitant plutôt que de développer de nouveaux services
+- Identifier des coûts pour le contrôle qualité
+- Expertise sur la chaine avec le CSBio / Theia et le CS de l'OEIL
+
+# Surfaces brulées
+
+## Chaine de traitement INSIGHT Sentinel 2
+
+- Contrôle qualité :
+    
+    - Photo interpretation sentinel
+        - Optimiser le contrôle des données Sentinel 2
+        - Faciliter la photo-interprétation avec des formulaires de saisie simplifié (collect earth)
+        - Rendre l'étape de photo-interprétation moins lourde, moins contraignante, continue par plusieurs personnes ...
+    - Pré-analyser la qualité des données en sortie de traitement par intelligence artificielle / statistique zonal GEE.
+    - Pré-qualifer les données avec un indice de confiance
+- Interpretation des surfaces :
+    
+    - aggrégation spatio-temporelle
+- Intégration du masque nuage
+    
+- calcul d'indice sur les objets surface brulées :
+    
+    - NBR et DeltaNBR
+
+## Modèle de données décisionnel
+
+- Bilbo 1 vs 2
+
+## Burned area Modis / VIIRS / Landsat
+
+## Liens Incendies / surfaces brulées
+
+# Alerte Incendie
+
+- confirmation d'alerte
+    
+    - Levées de doute terrain des alertes Pompier/DSCGR
+    - Information presse
+    - observations citoyens/agents
+- nouveaux capteurs satellites
+    
+- mise en forme et contenu des emails
+    
+- cluster de point chaud
+    
+- filtres photovoltaïques
+    
+- emprise des pixels
+    
+- Différences NC/FIDJI
+    
+
+# Valorisation
+
+## Vulcain Pro
+
+- Stratégie d'évolution de l'outil ?
+- Différences NC/FIDJI
+
+## Vulcain
+
+- effort sur la maintenabilité
+- intégration du modèle décisionnel
+
+## Livrables statiques
+
+- rapportage bilan
+- fiche communale
+- plan de communication

@@ -1,0 +1,19 @@
+---
+title: Simplify Spatial Indexing with the Power of H3
+last-modified: 2024-04-29 21:19:34Z
+date: 2024-04-29 21:19:34Z
+source: https://www.snowflake.com/blog/getting-started-with-h3-hexagonal-grid/?lang=fr
+---
+
+
+Fév 29, 2024
+
+# Simplify Spatial Indexing with the Power of H3 — What the World Needs Now Is a Hexagonal Grid
+
+- [Produit et technologie](https://www.snowflake.com/blog/category/produit-et-technologie/?lang=fr)
+    - [Data warehouse](https://www.snowflake.com/blog/category/produit-et-technologie/data-warehouse-fr/?lang=fr)
+
+[lire l'article](https://www.snowflake.com/blog/getting-started-with-h3-hexagonal-grid/?lang=fr)
+
+[Lire la suite](https://www.snowflake.com/blog/optimize-local-and-global-decisions-with-snowflakes-geospatial-support/?lang=fr)
+

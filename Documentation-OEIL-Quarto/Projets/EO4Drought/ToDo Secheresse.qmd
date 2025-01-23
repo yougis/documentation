@@ -1,0 +1,25 @@
+---
+title: ToDo Secheresse
+last-modified: 2024-03-27 21:47:04Z
+date: 2024-03-27 21:45:09Z
+---
+
+- [x] Chiffrer la charge et le coût de l’intégration de la chaine prévisionnelle,
+    
+- [x] Identifier les spécifications techniques réelles nécessaires au fonctionnement de la chaine,
+    
+- [x] Déterminer le coût d’infrastructure (hébergement, calculs) à l’année,
+    
+- [ ] Prise de contact à faire avec la NASA afin de déterminer leur recommandation concernant le décommissionnement de MODIS et l’utilisation du capteur de température de VIIRS (compte tenue des écarts identifiés). Ont-ils prévu de fournir un service dédié ?
+    
+- [ ] Programmer une bilatérale avec la CPS / SPREP, pour une présentation de l’outil et des données, en vue de déterminer des modalités de partenariat pour assumer la mise en œuvre opérationnelle de la chaine (hébergement, maintenance, évolutions),
+    
+- [ ] Rendez-vous à prévoir avec la CANC et l’Agence Rurale pour déterminer des modalités de partenariat pour assumer la mise en œuvre opérationnelle de la chaîne (hébergement, maintenance, évolutions),
+    
+- [x] Réunion Agence Rurale - OEIL
+
+- [x] Il a été évoqué de faire une restitution en juin/juillet afin de disposer d’information par INSIGHT pour différencier les deux projets (irrigation & sécheresse).
+    
+- [x] Demander à l’IRD un document formalisant leur contribution au projet,
+    
+- [x] Rédiger le rapport d’exécution du projet Fond pacifique

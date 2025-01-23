@@ -1,0 +1,71 @@
+---
+title: 'Donnée surfaces brûlées : étape intermédiaire '
+last-modified: 2021-07-29 05:20:17Z
+date: 2021-06-27 10:25:16Z
+tags:
+  - prioritaire
+---
+
+# Donnée élaborées surfaces incendiées 2020 :
+
+La donnée “surfaces incendiées” est issue d’une classification supervisée réalisée sur les images satellites Sentinel 2. Même si nous avons optimisé l’algorithme de détection des surfaces brûlées, il persiste de fausses détections (cuirasses, pâturages, labours, épandages de fumier, ombres…).
+
+De cette donnée, nous effectuons un post traitement afin de regrouper les surfaces brûlées pouvant être détectées lors d’un incendie. En effet, les surfaces sont redondantes entre les prises de vue, car chaque semaine les surfaces sont à nouveau détectées, sauf en cas de changement notable des sols ou de présence de nuage. Ce regroupement est essentiel pour comptabiliser, sans doublons, la superficie des surfaces brûlées durant l’année étudiée. Néanmoins, de par la manière dont le traitement est effectué, il persiste des doublons.
+
+## Objectifs du traitement :
+
+A partir de la détection d’un point chaud, confirmé soit par un capteur VIIRS ou MODIS, soit par référence DSCGR, on effectue un rattachement des surfaces brûlées détectées par Sentinel à l’une des références précédemment citées. Le rattachement est fait par proximité spatiale (100m) et temporelle (3 mois). Dans certains cas, aucune des références précédentes n’est identifiée, la référence est alors la surface brûlée Sentinel initiale.
+
+Un regroupement des surfaces détectées aux dates ultérieures peut ensuite être effectuée selon les mêmes critères spatio-temporels. Notons que des surfaces rattachées à un point chaud de référence ou une surface brulée de l’année n-1 ne sont pas comptabilisés pour l’année de l’étude.
+
+## Ce que le script automatique fait :
+
+Une surface brûlée est rattachée à une référence (point chaud ou surface brûlée) si son identification est faite dans un délai de moins de 3 mois et dans un périmètre de 100 m. Tant qu’aucune nouvelle référence de point chaud n’est détectée dans la zone, les surfaces détectées ultérieures sont agrégées.
+
+### Cas particuliers
+
+Dans le cas où un nouveau point chaud est détecté dans la zone, il devient la référence pour les surfaces détectées à posteriori. 
+Cela peut être problématique car :
+- la surface détecté est rattaché un point chaud de référence qui n'est pas son origine,
+- la surface réellement incendié est comptabilisée plusieurs fois. 
+
+Il nous arrive aussi de comptabiliser des surfaces brûlées deux années de suite (fin/début d'année).
+
+La donnée produite ici est une donnée élaborée intermédiaire. Une phase de contrôle et correction par photo-interprétation.
+
+**Exemples :**
+
+
+Le 19 Avril 2019
+
+![4d3bd0eead12a5026f28326555a6ab73.png](../../_resources/4d3bd0eead12a5026f28326555a6ab73.png)
+
+Détection point chaud avec VIIRS
+
+---
+
+Du 23 Avril 2019 au 15 Mai 2019
+
+![02a1bdbc5f7ce5d6c0635e7a32ad66d8.png](../../_resources/02a1bdbc5f7ce5d6c0635e7a32ad66d8.png)
+![02a1bdbc5f7ce5d6c0635e7a32ad66d8.png](../../_resources/02a1bdbc5f7ce5d6c0635e7a32ad66d8.png)
+![02a1bdbc5f7ce5d6c0635e7a32ad66d8.png](../../_resources/02a1bdbc5f7ce5d6c0635e7a32ad66d8.png)
+
+On identifie dans chaque image Sentinelle, 10 ha de surface brûlée, que nous fusionnons et associons au feux VIIRS du 19 Avril  
+
+---
+
+Le 16 Mai 2019
+
+![df8774aa90c1a843d6102e3969f3c0a6.png](../../_resources/df8774aa90c1a843d6102e3969f3c0a6.png)
+
+Nouvelle détection de point chaud avec VIIRS, nouvel incendie.
+
+---
+
+
+Du 20 Mai au 3 Août
+
+![cf78aeebc44e96c312051920fcb34f47.png](../../_resources/cf78aeebc44e96c312051920fcb34f47.png)![408ab558dc2bb58ff1f1137c2bccad1d.png](../../_resources/408ab558dc2bb58ff1f1137c2bccad1d.png)![47b60f39c8e670192c35873156b4505a.png](../../_resources/47b60f39c8e670192c35873156b4505a.png)
+
+On identifie dans chaque image Sentinelle, 20 ha de surface brûlée, que nous fusionnons et associons au feux VIIRS du 16 Mai  
+

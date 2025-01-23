@@ -1,0 +1,14 @@
+---
+title: remarque v1.2
+last-modified: 2022-08-25 03:02:16Z
+date: 2022-08-24 23:44:08Z
+---
+
+# donnée AEP
+valeur des champs non homogène, comporte des erreurs de frappe
+- Champ type eau
+- Champ activité 
+
+des points de captage sont localisés en dehors des limites administratives terrestres de référence sur le territoire (NC / Province / commune / aire coutumière). Ex Ouvrage AEP eau de mer de Ouvéa.
+
+Ouvrage sans aucun lien avec PP.

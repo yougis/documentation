@@ -1,0 +1,27 @@
+---
+title: réunion priorisation OEIL
+last-modified: 2021-11-08 00:44:11Z
+date: 2021-11-08 00:39:13Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+
+- Données disponibles, homogénéité spatio-temporelle
+
+- panel d'indicateurs Etat/pression/réponse
+
+- Les données de bases exploitées pour ces indicateurs sont: 
+	- les données AEP,
+	- les limites administratives : commune / province,
+	- météo,
+	- le MOS,
+	- les données incendies VIIRS,
+	- MNT,
+	- Géologie,
+	- les données statistiques de l'ISEE,
+	- la BD TOPO(Bati),
+	- métadonnées Atya
+	- les surfaces AP & Labelisées
+	- Milieux et espèces menacés (microendemicité flore, Especes menacées, KBA, ZICO, corridor forestier)

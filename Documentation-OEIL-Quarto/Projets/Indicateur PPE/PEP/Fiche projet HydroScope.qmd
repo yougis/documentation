@@ -1,0 +1,42 @@
+---
+title: Fiche projet HydroScope
+last-modified: 2024-01-30 23:32:02Z
+date: 2024-01-29 03:47:36Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+Le projet "HydroScope" vise, dans une démarche de co-construction avec les gestionnaires et les différentes parties prenantes, à mettre en place des outils modernes et performants pour le suivi de la ressource en eau, le partage d'informations entre acteurs et la sensibilisation du grand public. Il s'inscrit dans la continuité d'une collaboration entre la DAVAR et l'OEIL en 2021.
+
+Sur la Grande Terre, 64 % des captages destinés à la production d’eau potable sont implantés sur des cours d’eau et sont soumis à des pressions multiples. Les incendies, l’activité minière, les espèces envahissantes herbivores (cerfs, cochons) ou encore l’artificialisation des sols dégradent le couvert végétal et exposent les sols à l’érosion. A titre d’exemple, en 2019, 17 % des feux de brousse ont touché des périmètres de protection des eaux, sur près de 7 000 hectares. Par ailleurs, une étude estimait en 2016 que la couverture végétale dans 90 % des périmètres de protection des eaux de Nouvelle-Calédonie était dégradée (Andreoli R. et al., 2016), exposant les sols à l’érosion. L’assainissement des effluents urbains, industriels et agricoles est encore perfectible malgré des efforts conséquents depuis une décennie : la présence et les activités humaines sont à l’origine de rejets de substances polluantes. La surexploitation de la ressource en eau et les aménagements sur les cours d’eau perturbent les écosystèmes et mettent à mal la pérennité de l’accès à l’eau pour les générations à venir. Le changement climatique, selon de récentes estimations, induira une baisse de 20% des précipitations en moyenne d’ici 2100 avec de grandes disparités sur le Territoire (Menkes C. et al. 2019).
+
+Une ressource précieuse et menacée, qui plus est, sur un territoire insulaire comme le nôtre, appelle à des mesures de gestion éclairées et concertées. Bénéficier du plus haut niveau de connaissances possible sur cette ressource est un préalable nécessaire à des prises de décision efficientes.
+
+En corollaire, les ateliers de la PEP ont témoigné :
+
+- de la complexité, pour les gestionnaires (gouvernement, commune,…), à identifier et à suivre la ressource en eau et son niveau de pression environnementales et humaines, notamment en raison du nombre croissant et important de périmètres de protection des eaux réglementés (plus de 220 à ce jour) et en cours de réglementation,
+    
+- d'un déficit de connaissance des caractéristiques biogéographiques des bassins versants producteurs d’eau potable (périmètres de protection des eaux inclus) et des niveaux de pressions environnementales et humaines, déficit en lien avec une information restant, d'une part, trop souvent cantonnée aux services techniques des collectivités et, d'autre part, peu exploitée au regard de son réel potentiel analytique,
+    
+- d'une difficulté à partager, entre parties prenantes, des diagnostics sur la ressource en eau et, a fortiori, à décider en commun d'actions à mettre en œuvre.
+    
+
+Le projet HydroScope a donc pour objectifs généraux de :
+
+- caractériser les bassins versants producteurs d’eau potable (périmètres de protection des eaux inclus) via leurs principaux facteurs biogéographiques (relief, géologie, végétation, pluviométrie,...) et des pression subies (urbanisation, incendies, érosion,...) sur l'ensemble de la Nouvelle-Calédonie par la mise en place d'un jeu de variables et d'indicateurs produits à partir de géotraitements sur des données SIG disponibles,
+- permettre le partage et l'exploration des informations utiles sur ces périmètres et selon différentes échelles d'analyse (territoire, province, commune,...) via des interfaces de consultation des données de type "tableau de bord numérique" déclinés différemment par type d’acteurs dont le grand public.
+
+Dans une logique de consolidation et d'extension du projet initié en 2021, il s'agira plus particulièrement :
+
+- d'accroître la connaissance des bassins versants producteurs d’eau potable et des pressions subies en complétant le jeu de variables (état de fonctionnalité des bassins versant, nombre de radier/gué/ ouvrage d'art, linéaire des cours d'eau touchés par l'érosion, mesures de qualité biologique et physico chimique, proximité de la voirie aux cours d'eau...),
+    
+- de passer d'une approche strictement quantitative donnée par les variables à une notion d'indicateur de qualité par la définition de seuils basés sur des approche statistique multivariée ou des modèles d'analyse de données avec apprentissage (deep learning, machine learning etc.),
+    
+- de qualifier le niveau d'intégrité et de pression global sur la ressource en eau selon différentes thématiques par la mise en place d'une pondération entre ces indicateurs,
+    
+- de mettre en place des rapports destinées aux parties prenantes sur les évolutions du niveau de pression sur la ressource en eau. Il s'agit par exemple de pouvoir indiquer de la présence d'une nouvelle installation classée (ICPE), sur un périmètre, de la survenue d'un incendie sur la zone ou d'un défrichage important, etc. Ceci nécessite d'intégrer une notion de vie de la donnée avec :
+    
+    - la mise en œuvre de processus de détection automatique de changements à chaque intégration de nouvelles données de référence. Par exemple, à chaque mise à jour et intégration de la BD TOPO, la présence de nouvelles infrastructures (route, bâtiment…) serait mentionnée à l'utilisateur du système ;
+    - la recherche de données réactualisées fréquemment et au cycle de mise à jour maîtrisée. Par exemple concernant l'occupation du sol, les MOS locaux sont produits à une fréquence variable (2008, 2014) et deviennent rapidement obsolètes. Il existe désormais des cartographies libres de droits délivrées par des services mondiaux et mises à jour périodiquement,
+- de faciliter l'appropriation de ces nouvelles informations par les différentes parties prenantes (services techniques, décideurs des collectivités, conseil de l’eau…) en proposant des interfaces de consultation adaptées à différents niveaux de maîtrise technique des utilisateurs. L'accès aux données qualifiées et aux rapports seront proposés pour favoriser l’exploitation des données et des information quelles contiennes. Des sessions de formation aux outils seront proposées.

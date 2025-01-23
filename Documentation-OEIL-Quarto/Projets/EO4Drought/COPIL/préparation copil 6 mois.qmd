@@ -1,0 +1,32 @@
+---
+title: préparation copil 6 mois
+last-modified: 2023-08-08 06:03:50Z
+date: 2023-04-24 02:11:18Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+# Rappel des réunions et ateliers précédents
+- 2022/09/12 : KickOff - présentation des étapes du projet et du planning prévisionnel
+- 2022/09/14 : Echanges e-mail et prise en main methode Agile de l'équipe (Mathis-Hugo)
+- 2022/09/29 Ateliers : Rebouclage backlog eo4dm : Jeu 29/09/2022 08:30 - 09:30
+- 2022/10/04 : Point partenariat OEIL-INSIGHT-IRD
+- 2022/10/11 Visio : Avancement Sprint 0 : Mar 11/10/2022 08:30 - 09:00
+- 2022/10/10 : mail CS (pas de retour)
+- 2022/10/18 : definition Architecture/Infrastructure projet EO4DM : Mar 18/10/2022 08:30 - 09:00
+- 2022/10/21 : Sprint release + préparation sprint 1 : Ven 21/10/2022 08:30 - 10:00
+- 2022/10/27 : Point sur faisabilité Data Cube dans chaine Sécheresse : Jeu 27/10/2022 08:15 - 09:30
+- 2022/10/28 : Point Sprint 1 : Ven 28/10/2022 10:00 - 10:30
+
+Rançomware // Site Web // Régie Skazy / prepa OGS..
+
+- 2022/11/23 : Point avancement SPRINT 1 : Mer 23/11/2022 13:30 - 14:30
+// OGS // GIS DAY
+- 2022/12/16 : Point avancement SPRINT 1 : Ven 16/12/2022 13:30 - 14:30
+// rançomware 2
+- 2022/12/22 : Données météo dans chaine sécheresse : Jeu 22/12/2022 14:00 - 15:00
+// congés Hugo
+- 2023/02/09 : Reprise du projet : jeu 09/02/2023 08:30 - 10:00
+// congés Mathis
+- 2023/03/28 : Point projet sécheresse : Mar 28/03/2023 14:00 - 15:00

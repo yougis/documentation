@@ -1,0 +1,28 @@
+---
+title: Note réunion fin stage
+last-modified: 2022-08-31 23:16:09Z
+date: 2022-08-31 22:39:42Z
+---
+
+Après érosion des polygones de perte en appliquant une zone tampon de 1 pixel, les résultats à matière d’exactitude ont été significativement augmenté avec globalement un doublement des pourcentages pour les changements (pertes et gains).
+# Pertes 
+Les résultats montrent des pourcentages d’exactitude allant de 50 à 75% et plus pour la perte. Les meilleurs résultats sont obtenus pour GFC.
+Il est convenu que la raison de cette augmentation de l’exactitude doit être explorée pour être mieux comprise. Une exploration en détail des agrégats de pixels mal classés doit être faite avant érosion pour comprendre l’apport de cette opération. Trois hypothèses sont émises à ce sujet : 
+	
+1. l’érosion permet d’écarter les pixels isolés qui sont difficilement interprétables avec la résolution des images exploitées. 
+2. le décalage spatial (environ 1 pixel constaté sur la côte) rend incohérents les résultats de la photo-interprétation et les résultats des couches GFC / TMF.
+3. la stratégie de contrôle par agrégat est trop grossière pour être fidèle à la photo-interprétation lorsque le pixel central se positionne en lisère d’une zone de changement ou bien sur des zones de changement de un ou quelques pixels isolés.
+
+L’exploration devra vérifier si le type de végétation n’est pas en cause dans les résultats obtenus, notamment sur la côte Ouest. Cela pourrait expliquer les résultats moins bons sur TMF qui répond a priori moins bien que GFC sur les formations végétales sèches.
+
+# Résultats sur les gains 
+Les pourcentages d’exactitude sont 2 à 3 fois moins bons que ce qui est obtenu sur la perte. La stratégie d’érosion des zones échantillonnées pourrait améliorer l’effort d’échantillonnage qui est encore beaucoup trop faible pour être conclusif à ce stade.
+
+# Résultats de la comparaison de l’approche par agrégats VS par pixel
+L’approche par pixel donne de moins bons résultats que l’approche par agrégats ce qui semble aller dans le sens de la difficulté d’interprétation des images à l’échelle du pixel. La démarche d’agrégats permettrai donc de lisser les éventuelles erreurs d’interprétation.
+
+# Résultats entre les deux périodes 2000-2010 et 2010-2020
+La seconde période affiche de meilleurs résultats que la première ; L’hypothèse émise est le fait que les services TMF/GFC détectaient moins bien les pertes à cette époque à cause des stratégies de téléchargement/acquisitions d’images qui étaient moins importantes. Le fonctionnement actuel des algo se base sur la récurrence du signal de changement pour acter celui-ci. Avec une fréquence d’image moins importante, les services sont forcément moins performants. Cette hypothèse est aussi appuyée par l’absence de toute surface de perte végétale sur TMF de 1990 à 1999.
+-	Marin produira dès que possible la documentation permettant de retracer les opérations qu’il a mener pour nous permettre de consulter Ghislain Vielledent avant sa venue en NC le 18/09. Idéalement il faudrait que nous ayons le temps d’effectuer une explorations des mauvais classements d’agrégats de pixels des produits GFC/TMF avant l’opération d’ « érosion » des pertes pour mieux comprendre les résultats.
+Marin accepte de participer à visio d’échange avec Ghislain et l’ŒIL pour débriefer sur les résultats qu’il a obtenu.
+

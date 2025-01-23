@@ -1,0 +1,39 @@
+---
+title: Retour sur le dashboard PPE V1.2
+last-modified: 2022-08-17 23:54:08Z
+date: 2022-08-17 23:48:36Z
+---
+
+
+Retour sur le Dashboard PPE :
+
+- Alléger un peu le 1er onglet du Dashboard en créant un nouvel onglet "contexte environnemental"
+
+Sous la liste de sélection des ouvrages, on indique : 
+    -	carte d'identité PPE : type d'ouvrage, num PPE, date 
+    -	surface PPE, PPR ou PPE+PPR, selon ce qui est sélectionné en haut
+    -	1er onglet INFO AEP : on présente le dénombrement des ouvrages actifs/inactifs, eau sout/eau sup, (voir même les types d'ouvrages), les type de PPE en mode camembert (par entité territoriales), et surface cumulé PPR et PPE
+
+- 2e onglet : CONTEXE ENVIRONNEMENTAL : on reprend les Widget présent précédemment dans la 1er page (surface globale en moins, puisqu'on l'à déjà sur le côté). A voir également si on garde l'occupation du sol générale??
+
+- Si on a le temps : 
+    -	suppression des entités territoriales "sous-régions hydrographiques"
+    -	amélioration de l'ergonomie des panneaux érosion et impact anthropique 
+
+Il est convenu que le mode de sélection "fusionné/non fusionné" persistera, puisque, soit on regarde à une échelle "territoriale", donc info fusionnés, soit on regarde à l'échelle d'un ouvrage AEP, et il ne faut d pas oublier de regarder les données en mode "non fusionnés" 
+
+Les perspectives et propositions pour une V2 éventuelle : 
+
+- agrémenter l'outil avec un calcul par BV-AEP (qui aura valeur univoque pour tous les ouvrages AEP")
+- Ajouter des indicateurs : 
+    - enjeux : pop desservie pour chaque PPE, ...
+    - pressions : nombre et longueur de routes, nombre et volume de prélèvement autorisés, ....
+- Développer un système d'analyse multicritères en fonction : 
+    - des indicateurs d'enjeux et de pression et 
+    - permettre éventuellement de régler les pondérations de manière dynamique
+    Mais ça, on aura l'occasion d'en reparler. 
+
+
+Hugo a annoncé un planning 2022 relativement chargé : 
+-	la V1 sera reprise courant du mois d'aout (a son retour de vacances) 
+-	pour le moment, la V2 est à envisager dans le cadre de l'appel à projet PEP. 

@@ -1,0 +1,34 @@
+---
+title: ' méthodes  mesurer les émissions de GES des forêts'
+last-modified: 2024-01-26 03:17:47Z
+date: 2024-01-25 12:08:44Z
+---
+
+Quelles sont les méthodes utilisées pour mesurer les émissions de gaz à effet de serre liées à la dégradation des forêts?
+
+1.  **Inventaire des gaz à effet de serre** : Les données relevées in situ et les données de télédétection (SPOT5 et SPOT 7) sont utilisées pour estimer les données de la déforestation\[1\]. Les données d'activité (DA) par les facteurs d'émission (FE) sont calculées en multipliant les données d'activité (DA) par les facteurs d'émission (FE)\[1\].
+    
+2.  **Guide de quantification des émissions de GES** : Ce guide propose des protocoles de quantification des émissions de GES attribuables aux secteurs industriels, y compris les émissions liées à la dégradation des forêts\[2\].
+    
+3.  **Initiative mondiale pour la réduction des émissions de déforestation et de la dégradation des forêts (REDD+)** : Cette initiative propose des méthodes et pratiques recommandées pour estimer les facteurs d'émission liés au déboisement et à la dégradation des forêts\[4\].
+    
+4.  **Observations satellitaires** : Les données satellitaires, telles que les incendies de forêt, sont utilisées pour estimer les émissions de GES liées à la dégradation des forêts\[5\].
+    
+5.  **Études de cas spécifiques** : Des études spécifiques, telles que celle menée par l'Université de Berkeley, critiquent les méthodes douteuses utilisées pour émettre des crédits carbone liés à la protection des forêts\[9\].
+    
+
+HAL Id: hal-02929817 https://hal.science/hal-02929817/document
+\[2\] Guide de quantification https://www.environnement.gouv.qc.ca/changements/ges/guide-quantification/guide-quantification-ges.pdf
+\[3\] Comprendre l'impact de la forêt sur le climat | WWF France https://www.wwf.fr/vous-informer/actualites/comprendre-limpact-de-la-foret-sur-le-climat
+\[4\] Module 2.3 Estimation des facteurs d’émission liés à l’évolution du couvert forestier (déboisement et dégradation) [https://www.forestcarbonpartnership.org/system/files/documents/Module 2.3 Lecture-FR-08\_05\_15_final.pdf](https://www.forestcarbonpartnership.org/system/files/documents/Module%202.3%20Lecture-FR-08_05_15_final.pdf)
+\[5\] Module 2.6 Estimation des émissions de GES provenant de la combustion de la biomasse [https://www.forestcarbonpartnership.org/system/files/documents/Module 2.6 Lecture-FR-08\_05\_15_final.pdf](https://www.forestcarbonpartnership.org/system/files/documents/Module%202.6%20Lecture-FR-08_05_15_final.pdf)
+
+\[10\] Nouvelles approches des niveaux d’émissions de https://www.fao.org/3/i4846f/i4846f.pdf
+\[11\] Page | 1 [https://aida.ineris.fr/sites/aida/files/gesdoc/100392/Dec(FR)20190419\_2\_BO24052019_annexe.pdf](https://aida.ineris.fr/sites/aida/files/gesdoc/100392/Dec%28FR%2920190419_2_BO24052019_annexe.pdf "https://aida.ineris.fr/sites/aida/files/gesdoc/100392/Dec(FR)20190419_2_BO24052019_annexe.pdf")
+\[12\] A cause de la déforestation, les forêts libèrent plus de CO2 qu’elles n’en capturent https://www.lesechos.fr/2017/09/a-cause-de-la-deforestation-les-forets-liberent-plus-de-co2-quelles-nen-capturent-181824
+\[13\] Méthode [https://www.ecologie.gouv.fr/sites/default/files/methodo\_BEGES\_decli_07.pdf](https://www.ecologie.gouv.fr/sites/default/files/methodo_BEGES_decli_07.pdf)
+\[14\] Politique de prévention et de lutte contre l ’ incendie de forêt dans un contexte d ’ extension et d ’ intensification du risque dû au changement climatique https://www.interieur.gouv.fr/content/download/135524/1073511/file/22032R2-Incendies-forets-tome-2.pdf
+
+\[17\] https://www.fao.org/3/i4847f/i4847f.pdf
+
+\[20\] Rôle des forêts dans le bilan de carbone de la planète https://planet-vie.ens.fr/thematiques/ecologie/cycles-biogeochimiques/role-des-forets-dans-le-bilan-de-carbone-de-la-planete

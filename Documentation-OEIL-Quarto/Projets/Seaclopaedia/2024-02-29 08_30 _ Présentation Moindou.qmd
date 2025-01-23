@@ -1,0 +1,18 @@
+---
+title: '2024-02-29 08:30 : Présentation Moindou'
+last-modified: 2024-02-28 23:25:27Z
+date: 2024-02-28 21:51:09Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+2024-02-29 08:30
+
+\- analyse du coût du suivi actuel
+
+ce n'est pas prévu dans le cadre du projet.
+
+la démarche : on parle science et technique pour répondre aux questions.
+
+le calcul de la distance temps et pas simplement la distance métrique

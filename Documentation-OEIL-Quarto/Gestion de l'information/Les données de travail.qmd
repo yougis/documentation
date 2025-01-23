@@ -1,0 +1,60 @@
+---
+title: Les données de travail
+last-modified: 2024-07-07 23:13:00Z
+date: 2021-06-17 01:46:33Z
+---
+# Principes généraux 
+
+Intégrer les données vectorielles en base de données.
+
+Intégrer les données structurées tabulaires en base de données.
+
+Stocker les données Rasters sur serveur de fichiers.
+
+Cataloguer les données.
+
+
+## Bases de donnees et schemas pour les données vectoriels et tabulaires
+Une instance de base locale pour la production.
+Une instance de base locale pour la qualification.
+Une base pour les données de travail
+- Un schema par projet
+Une base pour les données de référence (publiée)
+- Un schema par projet
+Une base pour les données externes
+- Un schema par source (georep / openSig / PNord / ftpUNC ? .. )
+Une base de donnée pour les applications 
+- Un schema par application
+
+Une instance de base cloud pour la diffusion production.
+Une instance de base cloud pour la qualification de la diffusion.
+
+## Stockage et exploitation des images sattelites 
+
+cloud ? COG (cogeo.org)? analyse en temps réel 
+
+base de données locales ? rasdaman opendatacube?
+
+# Gestion des droits et des schemas
+Il existe un script pour la gestion des droits sur les bases de données.
+[repo DM_management](https://dev.azure.com/Oeilnc/GO%20-%20Gestion%20information%20OEIL%20(Documentation%20et%20script)/_git/DB_management).
+
+
+# Synchronisation des données externes
+
+Les transferts de données externes se font soit au sein de l'infrastructure (entre base et applications de l'OEIL), soit vers l'exterieur soit vers l'interieur.
+
+## Au sein de l'infrastructure
+On utilise rsync pour les transferts de fichiers pour récupérer les données des chaines de traitement INSIGHT.
+On utilise FME / GDAL / python, dump/restore de postgres servent aussi à migrer des données entre les bases de données. 
+
+Des données météo sont mises à disposition par Météo France NC via FTP pour être exploité par la chaine de traitement de la sécheresse. Le processus de récupération automatique n'est pas encore en place. Des échanges avec Alexandre Pelletier sont rester en l'état suite à un atelier de présentation à l'OEIL. Le protocole FTP envisagé au début semble être abandonée par Météo France NC. 
+
+## Vers l'exterieur
+Pour les données légères, il faut envisager la publication des données de l'OEIL dans un catalogue de donnée type CKAN, organisé selon les thèmes et les projets (incendies, hydrobio, suivi environnemental, etc.).
+Pour les gros jeux de données de type spatio-temporelle raster, l'utlisation d'un catalogue STAC semble la bonne option. Les lots d'images pourraient être stockés sur un serveur de fichiers et transmises au cas par cas.
+
+## Vers l'interieur
+On utilise FME / GDAL / python, pour intégrer des données de l'exterieur vers nos bases de données. 
+
+

@@ -1,0 +1,76 @@
+---
+title: Fiche description donnée collée
+last-modified: 2023-12-15 05:33:36Z
+date: 2023-12-15 02:56:40Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+1.  1.  **Titre:**
+        
+        - **Champ:** `field-title`
+        - **Exemple de valeur:** "Selection of World Bank Worldwide Governance Indicators (WB WGI) for Pacific Island Countries and Territories"
+        - **Description:** Le titre indique le nom ou la description succincte de la source de données. Il s'agit d'une information essentielle pour identifier rapidement le contenu de la source.
+    2.  **Description:**
+        
+        - **Champ:** `field-notes`
+        - **Exemple de valeur:** "This selection includes data related to SPC member countries and territories for some of the indicators available in the original database published by the World Bank. Find more Pacific data on [PDH.stat](https://stats.pacificdata.org)."
+        - **Description:** La description fournit des informations détaillées sur le contenu et le contexte de la source de données. Elle permet aux utilisateurs de comprendre plus en profondeur ce que la source offre.
+    3.  **Mots-clés:**
+        
+        - **Champ:** `field-tags`
+        - **Valeur:** "pdhstat, social, world-bank"
+        - **Description:** Les mots-clés sont des étiquettes ou des catégories qui facilitent la recherche et la classification de la source de données. Ils sont utiles pour organiser et retrouver rapidement des informations similaires.
+    4.  **Licence:**
+        
+        - **Champ:** `field-license`
+        - **Valeur:** "Autre (Ouvert)"
+        - **Description:** La licence indique les termes et conditions d'utilisation de la source de données. Dans cet exemple, la licence spécifie que les données sont ouvertes, mais avec des conditions spécifiques qui peuvent être détaillées ailleurs.
+    5.  **Organisation:**
+        
+        - **Champ:** `field-organizations`
+        - **Valeur:** "spc-sdd"
+        - **Description:** Ce champ indique l'organisation associée à la source de données. Cela peut être utile pour identifier la provenance de l'information.
+    6.  **Visibilité:**
+        
+        - **Champ:** `field-private`
+        - **Valeur:** "Publique", "Interne"
+        - **Description:** La visibilité spécifie qui peut accéder à la source de données. Dans cet exemple, elle peut être publique (accessible à tous) ou interne (limitée à un groupe restreint d'utilisateurs).
+    7.  **Source:**
+        
+        - **Champ:** `field-url`
+        - **Valeur:** ""
+        - **Description:** Ce champ peut contenir l'URL de la source d'origine si la source de données provient d'une référence externe.
+    8.  **Version:**
+        
+        - **Champ:** `field-version`
+        - **Valeur:** ""
+        - **Description:** La version indique la version actuelle de la source de données. Cela peut être utile pour suivre les mises à jour et les modifications au fil du temps.
+    9.  **Date de dernière mise à jour:**
+        
+        - **Champ**: field-last-update
+        - **Valeur**: "2023-06-20"
+        - **Description**: Indique la date de la dernière mise à jour de la source de données.
+    10. **Producteur / auteur:**
+        
+        - **Champ:** `field-author`
+        - **Valeur:** ""
+        - **Description:** Le producteur est la personne ou l'entité responsable de la création initiale de la source de données.
+    11. **Courriel de l'auteur:**
+        
+        - **Champ:** `field-author-email`
+        - **Valeur:** ""
+        - **Description:** Fournir l'adresse e-mail de l'auteur permet de contacter directement la personne qui a créé la source de données.
+    12. **Mainteneur:**
+        
+        - **Champ:** `field-maintainer`
+        - **Valeur:** ""
+        - **Description:** Le mainteneur est la personne responsable de la gestion continue et de la maintenance de la source de données à l'OEIL.
+    13. **Courriel du mainteneur:**
+        
+        - **Champ:** `field-maintainer-email`
+        - **Valeur:** ""
+        - **Description:** Fournir l'adresse e-mail du mainteneur permet de contacter la personne en charge de la maintenance de la source de données à l'OEIL.
+    
+    Ces champs fournissent des informations clés pour comprendre, organiser, et maintenir une source de données dans un catalogue.

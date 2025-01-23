@@ -1,0 +1,21 @@
+---
+title: SO2 prony ressources
+last-modified: 2022-08-18 23:30:03Z
+date: 2022-08-18 22:16:38Z
+---
+
+PSUD
+date : 19/08/2022
+
+la psud doit demander l'autorisation de survol à PNRC
+réseau de suivi SO2 n'offre pas de visibilité des PIC (moyenne mensuelle). 
+
+reco:
+- modélisation des dispertions dans l'air / altitude
+
+- partage d'information/communication des seuils modifiés
+
+- mise en place de protocole de suivi à étudier en collaboration avec la PS / PNRC / OEIL
+
+ccl :
+PS peut missioner  l'OEIL à établir le plan de suivi.

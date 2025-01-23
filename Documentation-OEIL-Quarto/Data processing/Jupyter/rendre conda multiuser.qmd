@@ -1,0 +1,36 @@
+---
+title: rendre conda multiuser
+last-modified: 2022-04-05 03:48:59Z
+date: 2022-04-05 03:47:10Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+---
+
+- installer anaconda dans /opt/anaconda3
+- créer le groupe oeil
+- ajouter les utilisateur au group
+- ajouter les permissions au groupe oeil sur le dossier /opt/anaconda
+- modifier le fichier .bashrc
+
+```sh
+# Pyenv initialization
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+```

@@ -1,0 +1,46 @@
+---
+title: Une initiative commune entre les US et l’UE
+last-modified: 2023-12-13 22:21:42Z
+date: 2023-08-29 22:27:06Z
+latitude: -22.25582340
+longitude: 166.45052430
+altitude: 0.0000
+---
+
+mail de Fabien
+
+Une initiative commune entre les US et l’UE
+
+GWIS - Welcome to GWIS (europa.eu)
+
+ 
+
+Globalement, des informations intéressantes côté données dispo, interface de consultation etc…
+
+ 
+
+Des résultats proches des notre ici
+
+Ex ici https://gwis.jrc.ec.europa.eu/apps/gwis.statistics/estimates/NCL/2023
+
+Ex ici https://gwis.jrc.ec.europa.eu/apps/gwis.statistics/seasonaltrend/NCL/2023/CO2
+
+ 
+
+Des résultats bizarres
+
+Ex ici
+
+countryprofile (europa.eu)
+
+ 
+
+Ils ont l’air aussi de générer automatiquement des polygones à partir des points chauds de MODIS/VIIRS
+
+GWIS - Burnt Areas (europa.eu)
+
+ 
+
+Bref, à explorer pour s’inspirer !
+
+ 

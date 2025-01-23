@@ -1,0 +1,29 @@
+---
+title: POC Magis restitution
+last-modified: 2022-09-16 03:13:30Z
+date: 2022-08-25 22:12:26Z
+---
+
+Bonjour Yann-Eric,
+
+Je reviens vers toi suite à ta venue dans nos locaux pour nous présenter le travail réalisé à notre demande. Je me permet de te donner notre point de vue sur la mise en œuvre de ce POC :
+
+- Durée du POC 7 jour au lieu de 1-2 jours demandé et estimé par nos soins.
+- Nous n'avons pas fixé de deadline de réalisation, l’urgence n'a pas été invoquée, seul le départ de Quentin notre stagiaire définissait une date de restitution préférable mais non stricte. Je ne suis pas certain d'avoir transmis convenablement ce contexte.
+- Sauf erreur de communication interne chez nous, tu ne nous a pas fait de relance concernant un besoin d'accéder à notre base de donnée, donc intégrer au temps de mise en œuvre du POC l'effort de la production des mailles H3 nous semble quelque peu maladroit (je n'ai reçu aucun mail entre le 6 juillet et le 12 août)
+- La recherche de solution à partir du langage « Arcade » avait bien été évoqué le 22/06/2022 comme probablement inadapté (du fait que le dashboard utilise des [profiles spécifiques](https://developers.arcgis.com/arcade/guide/profiles/?rsource=https%3A%2F%2Flinks.esri.com%2Fdashboards-help%2Farcade-profiles#dashboard)) mais notre niveau de connaissance des produits ESRI ne nous permettait pas de valider ce point . Il ne nous semble pas justifié de considérer cette étape dans la mise en œuvre du POC du moins pas à hauteur de plus de 2h.
+- Nous n'avons jamais été alerté sur le dépassement du temps de mise en oeuvre du POC (même lorsque les 2 jours ont été écoulé). A l'avenir, dans le cadre de nos projets il sera toujours nécessaire de nous informer des dérapages planning et de charge de réalisation. Nous mettre devant le fait accompli est pour nous maladroit.
+- Plus globalement sur le projet:
+    - Tu nous fais part d'un manque de hauteur d'analyse sur le projet, même après une présentation lors de la réunion le 22/06/2022 après midi. Tu aurais dû nous faire par de ce manque de hauteur suite à ce point, car c'est regrettable de nous le signaler au moment de la restitution.
+    - La mise en oeuvre des résultats du POC semblerait nous convenir mais techniquement, sa mise en oeuvre est toujours très flou. Nous avons bien compris que la solution que tu as trouvé risque de ne pas nous convenir car tu as travaillé sans être sûr des tenants et aboutissant du projet dans sa globalité.
+    - Nous avons considérer rapidement qu'un compromis de coûts serez une sortie adaptée à la situation seulement tu ne semble pas satisfait de notre proposition.
+    - Tu nous propose une facturation de 7 jours. Nous aimerions que tu nous indique quelle mode de prise en charge est envisageable (sur crédit de jours déjà payé, sur nouvelle facture ?).
+    - Nous souhaitons aussi disposer de précision sur les livrables au regard des 7 jours facturés.
+
+Nous aimerions toutefois que tu nous accompagne sur la suite du projet et afin de ne pas retomber dans des déboires équivalents (pour toi comme pour nous), je te prie de prendre bonne note de notre point de vue sur cette situation, que je viens de formaliser par cet email.
+
+J'espère recevoir toute ton attention,
+
+Merci de ta compréhension,
+
+A bientôt

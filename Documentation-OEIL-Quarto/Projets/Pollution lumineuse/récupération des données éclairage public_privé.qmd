@@ -1,0 +1,11 @@
+---
+title: récupération des données éclairage public/privé
+last-modified: 2021-07-13 04:29:28Z
+date: 2021-07-13 04:29:02Z
+latitude: -22.27430000
+longitude: 166.44680000
+altitude: 0.0000
+completed?: no
+---
+
+Déterminer le site
